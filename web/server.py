@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
@@ -156,6 +156,9 @@ def predict_hazard_risk(req: PredictRequest):
 class WarehousePredictRequest(BaseModel):
     model_version: str = "v3_learned"
     features: List[float]
+
+
+WarehousePredictRequest.model_rebuild()
 
 
 class AssistantChatRequest(BaseModel):
