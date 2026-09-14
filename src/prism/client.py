@@ -170,6 +170,31 @@ class PrismClient:
         """Checks whether a trace analysis backfill job is currently running."""
         return self._request("GET", "/api/backfill/trace-analyses/active", params={"project_id": self.project_id})
 
+    def emit_trace(
+        self,
+        input_text: str,
+        output_text: str,
+        latency_ms: int = 15,
+        agent_name: str = "rishabh",
+        model: str = "DamageMesh-V3-Supervisor",
+        session_id: str = "supervisor-shift-bay04",
+        metadata: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """Emits a live trace to PRISM ($0 cost / free)."""
+        payload = {
+            "project_id": self.project_id,
+            "agent_name": agent_name,
+            "model": model,
+            "session_id": session_id,
+            "input_messages": [{"role": "user", "content": input_text}],
+            "output_message": output_text,
+            "latency_ms": max(1, int(latency_ms)),
+            "token_count_input": 0,
+            "token_count_output": 0,
+            "metadata": {**(metadata or {}), "agent_name": agent_name, "agent_id": agent_name}
+        }
+        return self._request("POST", "/api/v1/traces", body=payload)
+
     # --------------------------------------------------------------------------
     # Guarded Paid Endpoints (Require Explicit `confirm_spend=True`)
     # --------------------------------------------------------------------------

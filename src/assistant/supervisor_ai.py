@@ -6,7 +6,10 @@ kinematic features, and incident detections without hallucinations.
 import os
 import json
 import re
+import time
+import threading
 from typing import Dict, List, Any, Optional
+from src.prism.client import PrismClient
 
 
 class WarehouseSupervisorAssistant:
@@ -14,6 +17,7 @@ class WarehouseSupervisorAssistant:
 
     def __init__(self, telemetry_file: Optional[str] = None):
         self.telemetry = self._load_telemetry(telemetry_file)
+        self.prism_client = PrismClient()
 
     def _load_telemetry(self, path: Optional[str]) -> List[Dict[str, Any]]:
         """Loads and indexes verified incident logs across warehouse clips."""
@@ -51,32 +55,50 @@ class WarehouseSupervisorAssistant:
                         })
         return incidents
 
+    def _dispatch_prism_trace_async(self, prompt: str, response: str, latency_ms: int) -> None:
+        """Asynchronously dispatches a free trace event to PRISM with agent_name=rishabh."""
+        def _send():
+            try:
+                self.prism_client.emit_trace(
+                    input_text=prompt,
+                    output_text=response,
+                    latency_ms=latency_ms,
+                    agent_name="rishabh",
+                    model="DamageMesh-V3-Supervisor",
+                    session_id="supervisor-shift-bay04"
+                )
+            except Exception:
+                pass
+
+        threading.Thread(target=_send, daemon=True).start()
+
     def query(self, user_prompt: str) -> Dict[str, Any]:
         """Processes user natural language query and returns grounded operational response."""
+        start_time = time.time()
         p = user_prompt.lower().strip()
 
         # 1. Event Explanation Query (e.g. "Why was event #2 high risk?")
         if any(w in p for w in ["why was", "why is", "explain", "reason for", "how come"]) or (re.search(r"(clip|event|box)[_\s#]*\d+", p) and "show" not in p):
-            return self._handle_explanation_query(user_prompt)
-
+            res = self._handle_explanation_query(user_prompt)
         # 2. High Risk / Critical Events Query
-        if any(w in p for w in ["high-risk", "high risk", "critical", "severe", "incidents today", "what happened"]):
-            return self._handle_high_risk_query()
-
+        elif any(w in p for w in ["high-risk", "high risk", "critical", "severe", "incidents today", "what happened"]):
+            res = self._handle_high_risk_query()
         # 3. Most Common Behaviors / Top Violations
-        if any(w in p for w in ["common", "top violation", "frequent", "recurring", "trend", "breakdown"]):
-            return self._handle_common_behaviors_query()
-
+        elif any(w in p for w in ["common", "top violation", "frequent", "recurring", "trend", "breakdown"]):
+            res = self._handle_common_behaviors_query()
         # 4. Bay / Location Analysis
-        if any(w in p for w in ["bay", "dock", "location", "area", "where"]):
-            return self._handle_bay_analysis_query()
-
+        elif any(w in p for w in ["bay", "dock", "location", "area", "where"]):
+            res = self._handle_bay_analysis_query()
         # 5. Corrective Actions / Coaching
-        if any(w in p for w in ["corrective", "recommend", "coaching", "training", "improve", "action"]):
-            return self._handle_recommendations_query()
-
+        elif any(w in p for w in ["corrective", "recommend", "coaching", "training", "improve", "action"]):
+            res = self._handle_recommendations_query()
         # 6. Default Shift Summary
-        return self._handle_shift_summary()
+        else:
+            res = self._handle_shift_summary()
+
+        latency_ms = max(1, int((time.time() - start_time) * 1000))
+        self._dispatch_prism_trace_async(user_prompt, res.get("response", ""), latency_ms)
+        return res
 
     def _handle_high_risk_query(self) -> Dict[str, Any]:
         high_risk_items = [inc for inc in self.telemetry if inc["peak_severity"] in ["HIGH", "CRITICAL"]]
