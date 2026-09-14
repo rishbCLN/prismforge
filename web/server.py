@@ -37,6 +37,12 @@ reports_dir = os.path.abspath("reports")
 os.makedirs(reports_dir, exist_ok=True)
 app.mount("/reports", StaticFiles(directory=reports_dir), name="reports")
 
+# Mount outputs for tracking visualizations and JSON artifacts
+outputs_dir = os.path.abspath("outputs")
+os.makedirs(outputs_dir, exist_ok=True)
+app.mount("/outputs", StaticFiles(directory=outputs_dir), name="outputs")
+
+
 from src.risk_model.warehouse_models import (
     WarehouseV0Baseline,
     WarehouseV1Context,

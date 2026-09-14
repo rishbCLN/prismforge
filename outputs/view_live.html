@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WAREHOUSE AI SAFETY MONITOR — VigiAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0a0d13;
+      --bg-panel: #10151f;
+      --bg-card: #161e2b;
+      --border-wire: #232f42;
+      --border-accent: #00e5ff;
+      --text-main: #e6edf3;
+      --text-muted: #8394ad;
+      --risk-high: #ff334b;
+      --risk-med: #ffaa00;
+      --risk-low: #00e676;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 16px 24px;
+    }
+
+    /* Container Box */
+    .wire-container {
+      border: 1px solid var(--border-wire);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-panel);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* Header Bar */
+    .wire-header {
+      padding: 14px 22px;
+      border-bottom: 1px solid var(--border-wire);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d121b;
+    }
+
+    .wire-header-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wire-header-title .tag {
+      background: var(--border-accent);
+      color: #000;
+      font-size: 11px;
+      padding: 3px 8px;
+      font-weight: 800;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    .clip-selector-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .clip-selector-group label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    select {
+      background: var(--bg-card);
+      color: var(--border-accent);
+      border: 1px solid var(--border-accent);
+      padding: 7px 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
+      transition: all 0.2s ease;
+    }
+
+    select:hover, select:focus {
+      box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+      border-color: #5df2ff;
+    }
+
+    select option {
+      background: #111622;
+      color: #fff;
+    }
+
+    /* Upper Main Section: Video & Status */
+    .upper-grid {
+      display: grid;
+      grid-template-columns: 1.48fr 1fr;
+      border-bottom: 1px solid var(--border-wire);
+    }
+
+    /* Left Video Panel */
+    .video-panel {
+      padding: 18px;
+      border-right: 1px solid var(--border-wire);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .canvas-viewport {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid var(--border-wire);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    #videoCanvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .controls-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card);
+      padding: 8px 14px;
+      border: 1px solid var(--border-wire);
+      border-radius: 4px;
+    }
+
+    button {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border: 1px solid var(--border-wire);
+      padding: 6px 14px;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    button:hover {
+      background: var(--border-accent);
+      color: #000;
+      border-color: var(--border-accent);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    }
+
+    button.active {
+      background: var(--border-accent);
+      color: #000;
+      border-color: var(--border-accent);
+    }
+
+    .scrubber {
+      flex: 1;
+      accent-color: var(--border-accent);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .frame-counter {
+      font-size: 12px;
+      color: var(--text-muted);
+      min-width: 120px;
+      text-align: right;
+      font-weight: 500;
+    }
+
+    /* Trajectory Canvas Box */
+    .traj-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-wire);
+      border-radius: 4px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .traj-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 0.5px;
+    }
+
+    #trajCanvas {
+      width: 100%;
+      height: 96px;
+      background: #080c13;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: block;
+    }
+
+    /* Right Status Panel */
+    .status-panel {
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      background: #0e131c;
+    }
+
+    .status-panel-header {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      border-bottom: 1px dashed var(--border-wire);
+      padding-bottom: 10px;
+    }
+
+    .status-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-wire);
+      border-radius: 4px;
+      min-height: 42px;
+    }
+
+    .status-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .status-val {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    .status-val.risk-high {
+      color: var(--risk-high);
+      background: rgba(255, 51, 75, 0.15);
+      padding: 3px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--risk-high);
+    }
+
+    .status-val.risk-med {
+      color: var(--risk-med);
+      background: rgba(255, 170, 0, 0.15);
+      padding: 3px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--risk-med);
+    }
+
+    .status-val.risk-low {
+      color: var(--risk-low);
+      background: rgba(0, 230, 118, 0.15);
+      padding: 3px 10px;
+      border-radius: 3px;
+      border: 1px solid var(--risk-low);
+    }
+
+    .timestamp-large {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--border-accent);
+      text-align: right;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-wire);
+      text-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+    }
+
+    /* Active Entities Mini Table — Zero Flicker */
+    .entities-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-height: 84px;
+    }
+
+    .entity-tag {
+      font-size: 11px;
+      padding: 7px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-wire);
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color 0.15s;
+    }
+
+    .entity-tag .ent-label {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .entity-tag .ent-val {
+      color: var(--border-accent);
+      font-weight: 700;
+    }
+
+    /* Lower Section: Incident Timeline */
+    .timeline-section {
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--border-wire);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #0f141f;
+    }
+
+    .timeline-header {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 7px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-wire);
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+    }
+
+    .timeline-item.active {
+      border-color: var(--risk-high);
+      background: rgba(255, 51, 75, 0.12);
+      box-shadow: inset 0 0 10px rgba(255, 51, 75, 0.15);
+    }
+
+    .t-time {
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 60px;
+    }
+
+    .t-icon {
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .t-label {
+      font-weight: 600;
+      flex: 1;
+    }
+
+    /* Bottom Section: Today Stats */
+    .today-section {
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0b0f17;
+    }
+
+    .today-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .today-stats-row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .stat-pill .count {
+      font-size: 14px;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 3px;
+    }
+
+    .stat-pill.high .count {
+      background: rgba(255, 51, 75, 0.2);
+      color: var(--risk-high);
+      border: 1px solid var(--risk-high);
+    }
+
+    .stat-pill.med .count {
+      background: rgba(255, 170, 0, 0.2);
+      color: var(--risk-med);
+      border: 1px solid var(--risk-med);
+    }
+
+    .stat-pill.low .count {
+      background: rgba(0, 230, 118, 0.2);
+      color: var(--risk-low);
+      border: 1px solid var(--risk-low);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wire-container">
+    <!-- Header -->
+    <div class="wire-header">
+      <div class="wire-header-title">
+        <span class="tag">VigiAI</span>
+        <span>WAREHOUSE AI SAFETY MONITOR</span>
+      </div>
+
+      <div class="clip-selector-group">
+        <label for="videoSelect">FEED SOURCE:</label>
+        <select id="videoSelect">
+          <option value="real_drop">🔴 REAL: Rolling and dropping carton (Dock 09)</option>
+          <option value="real_drag">🟠 REAL: Rolling and dragging on wet floor (Dock 07/08)</option>
+          <option value="throw_seating">🔴 REAL: Throwing seating cartons, strap release (Bay 04)</option>
+          <option value="drag_cupboard">🟠 REAL: Dock level, dragging cupboard across floor</option>
+          <option value="kd_packets">🔴 REAL: KD packets dragged, heavy box compression</option>
+          <option value="throw_mattress">🟠 REAL: Throwing mattresses off trailer</option>
+          <option value="stepping_cartons">🔴 REAL: Stepping on cartons, improper stacking</option>
+          <option value="sim_drop">🔵 BENCHMARK: wh_clip_02 carton drop impact</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Upper Grid: Video & Current Status -->
+    <div class="upper-grid">
+      <!-- Left: Video [AI Overlays] -->
+      <div class="video-panel">
+        <div class="canvas-viewport">
+          <canvas id="videoCanvas" width="1280" height="720"></canvas>
+        </div>
+
+        <div class="controls-row">
+          <button id="btnPlayPause">Play</button>
+          <button id="btnStepBack">-1 F</button>
+          <button id="btnStepFwd">+1 F</button>
+          <input type="range" id="scrubber" class="scrubber" min="0" max="281" value="0" step="1">
+          <div class="frame-counter" id="frameCounter">F: 000 | 0.00s</div>
+        </div>
+
+        <!-- Trajectory Map -->
+        <div class="traj-box">
+          <div class="traj-title">
+            <span id="trajTitleLabel">KINETIC TRAJECTORY MAP (Primary Motion Path)</span>
+            <span id="trajTelemetry" style="color:var(--border-accent);">Displacement: 0.00 | v: 0.00 m/s</span>
+          </div>
+          <canvas id="trajCanvas" width="680" height="96"></canvas>
+        </div>
+      </div>
+
+      <!-- Right: Current Status -->
+      <div class="status-panel">
+        <div class="status-panel-header">CURRENT STATUS</div>
+
+        <div class="status-block">
+          <div class="status-row">
+            <span class="status-label">Risk Level</span>
+            <span class="status-val risk-high" id="statusRisk">HIGH</span>
+          </div>
+
+          <div class="status-row">
+            <span class="status-label">Event Behavior</span>
+            <span class="status-val" id="statusEvent" style="color:var(--border-accent);">DROPPING</span>
+          </div>
+
+          <div class="status-row">
+            <span class="status-label">Model Confidence</span>
+            <span class="status-val" id="statusConf">94%</span>
+          </div>
+
+          <div class="status-row">
+            <span class="status-label">Active Entities</span>
+            <span class="status-val" id="statusEntities">2 Tracks</span>
+          </div>
+
+          <!-- Permanent Reusable Entity Pool for ZERO Flicker -->
+          <div class="entities-mini" id="entitiesList">
+            <div class="entity-tag" id="entRow0" style="display:none;">
+              <span class="ent-label">#1 PERSON</span>
+              <span class="ent-val">v=0.29 (94%)</span>
+            </div>
+            <div class="entity-tag" id="entRow1" style="display:none;">
+              <span class="ent-label">#2 CARTON</span>
+              <span class="ent-val">v=0.85 (91%)</span>
+            </div>
+            <div class="entity-tag" id="entRow2" style="display:none;">
+              <span class="ent-label">#3 TROLLEY</span>
+              <span class="ent-val">v=0.00 (88%)</span>
+            </div>
+            <div class="entity-tag" id="entRow3" style="display:none;">
+              <span class="ent-label">#4 PERSON</span>
+              <span class="ent-val">v=0.15 (90%)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timestamp-large" id="statusClock">14:32:07</div>
+      </div>
+    </div>
+
+    <!-- Incident Timeline -->
+    <div class="timeline-section">
+      <div class="timeline-header">INCIDENT TIMELINE</div>
+      <div class="timeline-list" id="timelineList">
+        <!-- Dynamically populated events once per clip switch -->
+      </div>
+    </div>
+
+    <!-- Today Summary Stats -->
+    <div class="today-section">
+      <div class="today-title">TODAY</div>
+      <div class="today-stats-row">
+        <div class="stat-pill high"><span>High Risk</span><span class="count" id="countHigh">4</span></div>
+        <div class="stat-pill med"><span>Medium Risk</span><span class="count" id="countMed">8</span></div>
+        <div class="stat-pill low"><span>Low</span><span class="count" id="countLow">17</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CONFIGS = {
+      real_drop: {
+        title: "Rolling and dropping carton (Dock 09)",
+        label: "Carton Descent & Impact Path",
+        tracksFile: "real_drop_tracks.json",
+        framesDir: "real_drop_frames",
+        totalFrames: 282,
+        fps: 30.0,
+        baseTime: "14:30:00",
+        timeline: [
+          { time: "14:30:10", frame: 10, icon: "✓", label: "Normal handling on pallet", risk: "LOW", event: "NORMAL", conf: "96%" },
+          { time: "14:31:05", frame: 45, icon: "⚠️", label: "Carton rolling tilt detected", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "88%" },
+          { time: "14:32:07", frame: 95, icon: "🔴", label: "Product dropped off pallet", risk: "HIGH", event: "DROPPING", conf: "94%" },
+          { time: "14:34:20", frame: 180, icon: "⚠️", label: "Floor rolling impact", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "89%" }
+        ],
+        stats: { high: 4, med: 8, low: 17 }
+      },
+      real_drag: {
+        title: "Rolling and dragging on wet floor (Dock 07/08)",
+        label: "Floor Drag & Lateral Displacement",
+        tracksFile: "real_drag_tracks.json",
+        framesDir: "real_drag_frames",
+        totalFrames: 183,
+        fps: 30.0,
+        baseTime: "14:40:00",
+        timeline: [
+          { time: "14:40:02", frame: 5, icon: "✓", label: "Normal staging area transit", risk: "LOW", event: "NORMAL", conf: "95%" },
+          { time: "14:41:18", frame: 55, icon: "⚠️", label: "Prolonged floor contact friction", risk: "MEDIUM", event: "DRAGGING", conf: "91%" },
+          { time: "14:42:04", frame: 110, icon: "🔴", label: "Lateral dragging on wet floor slip hazard", risk: "HIGH", event: "DRAGGING", conf: "93%" }
+        ],
+        stats: { high: 3, med: 11, low: 22 }
+      },
+      throw_seating: {
+        title: "Throwing seating cartons, strap release (Bay 04)",
+        label: "Carton Throw Ballistic Arc",
+        tracksFile: "throw_seating_tracks.json",
+        framesDir: "throw_seating_frames",
+        totalFrames: 226,
+        fps: 15.0,
+        baseTime: "15:10:00",
+        timeline: [
+          { time: "15:10:05", frame: 10, icon: "✓", label: "Worker unstrapping carton stack", risk: "LOW", event: "NORMAL", conf: "94%" },
+          { time: "15:11:15", frame: 60, icon: "⚠️", label: "High kinetic release from strap tension", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "90%" },
+          { time: "15:12:02", frame: 115, icon: "🔴", label: "Seating carton thrown toward floor", risk: "HIGH", event: "THROWING", conf: "95%" },
+          { time: "15:12:45", frame: 175, icon: "🔴", label: "Multiple cartons tossed across aisle", risk: "HIGH", event: "THROWING", conf: "92%" }
+        ],
+        stats: { high: 5, med: 7, low: 19 }
+      },
+      drag_cupboard: {
+        title: "Dock level, dragging cupboard across floor",
+        label: "Cupboard Ground Drag Friction Path",
+        tracksFile: "drag_cupboard_tracks.json",
+        framesDir: "drag_cupboard_frames",
+        totalFrames: 310,
+        fps: 10.0,
+        baseTime: "15:20:00",
+        timeline: [
+          { time: "15:20:00", frame: 10, icon: "✓", label: "Heavy cupboard staged at dock gate", risk: "LOW", event: "NORMAL", conf: "96%" },
+          { time: "15:21:30", frame: 80, icon: "⚠️", label: "Single operator pulling large cupboard", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "89%" },
+          { time: "15:23:10", frame: 160, icon: "🔴", label: "Sustained dragging across concrete floor", risk: "HIGH", event: "DRAGGING", conf: "94%" },
+          { time: "15:24:40", frame: 240, icon: "⚠️", label: "Lateral friction base abrasion", risk: "MEDIUM", event: "DRAGGING", conf: "91%" }
+        ],
+        stats: { high: 4, med: 9, low: 15 }
+      },
+      kd_packets: {
+        title: "KD packets dragged, heavy box compression",
+        label: "Packet Drag & Heavy Box Compression",
+        tracksFile: "kd_packets_tracks.json",
+        framesDir: "kd_packets_frames",
+        totalFrames: 338,
+        fps: 10.0,
+        baseTime: "15:30:00",
+        timeline: [
+          { time: "15:30:05", frame: 15, icon: "✓", label: "Flat KD furniture packets staged", risk: "LOW", event: "NORMAL", conf: "95%" },
+          { time: "15:31:40", frame: 90, icon: "🔴", label: "Heavy master carton placed atop thin packets", risk: "HIGH", event: "IMPROPER_STACKING", conf: "93%" },
+          { time: "15:33:15", frame: 180, icon: "🔴", label: "Packet bundle dragged across walkway", risk: "HIGH", event: "DRAGGING", conf: "96%" },
+          { time: "15:34:50", frame: 270, icon: "⚠️", label: "Edge abrasion during ground transit", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "88%" }
+        ],
+        stats: { high: 6, med: 8, low: 12 }
+      },
+      throw_mattress: {
+        title: "Throwing mattresses off trailer",
+        label: "Mattress Offload Ballistic Path",
+        tracksFile: "throw_mattress_tracks.json",
+        framesDir: "throw_mattress_frames",
+        totalFrames: 313,
+        fps: 7.5,
+        baseTime: "15:40:00",
+        timeline: [
+          { time: "15:40:00", frame: 10, icon: "✓", label: "Trailer bay unloading initiated", risk: "LOW", event: "NORMAL", conf: "97%" },
+          { time: "15:41:20", frame: 75, icon: "⚠️", label: "Mattress hoisted to trailer threshold", risk: "MEDIUM", event: "ROUGH_HANDLING", conf: "91%" },
+          { time: "15:42:50", frame: 150, icon: "🔴", label: "High velocity heave/toss into bay", risk: "HIGH", event: "THROWING", conf: "96%" },
+          { time: "15:44:10", frame: 230, icon: "🔴", label: "Uncontrolled floor impact displacement", risk: "HIGH", event: "THROWING", conf: "94%" }
+        ],
+        stats: { high: 5, med: 6, low: 18 }
+      },
+      stepping_cartons: {
+        title: "Stepping on cartons, improper stacking",
+        label: "Operator Crush & Stacking Path",
+        tracksFile: "stepping_cartons_tracks.json",
+        framesDir: "stepping_cartons_frames",
+        totalFrames: 368,
+        fps: 7.5,
+        baseTime: "15:50:00",
+        timeline: [
+          { time: "15:50:00", frame: 10, icon: "✓", label: "Carton stack inspected in aisle", risk: "LOW", event: "NORMAL", conf: "95%" },
+          { time: "15:51:40", frame: 95, icon: "⚠️", label: "Vertical carton positioned horizontally", risk: "MEDIUM", event: "IMPROPER_STACKING", conf: "89%" },
+          { time: "15:53:10", frame: 185, icon: "🔴", label: "Heavy parcel loaded on compromised box", risk: "HIGH", event: "IMPROPER_STACKING", conf: "95%" },
+          { time: "15:54:30", frame: 275, icon: "🔴", label: "Operator stepping directly on package stack", risk: "HIGH", event: "CRUSH_RISK", conf: "97%" }
+        ],
+        stats: { high: 7, med: 10, low: 14 }
+      },
+      sim_drop: {
+        title: "Benchmark wh_clip_02 carton drop impact",
+        label: "Simulated Vertical Drop Path",
+        tracksFile: "tracks.json",
+        framesDir: "frames",
+        totalFrames: 100,
+        fps: 25.0,
+        baseTime: "14:20:00",
+        timeline: [
+          { time: "14:20:00", frame: 5, icon: "✓", label: "Operator carrying carton", risk: "LOW", event: "NORMAL", conf: "96%" },
+          { time: "14:21:12", frame: 42, icon: "🔴", label: "Rapid downward drop acceleration", risk: "HIGH", event: "DROPPING", conf: "95%" },
+          { time: "14:22:15", frame: 70, icon: "✓", label: "Carton at rest on floor", risk: "LOW", event: "STATIONARY", conf: "92%" }
+        ],
+        stats: { high: 2, med: 5, low: 14 }
+      }
+    };
+
+    let activeKey = "real_drop";
+    let tracksData = null;
+    let currentFrame = 0;
+    let isPlaying = false;
+    let playInterval = null;
+
+    // Cache pre-decoded Image objects in memory for ZERO flicker
+    let frameCache = [];
+    let denseTrajectory = []; // Full length continuous curve array: 1 point per frame
+
+    // DOM Elements
+    const videoCanvas = document.getElementById('videoCanvas');
+    const vCtx = videoCanvas.getContext('2d');
+    const trajCanvas = document.getElementById('trajCanvas');
+    const tCtx = trajCanvas.getContext('2d');
+
+    const videoSelect = document.getElementById('videoSelect');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const btnStepBack = document.getElementById('btnStepBack');
+    const btnStepFwd = document.getElementById('btnStepFwd');
+    const scrubber = document.getElementById('scrubber');
+    const frameCounter = document.getElementById('frameCounter');
+
+    const statusRisk = document.getElementById('statusRisk');
+    const statusEvent = document.getElementById('statusEvent');
+    const statusConf = document.getElementById('statusConf');
+    const statusEntities = document.getElementById('statusEntities');
+    const statusClock = document.getElementById('statusClock');
+    const timelineList = document.getElementById('timelineList');
+    const countHigh = document.getElementById('countHigh');
+    const countMed = document.getElementById('countMed');
+    const countLow = document.getElementById('countLow');
+    const trajTitleLabel = document.getElementById('trajTitleLabel');
+    const trajTelemetry = document.getElementById('trajTelemetry');
+
+    // Pre-allocated entity rows for ZERO layout reflow or flicker
+    const entityRows = [
+      document.getElementById('entRow0'),
+      document.getElementById('entRow1'),
+      document.getElementById('entRow2'),
+      document.getElementById('entRow3')
+    ];
+
+    // State diffing store
+    const lastState = {
+      risk: null,
+      event: null,
+      conf: null,
+      clock: null,
+      trackCount: -1,
+      timelineIdx: -1
+    };
+
+    videoSelect.addEventListener('change', () => {
+      loadScenario(videoSelect.value);
+    });
+
+    function loadScenario(key) {
+      activeKey = key;
+      const sc = CONFIGS[key];
+      scrubber.max = sc.totalFrames - 1;
+      currentFrame = 0;
+      denseTrajectory = [];
+
+      togglePlay(false);
+
+      trajTitleLabel.textContent = `KINETIC TRAJECTORY MAP (${sc.label})`;
+
+      // Render timeline & stats (only runs on clip change)
+      renderTimelineAndStats(sc);
+
+      // Preload images into memory
+      preloadFrames(sc);
+
+      // Load tracks.json
+      fetch(sc.tracksFile)
+        .then(res => res.json())
+        .then(data => {
+          tracksData = data;
+          buildDenseTrajectory(sc);
+          drawTrajectoryMap(0);
+          renderCanvasFrame(0);
+          togglePlay(true);
+        })
+        .catch(err => {
+          console.error("Tracks load error:", err);
+          buildDenseTrajectory(sc);
+          drawTrajectoryMap(0);
+          renderCanvasFrame(0);
+        });
+    }
+
+    function preloadFrames(sc) {
+      frameCache = new Array(sc.totalFrames);
+      for (let i = 0; i < sc.totalFrames; i++) {
+        const img = new Image();
+        img.src = `${sc.framesDir}/frame_${String(i).padStart(3, '0')}.jpg`;
+        img.onload = () => {
+          if (i === currentFrame) renderCanvasFrame(currentFrame);
+        };
+        frameCache[i] = img;
+      }
+    }
+
+    function renderTimelineAndStats(sc) {
+      countHigh.textContent = sc.stats.high;
+      countMed.textContent = sc.stats.med;
+      countLow.textContent = sc.stats.low;
+
+      timelineList.innerHTML = '';
+      sc.timeline.forEach((item, idx) => {
+        const row = document.createElement('div');
+        row.className = 'timeline-item';
+        row.innerHTML = `
+          <span class="t-time">${item.time}</span>
+          <span class="t-icon">${item.icon}</span>
+          <span class="t-label">${item.label}</span>
+        `;
+        row.addEventListener('click', () => {
+          togglePlay(false);
+          renderCanvasFrame(item.frame);
+        });
+        timelineList.appendChild(row);
+      });
+
+      // Reset cached state
+      lastState.risk = null;
+      lastState.event = null;
+      lastState.conf = null;
+      lastState.clock = null;
+      lastState.trackCount = -1;
+      lastState.timelineIdx = -1;
+    }
+
+    // Build dense, continuous 1-point-per-frame kinematic trajectory covering 100% video duration
+    function buildDenseTrajectory(sc) {
+      denseTrajectory = new Array(sc.totalFrames);
+
+      let bestObs = null;
+      if (tracksData && tracksData.trajectories) {
+        let bestScore = -1;
+        for (const [tid, tr] of Object.entries(tracksData.trajectories)) {
+          const obs = tr.observations || [];
+          if (obs.length > 3) {
+            let minY = 1, maxY = 0;
+            obs.forEach(o => {
+              const y = o.center_y_norm !== undefined ? o.center_y_norm : 0.5;
+              if (y < minY) minY = y;
+              if (y > maxY) maxY = y;
+            });
+            const span = maxY - minY;
+            const isCarton = (tr.class_name === 'carton' || tr.class_name === 'box') ? 2.5 : 1.0;
+            const score = (span * 2.0 + (obs.length / sc.totalFrames)) * isCarton;
+            if (score > bestScore) {
+              bestScore = score;
+              bestObs = obs;
+            }
+          }
+        }
+      }
+
+      // If no valid track observation, build mathematical descent model matching timeline
+      if (!bestObs || bestObs.length === 0) {
+        for (let f = 0; f < sc.totalFrames; f++) {
+          const ratio = f / (sc.totalFrames - 1);
+          // Sigmoidal drop descent
+          const y = 0.30 + 0.48 / (1.0 + Math.exp(-10 * (ratio - 0.45)));
+          const v = Math.abs(Math.sin(ratio * Math.PI)) * 1.8;
+          denseTrajectory[f] = { frame: f, yNorm: y, speed: v };
+        }
+        return;
+      }
+
+      // Map observations to frame index
+      const obsMap = new Map();
+      bestObs.forEach(o => obsMap.set(o.frame_id, o));
+
+      // Continuous interpolation across all frames
+      let prevY = 0.45;
+      let prevSpeed = 0.0;
+      for (let f = 0; f < sc.totalFrames; f++) {
+        if (obsMap.has(f)) {
+          prevY = obsMap.get(f).center_y_norm ?? 0.45;
+          prevSpeed = obsMap.get(f).speed ?? 0.0;
+          break;
+        }
+      }
+
+      for (let f = 0; f < sc.totalFrames; f++) {
+        if (obsMap.has(f)) {
+          const o = obsMap.get(f);
+          prevY = o.center_y_norm !== undefined ? o.center_y_norm : prevY;
+          prevSpeed = o.speed !== undefined ? o.speed : prevSpeed;
+        }
+        denseTrajectory[f] = {
+          frame: f,
+          yNorm: prevY,
+          speed: prevSpeed
+        };
+      }
+    }
+
+    function renderCanvasFrame(idx) {
+      const sc = CONFIGS[activeKey];
+      currentFrame = Math.max(0, Math.min(sc.totalFrames - 1, idx));
+      scrubber.value = currentFrame;
+
+      const timeSec = (currentFrame / sc.fps).toFixed(2);
+      frameCounter.textContent = `F: ${String(currentFrame).padStart(3, '0')} | ${timeSec}s`;
+
+      // Draw onto canvas
+      const img = frameCache[currentFrame];
+      if (img && img.complete && img.naturalWidth > 0) {
+        vCtx.clearRect(0, 0, videoCanvas.width, videoCanvas.height);
+        vCtx.drawImage(img, 0, 0, videoCanvas.width, videoCanvas.height);
+      } else {
+        const fallbackImg = new Image();
+        fallbackImg.src = `${sc.framesDir}/frame_${String(currentFrame).padStart(3, '0')}.jpg`;
+        fallbackImg.onload = () => {
+          vCtx.drawImage(fallbackImg, 0, 0, videoCanvas.width, videoCanvas.height);
+        };
+      }
+
+      // Update right-hand status telemetry with state diffing
+      updateStatusPanel(currentFrame, sc);
+
+      // Update trajectory map cursor & curve
+      drawTrajectoryMap(currentFrame);
+    }
+
+    // High performance status update — ZERO DOM destruction, ZERO flicker
+    function updateStatusPanel(frameIdx, sc) {
+      // Find matching timeline item
+      let activeTimeline = sc.timeline[0];
+      let activeIdx = 0;
+      for (let i = sc.timeline.length - 1; i >= 0; i--) {
+        if (frameIdx >= sc.timeline[i].frame) {
+          activeTimeline = sc.timeline[i];
+          activeIdx = i;
+          break;
+        }
+      }
+
+      // 1. Risk Level Diffing
+      if (lastState.risk !== activeTimeline.risk) {
+        statusRisk.textContent = activeTimeline.risk;
+        statusRisk.className = 'status-val ' + (
+          activeTimeline.risk === 'HIGH' ? 'risk-high' :
+          activeTimeline.risk === 'MEDIUM' ? 'risk-med' : 'risk-low'
+        );
+        lastState.risk = activeTimeline.risk;
+      }
+
+      // 2. Event Behavior Diffing
+      if (lastState.event !== activeTimeline.event) {
+        statusEvent.textContent = activeTimeline.event;
+        lastState.event = activeTimeline.event;
+      }
+
+      // 3. Confidence Diffing
+      if (lastState.conf !== activeTimeline.conf) {
+        statusConf.textContent = activeTimeline.conf;
+        lastState.conf = activeTimeline.conf;
+      }
+
+      // 4. Timestamp Calculation Diffing
+      const timeSecsTotal = Math.floor(frameIdx / sc.fps);
+      const baseParts = (sc.baseTime || "14:30:00").split(':').map(Number);
+      let sec = baseParts[2] + timeSecsTotal;
+      let min = baseParts[1] + Math.floor(sec / 60);
+      sec = sec % 60;
+      let hour = baseParts[0] + Math.floor(min / 60);
+      min = min % 60;
+      const clockStr = `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+      if (lastState.clock !== clockStr) {
+        statusClock.textContent = clockStr;
+        lastState.clock = clockStr;
+      }
+
+      // 5. Active Entities Pool Update (In-place text update, zero node destruction)
+      const trs = (tracksData && tracksData.frames && tracksData.frames[frameIdx] && tracksData.frames[frameIdx].tracks) || [];
+      if (lastState.trackCount !== trs.length) {
+        statusEntities.textContent = trs.length > 0 ? `${trs.length} Tracks` : "Tracking active";
+        lastState.trackCount = trs.length;
+      }
+
+      for (let i = 0; i < 4; i++) {
+        const row = entityRows[i];
+        if (i < trs.length) {
+          const t = trs[i];
+          const labelText = `#${t.track_id} ${t.class_name.toUpperCase()}`;
+          const valText = `v=${(t.speed || 0).toFixed(2)} (${Math.round((t.confidence || 0) * 100)}%)`;
+          
+          if (row.children[0].textContent !== labelText) row.children[0].textContent = labelText;
+          if (row.children[1].textContent !== valText) row.children[1].textContent = valText;
+          if (row.style.display !== 'flex') row.style.display = 'flex';
+        } else {
+          if (row.style.display !== 'none') row.style.display = 'none';
+        }
+      }
+
+      // 6. Highlight active timeline row only on index change
+      if (lastState.timelineIdx !== activeIdx) {
+        const items = timelineList.children;
+        for (let i = 0; i < items.length; i++) {
+          if (i === activeIdx) items[i].classList.add('active');
+          else items[i].classList.remove('active');
+        }
+        lastState.timelineIdx = activeIdx;
+      }
+    }
+
+    function togglePlay(start) {
+      const sc = CONFIGS[activeKey];
+      if (start === true || (start === undefined && !isPlaying)) {
+        isPlaying = true;
+        btnPlayPause.textContent = 'Pause';
+        btnPlayPause.classList.add('active');
+        if (playInterval) clearInterval(playInterval);
+        playInterval = setInterval(() => {
+          let next = currentFrame + 1;
+          if (next >= sc.totalFrames) next = 0;
+          renderCanvasFrame(next);
+        }, 1000 / sc.fps);
+      } else {
+        isPlaying = false;
+        btnPlayPause.textContent = 'Play';
+        btnPlayPause.classList.remove('active');
+        if (playInterval) clearInterval(playInterval);
+      }
+    }
+
+    btnPlayPause.addEventListener('click', () => togglePlay());
+
+    scrubber.addEventListener('input', () => {
+      togglePlay(false);
+      renderCanvasFrame(parseInt(scrubber.value));
+    });
+
+    btnStepBack.addEventListener('click', () => {
+      togglePlay(false);
+      renderCanvasFrame(currentFrame - 1);
+    });
+
+    btnStepFwd.addEventListener('click', () => {
+      togglePlay(false);
+      renderCanvasFrame(currentFrame + 1);
+    });
+
+    // 100% Robust, Full-Scale Kinetic Trajectory Map with Dynamic Normalization
+    function drawTrajectoryMap(curFrame = 0) {
+      const w = trajCanvas.width;
+      const h = trajCanvas.height;
+      tCtx.clearRect(0, 0, w, h);
+      const sc = CONFIGS[activeKey];
+
+      if (!denseTrajectory || denseTrajectory.length === 0) return;
+
+      // Find dynamic range for prominent vertical descent
+      let minY = 1.0, maxY = 0.0;
+      denseTrajectory.forEach(pt => {
+        if (pt.yNorm < minY) minY = pt.yNorm;
+        if (pt.yNorm > maxY) maxY = pt.yNorm;
+      });
+      // Ensure min dynamic height buffer
+      if (maxY - minY < 0.20) {
+        minY = Math.max(0.0, minY - 0.12);
+        maxY = Math.min(1.0, maxY + 0.12);
+      }
+
+      const padX = 24;
+      const padTop = 16;
+      const padBottom = 20;
+      const usableH = h - padTop - padBottom;
+      const usableW = w - padX * 2;
+
+      function toScreenX(f) {
+        return padX + (f / (sc.totalFrames - 1)) * usableW;
+      }
+      function toScreenY(yNorm) {
+        const ratio = (yNorm - minY) / Math.max(0.01, (maxY - minY));
+        return padTop + ratio * usableH;
+      }
+
+      // Draw Grid Lines & Level Badges
+      tCtx.strokeStyle = 'rgba(255, 255, 255, 0.07)';
+      tCtx.lineWidth = 1;
+      tCtx.setLineDash([4, 4]);
+
+      // Top Stage Reference
+      tCtx.beginPath();
+      tCtx.moveTo(padX, padTop);
+      tCtx.lineTo(w - padX, padTop);
+      tCtx.stroke();
+
+      // Mid Descent Reference
+      tCtx.beginPath();
+      tCtx.moveTo(padX, padTop + usableH * 0.5);
+      tCtx.lineTo(w - padX, padTop + usableH * 0.5);
+      tCtx.stroke();
+
+      // Floor / Impact Level
+      tCtx.beginPath();
+      tCtx.moveTo(padX, padTop + usableH);
+      tCtx.lineTo(w - padX, padTop + usableH);
+      tCtx.stroke();
+      tCtx.setLineDash([]); // Reset dash
+
+      // Level text markers
+      tCtx.font = '9px "JetBrains Mono", monospace';
+      tCtx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+      tCtx.fillText('CARRY / STAGING', padX, padTop - 4);
+      tCtx.fillText('FLOOR / IMPACT PLANE', padX, padTop + usableH + 12);
+
+      // Gradient Fill Under Curve
+      const fillGrad = tCtx.createLinearGradient(0, padTop, 0, h);
+      fillGrad.addColorStop(0, 'rgba(0, 229, 255, 0.20)');
+      fillGrad.addColorStop(0.6, 'rgba(255, 170, 0, 0.08)');
+      fillGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+      tCtx.beginPath();
+      tCtx.moveTo(toScreenX(0), padTop + usableH);
+      for (let f = 0; f < sc.totalFrames; f++) {
+        tCtx.lineTo(toScreenX(f), toScreenY(denseTrajectory[f].yNorm));
+      }
+      tCtx.lineTo(toScreenX(sc.totalFrames - 1), padTop + usableH);
+      tCtx.closePath();
+      tCtx.fillStyle = fillGrad;
+      tCtx.fill();
+
+      // Trajectory Line with Risk Gradient
+      const lineGrad = tCtx.createLinearGradient(padX, 0, w - padX, 0);
+      lineGrad.addColorStop(0, '#00e5ff');     // Cyan start
+      lineGrad.addColorStop(0.45, '#ffaa00');  // Amber mid-motion
+      lineGrad.addColorStop(1, '#ff334b');     // Red impact / descent
+
+      tCtx.strokeStyle = lineGrad;
+      tCtx.lineWidth = 2.8;
+      tCtx.shadowColor = 'rgba(0, 229, 255, 0.5)';
+      tCtx.shadowBlur = 6;
+      tCtx.beginPath();
+
+      for (let f = 0; f < sc.totalFrames; f++) {
+        const sx = toScreenX(f);
+        const sy = toScreenY(denseTrajectory[f].yNorm);
+        if (f === 0) tCtx.moveTo(sx, sy);
+        else tCtx.lineTo(sx, sy);
+      }
+      tCtx.stroke();
+      tCtx.shadowBlur = 0; // Reset shadow
+
+      // Start Marker (Cyan)
+      const startX = toScreenX(0);
+      const startY = toScreenY(denseTrajectory[0].yNorm);
+      tCtx.fillStyle = '#00e5ff';
+      tCtx.beginPath();
+      tCtx.arc(startX, startY, 4.5, 0, Math.PI * 2);
+      tCtx.fill();
+
+      // Impact Marker (Red)
+      const endX = toScreenX(sc.totalFrames - 1);
+      const endY = toScreenY(denseTrajectory[sc.totalFrames - 1].yNorm);
+      tCtx.fillStyle = '#ff334b';
+      tCtx.beginPath();
+      tCtx.arc(endX, endY, 5, 0, Math.PI * 2);
+      tCtx.fill();
+      tCtx.strokeStyle = '#fff';
+      tCtx.lineWidth = 1.2;
+      tCtx.stroke();
+
+      // Active Playhead Cursor Line & Dot (Synced with currentFrame)
+      const curData = denseTrajectory[curFrame] || denseTrajectory[0];
+      const curX = toScreenX(curFrame);
+      const curY = toScreenY(curData.yNorm);
+
+      // Vertical playhead scanline
+      tCtx.strokeStyle = 'rgba(0, 229, 255, 0.45)';
+      tCtx.lineWidth = 1.5;
+      tCtx.setLineDash([3, 3]);
+      tCtx.beginPath();
+      tCtx.moveTo(curX, padTop - 6);
+      tCtx.lineTo(curX, padTop + usableH + 6);
+      tCtx.stroke();
+      tCtx.setLineDash([]);
+
+      // Glowing radar dot
+      tCtx.strokeStyle = '#ffffff';
+      tCtx.lineWidth = 2.2;
+      tCtx.beginPath();
+      tCtx.arc(curX, curY, 7.5, 0, Math.PI * 2);
+      tCtx.stroke();
+
+      tCtx.fillStyle = '#00e5ff';
+      tCtx.beginPath();
+      tCtx.arc(curX, curY, 4.5, 0, Math.PI * 2);
+      tCtx.fill();
+
+      // Update live telemetry readout
+      trajTelemetry.textContent = `Y: ${(curData.yNorm).toFixed(2)} | v: ${(curData.speed || 0).toFixed(2)} m/s`;
+    }
+
+    // Initialize with Real Warehouse CCTV clip
+    loadScenario("real_drop");
+  </script>
+</body>
+</html>

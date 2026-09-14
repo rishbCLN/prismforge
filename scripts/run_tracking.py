@@ -62,8 +62,26 @@ def render_tracking_visualization(
 
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-    out = cv2.VideoWriter(output_viz_path, fourcc, fps, (width, height))
+
+    # Use PyAV libx264 for universal browser playback (Chrome/Edge/Safari/Firefox)
+    use_av = False
+    av_container = None
+    av_stream = None
+    cv_out = None
+
+    try:
+        import av
+        av_container = av.open(output_viz_path, mode="w")
+        av_stream = av_container.add_stream("libx264", rate=int(fps))
+        av_stream.width = width
+        av_stream.height = height
+        av_stream.pix_fmt = "yuv420p"
+        av_stream.options = {"crf": "22", "preset": "fast"}
+        use_av = True
+    except Exception as e:
+        print(f"[WARN] PyAV H264 unavailable ({e}). Falling back to cv2.VideoWriter.")
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        cv_out = cv2.VideoWriter(output_viz_path, fourcc, fps, (width, height))
 
     # Index tracked data by frame_id
     frames_by_id = {f["frame_id"]: f for f in tracked_frames_data}
@@ -122,11 +140,24 @@ def render_tracking_visualization(
             cv2.putText(frame, f"VigiAI Tracker: Frame {frame_idx:03d}", (15, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (20, 220, 245), 1)
             cv2.putText(frame, f"Active Tracks: {len(active_tracks)} | Total Track IDs: {len(track_trails)}", (15, 48), cv2.FONT_HERSHEY_SIMPLEX, 0.40, (255, 255, 255), 1)
 
-        out.write(frame)
+        if use_av:
+            rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            vframe = av.VideoFrame.from_ndarray(rgb, format="rgb24")
+            for packet in av_stream.encode(vframe):
+                av_container.mux(packet)
+        elif cv_out is not None:
+            cv_out.write(frame)
+
         frame_idx += 1
 
     cap.release()
-    out.release()
+    if use_av:
+        for packet in av_stream.encode():
+            av_container.mux(packet)
+        av_container.close()
+    elif cv_out is not None:
+        cv_out.release()
+
     print(f"[INFO] Rendered tracking debug visualization to: {output_viz_path} ({frame_idx} frames)")
     return os.path.abspath(output_viz_path)
 

@@ -6,7 +6,7 @@ version: "1.0.0"
 # Perception Settings
 perception:
   model_weights: "yolov8n.pt"
-  confidence_threshold: 0.25
+  confidence_threshold: 0.18
   device: "cpu"
   input_size: 640
   # Target classes to extract from model detections
@@ -19,6 +19,8 @@ perception:
     - "handcart"
     - "suitcase" # COCO class fallback for boxes/luggage
     - "backpack" # COCO class fallback for small packages
+    - "handbag"  # COCO class fallback for mid-sized packages
+
   # Map COCO classes to canonical warehouse object types
   class_mapping:
     person: "person"
