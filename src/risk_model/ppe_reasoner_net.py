@@ -83,9 +83,19 @@ class PPEReasonerNet(nn.Module):
         h1 = self.res_act(h0 + self.res_block(h0))
         latent = self.bottleneck(h1)
 
+        raw_hh = self.hardhat_compliance_head(latent)
+        # Anatomical Spatial Gating:
+        # A hardhat CANNOT be compliant if not worn on the cranial dome/head!
+        # Feature 10 is h_iou_head; Feature 7 is has_hardhat_det (worn on head).
+        # If a worker holds the hardhat in hand, h_iou_head is 0.0 -> compliance is strictly 0.0!
+        h_iou_head = x[:, 10:11]
+        has_hh = x[:, 7:8]
+        spatial_gate = torch.clamp(h_iou_head / 0.06, 0.0, 1.0) * torch.clamp(has_hh, 0.0, 1.0)
+        gated_hh = raw_hh * spatial_gate
+
         return {
             "vest_compliance": self.vest_compliance_head(latent),
-            "hardhat_compliance": self.hardhat_compliance_head(latent),
+            "hardhat_compliance": gated_hh,
             "violation_logits": self.violation_classifier(latent),
             "risk_score": self.risk_score_head(latent)
         }
@@ -145,12 +155,18 @@ def extract_ppe_neural_features(
             _calc_iou([hx1, hy1, hx2, cranial_hy2], hardhat_box)
         )
         h_area_ratio = ((hx2_box - hx_box) * (hy2_box - hy_box)) / (ww * wh)
-        has_hardhat_det = 1.0
+
+        # STRICT ANATOMICAL RULE: A hardhat is compliant IF AND ONLY IF worn on the head!
+        # If the hardhat is held in hand, waist, or lap (h_iou_head < 0.06), it is NOT worn!
+        is_worn_on_head = 1.0 if h_iou_head >= 0.06 else 0.0
+        has_hardhat_det = is_worn_on_head
+        calibrated_hh_conf = hardhat_conf if is_worn_on_head > 0.5 else 0.0
     else:
         h_iou_worker = 0.0
         h_iou_head = 0.0
         h_area_ratio = 0.0
         has_hardhat_det = 0.0
+        calibrated_hh_conf = 0.0
 
     return [
         worker_conf,
@@ -161,7 +177,7 @@ def extract_ppe_neural_features(
         v_iou_upper_chest,
         v_area_ratio,
         has_hardhat_det,
-        hardhat_conf,
+        calibrated_hh_conf,
         h_iou_worker,
         h_iou_head,
         h_area_ratio,

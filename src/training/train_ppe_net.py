@@ -152,6 +152,25 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
                 "risk_score": risk
             })
 
+            # Augmentation: Explicit negative training for hardhat held in hand / waist
+            if has_hardhat and len(samples) % 5 == 0:
+                held_h = [w["x1"] + 0.15 * ww, w["y1"] + 0.58 * wh, w["x2"] - 0.15 * ww, w["y1"] + 0.78 * wh]
+                feats_held = extract_ppe_neural_features(
+                    worker_box=wb,
+                    vest_box=best_v if has_vest else None,
+                    hardhat_box=held_h,
+                    worker_conf=w.get("confidence", 1.0),
+                    vest_conf=0.90 if has_vest else 0.0,
+                    hardhat_conf=0.90
+                )
+                samples.append({
+                    "features": feats_held,
+                    "vest_label": v_label,
+                    "hardhat_label": 0.0,  # Strict rule: Holding hardhat in hand is non-compliant!
+                    "violation_class": 2 if has_vest else 3,  # MISSING_HARDHAT
+                    "risk_score": 0.55 if has_vest else 0.90
+                })
+
     return samples
 
 

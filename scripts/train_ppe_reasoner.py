@@ -98,14 +98,24 @@ def main():
             f"• Architectural Invariance: Full cranial dome targeting and aspect-ratio chest-up crop reasoning verified compliant."
         )
 
+        commit_sha = "HEAD"
+        try:
+            import subprocess
+            commit_sha = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True).strip()
+        except Exception:
+            pass
+
         client.emit_trace(
             input_text=f"Benchmark & Validation Evaluation for PPEReasonerNet on {results['total_samples']} worker instances from {args.dataset_dir}.",
             output_text=high_quality_response,
             latency_ms=inf_latency_ms,
             agent_name="rishabh",
             model="PPEReasonerNet-V1",
-            session_id="ppe-master-evaluation",
+            session_id=f"ppe-eval-{commit_sha}",
             metadata={
+                "git_commit": commit_sha,
+                "commit_sha": commit_sha,
+                "branch": "main",
                 "total_instances": results["total_samples"],
                 "vest_acc": m.get("val_vest_acc"),
                 "hardhat_acc": m.get("val_hardhat_acc"),

@@ -59,3 +59,31 @@ def test_ppe_reasoner_training_loop(tmp_path):
     res = train_ppe_model(mock_samples, output_path=out_file, epochs=2)
     assert res["status"] == "trained"
 
+
+def test_ppe_reasoner_held_in_hand_is_non_compliant():
+    """Validates that a hardhat held in hand (at waist level) is non-compliant (0.0)."""
+    worker_box = [100, 50, 200, 300]
+    vest_box = [110, 120, 190, 240]
+    held_hardhat_box = [110, 200, 170, 250]  # Held at waist/hand, h_iou_head is 0.0
+
+    features = extract_ppe_neural_features(
+        worker_box=worker_box,
+        vest_box=vest_box,
+        hardhat_box=held_hardhat_box,
+        worker_conf=0.95,
+        vest_conf=0.90,
+        hardhat_conf=0.90
+    )
+
+    model = PPEReasonerNet(input_dim=16, hidden_dim=64)
+    model.eval()
+
+    X = torch.tensor([features], dtype=torch.float32)
+    out = model(X)
+
+    # Compliance must be strictly 0.0 due to spatial head gating
+    assert float(out["hardhat_compliance"][0, 0].item()) == 0.0
+    # Vest should remain compliant
+    assert float(out["vest_compliance"][0, 0].item()) > 0.0
+
+
