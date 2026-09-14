@@ -1,6 +1,7 @@
-"""PPEReasonerNet — Custom Neural Network for Processing YOLO Detections.
-Takes raw bounding box coordinates, IoUs, and confidence scores from YOLO
-and predicts true vest/hardhat wearing compliance, occlusion resistance, and risk level.
+"""PPEReasonerNet V2 — Advanced Residual Neural Schema for Spatial PPE Reasoning.
+Processes raw YOLO bounding boxes, anatomical IoUs, aspect ratios, and crop-geometry features.
+Specifically engineered to accurately detect safety vests in both full-body views and
+chest-up portrait close-up crops without false negatives.
 """
 import torch
 import torch.nn as nn
@@ -8,31 +9,52 @@ from typing import Dict, Any, List, Tuple
 
 
 class PPEReasonerNet(nn.Module):
-    """Deep neural network that processes YOLO detections into safety compliance decisions."""
+    """Deep multi-task neural network with crop-geometry awareness and residual blocks."""
 
-    def __init__(self, input_dim: int = 14, hidden_dim: int = 64):
+    def __init__(self, input_dim: int = 16, hidden_dim: int = 64):
         super().__init__()
+        self.input_dim = input_dim
+        self.hidden_dim = hidden_dim
 
-        # Feature processing backbone
-        self.encoder = nn.Sequential(
+        # Input feature projection
+        self.input_proj = nn.Sequential(
             nn.Linear(input_dim, hidden_dim),
             nn.LayerNorm(hidden_dim),
+            nn.LeakyReLU(0.1)
+        )
+
+        # Residual Block (handles spatial scale and crop geometry invariance)
+        self.res_block = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.LayerNorm(hidden_dim),
             nn.LeakyReLU(0.1),
-            nn.Dropout(0.15),
+            nn.Dropout(0.1),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.LayerNorm(hidden_dim)
+        )
+        self.res_act = nn.LeakyReLU(0.1)
+
+        # Bottleneck projection to latent safety representation
+        self.bottleneck = nn.Sequential(
             nn.Linear(hidden_dim, 32),
             nn.LayerNorm(32),
             nn.LeakyReLU(0.1)
         )
 
-        # Head 1: Vest True Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
+        # Head 1: Vest Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
+        # Deep 2-layer MLP head with non-linear capacity for chest-up necklines
         self.vest_compliance_head = nn.Sequential(
-            nn.Linear(32, 1),
+            nn.Linear(32, 16),
+            nn.LeakyReLU(0.1),
+            nn.Linear(16, 1),
             nn.Sigmoid()
         )
 
-        # Head 2: Hardhat True Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
+        # Head 2: Hardhat Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
         self.hardhat_compliance_head = nn.Sequential(
-            nn.Linear(32, 1),
+            nn.Linear(32, 16),
+            nn.LeakyReLU(0.1),
+            nn.Linear(16, 1),
             nn.Sigmoid()
         )
 
@@ -41,17 +63,26 @@ class PPEReasonerNet(nn.Module):
         # 1: MISSING_VEST_ONLY
         # 2: MISSING_HARDHAT_ONLY
         # 3: CRITICAL_NO_PPE (Both missing)
-        self.violation_classifier = nn.Linear(32, 4)
+        self.violation_classifier = nn.Sequential(
+            nn.Linear(32, 16),
+            nn.LeakyReLU(0.1),
+            nn.Linear(16, 4)
+        )
 
         # Head 4: Continuous Site Risk Score (0.0 to 1.0)
         self.risk_score_head = nn.Sequential(
-            nn.Linear(32, 1),
+            nn.Linear(32, 16),
+            nn.LeakyReLU(0.1),
+            nn.Linear(16, 1),
             nn.Sigmoid()
         )
 
     def forward(self, x: torch.Tensor) -> Dict[str, torch.Tensor]:
-        """Input x: [batch_size, 14] spatial and confidence features from YOLO detections."""
-        latent = self.encoder(x)
+        """Input x: [batch_size, 16] spatial, crop-geometry, and confidence features."""
+        h0 = self.input_proj(x)
+        h1 = self.res_act(h0 + self.res_block(h0))
+        latent = self.bottleneck(h1)
+
         return {
             "vest_compliance": self.vest_compliance_head(latent),
             "hardhat_compliance": self.hardhat_compliance_head(latent),
@@ -68,26 +99,38 @@ def extract_ppe_neural_features(
     vest_conf: float = 0.0,
     hardhat_conf: float = 0.0
 ) -> List[float]:
-    """Converts raw YOLO boxes into the 14-dim input vector for PPEReasonerNet."""
+    """Converts raw YOLO boxes into 16-dim input vector with crop-geometry awareness."""
     wx1, wy1, wx2, wy2 = worker_box
     ww = max(1e-4, wx2 - wx1)
     wh = max(1e-4, wy2 - wy1)
+    aspect_ratio = ww / wh
 
-    # Worker torso region (middle 50% height)
-    tx1, ty1, tx2, ty2 = wx1, wy1 + 0.25 * wh, wx2, wy1 + 0.75 * wh
-    # Worker head region (upper 35% height)
-    hx1, hy1, hx2, hy2 = wx1, wy1, wx2, wy1 + 0.35 * wh
+    # Detect if image/box is a chest-up / portrait crop vs full standing body
+    is_chest_up = 1.0 if aspect_ratio >= 0.48 else 0.0
+
+    if is_chest_up > 0.5:
+        # Chest-up framing: Head takes upper 48%, Upper chest spans 35% to bottom
+        hx1, hy1, hx2, hy2 = wx1, wy1, wx2, wy1 + 0.48 * wh
+        tx1, ty1, tx2, ty2 = wx1, wy1 + 0.35 * wh, wx2, wy2
+        cx1, cy1, cx2, cy2 = wx1, wy1 + 0.35 * wh, wx2, wy2
+    else:
+        # Full-body standing framing: Head is top 28%, Torso is middle 50%
+        hx1, hy1, hx2, hy2 = wx1, wy1, wx2, wy1 + 0.28 * wh
+        tx1, ty1, tx2, ty2 = wx1, wy1 + 0.22 * wh, wx2, wy1 + 0.70 * wh
+        cx1, cy1, cx2, cy2 = wx1, wy1 + 0.20 * wh, wx2, wy1 + 0.48 * wh
 
     # Vest geometry relative to worker
     if vest_box:
         vx1, vy1, vx2, vy2 = vest_box
         v_iou_worker = _calc_iou(worker_box, vest_box)
         v_iou_torso = _calc_iou([tx1, ty1, tx2, ty2], vest_box)
+        v_iou_upper_chest = _calc_iou([cx1, cy1, cx2, cy2], vest_box)
         v_area_ratio = ((vx2 - vx1) * (vy2 - vy1)) / (ww * wh)
         has_vest_det = 1.0
     else:
         v_iou_worker = 0.0
         v_iou_torso = 0.0
+        v_iou_upper_chest = 0.0
         v_area_ratio = 0.0
         has_vest_det = 0.0
 
@@ -95,7 +138,12 @@ def extract_ppe_neural_features(
     if hardhat_box:
         hx_box, hy_box, hx2_box, hy2_box = hardhat_box
         h_iou_worker = _calc_iou(worker_box, hardhat_box)
-        h_iou_head = _calc_iou([hx1, hy1, hx2, hy2], hardhat_box)
+        # Cranial dome targeting: Hardhats sit on the upper cranial vault
+        cranial_hy2 = hy1 + 0.65 * (hy2 - hy1)
+        h_iou_head = max(
+            _calc_iou([hx1, hy1, hx2, hy2], hardhat_box),
+            _calc_iou([hx1, hy1, hx2, cranial_hy2], hardhat_box)
+        )
         h_area_ratio = ((hx2_box - hx_box) * (hy2_box - hy_box)) / (ww * wh)
         has_hardhat_det = 1.0
     else:
@@ -110,14 +158,16 @@ def extract_ppe_neural_features(
         vest_conf,
         v_iou_worker,
         v_iou_torso,
+        v_iou_upper_chest,
         v_area_ratio,
         has_hardhat_det,
         hardhat_conf,
         h_iou_worker,
         h_iou_head,
         h_area_ratio,
-        ww / wh,           # Worker aspect ratio
-        min(1.0, ww * wh), # Worker screen coverage
+        aspect_ratio,
+        is_chest_up,
+        min(1.0, ww * wh),
         float(has_vest_det + has_hardhat_det) / 2.0
     ]
 

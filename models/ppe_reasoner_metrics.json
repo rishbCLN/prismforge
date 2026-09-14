@@ -1,22 +1,22 @@
 {
   "status": "trained",
-  "epochs": 30,
+  "epochs": 35,
   "total_samples": 20019,
   "train_samples": 16016,
   "val_samples": 4003,
-  "training_time_seconds": 22.38,
+  "training_time_seconds": 58.07,
   "device": "cpu",
   "device_desc": "CPU (explicitly requested) [NVIDIA GPU 'NVIDIA GeForce RTX 3050 6GB Laptop GPU, 6144 MiB' idle]",
   "output_path": "models/ppe_reasoner.pt",
   "final_metrics": {
-    "epoch": 30,
-    "train_loss": 0.0016,
+    "epoch": 35,
+    "train_loss": 0.0019,
     "vest_acc": 100.0,
-    "hardhat_acc": 99.99,
-    "val_loss": 0.0025,
+    "hardhat_acc": 99.98,
+    "val_loss": 0.0005,
     "val_vest_acc": 100.0,
-    "val_hardhat_acc": 99.98,
-    "val_violation_acc": 99.98,
-    "val_risk_mae": 0.0009
+    "val_hardhat_acc": 100.0,
+    "val_violation_acc": 100.0,
+    "val_risk_mae": 0.0006
   }
 }

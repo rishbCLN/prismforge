@@ -18,9 +18,9 @@ def test_ppe_reasoner_net_forward():
         hardhat_conf=0.92
     )
 
-    assert len(features) == 14
+    assert len(features) == 16
 
-    model = PPEReasonerNet(input_dim=14, hidden_dim=64)
+    model = PPEReasonerNet(input_dim=16, hidden_dim=64)
     model.eval()
 
     X = torch.tensor([features], dtype=torch.float32)
@@ -40,14 +40,14 @@ def test_ppe_reasoner_net_forward():
 def test_ppe_reasoner_training_loop(tmp_path):
     mock_samples = [
         {
-            "features": [0.9, 1.0, 0.85, 0.4, 0.8, 0.3, 1.0, 0.9, 0.2, 0.8, 0.1, 0.5, 0.1, 1.0],
+            "features": [0.9, 1.0, 0.85, 0.4, 0.8, 0.7, 0.3, 1.0, 0.9, 0.2, 0.8, 0.1, 0.5, 1.0, 0.1, 1.0],
             "vest_label": 1.0,
             "hardhat_label": 1.0,
             "violation_class": 0,
             "risk_score": 0.05
         },
         {
-            "features": [0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.1, 0.0],
+            "features": [0.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.0, 0.1, 0.0],
             "vest_label": 0.0,
             "hardhat_label": 0.0,
             "violation_class": 3,
@@ -58,3 +58,4 @@ def test_ppe_reasoner_training_loop(tmp_path):
     out_file = str(tmp_path / "test_ppe_model.pt")
     res = train_ppe_model(mock_samples, output_path=out_file, epochs=2)
     assert res["status"] == "trained"
+

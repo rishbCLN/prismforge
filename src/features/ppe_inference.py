@@ -4,13 +4,16 @@ uploaded test images and output safety compliance conclusions and visual annotat
 """
 import os
 import cv2
+import time
 import base64
+import threading
 import torch
 import numpy as np
 from typing import Dict, Any, List, Optional, Tuple
 
 from src.risk_model.ppe_reasoner_net import PPEReasonerNet, extract_ppe_neural_features
 from src.perception.detector import SafetyDetector, PPEInspector, Detection
+from src.prism.client import PrismClient
 
 
 class PPEInferenceEngine:
@@ -59,6 +62,7 @@ class PPEInferenceEngine:
 
         # Load YOLOv8
         self.detector = SafetyDetector(model_path=yolo_path, conf_threshold=0.25)
+        self.prism_client = PrismClient()
 
     def analyze_image_bytes(self, image_bytes: bytes, filename: str = "test.jpg") -> Dict[str, Any]:
         """Analyzes raw image bytes, runs perception and PPEReasonerNet, and returns full metrics."""
@@ -71,6 +75,7 @@ class PPEInferenceEngine:
 
     def analyze_cv2_image(self, img: np.ndarray, filename: str = "test.jpg") -> Dict[str, Any]:
         """Runs full perception and reasoning pipeline on a BGR OpenCV image."""
+        start_time = time.time()
         h, w = img.shape[:2]
         detections = self.detector.detect_frame(img, frame_id=0, timestamp=0.0)
 
@@ -90,10 +95,16 @@ class PPEInferenceEngine:
 
             # Build bounding box coordinates normalized to 0.0 - 1.0
             p_box_norm = [p.x1 / w, p.y1 / h, p.x2 / w, p.y2 / h]
-            v_box_norm = [p.x1 / w, (p.y1 + 0.28 * p.height) / h, p.x2 / w, (p.y1 + 0.68 * p.height) / h] if has_vest else None
-            h_box_norm = [p.x1 / w, p.y1 / h, p.x2 / w, (p.y1 + 0.28 * p.height) / h] if has_helmet else None
+            aspect = float(p.width) / float(max(1.0, p.height))
+            if aspect >= 0.45:
+                # Chest-up crop: vest spans from 32% down to bottom of crop
+                v_box_norm = [p.x1 / w, (p.y1 + 0.32 * p.height) / h, p.x2 / w, p.y2 / h] if has_vest else None
+                h_box_norm = [p.x1 / w, p.y1 / h, p.x2 / w, (p.y1 + 0.35 * p.height) / h] if has_helmet else None
+            else:
+                v_box_norm = [p.x1 / w, (p.y1 + 0.20 * p.height) / h, p.x2 / w, (p.y1 + 0.72 * p.height) / h] if has_vest else None
+                h_box_norm = [p.x1 / w, p.y1 / h, p.x2 / w, (p.y1 + 0.20 * p.height) / h] if has_helmet else None
 
-            # Extract 14-dim spatial vector
+            # Extract 16-dim spatial vector with crop-geometry awareness
             feats = extract_ppe_neural_features(
                 worker_box=p_box_norm,
                 vest_box=v_box_norm,
@@ -224,6 +235,39 @@ class PPEInferenceEngine:
         else:
             site_status = "PARTIAL_NON_COMPLIANCE"
 
+        # Dispatch real-time telemetry trace to PRISM
+        try:
+            worker_details = ", ".join([f"{w['worker_id']}: {w['violation_class']} (Risk {w['risk_score']:.2f})" for w in workers_analysis]) or "No workers detected"
+            output_desc = f"PPEReasonerNet Status: {site_status} | Total: {total_workers} | Compliant: {compliant_count} | Violations: {violation_count} | Vest: {vest_compliance_rate}% | Hardhat: {hardhat_compliance_rate}% | Avg Risk: {avg_risk} | Breakdown: [{worker_details}]"
+            latency_ms = max(1, int((time.time() - start_time) * 1000))
+
+            def _send_trace():
+                try:
+                    self.prism_client.emit_trace(
+                        input_text=f"PPE Analyser Inspection: {filename} ({w}x{h}, {total_workers} workers)",
+                        output_text=output_desc,
+                        latency_ms=latency_ms,
+                        agent_name="rishabh",
+                        model="PPEReasonerNet-V1",
+                        session_id="ppe-analyser-session",
+                        metadata={
+                            "filename": filename,
+                            "workers_count": total_workers,
+                            "compliant_count": compliant_count,
+                            "violation_count": violation_count,
+                            "vest_rate": vest_compliance_rate,
+                            "hardhat_rate": hardhat_compliance_rate,
+                            "site_risk": avg_risk,
+                            "site_status": site_status
+                        }
+                    )
+                except Exception:
+                    pass
+
+            threading.Thread(target=_send_trace, daemon=True).start()
+        except Exception:
+            pass
+
         return {
             "status": "success",
             "filename": filename,
@@ -241,8 +285,8 @@ class PPEInferenceEngine:
             "annotated_image_base64": f"data:image/jpeg;base64,{base64_image}",
             "files_needed_by_analyser": self.FILES_USED,
             "neural_model_info": {
-                "architecture": "PPEReasonerNet (Dual-layer MLP + 4 Multi-Task Heads)",
-                "input_dimension": 14,
+                "architecture": "PPEReasonerNet V2 (Residual MLP + 4 Multi-Task Heads + Crop Geometry Invariance)",
+                "input_dimension": 16,
                 "hidden_dimension": 64,
                 "weights_file": self.model_path,
                 "perception_backbone": "YOLOv8 + High-Vis Anatomical Perception"

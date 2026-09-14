@@ -80,7 +80,7 @@ class PrismClient:
         req = urllib.request.Request(url, data=data, headers=self._get_headers(), method=method)
 
         try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
+            with urllib.request.urlopen(req, timeout=30) as resp:
                 resp_text = resp.read().decode("utf-8")
                 return json.loads(resp_text) if resp_text else {}
         except urllib.error.HTTPError as e:
@@ -176,8 +176,8 @@ class PrismClient:
         output_text: str,
         latency_ms: int = 15,
         agent_name: str = "rishabh",
-        model: str = "DamageMesh-V3-Supervisor",
-        session_id: str = "supervisor-shift-bay04",
+        model: str = "PPEReasonerNet-V1",
+        session_id: str = "ppe-inference-session",
         metadata: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """Emits a live trace to PRISM ($0 cost / free)."""

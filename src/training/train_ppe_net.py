@@ -82,8 +82,16 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
         for w in workers:
             wb = [w["x1"], w["y1"], w["x2"], w["y2"]]
             wh = max(1e-4, w["y2"] - w["y1"])
-            head_box = [w["x1"], w["y1"], w["x2"], w["y1"] + 0.35 * wh]
-            torso_box = [w["x1"], w["y1"] + 0.25 * wh, w["x2"], w["y1"] + 0.75 * wh]
+            ww = max(1e-4, w["x2"] - w["x1"])
+            aspect_ratio = ww / wh
+            is_chest_up = aspect_ratio >= 0.48
+
+            if is_chest_up:
+                head_box = [w["x1"], w["y1"], w["x2"], w["y1"] + 0.48 * wh]
+                torso_box = [w["x1"], w["y1"] + 0.32 * wh, w["x2"], w["y2"]]
+            else:
+                head_box = [w["x1"], w["y1"], w["x2"], w["y1"] + 0.28 * wh]
+                torso_box = [w["x1"], w["y1"] + 0.20 * wh, w["x2"], w["y1"] + 0.72 * wh]
 
             # Best matching vest
             best_v = None
@@ -99,16 +107,17 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
             has_vest = (best_v is not None and best_v_iou > 0.05) and not has_explicit_no_vest
 
             # Best matching hardhat / helmet
+            cranial_box = [w["x1"], w["y1"], w["x2"], w["y1"] + (0.35 * wh if is_chest_up else 0.20 * wh)]
             best_h = None
             best_h_iou = 0.0
             for h in helmets:
                 hb = [h["x1"], h["y1"], h["x2"], h["y2"]]
-                iou = _calc_iou(head_box, hb)
+                iou = max(_calc_iou(head_box, hb), _calc_iou(cranial_box, hb))
                 if iou > best_h_iou:
                     best_h_iou = iou
                     best_h = hb
 
-            has_explicit_no_helmet = any(_calc_iou(head_box, [nh["x1"], nh["y1"], nh["x2"], nh["y2"]]) > 0.05 for nh in no_helmets)
+            has_explicit_no_helmet = any(max(_calc_iou(head_box, [nh["x1"], nh["y1"], nh["x2"], nh["y2"]]), _calc_iou(cranial_box, [nh["x1"], nh["y1"], nh["x2"], nh["y2"]])) > 0.05 for nh in no_helmets)
             has_hardhat = (best_h is not None and best_h_iou > 0.05) and not has_explicit_no_helmet
 
             feats = extract_ppe_neural_features(
@@ -179,7 +188,7 @@ def train_ppe_model(
         train_loader = DataLoader(dataset, batch_size=min(batch_size, len(dataset)), shuffle=True)
         val_loader = None
 
-    model = PPEReasonerNet(input_dim=14, hidden_dim=64).to(device)
+    model = PPEReasonerNet(input_dim=16, hidden_dim=64).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-4)
 
     criterion_bce = nn.BCELoss()
@@ -292,7 +301,7 @@ def train_ppe_model(
     # Save model weights
     torch.save({
         "state_dict": model.state_dict(),
-        "input_dim": 14,
+        "input_dim": 16,
         "hidden_dim": 64,
         "device": str(device),
         "epochs": epochs

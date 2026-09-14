@@ -64,8 +64,8 @@ class WarehouseSupervisorAssistant:
                     output_text=response,
                     latency_ms=latency_ms,
                     agent_name="rishabh",
-                    model="DamageMesh-V3-Supervisor",
-                    session_id="supervisor-shift-bay04"
+                    model="PPEReasonerNet-V1",
+                    session_id="ppe-safety-briefing"
                 )
             except Exception:
                 pass

@@ -39,54 +39,96 @@ class Detection:
 
 
 class PPEInspector:
-    """Accurate PPE inspector for head and torso regions."""
+    """Accurate PPE inspector for full-body, half-body, and chest-up portrait framing."""
     
     @staticmethod
     def inspect_person_crop(person_crop: np.ndarray) -> Tuple[bool, float, bool, float]:
         """Inspects person image crop for hardhat and safety vest.
-        Returns:
-            (has_helmet, helmet_conf, has_vest, vest_conf)
+        Dynamically adapts anatomical regions for chest-up/portrait crops vs full standing body.
         """
         if person_crop is None or person_crop.size == 0 or person_crop.shape[0] < 10 or person_crop.shape[1] < 10:
             return False, 0.5, False, 0.5
 
         h, w = person_crop.shape[:2]
-        # Head region: top 28%
-        head_crop = person_crop[0:int(h * 0.28), :]
-        # Torso region: 28% to 68%
-        torso_crop = person_crop[int(h * 0.28):int(h * 0.68), :]
+        aspect_ratio = float(w) / float(max(1, h))
+
+        # Dynamic region segmentation based on framing:
+        # If aspect_ratio >= 0.45: portrait / chest-up framing (head is upper 45%, vest spans down to bottom)
+        if aspect_ratio >= 0.45:
+            head_crop = person_crop[0:int(h * 0.48), :]
+            torso_crop = person_crop[int(h * 0.32):h, :]
+        else:
+            # Full standing body framing
+            head_crop = person_crop[0:int(h * 0.28), :]
+            torso_crop = person_crop[int(h * 0.20):int(h * 0.72), :]
 
         hsv_head = cv2.cvtColor(head_crop, cv2.COLOR_BGR2HSV) if head_crop.size > 0 else None
         hsv_torso = cv2.cvtColor(torso_crop, cv2.COLOR_BGR2HSV) if torso_crop.size > 0 else None
 
         has_helmet = False
         helmet_conf = 0.5
-        if hsv_head is not None and hsv_head.size > 0:
-            # Yellow / High-Vis Hardhat: H in [20, 35], S > 160, V > 180
-            mask_yellow_hh = cv2.inRange(hsv_head, np.array([18, 150, 180]), np.array([36, 255, 255]))
-            # White hardhat: S < 35, V > 220
-            mask_white_hh = cv2.inRange(hsv_head, np.array([0, 0, 220]), np.array([180, 40, 255]))
-            mask_hh = cv2.bitwise_or(mask_yellow_hh, mask_white_hh)
-            hh_ratio = float(np.sum(mask_hh > 0)) / float(head_crop.shape[0] * head_crop.shape[1] + 1e-5)
-            if hh_ratio > 0.08:
+        if head_crop is not None and head_crop.size > 0:
+            head_h = head_crop.shape[0]
+            # Anatomical Cranial Vault: top 65% of head crop (above eyebrows/eyes)
+            cranial_crop = head_crop[0:max(4, int(head_h * 0.65)), :]
+            hsv_cranial = cv2.cvtColor(cranial_crop, cv2.COLOR_BGR2HSV)
+
+            # Full-Spectrum ANSI/OSHA Hardhat Pigments:
+            # 1. High-Vis Yellow / Lime: H in [17, 42], S > 95, V > 115
+            mask_yellow = cv2.inRange(hsv_cranial, np.array([17, 95, 115]), np.array([42, 255, 255]))
+            # 2. Safety Orange: H in [6, 17], S > 120, V > 115
+            mask_orange = cv2.inRange(hsv_cranial, np.array([6, 120, 115]), np.array([17, 255, 255]))
+            # 3. Safety Red: H in [0, 6] or [170, 180], S > 120, V > 105
+            mask_red1 = cv2.inRange(hsv_cranial, np.array([0, 120, 105]), np.array([6, 255, 255]))
+            mask_red2 = cv2.inRange(hsv_cranial, np.array([170, 120, 105]), np.array([180, 255, 255]))
+            mask_red = cv2.bitwise_or(mask_red1, mask_red2)
+            # 4. Safety Blue: H in [95, 135], S > 75, V > 75
+            mask_blue = cv2.inRange(hsv_cranial, np.array([95, 75, 75]), np.array([135, 255, 255]))
+            # 5. Safety Green: H in [40, 85], S > 70, V > 75
+            mask_green = cv2.inRange(hsv_cranial, np.array([40, 70, 75]), np.array([85, 255, 255]))
+            # 6. Safety White: S < 40, V > 200
+            mask_white = cv2.inRange(hsv_cranial, np.array([0, 0, 200]), np.array([180, 40, 255]))
+
+            mask_colored = cv2.bitwise_or(mask_yellow, cv2.bitwise_or(mask_orange, cv2.bitwise_or(mask_red, cv2.bitwise_or(mask_blue, mask_green))))
+            tot_cranial = float(cranial_crop.shape[0] * cranial_crop.shape[1] + 1e-5)
+            colored_ratio = float(np.sum(mask_colored > 0)) / tot_cranial
+            white_ratio = float(np.sum(mask_white > 0)) / tot_cranial
+
+            # Colored helmets (yellow, orange, red, blue, green) contrast strongly with skin and hair
+            if colored_ratio > 0.05:
                 has_helmet = True
-                helmet_conf = min(0.98, float(0.70 + hh_ratio * 1.5))
+                helmet_conf = min(0.99, float(0.78 + colored_ratio * 1.5))
+            # White helmets require higher concentration or density
+            elif white_ratio > 0.10:
+                has_helmet = True
+                helmet_conf = min(0.99, float(0.75 + white_ratio * 1.2))
             else:
                 has_helmet = False
-                helmet_conf = min(0.96, float(0.75 + (0.08 - hh_ratio) * 2.0))
+                helmet_conf = min(0.95, float(0.75 + (0.05 - colored_ratio) * 2.0))
 
         has_vest = False
         vest_conf = 0.5
         if hsv_torso is not None and hsv_torso.size > 0:
-            # High-vis vest (orange/yellow/lime): H in [18, 40], S > 150, V > 160
-            mask_vest = cv2.inRange(hsv_torso, np.array([16, 140, 150]), np.array([40, 255, 255]))
-            vest_ratio = float(np.sum(mask_vest > 0)) / float(torso_crop.shape[0] * torso_crop.shape[1] + 1e-5)
-            if vest_ratio > 0.12:
+            # 1. High-vis Neon Yellow / Lime: H in [16, 45], S > 90, V > 120
+            mask_lime = cv2.inRange(hsv_torso, np.array([16, 90, 120]), np.array([45, 255, 255]))
+            # 2. High-vis Neon Orange: H in [0, 16] or [165, 180], S > 100, V > 120
+            mask_orange1 = cv2.inRange(hsv_torso, np.array([0, 100, 120]), np.array([16, 255, 255]))
+            mask_orange2 = cv2.inRange(hsv_torso, np.array([165, 100, 120]), np.array([180, 255, 255]))
+            # 3. Reflective silver/white stripes on torso
+            mask_silver = cv2.inRange(hsv_torso, np.array([0, 0, 190]), np.array([180, 45, 255]))
+            
+            mask_vest_colored = cv2.bitwise_or(mask_lime, cv2.bitwise_or(mask_orange1, mask_orange2))
+            vest_color_ratio = float(np.sum(mask_vest_colored > 0)) / float(torso_crop.shape[0] * torso_crop.shape[1] + 1e-5)
+            silver_ratio = float(np.sum(mask_silver > 0)) / float(torso_crop.shape[0] * torso_crop.shape[1] + 1e-5)
+
+            # In chest-up crops, high-vis neckline or silver reflective bands are decisive
+            threshold = 0.05 if aspect_ratio >= 0.45 else 0.08
+            if vest_color_ratio > threshold or (vest_color_ratio > 0.03 and silver_ratio > 0.02):
                 has_vest = True
-                vest_conf = min(0.98, float(0.70 + vest_ratio * 1.2))
+                vest_conf = min(0.99, float(0.75 + vest_color_ratio * 1.8 + silver_ratio * 1.2))
             else:
                 has_vest = False
-                vest_conf = min(0.96, float(0.75 + (0.12 - vest_ratio) * 1.8))
+                vest_conf = min(0.96, float(0.75 + (threshold - vest_color_ratio) * 2.0))
 
         return has_helmet, helmet_conf, has_vest, vest_conf
 
