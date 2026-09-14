@@ -1,0 +1,24 @@
+{
+  "run_id": "run_Warehouse_V3_Learned_6be48c48",
+  "model_version": "Warehouse_V3_Learned",
+  "dataset_version": "warehouse_holdout_test",
+  "git_commit": "c7e4232",
+  "feature_version": "kinematic_16_feat",
+  "evaluation_timestamp": "2026-09-14T15:32:58.286189",
+  "hyperparameters": {
+    "samples": 200,
+    "classes": 4
+  },
+  "metrics": {
+    "version": "V3_Learned",
+    "accuracy": 0.995,
+    "macro_f1": 0.4974,
+    "high_risk_recall": 0.9875,
+    "false_alarm_rate": 0.0,
+    "asymmetric_damage_cost": 5.0,
+    "avg_latency_ms": 0.934,
+    "test_samples": 200
+  },
+  "failure_summary": {},
+  "diagnosis_note": "DamageMesh benchmark evaluation of V3_Learned"
+}

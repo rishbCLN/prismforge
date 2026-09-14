@@ -1,0 +1,75 @@
+{
+  "scenarios": [
+    {
+      "id": "wh_clip_01_safe_trolley_unloading",
+      "split": "train",
+      "behavior": "SAFE_HANDLING",
+      "risk_level": "LOW",
+      "description": "Operator places carton onto hand trolley and wheels it gently into designated staging zone."
+    },
+    {
+      "id": "wh_clip_02_carton_drop_impact",
+      "split": "train",
+      "behavior": "DROPPING",
+      "risk_level": "HIGH",
+      "description": "Operator loses grip on carton at 1.1m height; carton drops with gravitational acceleration and hits floor with severe impact."
+    },
+    {
+      "id": "wh_clip_03_carton_throwing_truck",
+      "split": "train",
+      "behavior": "THROWING",
+      "risk_level": "CRITICAL",
+      "description": "Operator tosses carton across 3.5 meters into truck bed without support; ballistic flight trajectory."
+    },
+    {
+      "id": "wh_clip_04_carton_floor_dragging",
+      "split": "train",
+      "behavior": "DRAGGING",
+      "risk_level": "HIGH",
+      "description": "Operator drags heavy 45-pound carton across concrete epoxy floor without a trolley."
+    },
+    {
+      "id": "wh_clip_05_rough_rapid_handling",
+      "split": "train",
+      "behavior": "ROUGH_HANDLING",
+      "risk_level": "HIGH",
+      "description": "Operator violently slams carton down onto pallet with excessive kinetic jerk and velocity shock."
+    },
+    {
+      "id": "wh_clip_06_staging_zone_breach",
+      "split": "train",
+      "behavior": "ZONE_BREACH",
+      "risk_level": "MEDIUM",
+      "description": "Carton staged outside designated yellow perimeter in an active traffic corridor."
+    },
+    {
+      "id": "wh_clip_07_val_mixed_handling",
+      "split": "val",
+      "behavior": "DROPPING_TRANSIENT",
+      "risk_level": "HIGH",
+      "description": "Validation clip: Operator handles two cartons; second carton slips and drops during palletizing."
+    },
+    {
+      "id": "wh_clip_08_val_prolonged_drag",
+      "split": "val",
+      "behavior": "DRAGGING",
+      "risk_level": "HIGH",
+      "description": "Validation clip: Prolonged continuous dragging of furniture carton across dock floor."
+    },
+    {
+      "id": "wh_clip_09_test_severe_toss_drop",
+      "split": "test",
+      "behavior": "THROWING_AND_DROP",
+      "risk_level": "CRITICAL",
+      "description": "Held-out test clip: Operator tosses fragile package which impacts wall and crashes to floor."
+    },
+    {
+      "id": "wh_clip_10_test_safe_dock_operations",
+      "split": "test",
+      "behavior": "SAFE_HANDLING",
+      "risk_level": "LOW",
+      "description": "Held-out test clip: Two operators executing controlled, compliant team-lift and pallet staging."
+    }
+  ],
+  "total_clips": 10
+}

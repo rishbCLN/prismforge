@@ -1,0 +1,24 @@
+{
+  "run_id": "run_Warehouse_V1_Context_9c1bec18",
+  "model_version": "Warehouse_V1_Context",
+  "dataset_version": "warehouse_holdout_test",
+  "git_commit": "c7e4232",
+  "feature_version": "kinematic_16_feat",
+  "evaluation_timestamp": "2026-09-14T15:32:57.991244",
+  "hyperparameters": {
+    "samples": 200,
+    "classes": 4
+  },
+  "metrics": {
+    "version": "V1_Context",
+    "accuracy": 0.375,
+    "macro_f1": 0.2748,
+    "high_risk_recall": 0.4125,
+    "false_alarm_rate": 0.0,
+    "asymmetric_damage_cost": 235.0,
+    "avg_latency_ms": 0.02,
+    "test_samples": 200
+  },
+  "failure_summary": {},
+  "diagnosis_note": "DamageMesh benchmark evaluation of V1_Context"
+}

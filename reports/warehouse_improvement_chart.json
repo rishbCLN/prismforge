@@ -1,0 +1,42 @@
+{
+  "V0_Baseline": {
+    "version": "V0_Baseline",
+    "accuracy": 0.17,
+    "macro_f1": 0.0833,
+    "high_risk_recall": 0.9875,
+    "false_alarm_rate": 0.75,
+    "asymmetric_damage_cost": 95.0,
+    "avg_latency_ms": 0.008,
+    "test_samples": 200
+  },
+  "V1_Context": {
+    "version": "V1_Context",
+    "accuracy": 0.375,
+    "macro_f1": 0.2748,
+    "high_risk_recall": 0.4125,
+    "false_alarm_rate": 0.0,
+    "asymmetric_damage_cost": 235.0,
+    "avg_latency_ms": 0.02,
+    "test_samples": 200
+  },
+  "V2_Temporal": {
+    "version": "V2_Temporal",
+    "accuracy": 0.325,
+    "macro_f1": 0.1389,
+    "high_risk_recall": 0.975,
+    "false_alarm_rate": 0.7417,
+    "asymmetric_damage_cost": 99.0,
+    "avg_latency_ms": 0.008,
+    "test_samples": 200
+  },
+  "V3_Learned": {
+    "version": "V3_Learned",
+    "accuracy": 0.995,
+    "macro_f1": 0.4974,
+    "high_risk_recall": 0.9875,
+    "false_alarm_rate": 0.0,
+    "asymmetric_damage_cost": 5.0,
+    "avg_latency_ms": 0.934,
+    "test_samples": 200
+  }
+}
