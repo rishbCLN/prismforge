@@ -1,79 +1,59 @@
-# HazardMesh Execution Instructions
+# PRISMForge — Standing Instructions for Coding Agents
 
-This document provides step-by-step instructions to reproduce the entire HazardMesh pipeline, run tests, and launch the interactive demo.
+This repository houses the **PRISMForge / HazardMesh / DamageMesh** physical safety and material handling intelligence platform.
 
-## Prerequisites
-* Python 3.10+
-* Windows / Linux / macOS
-* GPU recommended but CPU fully supported
+All coding agents, automated workflows, and contributors operating in this repository must strictly adhere to the following standing instructions.
 
-## 1. Setup Environment
-```bash
-pip install -r requirements.txt
-```
+---
 
-## 2. Generate Dataset & Ground Truth
-Generates 12 realistic construction video clips and strictly split ground truth annotations (70% train, 15% val, 15% holdout):
-```bash
-python -m data.generator
-```
+## 1. PRISM Tracing & Observability Standing Rules
 
-## 3. Perception Stage (YOLOv8)
-Runs YOLOv8 detector and PPE inspection on all video clips:
-```bash
-python scripts/run_perception.py
-```
-*Output*: `data/detections/*_detections.json`
+PRISM is the live observability and evaluation platform for AI agents and models in this system.
 
-## 4. Multi-Object Tracking
-Maintains persistent worker and machinery identities across frames:
-```bash
-python scripts/run_tracking.py
-```
-*Output*: `data/tracks/*_tracks.json`
+### Connection & Authentication
+- Tracing host: `https://prism-api-prod.up.railway.app`
+- Default Project ID: `e430ddf1-9e0f-425b-a438-bbbc3977f140`
+- Org ID: `afa090bb-98bc-48e4-8c9d-009028e16f20`
+- Header format: All requests MUST authenticate with **`X-PRISMtrace-Key: <api_key>`**.
+  - **Never** use `Authorization: Bearer` with the API key (that is for dashboard user sessions only).
+  - **Never** commit API keys or hardcode secrets into source files. Load them from `os.environ` or the untracked `.env` file. Keep `.env.example` committed with template names only.
 
-## 5. Spatio-Temporal Feature Engineering
-Computes 19 numeric tabular features (PPE, proximity, duration, density, confidence):
-```bash
-python scripts/build_features.py
-```
-*Output*: `data/features/train_features.json`, `val_features.json`, `holdout_features.json`
+### Free Reading Operations (Cost: $0 / 0 Credits)
+Agents should exhaust these endpoints before considering any actions:
+- `GET /api/setup-doctor?project_id=...` — Health check: confirms live connectivity and last arrival time.
+- `GET /api/traces?project_id=...&status=failed` — Lists failed/flagged traces (`status` is required: `failed`, `error`, `blocked`, `flagged`, `success`).
+- `GET /api/traces/{trace_id}` — Inspects full trace payload, prompts, responses, and latency.
+- `GET /api/spans/{trace_id}` — Span tree for tool calls and nested steps.
+- `GET /api/scores/summary?project_id=...` — Evaluation scores across all runs.
+- `GET /api/metrics/summary?project_id=...&period=...` — Throughput, latency, and cost summaries.
+- `GET /api/intelligence?project_id=...` — Coverage, risk trends, and failure pattern aggregations (pure SQL, free).
+- `GET /api/intelligence/clusters?project_id=...` — Existing Root Cause Analysis (RCA) clusters.
+- `GET /api/credits/balance?org_id=...` — Check remaining allowance before any paid operation.
 
-## 6. Train V3 Learned PyTorch Model
-Trains the dual-head Multi-Layer Perceptron (`RiskMLP`) with class-weighted Cross-Entropy and continuous MSE risk loss:
-```bash
-python scripts/train_model.py --version v3 --epochs 70 --lr 0.005
-```
-*Output*: `models/v3/hazard_risk_mlp.pt`
+---
 
-## 7. Run Evaluation on Held-Out Test Split
-Evaluates V0, V1, V2, and V3 on the exact same holdout split:
-```bash
-python scripts/evaluate_model.py --version all
-```
-*Output*: `reports/v0_baseline_eval.json`, `v1_context_eval.json`, `v2_temporal_eval.json`, `v3_learned_eval.json`
+## 2. Paid Endpoints & Credit Spending Safeguards
 
-## 8. Failure Analysis & Clustering
-Diagnoses misclassifications and calculates error reduction across iterations:
-```bash
-python scripts/analyze_failures.py
-```
-*Output*: `reports/failure_analysis_report.json`
+PRISM meters heavy AI operations against a monthly allowance. Agents must follow these **STRICT SPENDING RULES**:
 
-## 9. Generate Benchmark Improvement Chart
-Generates benchmark comparison table and visualization:
-```bash
-python scripts/generate_improvement_chart.py
-```
-*Output*: `reports/improvement_chart.png`, `reports/improvement_chart.json`
+| Action | Endpoint | Cost |
+| :--- | :--- | :--- |
+| **Cluster RCA Analysis** | `POST /api/intelligence/clusters/analyze` | 5 credits |
+| **Fix Recommendations** | `POST /api/remediation/recommend` | 2 credits |
+| **Trace Backfill** | `POST /api/backfill/trace-analyses` | 1 credit per unanalyzed trace |
+| **AI Narrative Briefing** | `GET /api/intelligence/narrative` | 1 credit / day |
+| **Automated Code Fix** | `POST /api/rca/remediation/generate-fix` | 5 credits |
 
-## 10. Run Automated Unit Tests
-```bash
-python -m unittest discover tests
-```
+### Mandatory Spending Protocol
+1. **Never call a paid endpoint without user confirmation.** You must state the exact credit cost (e.g., *"Running RCA analysis costs 5 credits"*) and receive explicit approval first.
+2. **Check the balance first:** Query `GET /api/credits/balance?org_id=$PRISMTRACE_ORG_ID` before committing to any paid plan.
+3. **Read before re-running:** `GET /api/intelligence/clusters` already contains past analyses. Never run a duplicate analysis if the data already exists.
+4. **Handle 402 gracefully:** A `402 Payment Required` means out of credits, not a code defect. Report it cleanly and stop.
+5. **No Hallucinated Data:** Never report a metric, latency, or status without fetching it from a live endpoint.
 
-## 11. Launch Web Demo
-```bash
-python scripts/run_demo.py --port 8000
-```
-Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
+---
+
+## 3. Media & Artifact Hygiene
+- Never commit raw `.mp4`, `.avi`, `.jpg`, `.png` datasets to git. Keep them under `data/` and protected by `.gitignore`.
+- Documentation charts and web UI static assets may be committed under `reports/` and `web/static/`.
+- All Python implementations must maintain 100% test pass rate with `pytest tests/ -v`.
