@@ -213,3 +213,9 @@ class HazardTracker:
                 track.associated_machine = None
 
         return list(self.worker_tracks.values()), active_machines
+
+
+# VigiAI Warehouse Tracking Re-exports
+from src.tracking.history import TrackHistory, TrackObservation
+from src.tracking.warehouse_tracker import WarehouseTrack, WarehouseTracker, compute_iou
+

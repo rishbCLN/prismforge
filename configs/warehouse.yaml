@@ -1,0 +1,86 @@
+# VigiAI Warehouse Material-Handling Intelligence Module Configuration
+# All thresholds, coordinate boundaries, and class mappings are externalized here.
+
+version: "1.0.0"
+
+# Perception Settings
+perception:
+  model_weights: "yolov8n.pt"
+  confidence_threshold: 0.25
+  device: "cpu"
+  input_size: 640
+  # Target classes to extract from model detections
+  target_classes:
+    - "person"
+    - "box"
+    - "package"
+    - "pallet"
+    - "trolley"
+    - "handcart"
+    - "suitcase" # COCO class fallback for boxes/luggage
+    - "backpack" # COCO class fallback for small packages
+  # Map COCO classes to canonical warehouse object types
+  class_mapping:
+    person: "person"
+    box: "carton"
+    package: "carton"
+    suitcase: "carton"
+    backpack: "carton"
+    handbag: "carton"
+    pallet: "pallet"
+    trolley: "trolley"
+    handcart: "trolley"
+
+# Tracking Settings
+tracking:
+  tracker_type: "bytetrack"
+  max_lost_frames: 15
+  iou_threshold: 0.30
+  history_window_size: 16
+
+# Behaviour Engine Thresholds
+behaviours:
+  drop:
+    min_downward_velocity: 0.25 # Normalized vertical displacement / time
+    min_worker_separation: 0.20 # Normalized separation distance proxy
+    floor_proximity_threshold: 0.78 # Normalized y coordinate near floor
+    stationary_frames: 5 # Frames required stationary post-impact
+    impact_decel_threshold: 0.20
+  drag:
+    floor_proximity_threshold: 0.80
+    min_lateral_velocity: 0.18 # Normalized horizontal displacement
+    persistence_frames: 8 # Minimum consecutive frames
+    max_vertical_displacement: 0.06
+  throw:
+    min_horizontal_velocity: 0.35
+    min_separation_rate: 0.20
+    max_floor_proximity: 0.75
+  rough_handling:
+    max_kinetic_jerk: 0.40 # Normalized 3rd derivative / acceleration variance
+    velocity_variance_threshold: 0.30
+  zone_breach:
+    staging_zone: "DESIGNATED_STAGING_AREA"
+
+# Designated Zones (Normalized polygon coordinates [x_norm, y_norm] in [0, 1])
+zones:
+  staging_zone:
+    name: "DESIGNATED_STAGING_AREA"
+    # Default coordinates matching benchmark dock: (40, 180) to (260, 330) in 640x360
+    polygon:
+      - [0.0625, 0.5000]
+      - [0.4062, 0.5000]
+      - [0.4062, 0.9167]
+      - [0.0625, 0.9167]
+
+# Risk Engine Scoring Matrix
+risk:
+  thresholds:
+    low: 0.30
+    medium: 0.65
+    high: 0.85
+  weights:
+    drop: 0.90
+    throw: 0.92
+    drag: 0.75
+    rough_handling: 0.70
+    zone_breach: 0.55
