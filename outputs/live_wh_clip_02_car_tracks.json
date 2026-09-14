@@ -1,0 +1,743 @@
+{
+  "clip_id": "live_wh_clip_02_car",
+  "total_frames": 100,
+  "total_unique_tracks": 0,
+  "metadata": {
+    "source_video": "wh_clip_02_carton_drop_impact.mp4",
+    "frame_width": 640,
+    "frame_height": 360,
+    "fps": 25.0,
+    "duration_seconds": 4.0,
+    "inference_duration_sec": 8.75
+  },
+  "neural_summary": {
+    "model_version": "WarehouseRiskMLP_v3",
+    "peak_risk_score": 0.0547,
+    "peak_severity": "LOW",
+    "intervention_priority": "P3_INFORMATIONAL",
+    "top_contributing_factors": [
+      "NORMAL_COMPLIANT_HANDLING"
+    ],
+    "gradient_attribution": {
+      "drop_velocity": 0.0,
+      "impact_deceleration": 0.0,
+      "throw_horizontal_velocity": 0.0,
+      "separation_rate": 0.0,
+      "drag_floor_contact": 0.0,
+      "drag_velocity": 0.0,
+      "trolley_overlap_iou": 0.0,
+      "kinematic_jerk": 0.0,
+      "staging_zone_distance": 0.0,
+      "is_outside_staging": 0.0,
+      "operator_distance": 0.0,
+      "handling_duration": 0.0,
+      "package_area_ratio": 0.0,
+      "velocity_variance": 0.0,
+      "stationary_after_impact": 0.0,
+      "tracking_confidence": 0.0
+    }
+  },
+  "frames": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.04,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.08,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.12,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.16,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 5,
+      "timestamp": 0.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 6,
+      "timestamp": 0.24,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 7,
+      "timestamp": 0.28,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 8,
+      "timestamp": 0.32,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 9,
+      "timestamp": 0.36,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 10,
+      "timestamp": 0.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 11,
+      "timestamp": 0.44,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 12,
+      "timestamp": 0.48,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 13,
+      "timestamp": 0.52,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 14,
+      "timestamp": 0.56,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 15,
+      "timestamp": 0.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 16,
+      "timestamp": 0.64,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 17,
+      "timestamp": 0.68,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 18,
+      "timestamp": 0.72,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 19,
+      "timestamp": 0.76,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 20,
+      "timestamp": 0.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 21,
+      "timestamp": 0.84,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 22,
+      "timestamp": 0.88,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 23,
+      "timestamp": 0.92,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 24,
+      "timestamp": 0.96,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 25,
+      "timestamp": 1.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 26,
+      "timestamp": 1.04,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 27,
+      "timestamp": 1.08,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 28,
+      "timestamp": 1.12,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 29,
+      "timestamp": 1.16,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 30,
+      "timestamp": 1.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 31,
+      "timestamp": 1.24,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 32,
+      "timestamp": 1.28,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 33,
+      "timestamp": 1.32,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 34,
+      "timestamp": 1.36,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 35,
+      "timestamp": 1.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 36,
+      "timestamp": 1.44,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 37,
+      "timestamp": 1.48,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 38,
+      "timestamp": 1.52,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 39,
+      "timestamp": 1.56,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 40,
+      "timestamp": 1.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 41,
+      "timestamp": 1.64,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 42,
+      "timestamp": 1.68,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 43,
+      "timestamp": 1.72,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 44,
+      "timestamp": 1.76,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 45,
+      "timestamp": 1.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 46,
+      "timestamp": 1.84,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 47,
+      "timestamp": 1.88,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 48,
+      "timestamp": 1.92,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 49,
+      "timestamp": 1.96,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 50,
+      "timestamp": 2.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 51,
+      "timestamp": 2.04,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 52,
+      "timestamp": 2.08,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 53,
+      "timestamp": 2.12,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 54,
+      "timestamp": 2.16,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 55,
+      "timestamp": 2.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 56,
+      "timestamp": 2.24,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 57,
+      "timestamp": 2.28,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 58,
+      "timestamp": 2.32,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 59,
+      "timestamp": 2.36,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 60,
+      "timestamp": 2.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 61,
+      "timestamp": 2.44,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 62,
+      "timestamp": 2.48,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 63,
+      "timestamp": 2.52,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 64,
+      "timestamp": 2.56,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 65,
+      "timestamp": 2.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 66,
+      "timestamp": 2.64,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 67,
+      "timestamp": 2.68,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 68,
+      "timestamp": 2.72,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 69,
+      "timestamp": 2.76,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 70,
+      "timestamp": 2.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 71,
+      "timestamp": 2.84,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 72,
+      "timestamp": 2.88,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 73,
+      "timestamp": 2.92,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 74,
+      "timestamp": 2.96,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 75,
+      "timestamp": 3.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 76,
+      "timestamp": 3.04,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 77,
+      "timestamp": 3.08,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 78,
+      "timestamp": 3.12,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 79,
+      "timestamp": 3.16,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 80,
+      "timestamp": 3.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 81,
+      "timestamp": 3.24,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 82,
+      "timestamp": 3.28,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 83,
+      "timestamp": 3.32,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 84,
+      "timestamp": 3.36,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 85,
+      "timestamp": 3.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 86,
+      "timestamp": 3.44,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 87,
+      "timestamp": 3.48,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 88,
+      "timestamp": 3.52,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 89,
+      "timestamp": 3.56,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 90,
+      "timestamp": 3.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 91,
+      "timestamp": 3.64,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 92,
+      "timestamp": 3.68,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 93,
+      "timestamp": 3.72,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 94,
+      "timestamp": 3.76,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 95,
+      "timestamp": 3.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 96,
+      "timestamp": 3.84,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 97,
+      "timestamp": 3.88,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 98,
+      "timestamp": 3.92,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    },
+    {
+      "frame_id": 99,
+      "timestamp": 3.96,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW"
+    }
+  ],
+  "trajectories": {}
+}

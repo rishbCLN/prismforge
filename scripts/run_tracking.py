@@ -269,6 +269,15 @@ def run_warehouse_tracking(
     return os.path.abspath(output_path)
 
 
+def run_tracking_on_clip(detections_path: str, output_path: Optional[str] = None, video_path: Optional[str] = None) -> str:
+    """Compatibility alias for pipeline orchestrator."""
+    if output_path is None:
+        clip_id = os.path.splitext(os.path.basename(detections_path))[0].replace("_detections", "")
+        output_path = os.path.join("outputs", f"{clip_id}_tracks.json")
+    return run_warehouse_tracking(detections_path, output_path, video_path=video_path)
+
+
+
 def main():
     parser = argparse.ArgumentParser(description="Run ByteTrack tracking on warehouse detections")
     parser.add_argument("--detections", default="outputs/detections.json", help="Path to detections JSON file")

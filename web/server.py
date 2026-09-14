@@ -336,3 +336,69 @@ def get_manifest():
     with open(manifest_path, "r") as f:
         return json.load(f)
 
+
+# ==================== LIVE VIDEO TEST INGESTION API ====================
+from src.pipeline.live_test import run_live_video_test
+
+
+@app.get("/api/warehouse/raw_videos")
+def list_raw_warehouse_videos():
+    """Lists available raw warehouse videos in data/raw for 1-click live testing."""
+    if not os.path.exists(videos_dir):
+        return {"videos": []}
+    files = [f for f in os.listdir(videos_dir) if f.endswith(('.mp4', '.avi', '.mov')) and not f.startswith('.')]
+    return {"videos": sorted(files)}
+
+
+@app.post("/api/warehouse/test_video")
+async def test_warehouse_video(
+    file: Optional[UploadFile] = File(None),
+    sample_video: Optional[str] = Form(None)
+):
+    """Executes live testing on uploaded or selected video using YOLOv8, ByteTrack, and PyTorch WarehouseRiskMLP."""
+    upload_dir = os.path.abspath("data/raw/uploads")
+    os.makedirs(upload_dir, exist_ok=True)
+
+    video_path = None
+    output_name = "live_test"
+
+    if file is not None and file.filename:
+        saved_path = os.path.join(upload_dir, file.filename)
+        with open(saved_path, "wb") as f:
+            content = await file.read()
+            f.write(content)
+        video_path = saved_path
+        clean_stem = "".join(c if c.isalnum() else "_" for c in os.path.splitext(file.filename)[0].lower())
+        output_name = f"live_{clean_stem[:14]}"
+    elif sample_video:
+        candidate = os.path.join(videos_dir, sample_video)
+        if os.path.exists(candidate):
+            video_path = candidate
+            clean_stem = "".join(c if c.isalnum() else "_" for c in os.path.splitext(sample_video)[0].lower())
+            output_name = f"live_{clean_stem[:14]}"
+        else:
+            raise HTTPException(status_code=404, detail=f"Sample video not found: {sample_video}")
+    else:
+        raise HTTPException(status_code=400, detail="Provide an uploaded video file or sample_video name")
+
+    try:
+        results = run_live_video_test(video_path, output_name=output_name)
+        return results
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Live test pipeline failed: {str(e)}")
+
+
+@app.get("/view_live.html")
+def get_view_live():
+    live_html_path = os.path.join(outputs_dir, "view_live.html")
+    if os.path.exists(live_html_path):
+        return FileResponse(live_html_path)
+    raise HTTPException(status_code=404, detail="view_live.html not found")
+
+
+# Mount outputs at root for seamless static serving of tracks and frames
+app.mount("/", StaticFiles(directory=outputs_dir, html=True), name="outputs_root")
+
+

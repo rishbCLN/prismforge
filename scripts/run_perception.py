@@ -78,6 +78,17 @@ def run_warehouse_perception(
     return exported_path
 
 
+def run_perception_on_clip(video_path: str, output_path: Optional[str] = None, detector: Optional[WarehouseYOLODetector] = None) -> str:
+    """Compatibility alias for pipeline orchestrator."""
+    if detector is None:
+        detector = WarehouseYOLODetector()
+    if output_path is None:
+        clip_id = os.path.splitext(os.path.basename(video_path))[0]
+        output_path = os.path.join("outputs", f"{clip_id}_detections.json")
+    return run_warehouse_perception(video_path, detector, output_path)
+
+
+
 def main():
     parser = argparse.ArgumentParser(description="Run YOLOv8 perception on warehouse videos")
     parser.add_argument("--video", default=None, help="Path to a single video file")

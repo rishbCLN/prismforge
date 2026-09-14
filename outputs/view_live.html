@@ -9,16 +9,51 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-main: #0a0d13;
-      --bg-panel: #10151f;
-      --bg-card: #161e2b;
-      --border-wire: #232f42;
-      --border-accent: #00e5ff;
-      --text-main: #e6edf3;
-      --text-muted: #8394ad;
-      --risk-high: #ff334b;
-      --risk-med: #ffaa00;
-      --risk-low: #00e676;
+      /* Background */
+      --bg-primary: #0B1220;
+      --bg-secondary: #0E1726;
+      --bg-main: #0B1220;
+      --bg-panel: #0E1726;
+      --bg-card: #111C2D;
+
+      /* Surfaces */
+      --surface-primary: #111C2D;
+      --surface-elevated: #162235;
+      --input-bg: #0F1A2A;
+
+      /* Borders */
+      --border-default: #26364D;
+      --border-active: #3B82F6;
+      --border-subtle: #1D2A3D;
+      --border-wire: #26364D;
+      --border-accent: #3B82F6;
+
+      /* Primary Brand */
+      --primary: #3B82F6;
+      --primary-hover: #60A5FA;
+      --primary-dark: #2563EB;
+
+      /* Secondary / Live System */
+      --teal: #14B8A6;
+      --teal-hover: #2DD4BF;
+      --teal-dark: #0F766E;
+
+      /* Semantic Colors */
+      --success: #22C55E;
+      --warning: #F59E0B;
+      --critical: #EF4444;
+      --risk-high: #EF4444;
+      --risk-med: #F59E0B;
+      --risk-low: #22C55E;
+
+      /* Typography Colors */
+      --text-primary: #F1F5F9;
+      --text-secondary: #CBD5E1;
+      --text-muted: #94A3B8;
+      --text-disabled: #64748B;
+      --text-main: #F1F5F9;
+
+      /* Fonts */
       --font-mono: 'JetBrains Mono', monospace;
       --font-sans: 'Inter', sans-serif;
     }
@@ -30,8 +65,8 @@
     }
 
     body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       font-family: var(--font-mono);
       min-height: 100vh;
       display: flex;
@@ -41,11 +76,11 @@
 
     /* Container Box */
     .wire-container {
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--border-default);
       border-radius: 6px;
       display: flex;
       flex-direction: column;
-      background: var(--bg-panel);
+      background: var(--bg-secondary);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
       flex: 1;
       overflow: hidden;
@@ -54,28 +89,28 @@
     /* Header Bar */
     .wire-header {
       padding: 14px 22px;
-      border-bottom: 1px solid var(--border-wire);
+      border-bottom: 1px solid var(--border-default);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #0d121b;
+      background: var(--bg-primary);
     }
 
     .wire-header-title {
       font-size: 15px;
       font-weight: 800;
       letter-spacing: 1px;
-      color: #fff;
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
     .wire-header-title .tag {
-      background: var(--border-accent);
-      color: #000;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+      color: #FFFFFF;
       font-size: 11px;
-      padding: 3px 8px;
+      padding: 3px 9px;
       font-weight: 800;
       border-radius: 3px;
       letter-spacing: 0.5px;
@@ -95,9 +130,9 @@
     }
 
     select {
-      background: var(--bg-card);
-      color: var(--border-accent);
-      border: 1px solid var(--border-accent);
+      background: var(--surface-primary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
       padding: 7px 14px;
       font-family: var(--font-mono);
       font-size: 12px;
@@ -105,48 +140,53 @@
       border-radius: 4px;
       outline: none;
       cursor: pointer;
-      box-shadow: 0 0 12px rgba(0, 229, 255, 0.15);
-      transition: all 0.2s ease;
+      transition: border-color 0.2s ease, background 0.2s ease;
     }
 
-    select:hover, select:focus {
-      box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
-      border-color: #5df2ff;
+    select:hover {
+      border-color: var(--primary);
+    }
+
+    select:focus {
+      border-color: var(--border-active);
+      box-shadow: 0 0 0 1px var(--primary);
     }
 
     select option {
-      background: #111622;
-      color: #fff;
+      background: var(--surface-elevated);
+      color: var(--text-primary);
     }
 
     /* Upper Main Section: Video & Status */
     .upper-grid {
       display: grid;
       grid-template-columns: 1.48fr 1fr;
-      border-bottom: 1px solid var(--border-wire);
+      border-bottom: 1px solid var(--border-default);
+      background: var(--bg-primary);
     }
 
     /* Left Video Panel */
     .video-panel {
       padding: 18px;
-      border-right: 1px solid var(--border-wire);
+      border-right: 1px solid var(--border-default);
       display: flex;
       flex-direction: column;
       gap: 12px;
+      background: var(--bg-primary);
     }
 
     .canvas-viewport {
       width: 100%;
       aspect-ratio: 16 / 9;
       background: #000;
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--border-default);
       border-radius: 4px;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
     }
 
     #videoCanvas {
@@ -160,16 +200,16 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      background: var(--bg-card);
+      background: var(--surface-primary);
       padding: 8px 14px;
-      border: 1px solid var(--border-wire);
+      border: 1px solid var(--border-default);
       border-radius: 4px;
     }
 
     button {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-main);
-      border: 1px solid var(--border-wire);
+      background: var(--surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
       padding: 6px 14px;
       border-radius: 3px;
       font-family: var(--font-mono);
@@ -180,21 +220,20 @@
     }
 
     button:hover {
-      background: var(--border-accent);
-      color: #000;
-      border-color: var(--border-accent);
-      box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+      background: var(--border-subtle);
+      color: var(--text-primary);
+      border-color: var(--border-active);
     }
 
     button.active {
-      background: var(--border-accent);
-      color: #000;
-      border-color: var(--border-accent);
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
     }
 
     .scrubber {
       flex: 1;
-      accent-color: var(--border-accent);
+      accent-color: var(--primary);
       cursor: pointer;
       height: 6px;
     }
@@ -209,8 +248,8 @@
 
     /* Trajectory Canvas Box */
     .traj-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-wire);
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
       border-radius: 4px;
       padding: 10px 14px;
       display: flex;
@@ -230,9 +269,9 @@
     #trajCanvas {
       width: 100%;
       height: 96px;
-      background: #080c13;
+      background: var(--bg-secondary);
       border-radius: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
       display: block;
     }
 
@@ -243,15 +282,15 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 16px;
-      background: #0e131c;
+      background: var(--bg-secondary);
     }
 
     .status-panel-header {
       font-size: 13px;
       font-weight: 800;
       letter-spacing: 1.5px;
-      color: var(--text-muted);
-      border-bottom: 1px dashed var(--border-wire);
+      color: var(--text-primary);
+      border-bottom: 1px solid var(--border-default);
       padding-bottom: 10px;
     }
 
@@ -266,8 +305,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 9px 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-wire);
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
       border-radius: 4px;
       min-height: 42px;
     }
@@ -282,42 +321,42 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.5px;
+      color: var(--text-primary);
       transition: color 0.15s ease, background 0.15s ease;
     }
 
     .status-val.risk-high {
-      color: var(--risk-high);
-      background: rgba(255, 51, 75, 0.15);
+      color: var(--critical);
+      background: rgba(239, 68, 68, 0.12);
       padding: 3px 10px;
       border-radius: 3px;
-      border: 1px solid var(--risk-high);
+      border: 1px solid var(--critical);
     }
 
     .status-val.risk-med {
-      color: var(--risk-med);
-      background: rgba(255, 170, 0, 0.15);
+      color: var(--warning);
+      background: rgba(245, 158, 11, 0.12);
       padding: 3px 10px;
       border-radius: 3px;
-      border: 1px solid var(--risk-med);
+      border: 1px solid var(--warning);
     }
 
     .status-val.risk-low {
-      color: var(--risk-low);
-      background: rgba(0, 230, 118, 0.15);
+      color: var(--success);
+      background: rgba(34, 197, 94, 0.12);
       padding: 3px 10px;
       border-radius: 3px;
-      border: 1px solid var(--risk-low);
+      border: 1px solid var(--success);
     }
 
     .timestamp-large {
       font-size: 28px;
       font-weight: 800;
       letter-spacing: 2px;
-      color: var(--border-accent);
+      color: var(--teal);
       text-align: right;
       padding-top: 12px;
-      border-top: 1px dashed var(--border-wire);
-      text-shadow: 0 0 16px rgba(0, 229, 255, 0.3);
+      border-top: 1px solid var(--border-default);
     }
 
     /* Active Entities Mini Table — Zero Flicker */
@@ -331,8 +370,8 @@
     .entity-tag {
       font-size: 11px;
       padding: 7px 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-wire);
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
       border-radius: 3px;
       display: flex;
       justify-content: space-between;
@@ -341,23 +380,23 @@
     }
 
     .entity-tag .ent-label {
-      color: var(--text-main);
+      color: var(--text-primary);
       font-weight: 600;
     }
 
     .entity-tag .ent-val {
-      color: var(--border-accent);
+      color: var(--primary);
       font-weight: 700;
     }
 
     /* Lower Section: Incident Timeline */
     .timeline-section {
       padding: 16px 22px;
-      border-bottom: 1px solid var(--border-wire);
+      border-bottom: 1px solid var(--border-default);
       display: flex;
       flex-direction: column;
       gap: 10px;
-      background: #0f141f;
+      background: var(--bg-secondary);
     }
 
     .timeline-header {
@@ -380,23 +419,25 @@
       align-items: center;
       gap: 16px;
       padding: 7px 14px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-wire);
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
       border-radius: 4px;
       font-size: 12px;
       cursor: pointer;
+      color: var(--text-primary);
       transition: all 0.15s ease;
     }
 
     .timeline-item:hover {
-      border-color: var(--border-accent);
+      border-color: var(--border-active);
+      background: var(--surface-elevated);
       transform: translateX(4px);
     }
 
     .timeline-item.active {
-      border-color: var(--risk-high);
-      background: rgba(255, 51, 75, 0.12);
-      box-shadow: inset 0 0 10px rgba(255, 51, 75, 0.15);
+      border-color: var(--critical);
+      background: rgba(239, 68, 68, 0.12);
+      box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.15);
     }
 
     .t-time {
@@ -414,6 +455,7 @@
     .t-label {
       font-weight: 600;
       flex: 1;
+      color: var(--text-primary);
     }
 
     /* Bottom Section: Today Stats */
@@ -422,7 +464,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #0b0f17;
+      background: var(--bg-primary);
     }
 
     .today-title {
@@ -443,6 +485,7 @@
       gap: 10px;
       font-size: 12px;
       font-weight: 600;
+      color: var(--text-muted);
     }
 
     .stat-pill .count {
@@ -453,21 +496,341 @@
     }
 
     .stat-pill.high .count {
-      background: rgba(255, 51, 75, 0.2);
-      color: var(--risk-high);
-      border: 1px solid var(--risk-high);
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--critical);
+      border: 1px solid var(--critical);
     }
 
     .stat-pill.med .count {
-      background: rgba(255, 170, 0, 0.2);
-      color: var(--risk-med);
-      border: 1px solid var(--risk-med);
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--warning);
+      border: 1px solid var(--warning);
     }
 
     .stat-pill.low .count {
-      background: rgba(0, 230, 118, 0.2);
-      color: var(--risk-low);
-      border: 1px solid var(--risk-low);
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    /* Live Test Studio Panel */
+    .test-studio-panel {
+      padding: 14px 22px;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .test-studio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .studio-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
+      animation: pulseGlow 1.5s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      from { opacity: 0.4; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1.15); box-shadow: 0 0 10px rgba(20, 184, 166, 0.7); }
+    }
+
+    .model-badge {
+      font-size: 11px;
+      padding: 3px 10px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid var(--primary);
+      color: var(--primary-hover);
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .test-studio-body {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .upload-zone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface-primary);
+      border: 1px dashed var(--border-default);
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--border-active);
+      background: var(--surface-elevated);
+    }
+
+    .upload-zone .btn-browse {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--text-primary);
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .upload-zone .btn-browse:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .upload-zone .file-name-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .sample-select-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sample-select-group label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .btn-test-action {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: 1px solid var(--primary-dark);
+      padding: 9px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      transition: all 0.15s ease;
+      margin-left: auto;
+    }
+
+    .btn-test-action:hover:not(:disabled) {
+      background: var(--primary-dark);
+      border-color: #1D4ED8;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-test-action:active:not(:disabled) {
+      background: #1D4ED8;
+      border-color: #1E40AF;
+    }
+
+    .btn-test-action:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Pipeline Progress Banner */
+    .pipeline-progress {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      padding: 10px 14px;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    .pipeline-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .pipeline-step .step-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .pipeline-step.active {
+      color: var(--primary);
+    }
+
+    .pipeline-step.active .step-num {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+    }
+
+    .pipeline-step.completed {
+      color: var(--success);
+    }
+
+    .pipeline-step.completed .step-num {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    /* Neural Outcome Banner */
+    .neural-outcome-banner {
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      padding: 12px 18px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .outcome-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .outcome-metric .o-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .outcome-metric .o-val {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-primary);
+    }
+
+    .factors-list {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .factor-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      border-radius: 3px;
+      color: var(--warning);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* Semantic Status Badges */
+    .badge-safe {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid var(--success);
+      color: var(--success);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid var(--warning);
+      color: var(--warning);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .badge-critical {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid var(--critical);
+      color: var(--critical);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .badge-info {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid var(--primary);
+      color: var(--primary-hover);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .badge-live {
+      background: rgba(20, 184, 166, 0.12);
+      border: 1px solid var(--teal);
+      color: var(--teal-hover);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* Custom Industrial Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-default);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
     }
   </style>
 </head>
@@ -496,6 +859,76 @@
       </div>
     </div>
 
+    <!-- LIVE VIDEO INGESTION & NEURAL TEST STUDIO -->
+    <div class="test-studio-panel">
+      <div class="test-studio-header">
+        <div class="studio-title">
+          <span class="live-dot"></span>
+          <span>LIVE VIDEO INGESTION & NEURAL TEST STUDIO</span>
+        </div>
+        <span class="model-badge">AI Model: WarehouseRiskMLP (PyTorch v3 Dual-Head Neural Net)</span>
+      </div>
+
+      <div class="test-studio-body">
+        <div class="upload-zone" id="dropZone">
+          <input type="file" id="videoFileInput" accept="video/mp4,video/avi,video/quicktime" style="display:none;">
+          <button class="btn-browse" id="btnBrowseFile">📁 Upload Video File...</button>
+          <span class="file-name-text" id="fileNameText">Select local MP4/AVI or drag & drop</span>
+        </div>
+
+        <div class="sample-select-group">
+          <label for="sampleVideoSelect">OR TEST RAW FEED:</label>
+          <select id="sampleVideoSelect">
+            <option value="">-- Choose Raw Video from Server --</option>
+          </select>
+        </div>
+
+        <button class="btn-test-action" id="btnRunLiveTest">
+          ⚡ PUSH TO TEST (RUN AI PIPELINE)
+        </button>
+      </div>
+
+      <!-- Pipeline Progress Stepper (Visible during test) -->
+      <div class="pipeline-progress" id="pipelineProgress" style="display:none;">
+        <div class="pipeline-step active" id="pStep1"><span class="step-num">1</span> Ingesting Stream (OpenCV)</div>
+        <div class="pipeline-step" id="pStep2"><span class="step-num">2</span> YOLOv8 Spatial Perception</div>
+        <div class="pipeline-step" id="pStep3"><span class="step-num">3</span> ByteTrack Multi-Stage Tracking</div>
+        <div class="pipeline-step" id="pStep4"><span class="step-num">4</span> Differential Kinematics (v, a, j)</div>
+        <div class="pipeline-step" id="pStep5"><span class="step-num">5</span> PyTorch Neural Net (WarehouseRiskMLP)</div>
+      </div>
+
+      <!-- Neural Outcome Banner (Visible after test) -->
+      <div class="neural-outcome-banner" id="neuralOutcomeBanner" style="display:none;">
+        <div class="outcome-metric">
+          <span class="o-label">TESTED CLIP</span>
+          <span class="o-val" id="outcomeClipName" style="color:var(--text-primary);">video.mp4</span>
+        </div>
+
+        <div class="outcome-metric">
+          <span class="o-label">NEURAL RISK SCORE</span>
+          <span class="o-val" id="outcomeRiskScore" style="color:var(--critical);">89.4% [CRITICAL]</span>
+        </div>
+
+        <div class="outcome-metric">
+          <span class="o-label">SEVERITY / PRIORITY</span>
+          <span class="o-val badge-critical" id="outcomeSeverity">CRITICAL / P1_IMMEDIATE</span>
+        </div>
+
+        <div class="outcome-metric" style="flex:1;">
+          <span class="o-label">TOP NEURAL ATTRIBUTION DRIVERS</span>
+          <div class="factors-list" id="outcomeFactorsList">
+            <span class="factor-badge">DROP_VELOCITY</span>
+          </div>
+        </div>
+
+        <div class="outcome-metric">
+          <span class="o-label">INFERENCE TIME</span>
+          <span class="o-val" id="outcomeInferenceTime" style="color:var(--teal);">5.8s (25.0 FPS)</span>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Upper Grid: Video & Current Status -->
     <div class="upper-grid">
       <!-- Left: Video [AI Overlays] -->
@@ -516,7 +949,7 @@
         <div class="traj-box">
           <div class="traj-title">
             <span id="trajTitleLabel">KINETIC TRAJECTORY MAP (Primary Motion Path)</span>
-            <span id="trajTelemetry" style="color:var(--border-accent);">Displacement: 0.00 | v: 0.00 m/s</span>
+            <span id="trajTelemetry" style="color:var(--teal);">Displacement: 0.00 | v: 0.00 m/s</span>
           </div>
           <canvas id="trajCanvas" width="680" height="96"></canvas>
         </div>
@@ -534,7 +967,7 @@
 
           <div class="status-row">
             <span class="status-label">Event Behavior</span>
-            <span class="status-val" id="statusEvent" style="color:var(--border-accent);">DROPPING</span>
+            <span class="status-val" id="statusEvent" style="color:var(--critical);">DROPPING</span>
           </div>
 
           <div class="status-row">
@@ -544,7 +977,7 @@
 
           <div class="status-row">
             <span class="status-label">Active Entities</span>
-            <span class="status-val" id="statusEntities">2 Tracks</span>
+            <span class="status-val" id="statusEntities" style="color:var(--teal);">2 Tracks</span>
           </div>
 
           <!-- Permanent Reusable Entity Pool for ZERO Flicker -->
@@ -977,6 +1410,16 @@
       // 2. Event Behavior Diffing
       if (lastState.event !== activeTimeline.event) {
         statusEvent.textContent = activeTimeline.event;
+        const ev = activeTimeline.event;
+        if (ev === 'NORMAL') {
+          statusEvent.style.color = 'var(--success)';
+        } else if (ev === 'DRAGGING' || ev === 'ROUGH_HANDLING' || ev === 'IMPROPER_STACKING') {
+          statusEvent.style.color = 'var(--warning)';
+        } else if (ev === 'DROPPING' || ev === 'THROWING' || ev === 'CRUSH_RISK' || ev === 'CRITICAL_HAZARD') {
+          statusEvent.style.color = 'var(--critical)';
+        } else {
+          statusEvent.style.color = 'var(--text-primary)';
+        }
         lastState.event = activeTimeline.event;
       }
 
@@ -1004,6 +1447,7 @@
       const trs = (tracksData && tracksData.frames && tracksData.frames[frameIdx] && tracksData.frames[frameIdx].tracks) || [];
       if (lastState.trackCount !== trs.length) {
         statusEntities.textContent = trs.length > 0 ? `${trs.length} Tracks` : "Tracking active";
+        statusEntities.style.color = 'var(--teal)';
         lastState.trackCount = trs.length;
       }
 
@@ -1106,7 +1550,7 @@
       }
 
       // Draw Grid Lines & Level Badges
-      tCtx.strokeStyle = 'rgba(255, 255, 255, 0.07)';
+      tCtx.strokeStyle = '#1D2A3D';
       tCtx.lineWidth = 1;
       tCtx.setLineDash([4, 4]);
 
@@ -1131,15 +1575,15 @@
 
       // Level text markers
       tCtx.font = '9px "JetBrains Mono", monospace';
-      tCtx.fillStyle = 'rgba(255, 255, 255, 0.35)';
+      tCtx.fillStyle = '#64748B';
       tCtx.fillText('CARRY / STAGING', padX, padTop - 4);
       tCtx.fillText('FLOOR / IMPACT PLANE', padX, padTop + usableH + 12);
 
       // Gradient Fill Under Curve
       const fillGrad = tCtx.createLinearGradient(0, padTop, 0, h);
-      fillGrad.addColorStop(0, 'rgba(0, 229, 255, 0.20)');
-      fillGrad.addColorStop(0.6, 'rgba(255, 170, 0, 0.08)');
-      fillGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      fillGrad.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
+      fillGrad.addColorStop(0.6, 'rgba(245, 158, 11, 0.05)');
+      fillGrad.addColorStop(1, 'rgba(14, 23, 38, 0)');
 
       tCtx.beginPath();
       tCtx.moveTo(toScreenX(0), padTop + usableH);
@@ -1153,14 +1597,13 @@
 
       // Trajectory Line with Risk Gradient
       const lineGrad = tCtx.createLinearGradient(padX, 0, w - padX, 0);
-      lineGrad.addColorStop(0, '#00e5ff');     // Cyan start
-      lineGrad.addColorStop(0.45, '#ffaa00');  // Amber mid-motion
-      lineGrad.addColorStop(1, '#ff334b');     // Red impact / descent
+      lineGrad.addColorStop(0, '#3B82F6');     // Primary blue start
+      lineGrad.addColorStop(0.45, '#F59E0B');  // Amber mid-motion
+      lineGrad.addColorStop(1, '#EF4444');     // Red impact / descent
 
       tCtx.strokeStyle = lineGrad;
-      tCtx.lineWidth = 2.8;
-      tCtx.shadowColor = 'rgba(0, 229, 255, 0.5)';
-      tCtx.shadowBlur = 6;
+      tCtx.lineWidth = 2.4;
+      tCtx.shadowBlur = 0;
       tCtx.beginPath();
 
       for (let f = 0; f < sc.totalFrames; f++) {
@@ -1170,12 +1613,11 @@
         else tCtx.lineTo(sx, sy);
       }
       tCtx.stroke();
-      tCtx.shadowBlur = 0; // Reset shadow
 
-      // Start Marker (Cyan)
+      // Start Marker (Blue)
       const startX = toScreenX(0);
       const startY = toScreenY(denseTrajectory[0].yNorm);
-      tCtx.fillStyle = '#00e5ff';
+      tCtx.fillStyle = '#3B82F6';
       tCtx.beginPath();
       tCtx.arc(startX, startY, 4.5, 0, Math.PI * 2);
       tCtx.fill();
@@ -1183,11 +1625,11 @@
       // Impact Marker (Red)
       const endX = toScreenX(sc.totalFrames - 1);
       const endY = toScreenY(denseTrajectory[sc.totalFrames - 1].yNorm);
-      tCtx.fillStyle = '#ff334b';
+      tCtx.fillStyle = '#EF4444';
       tCtx.beginPath();
       tCtx.arc(endX, endY, 5, 0, Math.PI * 2);
       tCtx.fill();
-      tCtx.strokeStyle = '#fff';
+      tCtx.strokeStyle = '#F1F5F9';
       tCtx.lineWidth = 1.2;
       tCtx.stroke();
 
@@ -1197,7 +1639,7 @@
       const curY = toScreenY(curData.yNorm);
 
       // Vertical playhead scanline
-      tCtx.strokeStyle = 'rgba(0, 229, 255, 0.45)';
+      tCtx.strokeStyle = 'rgba(59, 130, 246, 0.45)';
       tCtx.lineWidth = 1.5;
       tCtx.setLineDash([3, 3]);
       tCtx.beginPath();
@@ -1206,16 +1648,16 @@
       tCtx.stroke();
       tCtx.setLineDash([]);
 
-      // Glowing radar dot
-      tCtx.strokeStyle = '#ffffff';
-      tCtx.lineWidth = 2.2;
+      // Radar dot
+      tCtx.strokeStyle = '#F1F5F9';
+      tCtx.lineWidth = 2.0;
       tCtx.beginPath();
-      tCtx.arc(curX, curY, 7.5, 0, Math.PI * 2);
+      tCtx.arc(curX, curY, 7, 0, Math.PI * 2);
       tCtx.stroke();
 
-      tCtx.fillStyle = '#00e5ff';
+      tCtx.fillStyle = '#3B82F6';
       tCtx.beginPath();
-      tCtx.arc(curX, curY, 4.5, 0, Math.PI * 2);
+      tCtx.arc(curX, curY, 4, 0, Math.PI * 2);
       tCtx.fill();
 
       // Update live telemetry readout
@@ -1224,6 +1666,212 @@
 
     // Initialize with Real Warehouse CCTV clip
     loadScenario("real_drop");
+
+    // ==================== LIVE VIDEO TEST STUDIO LOGIC ====================
+    const dropZone = document.getElementById('dropZone');
+    const videoFileInput = document.getElementById('videoFileInput');
+    const btnBrowseFile = document.getElementById('btnBrowseFile');
+    const fileNameText = document.getElementById('fileNameText');
+    const sampleVideoSelect = document.getElementById('sampleVideoSelect');
+    const btnRunLiveTest = document.getElementById('btnRunLiveTest');
+    const pipelineProgress = document.getElementById('pipelineProgress');
+    const neuralOutcomeBanner = document.getElementById('neuralOutcomeBanner');
+
+    const outcomeClipName = document.getElementById('outcomeClipName');
+    const outcomeRiskScore = document.getElementById('outcomeRiskScore');
+    const outcomeSeverity = document.getElementById('outcomeSeverity');
+    const outcomeFactorsList = document.getElementById('outcomeFactorsList');
+    const outcomeInferenceTime = document.getElementById('outcomeInferenceTime');
+
+    let selectedUploadFile = null;
+
+    // Load available raw videos from backend API
+    fetch('/api/warehouse/raw_videos')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.videos) {
+          data.videos.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            sampleVideoSelect.appendChild(opt);
+          });
+        }
+      })
+      .catch(err => console.warn("Could not fetch raw videos:", err));
+
+    // File selection
+    btnBrowseFile.addEventListener('click', (e) => {
+      e.stopPropagation();
+      videoFileInput.click();
+    });
+
+    dropZone.addEventListener('click', () => {
+      videoFileInput.click();
+    });
+
+    videoFileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        handleFileSelected(e.target.files[0]);
+      }
+    });
+
+    // Drag & Drop
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleFileSelected(e.dataTransfer.files[0]);
+      }
+    });
+
+    function handleFileSelected(file) {
+      selectedUploadFile = file;
+      fileNameText.textContent = `📁 ${file.name} (${(file.size / (1024*1024)).toFixed(1)} MB)`;
+      fileNameText.style.color = 'var(--text-primary)';
+      sampleVideoSelect.value = '';
+    }
+
+    sampleVideoSelect.addEventListener('change', () => {
+      if (sampleVideoSelect.value) {
+        selectedUploadFile = null;
+        fileNameText.textContent = `Raw: ${sampleVideoSelect.value}`;
+        fileNameText.style.color = 'var(--text-primary)';
+      }
+    });
+
+    // Step Animation Timer
+    let stepTimer = null;
+    function animatePipelineSteps() {
+      const steps = [
+        document.getElementById('pStep1'),
+        document.getElementById('pStep2'),
+        document.getElementById('pStep3'),
+        document.getElementById('pStep4'),
+        document.getElementById('pStep5')
+      ];
+      steps.forEach(s => { s.className = 'pipeline-step'; });
+      steps[0].classList.add('active');
+
+      let currentStep = 0;
+      stepTimer = setInterval(() => {
+        if (currentStep < steps.length - 1) {
+          steps[currentStep].classList.remove('active');
+          steps[currentStep].classList.add('completed');
+          currentStep++;
+          steps[currentStep].classList.add('active');
+        }
+      }, 1100);
+    }
+
+    // Push to Test Action
+    btnRunLiveTest.addEventListener('click', () => {
+      if (!selectedUploadFile && !sampleVideoSelect.value) {
+        alert("Please select a local video file or choose a raw video from the dropdown first!");
+        return;
+      }
+
+      const formData = new FormData();
+      let clipLabel = "";
+      if (selectedUploadFile) {
+        formData.append('file', selectedUploadFile);
+        clipLabel = selectedUploadFile.name;
+      } else {
+        formData.append('sample_video', sampleVideoSelect.value);
+        clipLabel = sampleVideoSelect.value;
+      }
+
+      // UI state
+      btnRunLiveTest.disabled = true;
+      btnRunLiveTest.textContent = "⏳ RUNNING NEURAL PIPELINE...";
+      pipelineProgress.style.display = 'flex';
+      neuralOutcomeBanner.style.display = 'none';
+      animatePipelineSteps();
+
+      fetch('/api/warehouse/test_video', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => {
+        if (!res.ok) throw new Error(`Server returned ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        clearInterval(stepTimer);
+        const steps = document.querySelectorAll('.pipeline-step');
+        steps.forEach(s => { s.className = 'pipeline-step completed'; });
+
+        // Update Neural Outcome Banner
+        const ns = data.neural_summary || {};
+        outcomeClipName.textContent = clipLabel;
+        const riskPct = Math.round((ns.peak_risk_score || 0) * 100);
+        outcomeRiskScore.textContent = `${riskPct}% [${ns.peak_severity || 'LOW'}]`;
+        outcomeRiskScore.style.color = (riskPct >= 70) ? 'var(--critical)' : ((riskPct >= 40) ? 'var(--warning)' : 'var(--success)');
+        const sev = (ns.peak_severity || 'LOW').toUpperCase();
+        outcomeSeverity.textContent = `${sev} / ${ns.intervention_priority || 'P3_INFORMATIONAL'}`;
+        outcomeSeverity.className = 'o-val ' + (
+          (sev === 'CRITICAL' || sev === 'HIGH') ? 'badge-critical' :
+          (sev === 'MEDIUM' ? 'badge-warning' : 'badge-safe')
+        );
+        outcomeInferenceTime.textContent = `${data.inference_time_sec}s (${data.fps} FPS)`;
+
+        // Factors
+        outcomeFactorsList.innerHTML = '';
+        (ns.top_contributing_factors || ['NORMAL_COMPLIANT_HANDLING']).slice(0, 4).forEach(f => {
+          const bd = document.createElement('span');
+          bd.className = 'factor-badge';
+          bd.textContent = f;
+          outcomeFactorsList.appendChild(bd);
+        });
+
+        neuralOutcomeBanner.style.display = 'flex';
+        pipelineProgress.style.display = 'none';
+        btnRunLiveTest.disabled = false;
+        btnRunLiveTest.textContent = "⚡ PUSH TO TEST (RUN AI PIPELINE)";
+
+        // Register new scenario in CONFIGS
+        const scenarioKey = "live_" + String(Date.now()).slice(-4);
+        CONFIGS[scenarioKey] = {
+          title: `LIVE TEST: ${clipLabel}`,
+          label: `Live Tested Motion & Descent Path`,
+          tracksFile: data.tracks_file,
+          framesDir: data.frames_dir,
+          totalFrames: data.total_frames,
+          fps: data.fps,
+          baseTime: "00:00:00",
+          timeline: data.timeline,
+          stats: data.stats
+        };
+
+        // Add to Feed Selector dropdown & select
+        const newOpt = document.createElement('option');
+        newOpt.value = scenarioKey;
+        newOpt.textContent = `⚡ LIVE TEST: ${clipLabel} (${riskPct}% Risk [${ns.peak_severity}])`;
+        videoSelect.insertBefore(newOpt, videoSelect.firstChild);
+        videoSelect.value = scenarioKey;
+
+        // Auto-load and play
+        loadScenario(scenarioKey);
+      })
+      .catch(err => {
+        clearInterval(stepTimer);
+        pipelineProgress.style.display = 'none';
+        btnRunLiveTest.disabled = false;
+        btnRunLiveTest.textContent = "⚡ PUSH TO TEST (RUN AI PIPELINE)";
+        alert("Live test pipeline error: " + err.message);
+        console.error("Test pipeline error:", err);
+      });
+    });
+
   </script>
 </body>
 </html>

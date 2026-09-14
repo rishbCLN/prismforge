@@ -57,11 +57,11 @@ RAW_FEEDS = [
 ]
 
 CLASS_COLORS = {
-    "person": (245, 200, 20),      # Bright cyan-blue
-    "carton": (20, 145, 255),      # Bright amber-orange
-    "pallet": (200, 80, 200),      # Purple
-    "trolley": (50, 205, 50),      # Lime green
-    "default": (180, 180, 180)     # Light grey
+    "person": (166, 184, 20),      # #14B8A6 Teal
+    "carton": (246, 130, 59),      # #3B82F6 Primary Blue
+    "pallet": (166, 184, 20),      # Teal
+    "trolley": (34, 197, 94),      # #22C55E Green
+    "default": (166, 184, 20)      # Teal
 }
 
 def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetector, outputs_dir: str):
@@ -187,15 +187,23 @@ def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetec
                 speed_str = f" v={speed_val:.2f}" if speed_val > 0.05 else ""
                 label = f"#{tid} {cls_name} ({t.confidence:.2f}){speed_str}"
                 (lw, lh), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1)
-                cv2.rectangle(viz_frame, (x1, max(0, y1 - lh - 6)), (x1 + lw + 8, max(lh + 6, y1)), color, -1)
-                cv2.putText(viz_frame, label, (x1 + 4, max(lh + 2, y1 - 4)), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (10, 10, 15), 1)
+                lx1, ly1 = x1, max(0, y1 - lh - 8)
+                lx2, ly2 = x1 + lw + 10, max(lh + 6, y1)
+                lbl_sub = viz_frame[ly1:ly2, lx1:lx2]
+                if lbl_sub.shape[0] > 0 and lbl_sub.shape[1] > 0:
+                    bg_rect = np.full(lbl_sub.shape, (32, 18, 11), dtype=np.uint8) # #0B1220
+                    cv2.addWeighted(bg_rect, 0.85, lbl_sub, 0.15, 0, lbl_sub)
+                    viz_frame[ly1:ly2, lx1:lx2] = lbl_sub
+                cv2.rectangle(viz_frame, (lx1, ly1), (lx2, ly2), color, 1)
+                cv2.putText(viz_frame, label, (x1 + 5, max(lh + 2, y1 - 4)), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (249, 245, 241), 1)
 
             # Top HUD
             hud = viz_frame.copy()
-            cv2.rectangle(hud, (10, 10), (320, 65), (15, 18, 24), -1)
-            cv2.addWeighted(hud, 0.75, viz_frame, 0.25, 0, viz_frame)
-            cv2.putText(viz_frame, f"VigiAI Tracker: Frame {saved_frame_idx:03d}", (16, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (20, 220, 245), 1)
-            cv2.putText(viz_frame, f"Active: {len(active_tracks)} | Total Unique IDs: {len(unique_track_ids)}", (16, 48), cv2.FONT_HERSHEY_SIMPLEX, 0.40, (240, 240, 240), 1)
+            cv2.rectangle(hud, (10, 10), (340, 68), (32, 18, 11), -1) # #0B1220
+            cv2.addWeighted(hud, 0.85, viz_frame, 0.15, 0, viz_frame)
+            cv2.rectangle(viz_frame, (10, 10), (340, 68), (77, 54, 38), 1) # #26364D border
+            cv2.putText(viz_frame, f"VigiAI Tracker: Frame {saved_frame_idx:03d}", (16, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (246, 130, 59), 1) # #3B82F6 Blue
+            cv2.putText(viz_frame, f"Active: {len(active_tracks)} | Total Unique IDs: {len(unique_track_ids)}", (16, 48), cv2.FONT_HERSHEY_SIMPLEX, 0.40, (184, 163, 148), 1) # #94A3B8 Secondary
 
             # Save JPEG frame
             out_img_path = os.path.join(frames_out_dir, f"frame_{saved_frame_idx:03d}.jpg")
