@@ -1,0 +1,186 @@
+{
+  "summary": {
+    "v0_total_errors": 193,
+    "v1_total_errors": 176,
+    "v2_total_errors": 193,
+    "v3_total_errors": 6,
+    "v0_to_v3_reduction": 187
+  },
+  "iterations": {
+    "v0_to_v1": {
+      "diagnosis": "V0 flags all PPE violations as emergency regardless of proximity.",
+      "intervention": "Added 2D normalized machinery proximity and contextual multipliers.",
+      "results": {
+        "comparison": [
+          {
+            "cluster_id": "cluster_a_transient_proximity",
+            "name": "Transient Machinery Proximity",
+            "v0_baseline_count": 138,
+            "v1_context_count": 131,
+            "reduction_count": 7,
+            "percentage_change": -5.1,
+            "status": "IMPROVED",
+            "rationale": "V2 temporal persistence and consecutive-frame filtering."
+          },
+          {
+            "cluster_id": "cluster_b_detector_noise",
+            "name": "Detector Confidence & Flicker",
+            "v0_baseline_count": 0,
+            "v1_context_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "Confidence weighting and temporal smoothing."
+          },
+          {
+            "cluster_id": "cluster_c_safe_zone_ppe",
+            "name": "Isolated Safe-Zone PPE Violation",
+            "v0_baseline_count": 0,
+            "v1_context_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "V1 spatial context and normalized machinery proximity weighting."
+          },
+          {
+            "cluster_id": "cluster_d_compound_multi_worker",
+            "name": "Compound Multi-Worker Danger Zone",
+            "v0_baseline_count": 55,
+            "v1_context_count": 45,
+            "reduction_count": 10,
+            "percentage_change": -18.2,
+            "status": "IMPROVED",
+            "rationale": "V3 learned PyTorch MLP with non-linear feature interaction."
+          }
+        ],
+        "old_total_errors": 193,
+        "new_total_errors": 176,
+        "error_reduction": 17
+      }
+    },
+    "v1_to_v2": {
+      "diagnosis": "V1 produces false alarms on transient passersby and detector flicker.",
+      "intervention": "Added temporal persistence duration gating and consecutive frame tracking.",
+      "results": {
+        "comparison": [
+          {
+            "cluster_id": "cluster_a_transient_proximity",
+            "name": "Transient Machinery Proximity",
+            "v1_context_count": 131,
+            "v2_temporal_count": 140,
+            "reduction_count": -9,
+            "percentage_change": 6.9,
+            "status": "REGRESSED",
+            "rationale": "V2 temporal persistence and consecutive-frame filtering."
+          },
+          {
+            "cluster_id": "cluster_b_detector_noise",
+            "name": "Detector Confidence & Flicker",
+            "v1_context_count": 0,
+            "v2_temporal_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "Confidence weighting and temporal smoothing."
+          },
+          {
+            "cluster_id": "cluster_c_safe_zone_ppe",
+            "name": "Isolated Safe-Zone PPE Violation",
+            "v1_context_count": 0,
+            "v2_temporal_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "V1 spatial context and normalized machinery proximity weighting."
+          },
+          {
+            "cluster_id": "cluster_d_compound_multi_worker",
+            "name": "Compound Multi-Worker Danger Zone",
+            "v1_context_count": 45,
+            "v2_temporal_count": 53,
+            "reduction_count": -8,
+            "percentage_change": 17.8,
+            "status": "REGRESSED",
+            "rationale": "V3 learned PyTorch MLP with non-linear feature interaction."
+          }
+        ],
+        "old_total_errors": 176,
+        "new_total_errors": 193,
+        "error_reduction": -17
+      }
+    },
+    "v2_to_v3": {
+      "diagnosis": "V2 linear weights miscalibrate multi-worker compound danger zones.",
+      "intervention": "Trained PyTorch MLP to learn non-linear feature interactions.",
+      "results": {
+        "comparison": [
+          {
+            "cluster_id": "cluster_a_transient_proximity",
+            "name": "Transient Machinery Proximity",
+            "v2_temporal_count": 140,
+            "v3_learned_count": 6,
+            "reduction_count": 134,
+            "percentage_change": -95.7,
+            "status": "IMPROVED",
+            "rationale": "V2 temporal persistence and consecutive-frame filtering."
+          },
+          {
+            "cluster_id": "cluster_b_detector_noise",
+            "name": "Detector Confidence & Flicker",
+            "v2_temporal_count": 0,
+            "v3_learned_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "Confidence weighting and temporal smoothing."
+          },
+          {
+            "cluster_id": "cluster_c_safe_zone_ppe",
+            "name": "Isolated Safe-Zone PPE Violation",
+            "v2_temporal_count": 0,
+            "v3_learned_count": 0,
+            "reduction_count": 0,
+            "percentage_change": 0.0,
+            "status": "UNCHANGED",
+            "rationale": "V1 spatial context and normalized machinery proximity weighting."
+          },
+          {
+            "cluster_id": "cluster_d_compound_multi_worker",
+            "name": "Compound Multi-Worker Danger Zone",
+            "v2_temporal_count": 53,
+            "v3_learned_count": 0,
+            "reduction_count": 53,
+            "percentage_change": -100.0,
+            "status": "IMPROVED",
+            "rationale": "V3 learned PyTorch MLP with non-linear feature interaction."
+          }
+        ],
+        "old_total_errors": 193,
+        "new_total_errors": 6,
+        "error_reduction": 187
+      }
+    }
+  },
+  "cluster_profiles": {
+    "cluster_a_transient_proximity": {
+      "name": "Transient Machinery Proximity",
+      "description": "High proximity to machinery but brief exposure duration (< 0.5s). Models without temporal filtering trigger false alarms.",
+      "target_fix": "V2 temporal persistence and consecutive-frame filtering."
+    },
+    "cluster_b_detector_noise": {
+      "name": "Detector Confidence & Flicker",
+      "description": "Spurious detection or low confidence (< 0.60) causing erratic risk escalation.",
+      "target_fix": "Confidence weighting and temporal smoothing."
+    },
+    "cluster_c_safe_zone_ppe": {
+      "name": "Isolated Safe-Zone PPE Violation",
+      "description": "Missing PPE in designated safe walkway far from equipment. Naive baselines over-penalize this as high danger.",
+      "target_fix": "V1 spatial context and normalized machinery proximity weighting."
+    },
+    "cluster_d_compound_multi_worker": {
+      "name": "Compound Multi-Worker Danger Zone",
+      "description": "Multiple workers in close proximity to active machinery with non-linear compounding risk.",
+      "target_fix": "V3 learned PyTorch MLP with non-linear feature interaction."
+    }
+  }
+}

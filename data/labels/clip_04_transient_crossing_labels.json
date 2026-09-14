@@ -1,0 +1,2310 @@
+{
+  "clip_id": "clip_04_transient_crossing",
+  "split": "train",
+  "duration_s": 4.0,
+  "description": "Worker with missing helmet briefly cuts across machinery edge for 0.4s then exits.",
+  "overall_severity": "LOW",
+  "overall_risk": 0.32,
+  "frames": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 0,
+          "timestamp": 0.0,
+          "bbox": [
+            232,
+            110,
+            268,
+            192
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2246,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.04,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 1,
+          "timestamp": 0.04,
+          "bbox": [
+            235,
+            111,
+            271,
+            193
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2203,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.08,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 2,
+          "timestamp": 0.08,
+          "bbox": [
+            238,
+            113,
+            274,
+            195
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2157,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.12,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 3,
+          "timestamp": 0.12,
+          "bbox": [
+            242,
+            114,
+            278,
+            196
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2101,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.16,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 4,
+          "timestamp": 0.16,
+          "bbox": [
+            245,
+            116,
+            281,
+            198
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2055,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 5,
+      "timestamp": 0.2,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 5,
+          "timestamp": 0.2,
+          "bbox": [
+            248,
+            117,
+            284,
+            199
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2012,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 6,
+      "timestamp": 0.24,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 6,
+          "timestamp": 0.24,
+          "bbox": [
+            252,
+            119,
+            288,
+            201
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1953,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 7,
+      "timestamp": 0.28,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 7,
+          "timestamp": 0.28,
+          "bbox": [
+            255,
+            120,
+            291,
+            202
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.191,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 8,
+      "timestamp": 0.32,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 8,
+          "timestamp": 0.32,
+          "bbox": [
+            258,
+            122,
+            294,
+            204
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1864,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 9,
+      "timestamp": 0.36,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 9,
+          "timestamp": 0.36,
+          "bbox": [
+            262,
+            123,
+            298,
+            205
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1808,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 10,
+      "timestamp": 0.4,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 10,
+          "timestamp": 0.4,
+          "bbox": [
+            265,
+            125,
+            301,
+            207
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1763,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 11,
+      "timestamp": 0.44,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 11,
+          "timestamp": 0.44,
+          "bbox": [
+            268,
+            126,
+            304,
+            208
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.172,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 12,
+      "timestamp": 0.48,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 12,
+          "timestamp": 0.48,
+          "bbox": [
+            272,
+            128,
+            308,
+            210
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1661,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 13,
+      "timestamp": 0.52,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 13,
+          "timestamp": 0.52,
+          "bbox": [
+            275,
+            129,
+            311,
+            211
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1619,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 14,
+      "timestamp": 0.56,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 14,
+          "timestamp": 0.56,
+          "bbox": [
+            278,
+            131,
+            314,
+            213
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1574,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 15,
+      "timestamp": 0.6,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 15,
+          "timestamp": 0.6,
+          "bbox": [
+            282,
+            132,
+            318,
+            214
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1518,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 16,
+      "timestamp": 0.64,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 16,
+          "timestamp": 0.64,
+          "bbox": [
+            285,
+            134,
+            321,
+            216
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1473,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 17,
+      "timestamp": 0.68,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 17,
+          "timestamp": 0.68,
+          "bbox": [
+            288,
+            135,
+            324,
+            217
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1431,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 18,
+      "timestamp": 0.72,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 18,
+          "timestamp": 0.72,
+          "bbox": [
+            292,
+            137,
+            328,
+            219
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1373,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 19,
+      "timestamp": 0.76,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 19,
+          "timestamp": 0.76,
+          "bbox": [
+            295,
+            138,
+            331,
+            220
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1331,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 20,
+      "timestamp": 0.8,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 20,
+          "timestamp": 0.8,
+          "bbox": [
+            298,
+            140,
+            334,
+            222
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1287,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 21,
+      "timestamp": 0.84,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 21,
+          "timestamp": 0.84,
+          "bbox": [
+            302,
+            141,
+            338,
+            223
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1232,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 22,
+      "timestamp": 0.88,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 22,
+          "timestamp": 0.88,
+          "bbox": [
+            305,
+            143,
+            341,
+            225
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1189,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 23,
+      "timestamp": 0.92,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 23,
+          "timestamp": 0.92,
+          "bbox": [
+            308,
+            144,
+            344,
+            226
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1147,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 24,
+      "timestamp": 0.96,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 24,
+          "timestamp": 0.96,
+          "bbox": [
+            312,
+            146,
+            348,
+            228
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1091,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 25,
+      "timestamp": 1.0,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 25,
+          "timestamp": 1.0,
+          "bbox": [
+            315,
+            147,
+            351,
+            229
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1049,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 26,
+      "timestamp": 1.04,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 26,
+          "timestamp": 1.04,
+          "bbox": [
+            318,
+            149,
+            354,
+            231
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1008,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 27,
+      "timestamp": 1.08,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 27,
+          "timestamp": 1.08,
+          "bbox": [
+            322,
+            150,
+            358,
+            232
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0953,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 28,
+      "timestamp": 1.12,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 28,
+          "timestamp": 1.12,
+          "bbox": [
+            325,
+            152,
+            361,
+            234
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0913,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 29,
+      "timestamp": 1.16,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 29,
+          "timestamp": 1.16,
+          "bbox": [
+            328,
+            153,
+            364,
+            235
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0873,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 30,
+      "timestamp": 1.2,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 30,
+          "timestamp": 1.2,
+          "bbox": [
+            332,
+            155,
+            368,
+            237
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.082,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 31,
+      "timestamp": 1.24,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 31,
+          "timestamp": 1.24,
+          "bbox": [
+            335,
+            156,
+            371,
+            238
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0781,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 32,
+      "timestamp": 1.28,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 32,
+          "timestamp": 1.28,
+          "bbox": [
+            338,
+            158,
+            374,
+            240
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0743,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 33,
+      "timestamp": 1.32,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 33,
+          "timestamp": 1.32,
+          "bbox": [
+            342,
+            160,
+            378,
+            242
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0694,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 34,
+      "timestamp": 1.36,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 34,
+          "timestamp": 1.36,
+          "bbox": [
+            345,
+            161,
+            381,
+            243
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0657,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 35,
+      "timestamp": 1.4,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 35,
+          "timestamp": 1.4,
+          "bbox": [
+            348,
+            163,
+            384,
+            245
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0625,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 36,
+      "timestamp": 1.44,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 36,
+          "timestamp": 1.44,
+          "bbox": [
+            352,
+            164,
+            388,
+            246
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0577,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 37,
+      "timestamp": 1.48,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 37,
+          "timestamp": 1.48,
+          "bbox": [
+            355,
+            166,
+            391,
+            248
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0549,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 38,
+      "timestamp": 1.52,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 38,
+          "timestamp": 1.52,
+          "bbox": [
+            358,
+            167,
+            394,
+            249
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0518,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 39,
+      "timestamp": 1.56,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 39,
+          "timestamp": 1.56,
+          "bbox": [
+            362,
+            169,
+            398,
+            251
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0484,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 40,
+      "timestamp": 1.6,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 40,
+          "timestamp": 1.6,
+          "bbox": [
+            365,
+            170,
+            401,
+            252
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0458,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 41,
+      "timestamp": 1.64,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 41,
+          "timestamp": 1.64,
+          "bbox": [
+            368,
+            172,
+            404,
+            254
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0443,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 42,
+      "timestamp": 1.68,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 42,
+          "timestamp": 1.68,
+          "bbox": [
+            372,
+            173,
+            408,
+            255
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0415,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 43,
+      "timestamp": 1.72,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 43,
+          "timestamp": 1.72,
+          "bbox": [
+            375,
+            175,
+            411,
+            257
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0412,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 44,
+      "timestamp": 1.76,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 44,
+          "timestamp": 1.76,
+          "bbox": [
+            378,
+            176,
+            414,
+            258
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0402,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 45,
+      "timestamp": 1.8,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 45,
+          "timestamp": 1.8,
+          "bbox": [
+            382,
+            178,
+            418,
+            260
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0405,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 46,
+      "timestamp": 1.84,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 46,
+          "timestamp": 1.84,
+          "bbox": [
+            385,
+            179,
+            421,
+            261
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0406,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 47,
+      "timestamp": 1.88,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 47,
+          "timestamp": 1.88,
+          "bbox": [
+            388,
+            181,
+            424,
+            263
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0426,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 48,
+      "timestamp": 1.92,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 48,
+          "timestamp": 1.92,
+          "bbox": [
+            392,
+            182,
+            428,
+            264
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0436,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 49,
+      "timestamp": 1.96,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 49,
+          "timestamp": 1.96,
+          "bbox": [
+            395,
+            184,
+            431,
+            266
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0465,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 50,
+      "timestamp": 2.0,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 50,
+          "timestamp": 2.0,
+          "bbox": [
+            398,
+            185,
+            434,
+            267
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0484,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 51,
+      "timestamp": 2.04,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 51,
+          "timestamp": 2.04,
+          "bbox": [
+            402,
+            187,
+            438,
+            269
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0522,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 52,
+      "timestamp": 2.08,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 52,
+          "timestamp": 2.08,
+          "bbox": [
+            405,
+            188,
+            441,
+            270
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0547,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 53,
+      "timestamp": 2.12,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 53,
+          "timestamp": 2.12,
+          "bbox": [
+            408,
+            190,
+            444,
+            272
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0587,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 54,
+      "timestamp": 2.16,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 54,
+          "timestamp": 2.16,
+          "bbox": [
+            412,
+            191,
+            448,
+            273
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0621,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 55,
+      "timestamp": 2.2,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 55,
+          "timestamp": 2.2,
+          "bbox": [
+            415,
+            193,
+            451,
+            275
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0664,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 56,
+      "timestamp": 2.24,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 56,
+          "timestamp": 2.24,
+          "bbox": [
+            418,
+            194,
+            454,
+            276
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0696,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 57,
+      "timestamp": 2.28,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 57,
+          "timestamp": 2.28,
+          "bbox": [
+            422,
+            196,
+            458,
+            278
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0748,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 58,
+      "timestamp": 2.32,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 58,
+          "timestamp": 2.32,
+          "bbox": [
+            425,
+            197,
+            461,
+            279
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0782,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 59,
+      "timestamp": 2.36,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 59,
+          "timestamp": 2.36,
+          "bbox": [
+            428,
+            199,
+            464,
+            281
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0828,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 60,
+      "timestamp": 2.4,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 60,
+          "timestamp": 2.4,
+          "bbox": [
+            432,
+            200,
+            468,
+            282
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0872,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 61,
+      "timestamp": 2.44,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 61,
+          "timestamp": 2.44,
+          "bbox": [
+            435,
+            202,
+            471,
+            284
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0919,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 62,
+      "timestamp": 2.48,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 62,
+          "timestamp": 2.48,
+          "bbox": [
+            438,
+            203,
+            474,
+            285
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.0956,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 63,
+      "timestamp": 2.52,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 63,
+          "timestamp": 2.52,
+          "bbox": [
+            442,
+            205,
+            478,
+            287
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1012,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 64,
+      "timestamp": 2.56,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 64,
+          "timestamp": 2.56,
+          "bbox": [
+            445,
+            206,
+            481,
+            288
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.105,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 65,
+      "timestamp": 2.6,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 65,
+          "timestamp": 2.6,
+          "bbox": [
+            448,
+            208,
+            484,
+            290
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1098,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 66,
+      "timestamp": 2.64,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 66,
+          "timestamp": 2.64,
+          "bbox": [
+            452,
+            210,
+            488,
+            292
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1156,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 67,
+      "timestamp": 2.68,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 67,
+          "timestamp": 2.68,
+          "bbox": [
+            455,
+            211,
+            491,
+            293
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1194,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 68,
+      "timestamp": 2.72,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 68,
+          "timestamp": 2.72,
+          "bbox": [
+            458,
+            213,
+            494,
+            295
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1243,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 69,
+      "timestamp": 2.76,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 69,
+          "timestamp": 2.76,
+          "bbox": [
+            462,
+            214,
+            498,
+            296
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1292,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 70,
+      "timestamp": 2.8,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 70,
+          "timestamp": 2.8,
+          "bbox": [
+            465,
+            216,
+            501,
+            298
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.134,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 71,
+      "timestamp": 2.84,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 71,
+          "timestamp": 2.84,
+          "bbox": [
+            468,
+            217,
+            504,
+            299
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.138,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 72,
+      "timestamp": 2.88,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 72,
+          "timestamp": 2.88,
+          "bbox": [
+            472,
+            219,
+            508,
+            301
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1439,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 73,
+      "timestamp": 2.92,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 73,
+          "timestamp": 2.92,
+          "bbox": [
+            475,
+            220,
+            511,
+            302
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1479,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 74,
+      "timestamp": 2.96,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 74,
+          "timestamp": 2.96,
+          "bbox": [
+            478,
+            222,
+            514,
+            304
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1527,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 75,
+      "timestamp": 3.0,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 75,
+          "timestamp": 3.0,
+          "bbox": [
+            482,
+            223,
+            518,
+            305
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1578,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 76,
+      "timestamp": 3.04,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 76,
+          "timestamp": 3.04,
+          "bbox": [
+            485,
+            225,
+            521,
+            307
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1627,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 77,
+      "timestamp": 3.08,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 77,
+          "timestamp": 3.08,
+          "bbox": [
+            488,
+            226,
+            524,
+            308
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1667,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 78,
+      "timestamp": 3.12,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 78,
+          "timestamp": 3.12,
+          "bbox": [
+            492,
+            228,
+            528,
+            310
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1727,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 79,
+      "timestamp": 3.16,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 79,
+          "timestamp": 3.16,
+          "bbox": [
+            495,
+            229,
+            531,
+            311
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1768,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 80,
+      "timestamp": 3.2,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 80,
+          "timestamp": 3.2,
+          "bbox": [
+            498,
+            231,
+            534,
+            313
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1817,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 81,
+      "timestamp": 3.24,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 81,
+          "timestamp": 3.24,
+          "bbox": [
+            502,
+            232,
+            538,
+            314
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1868,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 82,
+      "timestamp": 3.28,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 82,
+          "timestamp": 3.28,
+          "bbox": [
+            505,
+            234,
+            541,
+            316
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1917,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 83,
+      "timestamp": 3.32,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 83,
+          "timestamp": 3.32,
+          "bbox": [
+            508,
+            235,
+            544,
+            317
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.1958,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 84,
+      "timestamp": 3.36,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 84,
+          "timestamp": 3.36,
+          "bbox": [
+            512,
+            237,
+            548,
+            319
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2019,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 85,
+      "timestamp": 3.4,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 85,
+          "timestamp": 3.4,
+          "bbox": [
+            515,
+            238,
+            551,
+            320
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.206,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 86,
+      "timestamp": 3.44,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 86,
+          "timestamp": 3.44,
+          "bbox": [
+            518,
+            240,
+            554,
+            322
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2109,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 87,
+      "timestamp": 3.48,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 87,
+          "timestamp": 3.48,
+          "bbox": [
+            522,
+            241,
+            558,
+            323
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2161,
+          "severity": "MEDIUM",
+          "risk_score": 0.52,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 88,
+      "timestamp": 3.52,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 88,
+          "timestamp": 3.52,
+          "bbox": [
+            525,
+            243,
+            561,
+            325
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.221,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 89,
+      "timestamp": 3.56,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 89,
+          "timestamp": 3.56,
+          "bbox": [
+            528,
+            244,
+            564,
+            326
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2251,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 90,
+      "timestamp": 3.6,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 90,
+          "timestamp": 3.6,
+          "bbox": [
+            532,
+            246,
+            568,
+            328
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2312,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 91,
+      "timestamp": 3.64,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 91,
+          "timestamp": 3.64,
+          "bbox": [
+            535,
+            247,
+            571,
+            329
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2353,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 92,
+      "timestamp": 3.68,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 92,
+          "timestamp": 3.68,
+          "bbox": [
+            538,
+            249,
+            574,
+            331
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2402,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 93,
+      "timestamp": 3.72,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 93,
+          "timestamp": 3.72,
+          "bbox": [
+            542,
+            250,
+            578,
+            332
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2455,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 94,
+      "timestamp": 3.76,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 94,
+          "timestamp": 3.76,
+          "bbox": [
+            545,
+            252,
+            581,
+            334
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2504,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 95,
+      "timestamp": 3.8,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 95,
+          "timestamp": 3.8,
+          "bbox": [
+            548,
+            253,
+            584,
+            335
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2546,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 96,
+      "timestamp": 3.84,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 96,
+          "timestamp": 3.84,
+          "bbox": [
+            552,
+            255,
+            588,
+            337
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2606,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 97,
+      "timestamp": 3.88,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 97,
+          "timestamp": 3.88,
+          "bbox": [
+            555,
+            256,
+            591,
+            338
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2648,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 98,
+      "timestamp": 3.92,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 98,
+          "timestamp": 3.92,
+          "bbox": [
+            558,
+            258,
+            594,
+            340
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2697,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    },
+    {
+      "frame_id": 99,
+      "timestamp": 3.96,
+      "workers": [
+        {
+          "worker_id": 5,
+          "frame_id": 99,
+          "timestamp": 3.96,
+          "bbox": [
+            562,
+            260,
+            598,
+            342
+          ],
+          "has_helmet": false,
+          "has_vest": true,
+          "distance_to_machine": 0.2758,
+          "severity": "LOW",
+          "risk_score": 0.28,
+          "priority": "REVIEW"
+        }
+      ]
+    }
+  ]
+}

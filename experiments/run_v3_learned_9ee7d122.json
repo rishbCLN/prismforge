@@ -1,0 +1,299 @@
+{
+  "run_id": "run_v3_learned_9ee7d122",
+  "model_version": "v3_learned",
+  "dataset_version": "v1.0-heldout",
+  "git_commit": "c0de9a4",
+  "feature_version": "f19_spatiotemporal",
+  "evaluation_timestamp": "2026-09-14T12:55:21.646012",
+  "hyperparameters": {
+    "arch": "RiskMLP_32_16",
+    "optimizer": "AdamW",
+    "lr": 0.005,
+    "loss": "WeightedCE+MSE"
+  },
+  "metrics": {
+    "sample_count": 366,
+    "accuracy": 0.1831,
+    "macro_f1": 0.0875,
+    "weighted_f1": 0.1176,
+    "macro_precision": 0.0644,
+    "macro_recall": 0.1362,
+    "high_risk_recall": 0.0,
+    "high_risk_false_negative_rate": 1.0,
+    "false_positive_rate": 1.0,
+    "weighted_hazard_error": 1.7117,
+    "per_class": {
+      "NONE": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 125
+      },
+      "LOW": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 6
+      },
+      "MEDIUM": {
+        "precision": 0.2577,
+        "recall": 0.5447,
+        "f1": 0.3499,
+        "support": 123
+      },
+      "HIGH": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 112
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        75,
+        50
+      ],
+      [
+        0,
+        0,
+        6,
+        0
+      ],
+      [
+        36,
+        0,
+        67,
+        20
+      ],
+      [
+        0,
+        0,
+        112,
+        0
+      ]
+    ],
+    "cost_matrix_description": {
+      "NONE_error": 1.0,
+      "LOW_error": 2.0,
+      "MEDIUM_error": 3.0,
+      "HIGH_missed": 5.0
+    }
+  },
+  "failure_summary": {
+    "total_failures": 299,
+    "total_samples": 366,
+    "overall_error_rate": 0.8169,
+    "clusters": [
+      {
+        "cluster_id": "cluster_a_transient_proximity",
+        "cluster_name": "Transient Machinery Proximity",
+        "description": "High proximity to machinery but brief exposure duration (< 0.5s). Models without temporal filtering trigger false alarms.",
+        "target_fix": "V2 temporal persistence and consecutive-frame filtering.",
+        "sample_count": 299,
+        "failure_rate_within_errors": 1.0,
+        "example_samples": [
+          {
+            "sample_id": "sample_0",
+            "clip_id": "clip_10_test_severe_hazard",
+            "frame_id": 0,
+            "true_severity": "HIGH",
+            "pred_severity": "MEDIUM",
+            "risk_score": 0.6112650632858276,
+            "features": {
+              "track_id": 1,
+              "frame_id": 0,
+              "timestamp": 0.0,
+              "helmet_missing": 0.0,
+              "vest_missing": 0.0,
+              "ppe_violation_count": 0.0,
+              "ppe_violation_confidence": 0.0,
+              "normalized_worker_machine_dist": 1.0,
+              "worker_machine_overlap": 0.0,
+              "worker_count_machine_zone": 0.0,
+              "machine_proximity_severity": 0.0,
+              "violation_duration": 0.0,
+              "consecutive_violating_frames": 0.0,
+              "frames_since_first_detection": 1.0,
+              "persistence_ratio": 0.0,
+              "num_workers": 1.0,
+              "num_machines": 0.0,
+              "simultaneous_violations": 0.0,
+              "scene_hazard_density": 0.0,
+              "mean_detection_confidence": 0.85,
+              "min_relevant_confidence": 0.85,
+              "confidence_variance": 0.0
+            },
+            "penalty": 5.0,
+            "assigned_cluster": "cluster_a_transient_proximity"
+          },
+          {
+            "sample_id": "sample_1",
+            "clip_id": "clip_10_test_severe_hazard",
+            "frame_id": 1,
+            "true_severity": "HIGH",
+            "pred_severity": "MEDIUM",
+            "risk_score": 0.6093227863311768,
+            "features": {
+              "track_id": 1,
+              "frame_id": 1,
+              "timestamp": 0.04,
+              "helmet_missing": 0.0,
+              "vest_missing": 0.0,
+              "ppe_violation_count": 0.0,
+              "ppe_violation_confidence": 0.0,
+              "normalized_worker_machine_dist": 1.0,
+              "worker_machine_overlap": 0.0,
+              "worker_count_machine_zone": 0.0,
+              "machine_proximity_severity": 0.0,
+              "violation_duration": 0.0,
+              "consecutive_violating_frames": 0.0,
+              "frames_since_first_detection": 2.0,
+              "persistence_ratio": 0.0,
+              "num_workers": 1.0,
+              "num_machines": 0.0,
+              "simultaneous_violations": 0.0,
+              "scene_hazard_density": 0.0,
+              "mean_detection_confidence": 0.85,
+              "min_relevant_confidence": 0.85,
+              "confidence_variance": 0.0
+            },
+            "penalty": 5.0,
+            "assigned_cluster": "cluster_a_transient_proximity"
+          },
+          {
+            "sample_id": "sample_2",
+            "clip_id": "clip_10_test_severe_hazard",
+            "frame_id": 2,
+            "true_severity": "HIGH",
+            "pred_severity": "MEDIUM",
+            "risk_score": 0.6072907447814941,
+            "features": {
+              "track_id": 1,
+              "frame_id": 2,
+              "timestamp": 0.08,
+              "helmet_missing": 0.0,
+              "vest_missing": 0.0,
+              "ppe_violation_count": 0.0,
+              "ppe_violation_confidence": 0.0,
+              "normalized_worker_machine_dist": 1.0,
+              "worker_machine_overlap": 0.0,
+              "worker_count_machine_zone": 0.0,
+              "machine_proximity_severity": 0.0,
+              "violation_duration": 0.0,
+              "consecutive_violating_frames": 0.0,
+              "frames_since_first_detection": 3.0,
+              "persistence_ratio": 0.0,
+              "num_workers": 1.0,
+              "num_machines": 0.0,
+              "simultaneous_violations": 0.0,
+              "scene_hazard_density": 0.0,
+              "mean_detection_confidence": 0.85,
+              "min_relevant_confidence": 0.85,
+              "confidence_variance": 0.0
+            },
+            "penalty": 5.0,
+            "assigned_cluster": "cluster_a_transient_proximity"
+          },
+          {
+            "sample_id": "sample_3",
+            "clip_id": "clip_10_test_severe_hazard",
+            "frame_id": 3,
+            "true_severity": "HIGH",
+            "pred_severity": "MEDIUM",
+            "risk_score": 0.6052802205085754,
+            "features": {
+              "track_id": 1,
+              "frame_id": 3,
+              "timestamp": 0.12,
+              "helmet_missing": 0.0,
+              "vest_missing": 0.0,
+              "ppe_violation_count": 0.0,
+              "ppe_violation_confidence": 0.0,
+              "normalized_worker_machine_dist": 1.0,
+              "worker_machine_overlap": 0.0,
+              "worker_count_machine_zone": 0.0,
+              "machine_proximity_severity": 0.0,
+              "violation_duration": 0.0,
+              "consecutive_violating_frames": 0.0,
+              "frames_since_first_detection": 4.0,
+              "persistence_ratio": 0.0,
+              "num_workers": 1.0,
+              "num_machines": 0.0,
+              "simultaneous_violations": 0.0,
+              "scene_hazard_density": 0.0,
+              "mean_detection_confidence": 0.85,
+              "min_relevant_confidence": 0.85,
+              "confidence_variance": 0.0
+            },
+            "penalty": 5.0,
+            "assigned_cluster": "cluster_a_transient_proximity"
+          },
+          {
+            "sample_id": "sample_4",
+            "clip_id": "clip_10_test_severe_hazard",
+            "frame_id": 4,
+            "true_severity": "HIGH",
+            "pred_severity": "MEDIUM",
+            "risk_score": 0.6037247180938721,
+            "features": {
+              "track_id": 1,
+              "frame_id": 4,
+              "timestamp": 0.16,
+              "helmet_missing": 0.0,
+              "vest_missing": 0.0,
+              "ppe_violation_count": 0.0,
+              "ppe_violation_confidence": 0.0,
+              "normalized_worker_machine_dist": 1.0,
+              "worker_machine_overlap": 0.0,
+              "worker_count_machine_zone": 0.0,
+              "machine_proximity_severity": 0.0,
+              "violation_duration": 0.0,
+              "consecutive_violating_frames": 0.0,
+              "frames_since_first_detection": 5.0,
+              "persistence_ratio": 0.0,
+              "num_workers": 1.0,
+              "num_machines": 0.0,
+              "simultaneous_violations": 0.0,
+              "scene_hazard_density": 0.0,
+              "mean_detection_confidence": 0.85,
+              "min_relevant_confidence": 0.85,
+              "confidence_variance": 0.0
+            },
+            "penalty": 5.0,
+            "assigned_cluster": "cluster_a_transient_proximity"
+          }
+        ]
+      },
+      {
+        "cluster_id": "cluster_b_detector_noise",
+        "cluster_name": "Detector Confidence & Flicker",
+        "description": "Spurious detection or low confidence (< 0.60) causing erratic risk escalation.",
+        "target_fix": "Confidence weighting and temporal smoothing.",
+        "sample_count": 0,
+        "failure_rate_within_errors": 0.0,
+        "example_samples": []
+      },
+      {
+        "cluster_id": "cluster_c_safe_zone_ppe",
+        "cluster_name": "Isolated Safe-Zone PPE Violation",
+        "description": "Missing PPE in designated safe walkway far from equipment. Naive baselines over-penalize this as high danger.",
+        "target_fix": "V1 spatial context and normalized machinery proximity weighting.",
+        "sample_count": 0,
+        "failure_rate_within_errors": 0.0,
+        "example_samples": []
+      },
+      {
+        "cluster_id": "cluster_d_compound_multi_worker",
+        "cluster_name": "Compound Multi-Worker Danger Zone",
+        "description": "Multiple workers in close proximity to active machinery with non-linear compounding risk.",
+        "target_fix": "V3 learned PyTorch MLP with non-linear feature interaction.",
+        "sample_count": 0,
+        "failure_rate_within_errors": 0.0,
+        "example_samples": []
+      }
+    ]
+  },
+  "diagnosis_note": "Learned multi-feature interactions in PyTorch MLP. Optimized both continuous risk and discrete severity."
+}

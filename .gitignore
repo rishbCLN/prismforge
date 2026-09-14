@@ -1,0 +1,141 @@
+# ==============================================================================
+# HazardMesh — Git Ignore Configuration
+# Ensures training, testing, raw video streams, image datasets, and
+# large binaries are NEVER tracked or uploaded to the Git repository.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Video Formats (Raw footage, training clips, validation/test streams, chunks)
+# ------------------------------------------------------------------------------
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.flv
+*.wmv
+*.m4v
+*.ts
+*.3gp
+*.h264
+*.hevc
+
+# ------------------------------------------------------------------------------
+# 2. Image Formats (Training frames, test crops, inspection captures, textures)
+# ------------------------------------------------------------------------------
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+*.tif
+*.webp
+*.gif
+*.ppm
+*.pgm
+
+# Whitelist: ONLY allow documentation charts and web frontend UI assets
+!reports/*.png
+!reports/**/*.png
+!web/static/**
+!web/static/*
+!docs/images/**
+
+# ------------------------------------------------------------------------------
+# 3. Training, Testing, Ingested & Processed Data Directories
+# ------------------------------------------------------------------------------
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/ingested/*
+!data/ingested/.gitkeep
+data/train/*
+!data/train/.gitkeep
+data/test/*
+!data/test/.gitkeep
+data/val/*
+!data/val/.gitkeep
+data/images/*
+!data/images/.gitkeep
+data/videos/*
+!data/videos/.gitkeep
+datasets/
+dataset/
+
+# Ingested dataset clips and temporary caches
+data/detections/kaggle_*
+data/tracks/kaggle_*
+data/features/kaggle_*
+data/labels/kaggle_*
+
+# ------------------------------------------------------------------------------
+# 4. Dataset Archives & Compressed Packages
+# ------------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.bz2
+*.7z
+*.rar
+
+# ------------------------------------------------------------------------------
+# 5. Model Weights, Perception Runs & Large Checkpoints
+# ------------------------------------------------------------------------------
+yolov8n.pt
+yolov8*.pt
+*.weights
+*.onnx
+*.engine
+*.tflite
+runs/
+wandb/
+
+# ------------------------------------------------------------------------------
+# 6. API Credentials, Keys & Secrets (Kaggle tokens, local envs)
+# ------------------------------------------------------------------------------
+kaggle.json
+access_token
+*.token
+.kaggle/
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------------------------
+# 7. Python & Environment Artifacts
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 8. Testing & Coverage Artifacts
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+
+# ------------------------------------------------------------------------------
+# 9. Operating System & IDE Cache
+# ------------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo

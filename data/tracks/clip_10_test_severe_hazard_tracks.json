@@ -1,0 +1,6951 @@
+{
+  "clip_id": "clip_10_test_severe_hazard",
+  "fps": 25.0,
+  "total_frames": 112,
+  "frames": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.0,
+          "frames_seen": 1,
+          "current_position": [
+            391.13092041015625,
+            204.74806213378906
+          ],
+          "bbox": [
+            371.54095458984375,
+            165.74810791015625,
+            410.72088623046875,
+            243.74801635742188
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.455722001517,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              600.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 1,
+          "total_violating_frames": 1,
+          "violation_duration": 0.0,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            600.0,
+            221.0
+          ],
+          "center": [
+            490.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.04,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.04,
+          "frames_seen": 2,
+          "current_position": [
+            390.9337158203125,
+            204.52862548828125
+          ],
+          "bbox": [
+            371.35394287109375,
+            165.57400512695312,
+            410.51348876953125,
+            243.48324584960938
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.86391962591563,
+            "machine_bbox": [
+              380.0,
+              89.0,
+              598.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 2,
+          "total_violating_frames": 2,
+          "violation_duration": 0.04,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            89.0,
+            598.0,
+            221.0
+          ],
+          "center": [
+            489.0,
+            155.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.08,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.08,
+          "frames_seen": 3,
+          "current_position": [
+            391.06329345703125,
+            204.54074096679688
+          ],
+          "bbox": [
+            371.16943359375,
+            165.46597290039062,
+            410.9571533203125,
+            243.61550903320312
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.09079169161669,
+            "machine_bbox": [
+              380.0,
+              88.0,
+              596.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 3,
+          "total_violating_frames": 3,
+          "violation_duration": 0.08,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            88.0,
+            596.0,
+            221.0
+          ],
+          "center": [
+            488.0,
+            154.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.12,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.12,
+          "frames_seen": 4,
+          "current_position": [
+            390.984375,
+            204.55511474609375
+          ],
+          "bbox": [
+            370.99444580078125,
+            165.44244384765625,
+            410.97430419921875,
+            243.66778564453125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.34068471894393,
+            "machine_bbox": [
+              380.0,
+              84.0,
+              592.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 4,
+          "total_violating_frames": 4,
+          "violation_duration": 0.12,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            84.0,
+            592.0,
+            221.0
+          ],
+          "center": [
+            486.0,
+            152.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.16,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.16,
+          "frames_seen": 5,
+          "current_position": [
+            390.9185485839844,
+            204.59420776367188
+          ],
+          "bbox": [
+            371.0668640136719,
+            165.51861572265625,
+            410.7702331542969,
+            243.6697998046875
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.02922937148105,
+            "machine_bbox": [
+              380.0,
+              82.0,
+              590.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 5,
+          "total_violating_frames": 5,
+          "violation_duration": 0.16,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            82.0,
+            590.0,
+            221.0
+          ],
+          "center": [
+            485.0,
+            151.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 5,
+      "timestamp": 0.2,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.2,
+          "frames_seen": 6,
+          "current_position": [
+            390.89154052734375,
+            204.594970703125
+          ],
+          "bbox": [
+            371.1556396484375,
+            165.54312133789062,
+            410.62744140625,
+            243.64682006835938
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.68217624446129,
+            "machine_bbox": [
+              380.0,
+              80.0,
+              588.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 6,
+          "total_violating_frames": 6,
+          "violation_duration": 0.2,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            80.0,
+            588.0,
+            221.0
+          ],
+          "center": [
+            484.0,
+            150.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 6,
+      "timestamp": 0.24,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.24,
+          "frames_seen": 7,
+          "current_position": [
+            390.9065856933594,
+            204.628662109375
+          ],
+          "bbox": [
+            371.19482421875,
+            165.5914306640625,
+            410.61834716796875,
+            243.6658935546875
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.4761922497744,
+            "machine_bbox": [
+              380.0,
+              78.0,
+              584.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 7,
+          "total_violating_frames": 7,
+          "violation_duration": 0.24,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            78.0,
+            584.0,
+            221.0
+          ],
+          "center": [
+            482.0,
+            149.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 7,
+      "timestamp": 0.28,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.28,
+          "frames_seen": 8,
+          "current_position": [
+            390.863037109375,
+            204.63363647460938
+          ],
+          "bbox": [
+            371.1683044433594,
+            165.61163330078125,
+            410.5577697753906,
+            243.6556396484375
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.33937201838756,
+            "machine_bbox": [
+              380.0,
+              76.0,
+              580.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 8,
+          "total_violating_frames": 8,
+          "violation_duration": 0.28,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            76.0,
+            580.0,
+            221.0
+          ],
+          "center": [
+            480.0,
+            148.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 8,
+      "timestamp": 0.32,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.32,
+          "frames_seen": 9,
+          "current_position": [
+            390.80853271484375,
+            204.6471710205078
+          ],
+          "bbox": [
+            371.19140625,
+            165.64736938476562,
+            410.4256591796875,
+            243.64697265625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.70562559931174,
+            "machine_bbox": [
+              380.0,
+              76.0,
+              576.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 9,
+          "total_violating_frames": 9,
+          "violation_duration": 0.32,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            76.0,
+            576.0,
+            221.0
+          ],
+          "center": [
+            478.0,
+            148.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 9,
+      "timestamp": 0.36,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.36,
+          "frames_seen": 10,
+          "current_position": [
+            390.81317138671875,
+            204.656494140625
+          ],
+          "bbox": [
+            371.23175048828125,
+            165.6598663330078,
+            410.39459228515625,
+            243.6531219482422
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 104.25165661076556,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              576.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 10,
+          "total_violating_frames": 10,
+          "violation_duration": 0.36,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            576.0,
+            221.0
+          ],
+          "center": [
+            478.0,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 10,
+      "timestamp": 0.4,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.4,
+          "frames_seen": 11,
+          "current_position": [
+            390.9274597167969,
+            204.6339111328125
+          ],
+          "bbox": [
+            371.2148742675781,
+            165.60296630859375,
+            410.6400451660156,
+            243.66485595703125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.03828770818622,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              572.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 11,
+          "total_violating_frames": 11,
+          "violation_duration": 0.4,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            572.0,
+            221.0
+          ],
+          "center": [
+            476.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 11,
+      "timestamp": 0.44,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.44,
+          "frames_seen": 12,
+          "current_position": [
+            390.8922424316406,
+            204.63038635253906
+          ],
+          "bbox": [
+            371.2449645996094,
+            165.60601806640625,
+            410.5395202636719,
+            243.65475463867188
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.91,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.24116930411826,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              570.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 12,
+          "total_violating_frames": 12,
+          "violation_duration": 0.44,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            570.0,
+            221.0
+          ],
+          "center": [
+            475.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 12,
+      "timestamp": 0.48,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.48,
+          "frames_seen": 13,
+          "current_position": [
+            391.7173156738281,
+            206.16793823242188
+          ],
+          "bbox": [
+            371.77178955078125,
+            167.2034912109375,
+            411.662841796875,
+            245.13238525390625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.23032265083295,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 13,
+          "total_violating_frames": 13,
+          "violation_duration": 0.48,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 13,
+      "timestamp": 0.52,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.52,
+          "frames_seen": 14,
+          "current_position": [
+            391.53192138671875,
+            206.13247680664062
+          ],
+          "bbox": [
+            371.3313293457031,
+            167.17001342773438,
+            411.7325134277344,
+            245.09494018554688
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.5546408424922,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 14,
+          "total_violating_frames": 14,
+          "violation_duration": 0.52,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 14,
+      "timestamp": 0.56,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.56,
+          "frames_seen": 15,
+          "current_position": [
+            391.50555419921875,
+            206.12350463867188
+          ],
+          "bbox": [
+            371.40887451171875,
+            167.14794921875,
+            411.60223388671875,
+            245.09906005859375
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.57043866722022,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 15,
+          "total_violating_frames": 15,
+          "violation_duration": 0.56,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 15,
+      "timestamp": 0.6,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.6,
+          "frames_seen": 16,
+          "current_position": [
+            391.4942626953125,
+            206.13226318359375
+          ],
+          "bbox": [
+            371.3795166015625,
+            167.16043090820312,
+            411.6090087890625,
+            245.10409545898438
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.78415092531132,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              564.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 16,
+          "total_violating_frames": 16,
+          "violation_duration": 0.6,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            564.0,
+            221.0
+          ],
+          "center": [
+            472.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 16,
+      "timestamp": 0.64,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.64,
+          "frames_seen": 17,
+          "current_position": [
+            391.49322509765625,
+            206.1317138671875
+          ],
+          "bbox": [
+            371.37921142578125,
+            167.15887451171875,
+            411.60723876953125,
+            245.10455322265625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.78464928573767,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              564.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 17,
+          "total_violating_frames": 17,
+          "violation_duration": 0.64,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            564.0,
+            221.0
+          ],
+          "center": [
+            472.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 17,
+      "timestamp": 0.68,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.68,
+          "frames_seen": 18,
+          "current_position": [
+            391.50341796875,
+            206.12583923339844
+          ],
+          "bbox": [
+            371.39898681640625,
+            167.14935302734375,
+            411.60784912109375,
+            245.10232543945312
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.57354609114587,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 18,
+          "total_violating_frames": 18,
+          "violation_duration": 0.68,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 18,
+      "timestamp": 0.72,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.72,
+          "frames_seen": 19,
+          "current_position": [
+            391.50811767578125,
+            206.12863159179688
+          ],
+          "bbox": [
+            371.39678955078125,
+            167.1517333984375,
+            411.61944580078125,
+            245.10552978515625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.57144211557768,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 19,
+          "total_violating_frames": 19,
+          "violation_duration": 0.72,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 19,
+      "timestamp": 0.76,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.76,
+          "frames_seen": 20,
+          "current_position": [
+            391.510009765625,
+            206.12608337402344
+          ],
+          "bbox": [
+            371.40570068359375,
+            167.14901733398438,
+            411.61431884765625,
+            245.1031494140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.37245954914498,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 20,
+          "total_violating_frames": 20,
+          "violation_duration": 0.76,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 20,
+      "timestamp": 0.8,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.8,
+          "frames_seen": 21,
+          "current_position": [
+            391.4881286621094,
+            206.12806701660156
+          ],
+          "bbox": [
+            371.4127197265625,
+            167.15792846679688,
+            411.56353759765625,
+            245.09820556640625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.80233439276795,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 21,
+          "total_violating_frames": 21,
+          "violation_duration": 0.8,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 21,
+      "timestamp": 0.84,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.84,
+          "frames_seen": 22,
+          "current_position": [
+            391.5042724609375,
+            206.13986206054688
+          ],
+          "bbox": [
+            371.421875,
+            167.17010498046875,
+            411.586669921875,
+            245.109619140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.42360039641119,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              572.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 22,
+          "total_violating_frames": 22,
+          "violation_duration": 0.84,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            572.0,
+            221.0
+          ],
+          "center": [
+            476.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 22,
+      "timestamp": 0.88,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.88,
+          "frames_seen": 23,
+          "current_position": [
+            391.4990234375,
+            206.1305389404297
+          ],
+          "bbox": [
+            371.43255615234375,
+            167.16302490234375,
+            411.56549072265625,
+            245.09805297851562
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.865,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.42251309237402,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              572.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 23,
+          "total_violating_frames": 23,
+          "violation_duration": 0.88,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            572.0,
+            221.0
+          ],
+          "center": [
+            476.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 23,
+      "timestamp": 0.92,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.92,
+          "frames_seen": 24,
+          "current_position": [
+            391.8277893066406,
+            206.98097229003906
+          ],
+          "bbox": [
+            371.56134033203125,
+            168.06564331054688,
+            412.09423828125,
+            245.89630126953125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.826,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 104.70738254941298,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              576.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 24,
+          "total_violating_frames": 24,
+          "violation_duration": 0.92,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            576.0,
+            221.0
+          ],
+          "center": [
+            478.0,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 24,
+      "timestamp": 0.96,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 0.96,
+          "frames_seen": 25,
+          "current_position": [
+            392.578369140625,
+            206.76011657714844
+          ],
+          "bbox": [
+            372.1524658203125,
+            167.49514770507812,
+            413.0042724609375,
+            246.02508544921875
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.784,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.05609323449903,
+            "machine_bbox": [
+              380.0,
+              76.0,
+              580.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 25,
+          "total_violating_frames": 25,
+          "violation_duration": 0.96,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            76.0,
+            580.0,
+            221.0
+          ],
+          "center": [
+            480.0,
+            148.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 25,
+      "timestamp": 1.0,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.0,
+          "frames_seen": 26,
+          "current_position": [
+            392.1509704589844,
+            206.7045440673828
+          ],
+          "bbox": [
+            371.4051513671875,
+            167.39752197265625,
+            412.89678955078125,
+            246.01156616210938
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.826,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.51388628446264,
+            "machine_bbox": [
+              380.0,
+              78.0,
+              584.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 26,
+          "total_violating_frames": 26,
+          "violation_duration": 1.0,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            78.0,
+            584.0,
+            221.0
+          ],
+          "center": [
+            482.0,
+            149.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 26,
+      "timestamp": 1.04,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.04,
+          "frames_seen": 27,
+          "current_position": [
+            392.1896057128906,
+            206.64053344726562
+          ],
+          "bbox": [
+            371.6094665527344,
+            167.3193359375,
+            412.7697448730469,
+            245.96173095703125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.822,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.76276132773926,
+            "machine_bbox": [
+              380.0,
+              80.0,
+              586.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 27,
+          "total_violating_frames": 27,
+          "violation_duration": 1.04,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            80.0,
+            586.0,
+            221.0
+          ],
+          "center": [
+            483.0,
+            150.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 27,
+      "timestamp": 1.08,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.08,
+          "frames_seen": 28,
+          "current_position": [
+            392.2568359375,
+            206.582275390625
+          ],
+          "bbox": [
+            371.7295837402344,
+            167.1864013671875,
+            412.7840881347656,
+            245.9781494140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.822,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.00871560021382,
+            "machine_bbox": [
+              380.0,
+              82.0,
+              588.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 28,
+          "total_violating_frames": 28,
+          "violation_duration": 1.08,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            82.0,
+            588.0,
+            221.0
+          ],
+          "center": [
+            484.0,
+            151.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 28,
+      "timestamp": 1.12,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.12,
+          "frames_seen": 29,
+          "current_position": [
+            392.29864501953125,
+            206.5868682861328
+          ],
+          "bbox": [
+            371.82464599609375,
+            167.19558715820312,
+            412.77264404296875,
+            245.9781494140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.822,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.32628073410704,
+            "machine_bbox": [
+              380.0,
+              84.0,
+              590.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 29,
+          "total_violating_frames": 29,
+          "violation_duration": 1.12,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            84.0,
+            590.0,
+            221.0
+          ],
+          "center": [
+            485.0,
+            152.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 29,
+      "timestamp": 1.16,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.16,
+          "frames_seen": 30,
+          "current_position": [
+            392.4666748046875,
+            206.6060333251953
+          ],
+          "bbox": [
+            372.14556884765625,
+            167.26016235351562,
+            412.78778076171875,
+            245.951904296875
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.82,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.42878007254099,
+            "machine_bbox": [
+              380.0,
+              86.0,
+              594.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 30,
+          "total_violating_frames": 30,
+          "violation_duration": 1.16,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            86.0,
+            594.0,
+            221.0
+          ],
+          "center": [
+            487.0,
+            153.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 30,
+      "timestamp": 1.2,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.2,
+          "frames_seen": 31,
+          "current_position": [
+            392.3966369628906,
+            206.58596801757812
+          ],
+          "bbox": [
+            372.03759765625,
+            167.24069213867188,
+            412.75567626953125,
+            245.93124389648438
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.82,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.632937548038,
+            "machine_bbox": [
+              380.0,
+              89.0,
+              596.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 31,
+          "total_violating_frames": 31,
+          "violation_duration": 1.2,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            89.0,
+            596.0,
+            221.0
+          ],
+          "center": [
+            488.0,
+            155.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 31,
+      "timestamp": 1.24,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.24,
+          "frames_seen": 32,
+          "current_position": [
+            392.3617248535156,
+            206.63949584960938
+          ],
+          "bbox": [
+            371.9349365234375,
+            167.30545043945312,
+            412.78851318359375,
+            245.97354125976562
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.822,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.22014702100884,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              600.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 32,
+          "total_violating_frames": 32,
+          "violation_duration": 1.24,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            600.0,
+            221.0
+          ],
+          "center": [
+            490.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 32,
+      "timestamp": 1.28,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.28,
+          "frames_seen": 33,
+          "current_position": [
+            392.40692138671875,
+            206.73651123046875
+          ],
+          "bbox": [
+            372.14349365234375,
+            167.55514526367188,
+            412.67034912109375,
+            245.91787719726562
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.82,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 111.11154410552761,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 33,
+          "total_violating_frames": 33,
+          "violation_duration": 1.28,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 33,
+      "timestamp": 1.32,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.32,
+          "frames_seen": 34,
+          "current_position": [
+            392.33074951171875,
+            206.64144897460938
+          ],
+          "bbox": [
+            371.96624755859375,
+            167.33428955078125,
+            412.69525146484375,
+            245.9486083984375
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.822,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 111.79676134461015,
+            "machine_bbox": [
+              380.0,
+              91.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 34,
+          "total_violating_frames": 34,
+          "violation_duration": 1.32,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            91.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 34,
+      "timestamp": 1.36,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.36,
+          "frames_seen": 35,
+          "current_position": [
+            392.6529541015625,
+            208.3344268798828
+          ],
+          "bbox": [
+            371.82000732421875,
+            169.643798828125,
+            413.48590087890625,
+            247.02505493164062
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.794,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 112.2885914311514,
+            "machine_bbox": [
+              380.0,
+              91.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 35,
+          "total_violating_frames": 35,
+          "violation_duration": 1.36,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            91.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 35,
+      "timestamp": 1.4,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.4,
+          "frames_seen": 36,
+          "current_position": [
+            392.6995849609375,
+            208.30873107910156
+          ],
+          "bbox": [
+            371.7802734375,
+            169.59298706054688,
+            413.618896484375,
+            247.02447509765625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.794,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 112.0032010388843,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 36,
+          "total_violating_frames": 36,
+          "violation_duration": 1.4,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 36,
+      "timestamp": 1.44,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.44,
+          "frames_seen": 37,
+          "current_position": [
+            392.9293212890625,
+            208.440673828125
+          ],
+          "bbox": [
+            372.684326171875,
+            170.0726318359375,
+            413.17431640625,
+            246.8087158203125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 112.29021768493949,
+            "machine_bbox": [
+              380.0,
+              94.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 37,
+          "total_violating_frames": 37,
+          "violation_duration": 1.44,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            94.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            157.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 37,
+      "timestamp": 1.48,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.48,
+          "frames_seen": 38,
+          "current_position": [
+            392.9102783203125,
+            208.49432373046875
+          ],
+          "bbox": [
+            372.6454162597656,
+            170.10427856445312,
+            413.1751403808594,
+            246.88436889648438
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 112.33153358983913,
+            "machine_bbox": [
+              380.0,
+              94.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 38,
+          "total_violating_frames": 38,
+          "violation_duration": 1.48,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            94.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            157.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 38,
+      "timestamp": 1.52,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.52,
+          "frames_seen": 39,
+          "current_position": [
+            392.93267822265625,
+            208.4921875
+          ],
+          "bbox": [
+            372.60552978515625,
+            170.10690307617188,
+            413.25982666015625,
+            246.87747192382812
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 111.860125597666,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 39,
+          "total_violating_frames": 39,
+          "violation_duration": 1.52,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 39,
+      "timestamp": 1.56,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.56,
+          "frames_seen": 40,
+          "current_position": [
+            392.93218994140625,
+            208.49188232421875
+          ],
+          "bbox": [
+            372.623291015625,
+            170.10147094726562,
+            413.2410888671875,
+            246.88229370117188
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 111.86042601492868,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 40,
+          "total_violating_frames": 40,
+          "violation_duration": 1.56,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 40,
+      "timestamp": 1.6,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.6,
+          "frames_seen": 41,
+          "current_position": [
+            392.9005432128906,
+            208.47503662109375
+          ],
+          "bbox": [
+            372.6102600097656,
+            170.07284545898438,
+            413.1908264160156,
+            246.87722778320312
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 111.88121171293257,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 41,
+          "total_violating_frames": 41,
+          "violation_duration": 1.6,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 41,
+      "timestamp": 1.64,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.64,
+          "frames_seen": 42,
+          "current_position": [
+            392.9129638671875,
+            208.4644012451172
+          ],
+          "bbox": [
+            372.61273193359375,
+            170.05322265625,
+            413.21319580078125,
+            246.87557983398438
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.52489909010605,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 42,
+          "total_violating_frames": 42,
+          "violation_duration": 1.64,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 42,
+      "timestamp": 1.68,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.68,
+          "frames_seen": 43,
+          "current_position": [
+            392.923583984375,
+            208.46075439453125
+          ],
+          "bbox": [
+            372.6070861816406,
+            170.05233764648438,
+            413.2400817871094,
+            246.86917114257812
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.5137624071446,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 43,
+          "total_violating_frames": 43,
+          "violation_duration": 1.68,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 43,
+      "timestamp": 1.72,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.72,
+          "frames_seen": 44,
+          "current_position": [
+            392.8771057128906,
+            208.45713806152344
+          ],
+          "bbox": [
+            372.5910949707031,
+            170.04501342773438,
+            413.1631164550781,
+            246.8692626953125
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.21533534413224,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 44,
+          "total_violating_frames": 44,
+          "violation_duration": 1.72,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 44,
+      "timestamp": 1.76,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.76,
+          "frames_seen": 45,
+          "current_position": [
+            392.873291015625,
+            208.47802734375
+          ],
+          "bbox": [
+            372.60040283203125,
+            170.08309936523438,
+            413.14617919921875,
+            246.87295532226562
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.799,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.22793655426182,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 45,
+          "total_violating_frames": 45,
+          "violation_duration": 1.76,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 45,
+      "timestamp": 1.8,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.8,
+          "frames_seen": 46,
+          "current_position": [
+            394.4109802246094,
+            209.1959991455078
+          ],
+          "bbox": [
+            374.079833984375,
+            170.52764892578125,
+            414.74212646484375,
+            247.86434936523438
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.758,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.94578766586768,
+            "machine_bbox": [
+              380.0,
+              101.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 46,
+          "total_violating_frames": 46,
+          "violation_duration": 1.8,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            101.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            161.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 46,
+      "timestamp": 1.84,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.84,
+          "frames_seen": 47,
+          "current_position": [
+            394.45184326171875,
+            209.2144317626953
+          ],
+          "bbox": [
+            374.110595703125,
+            170.55496215820312,
+            414.7930908203125,
+            247.8739013671875
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.758,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.14177005913128,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 47,
+          "total_violating_frames": 47,
+          "violation_duration": 1.84,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 47,
+      "timestamp": 1.88,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.88,
+          "frames_seen": 48,
+          "current_position": [
+            394.4610595703125,
+            209.21255493164062
+          ],
+          "bbox": [
+            374.1201171875,
+            170.541748046875,
+            414.802001953125,
+            247.88336181640625
+          ],
+          "associated_ppe": {
+            "helmet_missing": true,
+            "vest_missing": true,
+            "helmet_conf": 0.758,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.13269638390997,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 48,
+          "total_violating_frames": 48,
+          "violation_duration": 1.88,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 48,
+      "timestamp": 1.92,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.92,
+          "frames_seen": 49,
+          "current_position": [
+            395.0758056640625,
+            209.0858154296875
+          ],
+          "bbox": [
+            374.66693115234375,
+            170.050048828125,
+            415.48468017578125,
+            248.12158203125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.52689207805815,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 49,
+          "total_violating_frames": 49,
+          "violation_duration": 1.92,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 49,
+      "timestamp": 1.96,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 1.96,
+          "frames_seen": 50,
+          "current_position": [
+            395.1114501953125,
+            209.15228271484375
+          ],
+          "bbox": [
+            374.78289794921875,
+            170.1280517578125,
+            415.44000244140625,
+            248.176513671875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.07639343749598,
+            "machine_bbox": [
+              380.0,
+              102.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 50,
+          "total_violating_frames": 50,
+          "violation_duration": 1.96,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            102.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            161.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 50,
+      "timestamp": 2.0,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.0,
+          "frames_seen": 51,
+          "current_position": [
+            395.0303955078125,
+            209.1424102783203
+          ],
+          "bbox": [
+            374.63702392578125,
+            170.14987182617188,
+            415.42376708984375,
+            248.13494873046875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.59297869318117,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 51,
+          "total_violating_frames": 51,
+          "violation_duration": 2.0,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 51,
+      "timestamp": 2.04,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.04,
+          "frames_seen": 52,
+          "current_position": [
+            395.06365966796875,
+            209.15972900390625
+          ],
+          "bbox": [
+            374.6524658203125,
+            170.14816284179688,
+            415.474853515625,
+            248.17129516601562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.57114214805438,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 52,
+          "total_violating_frames": 52,
+          "violation_duration": 2.04,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 52,
+      "timestamp": 2.08,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.08,
+          "frames_seen": 53,
+          "current_position": [
+            395.05731201171875,
+            209.16592407226562
+          ],
+          "bbox": [
+            374.6310119628906,
+            170.17135620117188,
+            415.4836120605469,
+            248.16049194335938
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.92469310650044,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 53,
+          "total_violating_frames": 53,
+          "violation_duration": 2.08,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 53,
+      "timestamp": 2.12,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.12,
+          "frames_seen": 54,
+          "current_position": [
+            395.10430908203125,
+            209.15675354003906
+          ],
+          "bbox": [
+            374.7169189453125,
+            170.1290283203125,
+            415.49169921875,
+            248.18447875976562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.87868519874179,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 54,
+          "total_violating_frames": 54,
+          "violation_duration": 2.12,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 54,
+      "timestamp": 2.16,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.16,
+          "frames_seen": 55,
+          "current_position": [
+            395.082275390625,
+            209.15025329589844
+          ],
+          "bbox": [
+            374.69647216796875,
+            170.15377807617188,
+            415.46807861328125,
+            248.146728515625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.78628532300506,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 55,
+          "total_violating_frames": 55,
+          "violation_duration": 2.16,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 55,
+      "timestamp": 2.2,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.2,
+          "frames_seen": 56,
+          "current_position": [
+            395.1094970703125,
+            209.15879821777344
+          ],
+          "bbox": [
+            374.69769287109375,
+            170.1441650390625,
+            415.52130126953125,
+            248.17343139648438
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.839,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.2218871218246,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 56,
+          "total_violating_frames": 56,
+          "violation_duration": 2.2,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 56,
+      "timestamp": 2.24,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.24,
+          "frames_seen": 57,
+          "current_position": [
+            395.91094970703125,
+            210.0203857421875
+          ],
+          "bbox": [
+            375.196044921875,
+            170.95913696289062,
+            416.6258544921875,
+            249.08163452148438
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.86,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.91193672124248,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 57,
+          "total_violating_frames": 57,
+          "violation_duration": 2.24,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 57,
+      "timestamp": 2.28,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.28,
+          "frames_seen": 58,
+          "current_position": [
+            395.8782653808594,
+            210.03013610839844
+          ],
+          "bbox": [
+            375.1511535644531,
+            170.980712890625,
+            416.6053771972656,
+            249.07955932617188
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.86,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.94537854216905,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 58,
+          "total_violating_frames": 58,
+          "violation_duration": 2.28,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 58,
+      "timestamp": 2.32,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.32,
+          "frames_seen": 59,
+          "current_position": [
+            395.91845703125,
+            210.01951599121094
+          ],
+          "bbox": [
+            375.2242431640625,
+            170.96554565429688,
+            416.6126708984375,
+            249.073486328125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.86,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.37719667188651,
+            "machine_bbox": [
+              380.0,
+              94.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 59,
+          "total_violating_frames": 59,
+          "violation_duration": 2.32,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            94.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            157.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 59,
+      "timestamp": 2.36,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.36,
+          "frames_seen": 60,
+          "current_position": [
+            395.912109375,
+            210.0663299560547
+          ],
+          "bbox": [
+            375.1986999511719,
+            171.04019165039062,
+            416.6255187988281,
+            249.09246826171875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.88467076639982,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 60,
+          "total_violating_frames": 60,
+          "violation_duration": 2.36,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 60,
+      "timestamp": 2.4,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.4,
+          "frames_seen": 61,
+          "current_position": [
+            395.95465087890625,
+            210.28076171875
+          ],
+          "bbox": [
+            375.25921630859375,
+            171.3582763671875,
+            416.65008544921875,
+            249.2032470703125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.07760634589467,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 61,
+          "total_violating_frames": 61,
+          "violation_duration": 2.4,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 61,
+      "timestamp": 2.44,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.44,
+          "frames_seen": 62,
+          "current_position": [
+            395.98760986328125,
+            210.22882080078125
+          ],
+          "bbox": [
+            375.30975341796875,
+            171.27822875976562,
+            416.66546630859375,
+            249.17941284179688
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 110.26850894615713,
+            "machine_bbox": [
+              380.0,
+              91.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 62,
+          "total_violating_frames": 62,
+          "violation_duration": 2.44,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            91.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 62,
+      "timestamp": 2.48,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.48,
+          "frames_seen": 63,
+          "current_position": [
+            395.98016357421875,
+            210.27264404296875
+          ],
+          "bbox": [
+            375.28424072265625,
+            171.36672973632812,
+            416.67608642578125,
+            249.17855834960938
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.67594015936214,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 63,
+          "total_violating_frames": 63,
+          "violation_duration": 2.48,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 63,
+      "timestamp": 2.52,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.52,
+          "frames_seen": 64,
+          "current_position": [
+            395.9930419921875,
+            210.2725830078125
+          ],
+          "bbox": [
+            375.302490234375,
+            171.3560791015625,
+            416.68359375,
+            249.1890869140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.79955883748028,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              600.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 64,
+          "total_violating_frames": 64,
+          "violation_duration": 2.52,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            600.0,
+            221.0
+          ],
+          "center": [
+            490.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 64,
+      "timestamp": 2.56,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.56,
+          "frames_seen": 65,
+          "current_position": [
+            395.99053955078125,
+            210.2692108154297
+          ],
+          "bbox": [
+            375.2828369140625,
+            171.36700439453125,
+            416.6982421875,
+            249.17141723632812
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.93713997693179,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              598.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 65,
+          "total_violating_frames": 65,
+          "violation_duration": 2.56,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            598.0,
+            221.0
+          ],
+          "center": [
+            489.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 65,
+      "timestamp": 2.6,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.6,
+          "frames_seen": 66,
+          "current_position": [
+            395.9859619140625,
+            210.28030395507812
+          ],
+          "bbox": [
+            375.2877197265625,
+            171.36648559570312,
+            416.6842041015625,
+            249.19412231445312
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.74735330690586,
+            "machine_bbox": [
+              380.0,
+              88.0,
+              594.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 66,
+          "total_violating_frames": 66,
+          "violation_duration": 2.6,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            88.0,
+            594.0,
+            221.0
+          ],
+          "center": [
+            487.0,
+            154.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 66,
+      "timestamp": 2.64,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.64,
+          "frames_seen": 67,
+          "current_position": [
+            395.9705810546875,
+            210.2762451171875
+          ],
+          "bbox": [
+            375.2401123046875,
+            171.35699462890625,
+            416.7010498046875,
+            249.19549560546875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.857,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.97378545920456,
+            "machine_bbox": [
+              380.0,
+              84.0,
+              592.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 67,
+          "total_violating_frames": 67,
+          "violation_duration": 2.64,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            84.0,
+            592.0,
+            221.0
+          ],
+          "center": [
+            486.0,
+            152.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 67,
+      "timestamp": 2.68,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.68,
+          "frames_seen": 68,
+          "current_position": [
+            396.47119140625,
+            210.7496795654297
+          ],
+          "bbox": [
+            376.01934814453125,
+            171.36041259765625,
+            416.92303466796875,
+            250.13894653320312
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.52640273488502,
+            "machine_bbox": [
+              380.0,
+              82.0,
+              590.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 68,
+          "total_violating_frames": 68,
+          "violation_duration": 2.68,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            82.0,
+            590.0,
+            221.0
+          ],
+          "center": [
+            485.0,
+            151.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 68,
+      "timestamp": 2.72,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.72,
+          "frames_seen": 69,
+          "current_position": [
+            396.48199462890625,
+            210.7445526123047
+          ],
+          "bbox": [
+            376.0823974609375,
+            171.36929321289062,
+            416.881591796875,
+            250.11981201171875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.42661605519432,
+            "machine_bbox": [
+              380.0,
+              80.0,
+              586.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 69,
+          "total_violating_frames": 69,
+          "violation_duration": 2.72,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            80.0,
+            586.0,
+            221.0
+          ],
+          "center": [
+            483.0,
+            150.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 69,
+      "timestamp": 2.76,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.76,
+          "frames_seen": 70,
+          "current_position": [
+            396.46502685546875,
+            210.73731994628906
+          ],
+          "bbox": [
+            376.06646728515625,
+            171.36279296875,
+            416.86358642578125,
+            250.11184692382812
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.60315316402435,
+            "machine_bbox": [
+              380.0,
+              78.0,
+              585.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 70,
+          "total_violating_frames": 70,
+          "violation_duration": 2.76,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            78.0,
+            585.0,
+            221.0
+          ],
+          "center": [
+            482.5,
+            149.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 70,
+      "timestamp": 2.8,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.8,
+          "frames_seen": 71,
+          "current_position": [
+            396.455322265625,
+            210.73573303222656
+          ],
+          "bbox": [
+            376.05352783203125,
+            171.3636474609375,
+            416.85711669921875,
+            250.10781860351562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 104.5791294739707,
+            "machine_bbox": [
+              380.0,
+              76.0,
+              581.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 71,
+          "total_violating_frames": 71,
+          "violation_duration": 2.8,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            76.0,
+            581.0,
+            221.0
+          ],
+          "center": [
+            480.5,
+            148.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 71,
+      "timestamp": 2.84,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.84,
+          "frames_seen": 72,
+          "current_position": [
+            396.45391845703125,
+            210.7394256591797
+          ],
+          "bbox": [
+            376.0391845703125,
+            171.36376953125,
+            416.86865234375,
+            250.11508178710938
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.19393573614403,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              576.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 72,
+          "total_violating_frames": 72,
+          "violation_duration": 2.84,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            576.0,
+            221.0
+          ],
+          "center": [
+            478.0,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 72,
+      "timestamp": 2.88,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.88,
+          "frames_seen": 73,
+          "current_position": [
+            396.217041015625,
+            210.9330291748047
+          ],
+          "bbox": [
+            376.067626953125,
+            171.03753662109375,
+            416.366455078125,
+            250.82852172851562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.71141928998371,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              574.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 73,
+          "total_violating_frames": 73,
+          "violation_duration": 2.88,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            574.0,
+            221.0
+          ],
+          "center": [
+            477.0,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 73,
+      "timestamp": 2.92,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.92,
+          "frames_seen": 74,
+          "current_position": [
+            396.27557373046875,
+            210.8505859375
+          ],
+          "bbox": [
+            376.2181396484375,
+            170.99252319335938,
+            416.3330078125,
+            250.70864868164062
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.867,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.45478053514876,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              572.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 74,
+          "total_violating_frames": 74,
+          "violation_duration": 2.92,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            572.0,
+            221.0
+          ],
+          "center": [
+            476.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 74,
+      "timestamp": 2.96,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 2.96,
+          "frames_seen": 75,
+          "current_position": [
+            396.25164794921875,
+            210.85565185546875
+          ],
+          "bbox": [
+            376.1917724609375,
+            170.99920654296875,
+            416.3115234375,
+            250.71209716796875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.867,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.92797517217176,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 75,
+          "total_violating_frames": 75,
+          "violation_duration": 2.96,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 75,
+      "timestamp": 3.0,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.0,
+          "frames_seen": 76,
+          "current_position": [
+            396.2666015625,
+            210.85853576660156
+          ],
+          "bbox": [
+            376.18670654296875,
+            171.00128173828125,
+            416.34649658203125,
+            250.71578979492188
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.55894559415859,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 76,
+          "total_violating_frames": 76,
+          "violation_duration": 3.0,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 76,
+      "timestamp": 3.04,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.04,
+          "frames_seen": 77,
+          "current_position": [
+            396.26959228515625,
+            210.85414123535156
+          ],
+          "bbox": [
+            376.1853942871094,
+            170.99359130859375,
+            416.3537902832031,
+            250.71469116210938
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.867,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.79047199361868,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 77,
+          "total_violating_frames": 77,
+          "violation_duration": 3.04,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 77,
+      "timestamp": 3.08,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.08,
+          "frames_seen": 78,
+          "current_position": [
+            396.27398681640625,
+            210.85162353515625
+          ],
+          "bbox": [
+            376.210693359375,
+            171.00143432617188,
+            416.3372802734375,
+            250.70181274414062
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.853,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.78549398464935,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 78,
+          "total_violating_frames": 78,
+          "violation_duration": 3.08,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 78,
+      "timestamp": 3.12,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.12,
+          "frames_seen": 79,
+          "current_position": [
+            397.29571533203125,
+            211.46942138671875
+          ],
+          "bbox": [
+            377.1019287109375,
+            171.62481689453125,
+            417.489501953125,
+            251.31402587890625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 99.66290536529314,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              564.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 79,
+          "total_violating_frames": 79,
+          "violation_duration": 3.12,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            564.0,
+            221.0
+          ],
+          "center": [
+            472.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 79,
+      "timestamp": 3.16,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.16,
+          "frames_seen": 80,
+          "current_position": [
+            397.2890625,
+            211.39639282226562
+          ],
+          "bbox": [
+            377.11029052734375,
+            171.47222900390625,
+            417.46783447265625,
+            251.320556640625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 99.61957021145618,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              564.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 80,
+          "total_violating_frames": 80,
+          "violation_duration": 3.16,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            564.0,
+            221.0
+          ],
+          "center": [
+            472.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 80,
+      "timestamp": 3.2,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.2,
+          "frames_seen": 81,
+          "current_position": [
+            397.29339599609375,
+            211.41775512695312
+          ],
+          "bbox": [
+            377.11761474609375,
+            171.52639770507812,
+            417.46917724609375,
+            251.30911254882812
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.38247023649711,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 81,
+          "total_violating_frames": 81,
+          "violation_duration": 3.2,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 81,
+      "timestamp": 3.24,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.24,
+          "frames_seen": 82,
+          "current_position": [
+            397.291015625,
+            211.39712524414062
+          ],
+          "bbox": [
+            377.0961608886719,
+            171.46923828125,
+            417.4858703613281,
+            251.32501220703125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.37071998613914,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              566.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 82,
+          "total_violating_frames": 82,
+          "violation_duration": 3.24,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            566.0,
+            221.0
+          ],
+          "center": [
+            473.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 82,
+      "timestamp": 3.28,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.28,
+          "frames_seen": 83,
+          "current_position": [
+            397.29205322265625,
+            211.4089813232422
+          ],
+          "bbox": [
+            377.10675048828125,
+            171.4951171875,
+            417.47735595703125,
+            251.32284545898438
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.13408385832784,
+            "machine_bbox": [
+              380.0,
+              70.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 83,
+          "total_violating_frames": 83,
+          "violation_duration": 3.28,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            70.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            145.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 83,
+      "timestamp": 3.32,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.32,
+          "frames_seen": 84,
+          "current_position": [
+            397.2825622558594,
+            211.38658142089844
+          ],
+          "bbox": [
+            377.10162353515625,
+            171.45361328125,
+            417.4635009765625,
+            251.31954956054688
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 100.4780259684523,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              568.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 84,
+          "total_violating_frames": 84,
+          "violation_duration": 3.32,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            568.0,
+            221.0
+          ],
+          "center": [
+            474.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 84,
+      "timestamp": 3.36,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.36,
+          "frames_seen": 85,
+          "current_position": [
+            397.3992614746094,
+            211.25039672851562
+          ],
+          "bbox": [
+            376.9067687988281,
+            171.25253295898438,
+            417.8917541503906,
+            251.24826049804688
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.878,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 101.83658465029644,
+            "machine_bbox": [
+              380.0,
+              72.0,
+              572.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 85,
+          "total_violating_frames": 85,
+          "violation_duration": 3.36,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            72.0,
+            572.0,
+            221.0
+          ],
+          "center": [
+            476.0,
+            146.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 85,
+      "timestamp": 3.4,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.4,
+          "frames_seen": 86,
+          "current_position": [
+            397.47015380859375,
+            211.34722900390625
+          ],
+          "bbox": [
+            377.0323486328125,
+            171.50140380859375,
+            417.907958984375,
+            251.19305419921875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.37795140017889,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              575.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 86,
+          "total_violating_frames": 86,
+          "violation_duration": 3.4,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            575.0,
+            221.0
+          ],
+          "center": [
+            477.5,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 86,
+      "timestamp": 3.44,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.44,
+          "frames_seen": 87,
+          "current_position": [
+            397.506591796875,
+            211.26541137695312
+          ],
+          "bbox": [
+            377.117431640625,
+            171.35000610351562,
+            417.895751953125,
+            251.18081665039062
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 102.68990433449129,
+            "machine_bbox": [
+              380.0,
+              74.0,
+              576.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 87,
+          "total_violating_frames": 87,
+          "violation_duration": 3.44,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            74.0,
+            576.0,
+            221.0
+          ],
+          "center": [
+            478.0,
+            147.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 87,
+      "timestamp": 3.48,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.48,
+          "frames_seen": 88,
+          "current_position": [
+            397.52960205078125,
+            211.30540466308594
+          ],
+          "bbox": [
+            377.1680908203125,
+            171.4625244140625,
+            417.89111328125,
+            251.14828491210938
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.6623624696856,
+            "machine_bbox": [
+              380.0,
+              76.0,
+              580.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 88,
+          "total_violating_frames": 88,
+          "violation_duration": 3.48,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            76.0,
+            580.0,
+            221.0
+          ],
+          "center": [
+            480.0,
+            148.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 88,
+      "timestamp": 3.52,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.52,
+          "frames_seen": 89,
+          "current_position": [
+            397.53106689453125,
+            211.31796264648438
+          ],
+          "bbox": [
+            377.1690673828125,
+            171.48394775390625,
+            417.89306640625,
+            251.1519775390625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.882,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 103.8678164761701,
+            "machine_bbox": [
+              380.0,
+              78.0,
+              582.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 89,
+          "total_violating_frames": 89,
+          "violation_duration": 3.52,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            78.0,
+            582.0,
+            221.0
+          ],
+          "center": [
+            481.0,
+            149.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 89,
+      "timestamp": 3.56,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.56,
+          "frames_seen": 90,
+          "current_position": [
+            398.6067810058594,
+            213.01177978515625
+          ],
+          "bbox": [
+            378.2500915527344,
+            173.8914794921875,
+            418.9634704589844,
+            252.132080078125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.877,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.02351176808385,
+            "machine_bbox": [
+              380.0,
+              80.0,
+              586.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 90,
+          "total_violating_frames": 90,
+          "violation_duration": 3.56,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            80.0,
+            586.0,
+            221.0
+          ],
+          "center": [
+            483.0,
+            150.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 90,
+      "timestamp": 3.6,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.6,
+          "frames_seen": 91,
+          "current_position": [
+            398.62554931640625,
+            213.03204345703125
+          ],
+          "bbox": [
+            378.2025146484375,
+            174.01242065429688,
+            419.048583984375,
+            252.05166625976562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.888,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.05063933277607,
+            "machine_bbox": [
+              380.0,
+              82.0,
+              590.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 91,
+          "total_violating_frames": 91,
+          "violation_duration": 3.6,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            82.0,
+            590.0,
+            221.0
+          ],
+          "center": [
+            485.0,
+            151.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 91,
+      "timestamp": 3.64,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.64,
+          "frames_seen": 92,
+          "current_position": [
+            398.65545654296875,
+            212.95050048828125
+          ],
+          "bbox": [
+            378.1949157714844,
+            173.854248046875,
+            419.1159973144531,
+            252.0467529296875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.22303084077818,
+            "machine_bbox": [
+              380.0,
+              84.0,
+              592.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 92,
+          "total_violating_frames": 92,
+          "violation_duration": 3.64,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            84.0,
+            592.0,
+            221.0
+          ],
+          "center": [
+            486.0,
+            152.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 92,
+      "timestamp": 3.68,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.68,
+          "frames_seen": 93,
+          "current_position": [
+            398.6886291503906,
+            212.9547576904297
+          ],
+          "bbox": [
+            378.22857666015625,
+            173.87774658203125,
+            419.148681640625,
+            252.03176879882812
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.46016359824432,
+            "machine_bbox": [
+              380.0,
+              86.0,
+              594.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 93,
+          "total_violating_frames": 93,
+          "violation_duration": 3.68,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            86.0,
+            594.0,
+            221.0
+          ],
+          "center": [
+            487.0,
+            153.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 93,
+      "timestamp": 3.72,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.72,
+          "frames_seen": 94,
+          "current_position": [
+            398.6411437988281,
+            212.97157287597656
+          ],
+          "bbox": [
+            378.2183532714844,
+            173.915283203125,
+            419.0639343261719,
+            252.02786254882812
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.51623558545606,
+            "machine_bbox": [
+              380.0,
+              89.0,
+              596.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 94,
+          "total_violating_frames": 94,
+          "violation_duration": 3.72,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            89.0,
+            596.0,
+            221.0
+          ],
+          "center": [
+            488.0,
+            155.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 94,
+      "timestamp": 3.76,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.76,
+          "frames_seen": 95,
+          "current_position": [
+            398.6309814453125,
+            212.99664306640625
+          ],
+          "bbox": [
+            378.22430419921875,
+            173.9482421875,
+            419.03765869140625,
+            252.0450439453125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.95444185188745,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              600.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 95,
+          "total_violating_frames": 95,
+          "violation_duration": 3.76,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            600.0,
+            221.0
+          ],
+          "center": [
+            490.0,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 95,
+      "timestamp": 3.8,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.8,
+          "frames_seen": 96,
+          "current_position": [
+            398.64447021484375,
+            213.0076904296875
+          ],
+          "bbox": [
+            378.22357177734375,
+            173.9691162109375,
+            419.06536865234375,
+            252.0462646484375
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.37238029437435,
+            "machine_bbox": [
+              380.0,
+              90.0,
+              601.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 96,
+          "total_violating_frames": 96,
+          "violation_duration": 3.8,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            90.0,
+            601.0,
+            221.0
+          ],
+          "center": [
+            490.5,
+            155.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 96,
+      "timestamp": 3.84,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.84,
+          "frames_seen": 97,
+          "current_position": [
+            398.7428894042969,
+            213.02731323242188
+          ],
+          "bbox": [
+            378.14447021484375,
+            173.8218994140625,
+            419.34130859375,
+            252.23272705078125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.05148241970643,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 97,
+          "total_violating_frames": 97,
+          "violation_duration": 3.84,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 97,
+      "timestamp": 3.88,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.88,
+          "frames_seen": 98,
+          "current_position": [
+            398.7620849609375,
+            213.08413696289062
+          ],
+          "bbox": [
+            378.2237548828125,
+            173.94876098632812,
+            419.3004150390625,
+            252.21951293945312
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.06453757599948,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 98,
+          "total_violating_frames": 98,
+          "violation_duration": 3.88,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 98,
+      "timestamp": 3.92,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.92,
+          "frames_seen": 99,
+          "current_position": [
+            398.7772216796875,
+            213.0735626220703
+          ],
+          "bbox": [
+            378.2266845703125,
+            173.93368530273438,
+            419.3277587890625,
+            252.21343994140625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.90222901357399,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 99,
+          "total_violating_frames": 99,
+          "violation_duration": 3.92,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 99,
+      "timestamp": 3.96,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 3.96,
+          "frames_seen": 100,
+          "current_position": [
+            398.80010986328125,
+            213.04739379882812
+          ],
+          "bbox": [
+            378.23846435546875,
+            173.8818359375,
+            419.36175537109375,
+            252.21295166015625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.895,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.86913600829683,
+            "machine_bbox": [
+              380.0,
+              92.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 100,
+          "total_violating_frames": 100,
+          "violation_duration": 3.96,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            92.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            156.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 100,
+      "timestamp": 4.0,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.0,
+          "frames_seen": 101,
+          "current_position": [
+            399.5865173339844,
+            214.2664794921875
+          ],
+          "bbox": [
+            378.3203430175781,
+            175.23007202148438,
+            420.8526916503906,
+            253.30288696289062
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.887,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 108.79328554072889,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 101,
+          "total_violating_frames": 101,
+          "violation_duration": 4.0,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 101,
+      "timestamp": 4.04,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.04,
+          "frames_seen": 102,
+          "current_position": [
+            399.44268798828125,
+            214.60845947265625
+          ],
+          "bbox": [
+            377.8070068359375,
+            175.77285766601562,
+            421.078369140625,
+            253.44406127929688
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.09229970649992,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 102,
+          "total_violating_frames": 102,
+          "violation_duration": 4.04,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 102,
+      "timestamp": 4.08,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.08,
+          "frames_seen": 103,
+          "current_position": [
+            399.448974609375,
+            214.60028076171875
+          ],
+          "bbox": [
+            377.817138671875,
+            175.75250244140625,
+            421.080810546875,
+            253.44805908203125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.08270189714332,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 103,
+          "total_violating_frames": 103,
+          "violation_duration": 4.08,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 103,
+      "timestamp": 4.12,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.12,
+          "frames_seen": 104,
+          "current_position": [
+            399.46343994140625,
+            214.58868408203125
+          ],
+          "bbox": [
+            377.8172607421875,
+            175.7218017578125,
+            421.109619140625,
+            253.45556640625
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 109.06433216065105,
+            "machine_bbox": [
+              380.0,
+              96.0,
+              606.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 104,
+          "total_violating_frames": 104,
+          "violation_duration": 4.12,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            96.0,
+            606.0,
+            221.0
+          ],
+          "center": [
+            493.0,
+            158.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 104,
+      "timestamp": 4.16,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.16,
+          "frames_seen": 105,
+          "current_position": [
+            399.49114990234375,
+            214.57180786132812
+          ],
+          "bbox": [
+            377.81439208984375,
+            175.69186401367188,
+            421.16790771484375,
+            253.45175170898438
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.66053765194411,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 105,
+          "total_violating_frames": 105,
+          "violation_duration": 4.16,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 105,
+      "timestamp": 4.2,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.2,
+          "frames_seen": 106,
+          "current_position": [
+            399.48736572265625,
+            214.58450317382812
+          ],
+          "bbox": [
+            377.8197021484375,
+            175.7142333984375,
+            421.155029296875,
+            253.45477294921875
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 107.67028369443929,
+            "machine_bbox": [
+              380.0,
+              98.0,
+              604.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 106,
+          "total_violating_frames": 106,
+          "violation_duration": 4.2,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            98.0,
+            604.0,
+            221.0
+          ],
+          "center": [
+            492.0,
+            159.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 106,
+      "timestamp": 4.24,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.24,
+          "frames_seen": 107,
+          "current_position": [
+            399.47137451171875,
+            214.58404541015625
+          ],
+          "bbox": [
+            377.81829833984375,
+            175.71060180664062,
+            421.12445068359375,
+            253.45748901367188
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.31356099624306,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 107,
+          "total_violating_frames": 107,
+          "violation_duration": 4.24,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 107,
+      "timestamp": 4.28,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.28,
+          "frames_seen": 108,
+          "current_position": [
+            399.4617004394531,
+            214.5867919921875
+          ],
+          "bbox": [
+            377.81866455078125,
+            175.71142578125,
+            421.104736328125,
+            253.462158203125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.896,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.3232869809929,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 108,
+          "total_violating_frames": 108,
+          "violation_duration": 4.28,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 108,
+      "timestamp": 4.32,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.32,
+          "frames_seen": 109,
+          "current_position": [
+            399.2435607910156,
+            214.69088745117188
+          ],
+          "bbox": [
+            377.919921875,
+            175.66598510742188,
+            420.56719970703125,
+            253.71578979492188
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.883,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.31065577639173,
+            "machine_bbox": [
+              380.0,
+              101.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 109,
+          "total_violating_frames": 109,
+          "violation_duration": 4.32,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            101.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            161.0
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 109,
+      "timestamp": 4.36,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.36,
+          "frames_seen": 110,
+          "current_position": [
+            399.2987060546875,
+            214.7395782470703
+          ],
+          "bbox": [
+            378.03387451171875,
+            175.62258911132812,
+            420.56353759765625,
+            253.8565673828125
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.887,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 106.54134952995794,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 110,
+          "total_violating_frames": 110,
+          "violation_duration": 4.36,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 110,
+      "timestamp": 4.4,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.4,
+          "frames_seen": 111,
+          "current_position": [
+            399.6412353515625,
+            214.20932006835938
+          ],
+          "bbox": [
+            378.64385986328125,
+            175.37258911132812,
+            420.63861083984375,
+            253.04605102539062
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.887,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.97695476042924,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 111,
+          "total_violating_frames": 111,
+          "violation_duration": 4.4,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    },
+    {
+      "frame_id": 111,
+      "timestamp": 4.44,
+      "workers": [
+        {
+          "track_id": 1,
+          "first_seen": 0.0,
+          "last_seen": 4.44,
+          "frames_seen": 112,
+          "current_position": [
+            400.6162109375,
+            215.28280639648438
+          ],
+          "bbox": [
+            379.01708984375,
+            176.21121215820312,
+            422.21533203125,
+            254.35440063476562
+          ],
+          "associated_ppe": {
+            "helmet_missing": false,
+            "vest_missing": true,
+            "helmet_conf": 0.899,
+            "vest_conf": 0.96
+          },
+          "associated_machine": {
+            "machine_id": 1,
+            "distance_px": 105.69004305973758,
+            "machine_bbox": [
+              380.0,
+              100.0,
+              602.0,
+              221.0
+            ],
+            "class_name": "excavator"
+          },
+          "current_risk_state": "NONE",
+          "violation_start_time": 0.0,
+          "consecutive_violating_frames": 112,
+          "total_violating_frames": 112,
+          "violation_duration": 4.44,
+          "persistence_ratio": 1.0
+        }
+      ],
+      "machinery": [
+        {
+          "machine_id": 1,
+          "bbox": [
+            380.0,
+            100.0,
+            602.0,
+            221.0
+          ],
+          "center": [
+            491.0,
+            160.5
+          ],
+          "class_name": "excavator",
+          "confidence": 0.91
+        }
+      ]
+    }
+  ]
+}

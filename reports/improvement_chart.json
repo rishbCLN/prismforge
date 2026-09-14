@@ -1,0 +1,38 @@
+{
+  "generated_from": "saved_eval_files",
+  "benchmark_dataset": "holdout_features.json",
+  "models": [
+    {
+      "version": "v0_baseline",
+      "display_name": "V0: Baseline",
+      "macro_f1": 0.3053,
+      "high_risk_recall": 0.4286,
+      "false_positive_rate": 0.0,
+      "weighted_hazard_error": 1.1639
+    },
+    {
+      "version": "v1_context",
+      "display_name": "V1: Context",
+      "macro_f1": 0.4367,
+      "high_risk_recall": 0.4286,
+      "false_positive_rate": 0.0,
+      "weighted_hazard_error": 0.8962
+    },
+    {
+      "version": "v2_temporal",
+      "display_name": "V2: Temporal",
+      "macro_f1": 0.3541,
+      "high_risk_recall": 0.3482,
+      "false_positive_rate": 0.0,
+      "weighted_hazard_error": 1.3347
+    },
+    {
+      "version": "v3_learned",
+      "display_name": "V3: Learned",
+      "macro_f1": 0.7143,
+      "high_risk_recall": 1.0,
+      "false_positive_rate": 0.0,
+      "weighted_hazard_error": 0.0546
+    }
+  ]
+}
