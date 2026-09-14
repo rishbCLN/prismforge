@@ -1,0 +1,2406 @@
+{
+  "clip_id": "wh_clip_03_carton_throwing_truck",
+  "total_frames": 100,
+  "tracks": [
+    {
+      "frame_idx": 0,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 1,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 2,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 3,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 4,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 5,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 6,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 7,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 8,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 9,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 10,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 11,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 12,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 13,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 14,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 15,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 16,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 17,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 18,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 19,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 20,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 21,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 22,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 23,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 24,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": true
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 25,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 505,
+        "y": 230,
+        "w": 38,
+        "h": 30,
+        "tilt": 0.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 26,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 496,
+        "y": 226,
+        "w": 38,
+        "h": 30,
+        "tilt": 7.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 27,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 488,
+        "y": 223,
+        "w": 38,
+        "h": 30,
+        "tilt": 14.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 28,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 479,
+        "y": 221,
+        "w": 38,
+        "h": 30,
+        "tilt": 21.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 29,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 471,
+        "y": 218,
+        "w": 38,
+        "h": 30,
+        "tilt": 28.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 30,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 462,
+        "y": 217,
+        "w": 38,
+        "h": 30,
+        "tilt": 35.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 31,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 454,
+        "y": 215,
+        "w": 38,
+        "h": 30,
+        "tilt": 42.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 32,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 445,
+        "y": 214,
+        "w": 38,
+        "h": 30,
+        "tilt": 49.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 33,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 437,
+        "y": 213,
+        "w": 38,
+        "h": 30,
+        "tilt": 56.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 34,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 428,
+        "y": 213,
+        "w": 38,
+        "h": 30,
+        "tilt": 63.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 35,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 420,
+        "y": 213,
+        "w": 38,
+        "h": 30,
+        "tilt": 70.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 36,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 411,
+        "y": 213,
+        "w": 38,
+        "h": 30,
+        "tilt": 77.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 37,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 403,
+        "y": 213,
+        "w": 38,
+        "h": 30,
+        "tilt": 84.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 38,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 394,
+        "y": 214,
+        "w": 38,
+        "h": 30,
+        "tilt": 91.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 39,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 386,
+        "y": 216,
+        "w": 38,
+        "h": 30,
+        "tilt": 98.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 40,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 377,
+        "y": 218,
+        "w": 38,
+        "h": 30,
+        "tilt": 105.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 41,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 369,
+        "y": 220,
+        "w": 38,
+        "h": 30,
+        "tilt": 112.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 42,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 360,
+        "y": 222,
+        "w": 38,
+        "h": 30,
+        "tilt": 119.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 43,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 352,
+        "y": 225,
+        "w": 38,
+        "h": 30,
+        "tilt": 126.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 44,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 343,
+        "y": 228,
+        "w": 38,
+        "h": 30,
+        "tilt": 133.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 45,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 335,
+        "y": 232,
+        "w": 38,
+        "h": 30,
+        "tilt": 140.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 46,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 326,
+        "y": 235,
+        "w": 38,
+        "h": 30,
+        "tilt": 147.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 47,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 318,
+        "y": 240,
+        "w": 38,
+        "h": 30,
+        "tilt": 154.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 48,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 309,
+        "y": 244,
+        "w": 38,
+        "h": 30,
+        "tilt": 161.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 49,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 301,
+        "y": 249,
+        "w": 38,
+        "h": 30,
+        "tilt": 168.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 50,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 292,
+        "y": 255,
+        "w": 38,
+        "h": 30,
+        "tilt": 175.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 51,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 284,
+        "y": 260,
+        "w": 38,
+        "h": 30,
+        "tilt": 182.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 52,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 275,
+        "y": 266,
+        "w": 38,
+        "h": 30,
+        "tilt": 189.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 53,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 267,
+        "y": 273,
+        "w": 38,
+        "h": 30,
+        "tilt": 196.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 54,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 258,
+        "y": 279,
+        "w": 38,
+        "h": 30,
+        "tilt": 203.0,
+        "is_damaged": false
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 8.5,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 55,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 56,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 57,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 58,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 59,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 60,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 61,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 62,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 63,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 64,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 65,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 66,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 67,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 68,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 69,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 70,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 71,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 72,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 73,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 74,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 75,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 76,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 77,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 78,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 79,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 80,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 81,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 82,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 83,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 84,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 85,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 86,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 87,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 88,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 89,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 90,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 91,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 92,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 93,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 94,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 95,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 96,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 97,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 98,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    },
+    {
+      "frame_idx": 99,
+      "operator": {
+        "x": 520,
+        "y": 240,
+        "pose": "standing",
+        "is_carrying": false
+      },
+      "carton": {
+        "x": 250,
+        "y": 290,
+        "w": 38,
+        "h": 30,
+        "tilt": 25.0,
+        "is_damaged": true
+      },
+      "kinematics": {
+        "drop_velocity": 0.0,
+        "throw_velocity": 0.0,
+        "drag_velocity": 0.0,
+        "jerk": 0.0,
+        "outside_staging": false
+      }
+    }
+  ]
+}

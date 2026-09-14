@@ -32,7 +32,28 @@ videos_dir = os.path.abspath("data/raw")
 os.makedirs(videos_dir, exist_ok=True)
 app.mount("/videos", StaticFiles(directory=videos_dir), name="videos")
 
-# Initialize models
+# Mount reports for charts
+reports_dir = os.path.abspath("reports")
+os.makedirs(reports_dir, exist_ok=True)
+app.mount("/reports", StaticFiles(directory=reports_dir), name="reports")
+
+from src.risk_model.warehouse_models import (
+    WarehouseV0Baseline,
+    WarehouseV1Context,
+    WarehouseV2Temporal,
+    WarehouseV3Learned
+)
+from src.assistant.supervisor_ai import WarehouseSupervisorAssistant
+
+# Initialize warehouse models and supervisor assistant
+WAREHOUSE_MODELS = {
+    "v0_baseline": WarehouseV0Baseline(),
+    "v1_context": WarehouseV1Context(),
+    "v2_temporal": WarehouseV2Temporal(),
+    "v3_learned": WarehouseV3Learned("models/v3/warehouse_risk_mlp.pt")
+}
+
+# Initialize models for construction domain
 MODELS = {
     "v0_baseline": V0RuleBaselineModel(),
     "v1_context": V1ContextRiskModel(),
@@ -40,6 +61,7 @@ MODELS = {
     "v3_learned": V3LearnedRiskModel()
 }
 prism_tracker = PrismTracker()
+supervisor_assistant = WarehouseSupervisorAssistant()
 
 
 @app.get("/")
@@ -128,6 +150,83 @@ def predict_hazard_risk(req: PredictRequest):
         "model_version": req.model_version,
         "prediction": pred.to_dict()
     }
+
+
+# ==================== WAREHOUSE MATERIAL HANDLING API ====================
+class WarehousePredictRequest(BaseModel):
+    model_version: str = "v3_learned"
+    features: List[float]
+
+
+class AssistantChatRequest(BaseModel):
+    message: str
+
+
+@app.get("/api/warehouse/scenarios")
+def list_warehouse_scenarios():
+    manifest_path = "data/labels/warehouse_manifest.json"
+    if not os.path.exists(manifest_path):
+        return {"scenarios": []}
+    with open(manifest_path, "r") as f:
+        data = json.load(f)
+    return {"scenarios": data.get("scenarios", [])}
+
+
+@app.get("/api/warehouse/scenario/{clip_id}/frames")
+def get_warehouse_scenario_frames(clip_id: str):
+    features_file = os.path.join("data/features", f"{clip_id}_features.json")
+    tracks_file = os.path.join("data/tracks", f"{clip_id}_tracks.json")
+    labels_file = os.path.join("data/labels", f"{clip_id}_labels.json")
+
+    if not os.path.exists(features_file) or not os.path.exists(tracks_file):
+        raise HTTPException(status_code=404, detail=f"Data for {clip_id} not found")
+
+    with open(features_file, "r") as f:
+        feat_data = json.load(f)
+    with open(tracks_file, "r") as f:
+        track_data = json.load(f)
+    labels_data = {}
+    if os.path.exists(labels_file):
+        with open(labels_file, "r") as lf:
+            labels_data = json.load(lf)
+
+    return {
+        "clip_id": clip_id,
+        "total_frames": track_data.get("total_frames", 100),
+        "fps": 25.0,
+        "tracks": track_data.get("tracks", []),
+        "features": feat_data.get("samples", []),
+        "ground_truth": labels_data.get("frames", [])
+    }
+
+
+@app.post("/api/warehouse/predict")
+def predict_warehouse_risk(req: WarehousePredictRequest):
+    model = WAREHOUSE_MODELS.get(req.model_version)
+    if model is None:
+        model = WAREHOUSE_MODELS["v3_learned"]
+    if len(req.features) != 16:
+        raise HTTPException(status_code=400, detail="Expected 16 kinematic features")
+    pred = model.predict(req.features)
+    return {
+        "model_version": req.model_version,
+        "prediction": pred.to_dict()
+    }
+
+
+@app.get("/api/warehouse/benchmark")
+def get_warehouse_benchmark():
+    chart_path = "reports/warehouse_improvement_chart.json"
+    if not os.path.exists(chart_path):
+        return {}
+    with open(chart_path, "r") as f:
+        return json.load(f)
+
+
+@app.post("/api/assistant/chat")
+def chat_with_supervisor_assistant(req: AssistantChatRequest):
+    res = supervisor_assistant.query(req.message)
+    return res
 
 
 @app.get("/api/benchmark")

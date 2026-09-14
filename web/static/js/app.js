@@ -14,6 +14,26 @@ class HazardMeshApp {
     this.cachedFrames = [];
     this.selectedWorkerId = null;
 
+    // Domain state
+    this.currentDomain = "warehouse"; // Default to Warehouse Material Handling
+    this.domainWarehouseBtn = document.getElementById("domainWarehouseBtn");
+    this.domainConstructionBtn = document.getElementById("domainConstructionBtn");
+    this.warehouseTelemetryGrid = document.getElementById("warehouseTelemetryGrid");
+    this.constructionTelemetryGrid = document.getElementById("constructionTelemetryGrid");
+    this.telemetryPanelTitle = document.getElementById("telemetryPanelTitle");
+
+    // Warehouse Telemetry elements
+    this.whDropVal = document.getElementById("whDropVal");
+    this.whThrowVal = document.getElementById("whThrowVal");
+    this.whDragVal = document.getElementById("whDragVal");
+    this.whJerkVal = document.getElementById("whJerkVal");
+    this.whZoneVal = document.getElementById("whZoneVal");
+
+    // Assistant Chat elements
+    this.chatMessagesStream = document.getElementById("chatMessagesStream");
+    this.chatInputField = document.getElementById("chatInputField");
+    this.chatSendBtn = document.getElementById("chatSendBtn");
+
     // DOM Elements
     this.videoEl = document.getElementById("constructionVideo");
     this.canvasEl = document.getElementById("overlayCanvas");
@@ -40,6 +60,8 @@ class HazardMeshApp {
 
   async init() {
     this.setupTabs();
+    this.setupDomainSwitcher();
+    this.setupSupervisorChat();
     this.setupModelSelector();
     this.setupControls();
     this.setupIngestionStudio();
@@ -60,6 +82,100 @@ class HazardMeshApp {
         if (targetPane) targetPane.classList.add("active");
       });
     });
+  }
+
+  setupDomainSwitcher() {
+    if (this.domainWarehouseBtn) {
+      this.domainWarehouseBtn.addEventListener("click", async () => {
+        if (this.currentDomain === "warehouse") return;
+        this.currentDomain = "warehouse";
+        this.domainWarehouseBtn.classList.add("active");
+        if (this.domainConstructionBtn) this.domainConstructionBtn.classList.remove("active");
+        if (this.warehouseTelemetryGrid) this.warehouseTelemetryGrid.style.display = "grid";
+        if (this.constructionTelemetryGrid) this.constructionTelemetryGrid.style.display = "none";
+        if (this.telemetryPanelTitle) this.telemetryPanelTitle.innerHTML = 'Warehouse Handling Kinematics &bull; <span id="workerIdTag" style="color:var(--color-cyan);">Carton #102</span>';
+        await this.loadScenarios();
+        await this.loadBenchmarkHub();
+      });
+    }
+
+    if (this.domainConstructionBtn) {
+      this.domainConstructionBtn.addEventListener("click", async () => {
+        if (this.currentDomain === "construction") return;
+        this.currentDomain = "construction";
+        this.domainConstructionBtn.classList.add("active");
+        if (this.domainWarehouseBtn) this.domainWarehouseBtn.classList.remove("active");
+        if (this.warehouseTelemetryGrid) this.warehouseTelemetryGrid.style.display = "none";
+        if (this.constructionTelemetryGrid) this.constructionTelemetryGrid.style.display = "grid";
+        if (this.telemetryPanelTitle) this.telemetryPanelTitle.innerHTML = 'Worker Telemetry &bull; <span id="workerIdTag" style="color:var(--color-cyan);">#1</span>';
+        await this.loadScenarios();
+        await this.loadBenchmarkHub();
+      });
+    }
+  }
+
+  setupSupervisorChat() {
+    if (!this.chatSendBtn || !this.chatInputField) return;
+
+    const sendMessage = async () => {
+      const text = this.chatInputField.value.trim();
+      if (!text) return;
+      this.chatInputField.value = "";
+
+      // Append user bubble
+      this.appendChatBubble(text, "user");
+
+      try {
+        const res = await fetch("/api/assistant/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json();
+        this.appendChatBubble(data.response || "No response received.", "assistant");
+      } catch (err) {
+        this.appendChatBubble("Error communicating with AI Assistant API.", "assistant");
+      }
+    };
+
+    this.chatSendBtn.addEventListener("click", sendMessage);
+    this.chatInputField.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    // Handle prompt chip clicks
+    document.querySelectorAll(".prompt-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        const promptText = chip.getAttribute("data-prompt");
+        if (promptText) {
+          this.chatInputField.value = promptText;
+          sendMessage();
+        }
+      });
+    });
+  }
+
+  appendChatBubble(text, role) {
+    if (!this.chatMessagesStream) return;
+    const bubble = document.createElement("div");
+    bubble.className = `chat-bubble ${role}`;
+
+    // Formatting for assistant
+    if (role === "assistant") {
+      let formatted = text
+        .replace(/### (.*?)\n/g, '<div style="font-size:15px; font-weight:700; color:#38bdf8; margin-bottom:6px;">$1</div>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/\n\n/g, '<br><br>')
+        .replace(/\n- /g, '<br>&bull; ')
+        .replace(/\n/g, '<br>');
+      bubble.innerHTML = formatted;
+    } else {
+      bubble.textContent = text;
+    }
+
+    this.chatMessagesStream.appendChild(bubble);
+    this.chatMessagesStream.scrollTop = this.chatMessagesStream.scrollHeight;
   }
 
   setupModelSelector() {
@@ -103,23 +219,28 @@ class HazardMeshApp {
 
   async loadScenarios() {
     try {
-      const res = await fetch("/api/scenarios");
+      const url = this.currentDomain === "warehouse" ? "/api/warehouse/scenarios" : "/api/scenarios";
+      const res = await fetch(url);
       const data = await res.json();
       const scenarios = data.scenarios || [];
 
       this.scenarioSelect.innerHTML = "";
       scenarios.forEach((s, idx) => {
         const opt = document.createElement("option");
-        opt.value = s.clip_id;
-        opt.textContent = `[${s.split.toUpperCase()}] ${s.clip_id} (${s.severity})`;
+        const clipId = s.id || s.clip_id;
+        opt.value = clipId;
+        const splitTag = (s.split || "train").toUpperCase();
+        const sevTag = s.risk_level || s.severity || "INFO";
+        const desc = s.behavior ? `${s.behavior.replace(/_/g, " ")} [${sevTag}]` : `${clipId} [${sevTag}]`;
+        opt.textContent = `[${splitTag}] ${clipId} — ${desc}`;
         this.scenarioSelect.appendChild(opt);
       });
 
       if (scenarios.length > 0) {
-        // Default to critical danger scenario or first holdout
-        const defaultClip = scenarios.find(s => s.clip_id.includes("danger") || s.clip_id.includes("test_severe")) || scenarios[0];
-        this.scenarioSelect.value = defaultClip.clip_id;
-        await this.loadScenario(defaultClip.clip_id);
+        const first = scenarios[0];
+        const clipId = first.id || first.clip_id;
+        this.scenarioSelect.value = clipId;
+        await this.loadScenario(clipId);
       }
     } catch (err) {
       console.error("Failed to load scenarios:", err);
@@ -129,10 +250,13 @@ class HazardMeshApp {
   async loadScenario(clipId) {
     this.pause();
     try {
-      const res = await fetch(`/api/scenario/${clipId}/frames`);
+      const url = this.currentDomain === "warehouse"
+        ? `/api/warehouse/scenario/${clipId}/frames`
+        : `/api/scenario/${clipId}/frames`;
+      const res = await fetch(url);
       const data = await res.json();
       this.currentScenario = clipId;
-      this.totalFrames = data.total_frames;
+      this.totalFrames = data.total_frames || 100;
       this.fps = data.fps || 25.0;
       this.cachedFrames = data.features || [];
       this.cachedTracks = data.tracks || [];
@@ -226,7 +350,44 @@ class HazardMeshApp {
     const trackFrame = this.cachedTracks[frameIdx];
     if (!trackFrame) return;
 
-    // A. Draw Machinery Danger Perimeter
+    if (this.currentDomain === "warehouse") {
+      // 1. Draw Staging Area Polygon
+      ctx.strokeStyle = "rgba(20, 220, 245, 0.9)";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(40, 180, 220, 150);
+      ctx.fillStyle = "rgba(20, 220, 245, 0.08)";
+      ctx.fillRect(40, 180, 220, 150);
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = "bold 10px 'JetBrains Mono', monospace";
+      ctx.fillText("SAFE STAGING ZONE", 48, 196);
+
+      // 2. Draw Carton and Operator BBoxes
+      if (trackFrame.carton) {
+        const c = trackFrame.carton;
+        const bw = c.w || 38;
+        const bh = c.h || 30;
+        const bx = c.x - bw / 2;
+        const by = c.y - bh / 2;
+
+        const k = trackFrame.kinematics || {};
+        const isHazard = (k.drop_velocity > 0.25 || k.throw_velocity > 0.35 || k.drag_velocity > 0.2 || k.outside_staging);
+        const boxStroke = isHazard ? "#ef4444" : "#10b981";
+
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = boxStroke;
+        ctx.strokeRect(bx, by, bw, bh);
+
+        ctx.fillStyle = "rgba(10, 14, 23, 0.85)";
+        ctx.fillRect(bx, by - 16, Math.max(70, bw), 16);
+        ctx.fillStyle = boxStroke;
+        ctx.font = "bold 10px 'Outfit', sans-serif";
+        const tag = isHazard ? "BOX #102 [RISK]" : "BOX #102 [SAFE]";
+        ctx.fillText(tag, bx + 4, by - 4);
+      }
+      return;
+    }
+
+    // A. Draw Machinery Danger Perimeter (Construction)
     if (trackFrame.machinery && trackFrame.machinery.length > 0) {
       trackFrame.machinery.forEach(m => {
         const [mx, my] = m.center;
@@ -296,7 +457,61 @@ class HazardMeshApp {
   }
 
   async updateCurrentFrameInference() {
-    // Find sample for current frame
+    if (!this.cachedFrames || this.cachedFrames.length === 0) return;
+
+    if (this.currentDomain === "warehouse") {
+      const sample = this.cachedFrames[this.currentFrameIdx] || this.cachedFrames.find(s => s.frame_idx === this.currentFrameIdx);
+      if (!sample) return;
+
+      const feats = sample.features || [];
+      if (feats.length === 16) {
+        // Update Warehouse Gauges
+        if (this.whDropVal) {
+          const dVal = (feats[0] * 3.5).toFixed(1);
+          this.whDropVal.textContent = `${dVal} m/s`;
+          this.whDropVal.className = feats[0] > 0.25 ? "t-value violation" : "t-value compliant";
+        }
+        if (this.whThrowVal) {
+          const tVal = (feats[2] * 4.2).toFixed(1);
+          this.whThrowVal.textContent = `${tVal} m/s`;
+          this.whThrowVal.className = feats[2] > 0.35 ? "t-value violation" : "t-value compliant";
+        }
+        if (this.whDragVal) {
+          const isDragging = feats[5] > 0.20;
+          this.whDragVal.textContent = isDragging ? "ACTIVE (ON FLOOR)" : "NONE";
+          this.whDragVal.className = isDragging ? "t-value violation" : "t-value compliant";
+        }
+        if (this.whJerkVal) {
+          const isJerk = feats[7] > 0.40;
+          this.whJerkVal.textContent = isJerk ? "EXCESSIVE SHOCK" : "CONTROLLED";
+          this.whJerkVal.className = isJerk ? "t-value violation" : "t-value compliant";
+        }
+        if (this.whZoneVal) {
+          const isOutside = feats[9] > 0.5;
+          this.whZoneVal.textContent = isOutside ? "OUTSIDE DESIGNATED BAY (BREACH)" : "INSIDE SAFE STAGING ZONE";
+          this.whZoneVal.className = isOutside ? "t-value violation" : "t-value compliant";
+        }
+
+        // Call Warehouse Predict API
+        try {
+          const res = await fetch("/api/warehouse/predict", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              model_version: this.activeModel,
+              features: feats
+            })
+          });
+          const data = await res.json();
+          this.updateRiskDisplay(data.prediction);
+        } catch (err) {
+          console.error("Warehouse predict error:", err);
+        }
+      }
+      return;
+    }
+
+    // Construction Domain Inference
     const frameSamples = this.cachedFrames.filter(s => s.frame_id === this.currentFrameIdx);
     if (!frameSamples || frameSamples.length === 0) return;
 
@@ -364,9 +579,11 @@ class HazardMeshApp {
   }
 
   updateRiskDisplay(pred) {
-    const score = pred.risk_score;
-    const severity = pred.severity;
-    const priority = pred.priority;
+    if (!pred) return;
+    const score = pred.risk_score || 0.0;
+    const severity = pred.severity || "LOW";
+    const priority = pred.priority || pred.intervention_priority || "P3_INFORMATIONAL";
+    const factors = pred.primary_factors || pred.contributing_factors || [];
 
     // Circular gauge offset: circumference = 2 * PI * 45 = ~283
     const maxOffset = 283;
@@ -374,7 +591,7 @@ class HazardMeshApp {
     if (this.riskGaugeCircle) {
       this.riskGaugeCircle.style.strokeDashoffset = currentOffset;
       // Gauge color
-      if (severity === "HIGH") this.riskGaugeCircle.style.stroke = "var(--color-crimson)";
+      if (severity === "CRITICAL" || severity === "HIGH") this.riskGaugeCircle.style.stroke = "var(--color-crimson)";
       else if (severity === "MEDIUM") this.riskGaugeCircle.style.stroke = "var(--color-amber)";
       else if (severity === "LOW") this.riskGaugeCircle.style.stroke = "var(--color-blue)";
       else this.riskGaugeCircle.style.stroke = "var(--color-green)";
@@ -390,44 +607,90 @@ class HazardMeshApp {
       this.severityBadge.className = `severity-badge severity-${severity}`;
     }
     if (this.priorityBadge) {
-      this.priorityBadge.textContent = priority;
+      this.priorityBadge.textContent = priority.replace("priority-", "");
       this.priorityBadge.className = `priority-badge priority-${priority}`;
     }
 
     // Why Factors
     if (this.factorsList) {
       this.factorsList.innerHTML = "";
-      (pred.primary_factors || []).forEach(factorText => {
+      if (factors.length === 0) {
         const chip = document.createElement("div");
-        chip.className = "factor-chip" + (factorText.includes("Critical") || factorText.includes("High") ? " critical" : "");
-        chip.textContent = factorText;
+        chip.className = "factor-chip";
+        chip.textContent = "Normal compliant operation";
         this.factorsList.appendChild(chip);
-      });
+      } else {
+        factors.forEach(factorText => {
+          const chip = document.createElement("div");
+          const isCritical = (factorText.includes("CRITICAL") || factorText.includes("HIGH") || factorText.includes("DROP") || factorText.includes("THROW") || factorText.includes("Critical"));
+          chip.className = "factor-chip" + (isCritical ? " critical" : "");
+          chip.textContent = factorText.replace(/_/g, " ");
+          this.factorsList.appendChild(chip);
+        });
+      }
     }
   }
 
   async loadBenchmarkHub() {
     try {
-      // 1. Benchmark Table
-      const bRes = await fetch("/api/benchmark");
-      const bData = await bRes.json();
       const tbody = document.getElementById("benchmarkTableBody");
-      if (tbody && bData.models) {
-        tbody.innerHTML = "";
-        bData.models.forEach(m => {
-          const tr = document.createElement("tr");
-          if (m.version === "v3_learned") tr.className = "highlight-v3";
+      const chartImg = document.getElementById("benchmarkChartImg");
+      const chartCounter = document.getElementById("chartCounter");
 
-          const pillClass = m.version.replace("_baseline", "").replace("_context", "").replace("_temporal", "").replace("_learned", "");
-          tr.innerHTML = `
-            <td><span class="pill-version pill-${pillClass}">${m.display_name}</span></td>
-            <td>${m.macro_f1.toFixed(4)}</td>
-            <td>${m.high_risk_recall.toFixed(4)}</td>
-            <td>${m.false_positive_rate.toFixed(4)}</td>
-            <td>${m.weighted_hazard_error.toFixed(4)}</td>
-          `;
-          tbody.appendChild(tr);
-        });
+      if (this.currentDomain === "warehouse") {
+        if (chartImg) chartImg.src = "/reports/warehouse_improvement_chart.png";
+        if (chartCounter) chartCounter.textContent = "DamageMesh Held-Out Benchmark (N=200)";
+
+        const bRes = await fetch("/api/warehouse/benchmark");
+        const bData = await bRes.json();
+        if (tbody) {
+          tbody.innerHTML = "";
+          const vOrder = ["V0_Baseline", "V1_Context", "V2_Temporal", "V3_Learned"];
+          const vLabels = {
+            "V0_Baseline": "V0 Baseline (Heuristic)",
+            "V1_Context": "V1 Context (Spatial)",
+            "V2_Temporal": "V2 Temporal (Persistence)",
+            "V3_Learned": "V3 Learned (PyTorch MLP)"
+          };
+
+          vOrder.forEach(vKey => {
+            const m = bData[vKey];
+            if (!m) return;
+            const tr = document.createElement("tr");
+            if (vKey === "V3_Learned") tr.className = "highlight-v3";
+            const pillClass = vKey.toLowerCase().replace("warehouse_", "");
+            tr.innerHTML = `
+              <td><span class="pill-version pill-${pillClass}">${vLabels[vKey] || vKey}</span></td>
+              <td><strong>${m.macro_f1.toFixed(4)}</strong></td>
+              <td>${(m.high_risk_recall * 100).toFixed(1)}%</td>
+              <td>${(m.false_alarm_rate * 100).toFixed(1)}%</td>
+              <td><strong>${m.asymmetric_damage_cost.toFixed(1)}</strong> (5x FN + 1x FP)</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+      } else {
+        if (chartImg) chartImg.src = "/reports/improvement_chart.png";
+        if (chartCounter) chartCounter.textContent = "HazardMesh Held-Out Benchmark (N=366)";
+
+        const bRes = await fetch("/api/benchmark");
+        const bData = await bRes.json();
+        if (tbody && bData.models) {
+          tbody.innerHTML = "";
+          bData.models.forEach(m => {
+            const tr = document.createElement("tr");
+            if (m.version === "v3_learned") tr.className = "highlight-v3";
+            const pillClass = m.version.replace("_baseline", "").replace("_context", "").replace("_temporal", "").replace("_learned", "");
+            tr.innerHTML = `
+              <td><span class="pill-version pill-${pillClass}">${m.display_name}</span></td>
+              <td><strong>${m.macro_f1.toFixed(4)}</strong></td>
+              <td>${(m.high_risk_recall * 100).toFixed(1)}%</td>
+              <td>${(m.false_positive_rate * 100).toFixed(1)}%</td>
+              <td>${m.weighted_hazard_error.toFixed(4)}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
       }
 
       // 2. Failure Analysis

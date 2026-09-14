@@ -1,0 +1,24 @@
+{
+  "run_id": "run_Warehouse_V2_Temporal_3f65d7e7",
+  "model_version": "Warehouse_V2_Temporal",
+  "dataset_version": "warehouse_holdout_test",
+  "git_commit": "c7e4232",
+  "feature_version": "kinematic_16_feat",
+  "evaluation_timestamp": "2026-09-14T15:32:58.043706",
+  "hyperparameters": {
+    "samples": 200,
+    "classes": 4
+  },
+  "metrics": {
+    "version": "V2_Temporal",
+    "accuracy": 0.325,
+    "macro_f1": 0.1389,
+    "high_risk_recall": 0.975,
+    "false_alarm_rate": 0.7417,
+    "asymmetric_damage_cost": 99.0,
+    "avg_latency_ms": 0.008,
+    "test_samples": 200
+  },
+  "failure_summary": {},
+  "diagnosis_note": "DamageMesh benchmark evaluation of V2_Temporal"
+}

@@ -1877,6 +1877,102 @@
         ]
       },
       "diagnosis_note": "Learned multi-feature interactions in PyTorch MLP. Optimized both continuous risk and discrete severity."
+    },
+    {
+      "run_id": "run_Warehouse_V0_Baseline_4aa71c3b",
+      "model_version": "Warehouse_V0_Baseline",
+      "dataset_version": "warehouse_holdout_test",
+      "git_commit": "c7e4232",
+      "feature_version": "kinematic_16_feat",
+      "evaluation_timestamp": "2026-09-14T15:32:57.933108",
+      "hyperparameters": {
+        "samples": 200,
+        "classes": 4
+      },
+      "metrics": {
+        "version": "V0_Baseline",
+        "accuracy": 0.17,
+        "macro_f1": 0.0833,
+        "high_risk_recall": 0.9875,
+        "false_alarm_rate": 0.75,
+        "asymmetric_damage_cost": 95.0,
+        "avg_latency_ms": 0.008,
+        "test_samples": 200
+      },
+      "failure_summary": {},
+      "diagnosis_note": "DamageMesh benchmark evaluation of V0_Baseline"
+    },
+    {
+      "run_id": "run_Warehouse_V1_Context_9c1bec18",
+      "model_version": "Warehouse_V1_Context",
+      "dataset_version": "warehouse_holdout_test",
+      "git_commit": "c7e4232",
+      "feature_version": "kinematic_16_feat",
+      "evaluation_timestamp": "2026-09-14T15:32:57.991244",
+      "hyperparameters": {
+        "samples": 200,
+        "classes": 4
+      },
+      "metrics": {
+        "version": "V1_Context",
+        "accuracy": 0.375,
+        "macro_f1": 0.2748,
+        "high_risk_recall": 0.4125,
+        "false_alarm_rate": 0.0,
+        "asymmetric_damage_cost": 235.0,
+        "avg_latency_ms": 0.02,
+        "test_samples": 200
+      },
+      "failure_summary": {},
+      "diagnosis_note": "DamageMesh benchmark evaluation of V1_Context"
+    },
+    {
+      "run_id": "run_Warehouse_V2_Temporal_3f65d7e7",
+      "model_version": "Warehouse_V2_Temporal",
+      "dataset_version": "warehouse_holdout_test",
+      "git_commit": "c7e4232",
+      "feature_version": "kinematic_16_feat",
+      "evaluation_timestamp": "2026-09-14T15:32:58.043706",
+      "hyperparameters": {
+        "samples": 200,
+        "classes": 4
+      },
+      "metrics": {
+        "version": "V2_Temporal",
+        "accuracy": 0.325,
+        "macro_f1": 0.1389,
+        "high_risk_recall": 0.975,
+        "false_alarm_rate": 0.7417,
+        "asymmetric_damage_cost": 99.0,
+        "avg_latency_ms": 0.008,
+        "test_samples": 200
+      },
+      "failure_summary": {},
+      "diagnosis_note": "DamageMesh benchmark evaluation of V2_Temporal"
+    },
+    {
+      "run_id": "run_Warehouse_V3_Learned_6be48c48",
+      "model_version": "Warehouse_V3_Learned",
+      "dataset_version": "warehouse_holdout_test",
+      "git_commit": "c7e4232",
+      "feature_version": "kinematic_16_feat",
+      "evaluation_timestamp": "2026-09-14T15:32:58.286189",
+      "hyperparameters": {
+        "samples": 200,
+        "classes": 4
+      },
+      "metrics": {
+        "version": "V3_Learned",
+        "accuracy": 0.995,
+        "macro_f1": 0.4974,
+        "high_risk_recall": 0.9875,
+        "false_alarm_rate": 0.0,
+        "asymmetric_damage_cost": 5.0,
+        "avg_latency_ms": 0.934,
+        "test_samples": 200
+      },
+      "failure_summary": {},
+      "diagnosis_note": "DamageMesh benchmark evaluation of V3_Learned"
     }
   ]
 }

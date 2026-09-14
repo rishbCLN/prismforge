@@ -18,20 +18,33 @@
         </svg>
       </div>
       <div class="brand-text">
-        <h1>HazardMesh</h1>
-        <p>Context-Aware Construction Safety Intelligence</p>
+        <h1 id="brandTitle">PRISMForge</h1>
+        <p id="brandSubtitle">Physical Operations Intelligence &bull; Damage Prevention</p>
       </div>
+    </div>
+
+    <!-- Operational Domain Switcher -->
+    <div class="domain-switcher">
+      <button class="domain-btn active" id="domainWarehouseBtn" data-domain="warehouse">
+        <span class="domain-icon">📦</span>
+        <span>DamageMesh (Warehouse)</span>
+      </button>
+      <button class="domain-btn" id="domainConstructionBtn" data-domain="construction">
+        <span class="domain-icon">🏗️</span>
+        <span>HazardMesh (Construction)</span>
+      </button>
     </div>
 
     <div class="header-controls">
       <nav class="nav-tabs">
-        <button class="tab-btn active" data-tab="tab-live-intel" id="tabLiveBtn">Live Safety Reasoning</button>
+        <button class="tab-btn active" data-tab="tab-live-intel" id="tabLiveBtn">Live Field Reasoning</button>
+        <button class="tab-btn" data-tab="tab-assistant" id="tabAssistantBtn">💬 AI Supervisor Assistant</button>
         <button class="tab-btn" data-tab="tab-improvement" id="tabImprovementBtn">Model Improvement Hub</button>
         <button class="tab-btn" data-tab="tab-ingestion" id="tabIngestionBtn">Data Ingestion Studio</button>
       </nav>
       <div class="status-badge" id="systemStatusBadge">
         <span class="status-dot"></span>
-        <span>YOLOv8 + PyTorch Active</span>
+        <span>PRISM Dual-Domain Engine Active</span>
       </div>
     </div>
   </header>
@@ -129,11 +142,36 @@
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                   </svg>
-                  Worker Telemetry &bull; <span id="workerIdTag" style="color:var(--color-cyan);">#1</span>
+                  <span id="telemetryPanelTitle">Warehouse Handling Kinematics &bull; <span id="workerIdTag" style="color:var(--color-cyan);">Carton #102</span></span>
                 </h2>
               </div>
 
-              <div class="worker-telemetry-grid">
+              <!-- Warehouse Telemetry Grid -->
+              <div class="worker-telemetry-grid" id="warehouseTelemetryGrid">
+                <div class="telemetry-item">
+                  <div class="t-label">Drop Velocity (vy)</div>
+                  <div class="t-value compliant" id="whDropVal">0.0 m/s</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="t-label">Horizontal Throw (vx)</div>
+                  <div class="t-value compliant" id="whThrowVal">0.0 m/s</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="t-label">Floor Dragging</div>
+                  <div class="t-value compliant" id="whDragVal">NONE</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="t-label">Kinetic Jerk (Shock)</div>
+                  <div class="t-value compliant" id="whJerkVal">LOW</div>
+                </div>
+                <div class="telemetry-item" style="grid-column: span 2;">
+                  <div class="t-label">Staging Zone Status</div>
+                  <div class="t-value compliant" id="whZoneVal">INSIDE DESIGNATED BAY</div>
+                </div>
+              </div>
+
+              <!-- Construction Telemetry Grid (Hidden in warehouse mode) -->
+              <div class="worker-telemetry-grid" id="constructionTelemetryGrid" style="display: none;">
                 <div class="telemetry-item">
                   <div class="t-label">Hardhat Status</div>
                   <div class="t-value compliant" id="workerHelmetVal">PRESENT</div>
@@ -176,6 +214,49 @@
       </div>
     </section>
 
+    <!-- Tab: AI Supervisor Assistant -->
+    <section class="tab-pane" id="tab-assistant">
+      <div class="glass-card" style="padding: 0; margin-bottom: 24px;">
+        <div class="chat-container">
+          <div class="chat-header">
+            <div class="chat-header-title">
+              <span style="font-size: 22px;">🤖</span>
+              <div>
+                <div style="font-size: 15px; font-weight: 700; color: #f1f5f9;">PRISM Field Intelligence Assistant</div>
+                <div style="font-size: 11px; color: var(--color-green); font-weight: normal;">Grounded in Verified PRISM Telemetry &bull; Zero Hallucinations</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <span class="status-badge" style="padding: 4px 10px; font-size: 11px;">
+                <span class="status-dot"></span>
+                Dock Bay 04 Active
+              </span>
+            </div>
+          </div>
+
+          <div class="chat-messages" id="chatMessagesStream">
+            <div class="chat-bubble assistant">
+              Hello Supervisor. I am your <strong>PRISM Operations Assistant</strong> for Warehouse Unloading. I monitor real-time kinematic telemetry and can explain detected handling violations, analyze loading bay trends, and recommend process improvements.<br><br>
+              Click any quick chip below or ask me a question!
+            </div>
+          </div>
+
+          <div class="prompt-chips-bar">
+            <button class="prompt-chip" data-prompt="Show me all high-risk handling events from today's unloading.">🚨 High-Risk Incidents</button>
+            <button class="prompt-chip" data-prompt="Why was clip 02 classified as high risk?">📦 Explain Clip 02 Drop</button>
+            <button class="prompt-chip" data-prompt="Which loading bay had the highest number of risky events?">📊 Bay Risk Distribution</button>
+            <button class="prompt-chip" data-prompt="What corrective actions are recommended to prevent damage?">💡 Recommended Interventions</button>
+            <button class="prompt-chip" data-prompt="Summarize today's shift observations and damage prevention impact.">📋 Shift Summary</button>
+          </div>
+
+          <div class="chat-input-bar">
+            <input type="text" class="chat-input" id="chatInputField" placeholder="Ask about incidents, specific clips, or loading bay trends...">
+            <button class="chat-send-btn" id="chatSendBtn">Send Query</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Tab 2: Model Improvement Hub & Benchmark -->
     <section class="tab-pane" id="tab-improvement">
       <div class="hub-header">
@@ -202,9 +283,20 @@
               </tr>
             </thead>
             <tbody id="benchmarkTableBody">
-              <!-- Dynamically populated from /api/benchmark -->
+              <!-- Dynamically populated from /api/benchmark or /api/warehouse/benchmark -->
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- Visual Benchmark Chart Card -->
+      <div class="glass-card" style="margin-bottom: 24px;">
+        <div class="card-title-bar">
+          <h2 id="chartTitle">Model Progression Visual Benchmark</h2>
+          <span class="chip-counter" id="chartCounter">DamageMesh Benchmark</span>
+        </div>
+        <div style="margin-top: 14px; overflow: hidden; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); background: #111625; padding: 12px; text-align: center;">
+          <img id="benchmarkChartImg" src="/reports/warehouse_improvement_chart.png" alt="Progression Benchmark Chart" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;">
         </div>
       </div>
 
