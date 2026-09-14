@@ -37,6 +37,11 @@ reports_dir = os.path.abspath("reports")
 os.makedirs(reports_dir, exist_ok=True)
 app.mount("/reports", StaticFiles(directory=reports_dir), name="reports")
 
+# Mount datasets for live test sample previews
+datasets_dir = os.path.abspath("datasets")
+if os.path.exists(datasets_dir):
+    app.mount("/datasets", StaticFiles(directory=datasets_dir), name="datasets")
+
 from src.risk_model.warehouse_models import (
     WarehouseV0Baseline,
     WarehouseV1Context,
@@ -330,3 +335,80 @@ def get_manifest():
     with open(manifest_path, "r") as f:
         return json.load(f)
 
+
+# ==================== PPE ANALYSER API ====================
+from src.features.ppe_inference import PPEInferenceEngine
+
+ppe_engine = PPEInferenceEngine(model_path="models/ppe_reasoner.pt", yolo_path="yolov8n.pt")
+
+
+@app.post("/api/ppe/analyze")
+async def analyze_ppe_image(file: UploadFile = File(...)):
+    """Accepts uploaded test image, executes YOLOv8 + PPEReasonerNet, and returns metrics & visual annotations."""
+    try:
+        content = await file.read()
+        res = ppe_engine.analyze_image_bytes(content, filename=file.filename)
+        return JSONResponse(content=res)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"PPE analysis failed: {str(e)}")
+
+
+@app.get("/api/ppe/info")
+def get_ppe_analyser_info():
+    """Returns architecture info and files needed by the PPE Analyser."""
+    metrics_path = "models/ppe_reasoner_metrics.json"
+    metrics = {}
+    if os.path.exists(metrics_path):
+        try:
+            with open(metrics_path, "r") as f:
+                metrics = json.load(f)
+        except Exception:
+            pass
+    return {
+        "status": "ready",
+        "files_needed": PPEInferenceEngine.FILES_USED,
+        "weights_path": "models/ppe_reasoner.pt",
+        "training_metrics": metrics
+    }
+
+
+@app.get("/api/ppe/samples")
+def get_ppe_samples():
+    """Returns sample images from datasets/ppe_master_folder for 1-click test inspection."""
+    import glob
+    samples = []
+    base_folder = "datasets/ppe_master_folder"
+    if os.path.exists(base_folder):
+        all_imgs = glob.glob(f"{base_folder}/**/*.jpg", recursive=True)
+        # Select 6 varied samples across ppe1, ppe2, ppe3
+        for img_p in all_imgs[:6]:
+            rel_p = os.path.relpath(img_p, ".").replace("\\", "/")
+            samples.append({
+                "path": rel_p,
+                "url": f"/{rel_p}",
+                "name": os.path.basename(img_p)
+            })
+    return {"samples": samples}
+
+
+class AnalyzeSampleRequest(BaseModel):
+    sample_path: str
+
+
+@app.post("/api/ppe/analyze_sample")
+def analyze_sample_image(req: AnalyzeSampleRequest):
+    """Analyzes a preset sample image from datasets/ppe_master_folder."""
+    if not os.path.exists(req.sample_path):
+        raise HTTPException(status_code=404, detail="Sample image not found.")
+    try:
+        with open(req.sample_path, "rb") as f:
+            content = f.read()
+        res = ppe_engine.analyze_image_bytes(content, filename=os.path.basename(req.sample_path))
+        return JSONResponse(content=res)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Analysis failed: {e}")
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("web.server:app", host="0.0.0.0", port=8000, reload=False)

@@ -108,6 +108,7 @@ class HazardMeshConsole {
     this.setupCanvasInteractions();
     this.setupKeyboardShortcuts();
     this.setupIngestionHandlers();
+    this.setupPPEAnalyser();
 
     // Initial Data Fetches
     await this.loadScenarios();
@@ -1231,6 +1232,197 @@ class HazardMeshConsole {
       });
 
       this.manifestTableBody.appendChild(row);
+    });
+  }
+
+  // ==================== PPE ANALYSER ====================
+  setupPPEAnalyser() {
+    const fileInput = document.getElementById("ppeImageUploadInput");
+    const loadingBox = document.getElementById("ppeAnalysisLoading");
+
+    // File Upload Handler
+    fileInput?.addEventListener("change", async (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      loadingBox?.classList.remove("hidden");
+      const startTime = performance.now();
+
+      try {
+        const resp = await fetch("/api/ppe/analyze", {
+          method: "POST",
+          body: formData
+        });
+        const data = await resp.json();
+        const duration = Math.round(performance.now() - startTime);
+
+        this.renderPPEResults(data, duration);
+      } catch (err) {
+        console.error("PPE analysis failed:", err);
+        alert("PPE Analysis failed: " + err.message);
+      } finally {
+        loadingBox?.classList.add("hidden");
+      }
+    });
+
+    // Sample Preset Buttons
+    [1, 2, 3].forEach(idx => {
+      const btn = document.getElementById(`ppeSampleBtn${idx}`);
+      btn?.addEventListener("click", async () => {
+        loadingBox?.classList.remove("hidden");
+        const startTime = performance.now();
+        try {
+          const samplesResp = await fetch("/api/ppe/samples");
+          const samplesData = await samplesResp.json();
+          const sample = samplesData.samples?.[idx - 1] || samplesData.samples?.[0];
+
+          if (sample) {
+            const resp = await fetch("/api/ppe/analyze_sample", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ sample_path: sample.path })
+            });
+            const data = await resp.json();
+            const duration = Math.round(performance.now() - startTime);
+            this.renderPPEResults(data, duration);
+          }
+        } catch (err) {
+          console.error("Failed to analyze sample:", err);
+        } finally {
+          loadingBox?.classList.add("hidden");
+        }
+      });
+    });
+  }
+
+  renderPPEResults(data, latencyMs) {
+    if (!data || data.status !== "success") return;
+
+    const summary = data.summary_metrics || {};
+    const workers = data.workers || [];
+
+    // Update metrics strip
+    const setVal = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+
+    setVal("metricTotalWorkers", summary.total_workers ?? 0);
+    setVal("metricCompliantCount", summary.compliant_count ?? 0);
+    setVal("metricViolationCount", summary.violation_count ?? 0);
+    setVal("metricHardhatRate", `${summary.hardhat_compliance_rate_pct ?? 0}%`);
+    setVal("metricVestRate", `${summary.vest_compliance_rate_pct ?? 0}%`);
+    setVal("metricAvgRisk", (summary.avg_risk_score ?? 0).toFixed(3));
+
+    const statusEl = document.getElementById("metricSiteStatus");
+    const siteStatus = summary.site_status || "UNKNOWN";
+    if (statusEl) {
+      statusEl.textContent = siteStatus.replace(/_/g, " ");
+      if (siteStatus === "FULL_COMPLIANCE") {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-secondary text-secondary bg-secondary-container/20";
+      } else if (siteStatus === "CRITICAL_VIOLATIONS") {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-error text-error bg-error-container/20";
+      } else {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-tertiary text-tertiary bg-tertiary-container/20";
+      }
+    }
+
+    // Annotated Image View
+    const placeholder = document.getElementById("ppeImagePlaceholder");
+    const imgDisplay = document.getElementById("ppeAnnotatedImageDisplay");
+    if (data.annotated_image_base64 && imgDisplay) {
+      imgDisplay.src = data.annotated_image_base64;
+      imgDisplay.classList.remove("hidden");
+      if (placeholder) placeholder.classList.add("hidden");
+    }
+
+    // Metadata Strip
+    setVal("ppeFilenameDisplay", `SOURCE: ${data.filename || "Uploaded Image"}`);
+    setVal("ppeDimensionsDisplay", `RESOLUTION: ${data.image_dimensions?.width || 0} x ${data.image_dimensions?.height || 0}`);
+    setVal("ppeInferenceTimeDisplay", `LATENCY: ${latencyMs} ms`);
+
+    // Render Worker Cards
+    const container = document.getElementById("ppeWorkerCardsContainer");
+    setVal("ppeWorkerCardCount", `(${workers.length} Workers)`);
+    if (!container) return;
+    container.innerHTML = "";
+
+    if (workers.length === 0) {
+      container.innerHTML = `
+        <div class="p-space-lg bg-surface-container-lowest border border-outline-variant text-center">
+          <span class="font-label-mono-micro text-[11px] text-on-surface-variant block">
+            No workers detected in this scene.
+          </span>
+        </div>
+      `;
+      return;
+    }
+
+    workers.forEach((w) => {
+      let badgeClass = "border-secondary text-secondary bg-secondary-container/20";
+      let statusDot = "bg-secondary";
+      if (w.violation_id === 1) {
+        badgeClass = "border-tertiary text-tertiary bg-tertiary-container/20";
+        statusDot = "bg-tertiary";
+      } else if (w.violation_id === 2) {
+        badgeClass = "border-yellow-400 text-yellow-400 bg-yellow-400/20";
+        statusDot = "bg-yellow-400";
+      } else if (w.violation_id === 3) {
+        badgeClass = "border-error text-error bg-error-container/20";
+        statusDot = "bg-error";
+      }
+
+      const card = document.createElement("div");
+      card.className = "p-space-sm bg-surface-container-lowest border border-outline-variant space-y-2 hover:border-primary transition-colors";
+      card.innerHTML = `
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full ${statusDot}"></span>
+            <span class="font-label-caps text-[11px] font-bold text-on-surface">${w.worker_id}</span>
+            <span class="font-mono text-[10px] text-on-surface-variant">(Conf: ${(w.confidence * 100).toFixed(0)}%)</span>
+          </div>
+          <span class="px-1.5 py-0.5 font-label-caps text-[9px] font-bold border ${badgeClass}">
+            ${w.violation_class.replace(/_/g, " ")}
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-[10px] font-mono">
+          <div class="bg-surface-container p-1 border border-outline-variant">
+            <div class="flex justify-between text-on-surface-variant">
+              <span>Hardhat:</span>
+              <span class="${w.has_hardhat ? 'text-secondary font-bold' : 'text-error font-bold'}">
+                ${w.has_hardhat ? 'WORN' : 'MISSING'}
+              </span>
+            </div>
+            <div class="w-full bg-surface-container-lowest h-1 mt-1">
+              <div class="h-1 ${w.has_hardhat ? 'bg-secondary' : 'bg-error'}" style="width: ${w.hardhat_compliance_pct}%"></div>
+            </div>
+            <span class="text-[9px] text-on-surface-variant mt-0.5 block">${w.hardhat_compliance_pct}% Confidence</span>
+          </div>
+
+          <div class="bg-surface-container p-1 border border-outline-variant">
+            <div class="flex justify-between text-on-surface-variant">
+              <span>Safety Vest:</span>
+              <span class="${w.has_vest ? 'text-secondary font-bold' : 'text-error font-bold'}">
+                ${w.has_vest ? 'WORN' : 'MISSING'}
+              </span>
+            </div>
+            <div class="w-full bg-surface-container-lowest h-1 mt-1">
+              <div class="h-1 ${w.has_vest ? 'bg-secondary' : 'bg-error'}" style="width: ${w.vest_compliance_pct}%"></div>
+            </div>
+            <span class="text-[9px] text-on-surface-variant mt-0.5 block">${w.vest_compliance_pct}% Confidence</span>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between text-[10px] font-mono border-t border-outline-variant pt-1.5">
+          <span class="text-on-surface-variant">Risk: <strong class="${w.risk_score >= 0.5 ? 'text-error' : 'text-secondary'}">${w.risk_score.toFixed(3)}</strong> (${w.risk_level})</span>
+          <span class="text-primary text-[9px] truncate max-w-[200px]" title="${w.action}">${w.action}</span>
+        </div>
+      `;
+      container.appendChild(card);
     });
   }
 }

@@ -149,6 +149,11 @@
           data-tab="tab-ingestion" id="tabIngestionBtn">
           [3] Data Ingestion Studio
         </button>
+        <button
+          class="nav-tab-btn px-space-md py-1 font-label-caps uppercase text-[11px] text-on-surface-variant hover:text-on-surface transition-colors"
+          data-tab="tab-ppe-analyser" id="tabPpeAnalyserBtn">
+          [4] PPE Analyser (Neural Model)
+        </button>
       </nav>
 
       <!-- Right Telemetry & Active Model Indicator -->
@@ -1137,6 +1142,234 @@
 
         </div>
       </section>
+
+    </section>
+
+    <!-- ==================== TAB 4: PPE ANALYSER ==================== -->
+    <section class="tab-pane" id="tab-ppe-analyser">
+
+      <!-- Sub-Ticker Stream Status Strip -->
+      <div class="w-full px-margin-desktop py-1.5 bg-surface-container-lowest border-b border-outline-variant">
+        <div class="flex flex-wrap items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-md">
+            <div class="flex items-center gap-space-xs px-space-sm py-0.5 bg-secondary-container/30 text-secondary font-label-caps text-[10px] font-bold border border-secondary">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              <span>ENGINE: PPEReasonerNet V1</span>
+            </div>
+            <div class="flex items-center gap-space-xs font-label-mono-micro text-[10px] text-on-surface-variant">
+              <span class="text-outline">WEIGHTS:</span>
+              <span class="text-primary font-semibold font-mono">models/ppe_reasoner.pt</span>
+              <span class="text-outline">|</span>
+              <span class="text-outline">DATASET:</span>
+              <span class="text-tertiary font-mono">datasets/ppe_master_folder (22,740 Images / 20,019 Workers)</span>
+              <span class="text-outline">|</span>
+              <span class="text-outline">VAL ACC:</span>
+              <span class="text-secondary font-mono">Vest 100% / Hardhat 99.98%</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-sm">
+            <span class="font-label-mono-micro text-[10px] text-on-surface-variant">OSHA / ANSI PROTOCOL:</span>
+            <span class="px-space-xs py-0.5 bg-surface-container text-secondary font-mono text-[10px] font-bold border border-outline-variant">ENFORCED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Layout Grid -->
+      <div class="w-full px-margin-desktop py-space-md flex flex-col gap-gutter-desktop">
+
+        <!-- Top Architecture & File Lineage Card -->
+        <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm border-b border-outline-variant pb-space-sm mb-space-sm">
+            <div class="flex items-center gap-space-xs">
+              <div class="w-2.5 h-2.5 bg-primary"></div>
+              <h2 class="font-label-caps text-[12px] uppercase tracking-wider text-on-surface font-bold">
+                PPE Analyser Neural System Architecture &amp; File Dependencies
+              </h2>
+            </div>
+            <span class="font-label-mono-micro text-[10px] text-secondary bg-surface-container-lowest px-space-sm py-0.5 border border-outline-variant">
+              Proprietary AI Contribution (Non-YOLO Custom Network)
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-sm text-[11px] font-mono">
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">1. Neural Weights</div>
+              <div class="text-on-surface font-semibold">models/ppe_reasoner.pt</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">Trained PyTorch weights (4-head multi-task net trained on 20,019 instances from ppe_master_folder).</div>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">2. Neural Architecture &amp; Features</div>
+              <div class="text-on-surface font-semibold">src/risk_model/ppe_reasoner_net.py</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">Custom PPEReasonerNet PyTorch model and extract_ppe_neural_features (14-dim spatial vector).</div>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">3. Visual Perception Engine</div>
+              <div class="text-on-surface font-semibold">src/perception/detector.py</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">YOLOv8 person detector + PPEInspector (anatomical head &amp; torso HSV chrominance inspection).</div>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">4. End-to-End Inference Pipeline</div>
+              <div class="text-on-surface font-semibold">src/features/ppe_inference.py</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">PPEInferenceEngine coordinating detection, 14-dim extraction, neural reasoning, and CV2 annotation.</div>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">5. Fast API Endpoint</div>
+              <div class="text-on-surface font-semibold">web/server.py</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">Exposes /api/ppe/analyze and /api/ppe/samples for real-time image evaluation and preset testing.</div>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant">
+              <div class="text-primary font-bold text-[11px] mb-0.5">6. Interactive Dashboard Console</div>
+              <div class="text-on-surface font-semibold">web/index.html &amp; web/static/js/app.js</div>
+              <div class="text-on-surface-variant text-[10px] mt-0.5">Visual inspection workspace, annotated canvas rendering, and per-worker compliance cards.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing & Upload Control Panel -->
+        <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md border-b border-outline-variant pb-space-sm mb-space-md">
+            <div>
+              <h3 class="font-label-caps text-[12px] uppercase tracking-wider text-on-surface font-bold flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-primary text-[18px]">upload_file</span>
+                Image Testing Studio &amp; Upload
+              </h3>
+              <p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+                Upload any construction test image or click a verified sample from <code class="text-tertiary font-mono">datasets/ppe_master_folder</code>.
+              </p>
+            </div>
+
+            <!-- Upload input and quick buttons -->
+            <div class="flex flex-wrap items-center gap-space-sm">
+              <label class="cursor-pointer px-space-md py-1.5 bg-primary text-on-primary font-label-caps text-[11px] uppercase font-bold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow">
+                <span class="material-symbols-outlined text-[16px]">add_photo_alternate</span>
+                <span>Select Test Image</span>
+                <input type="file" id="ppeImageUploadInput" accept="image/*" class="hidden" />
+              </label>
+
+              <button id="ppeSampleBtn1" class="px-space-sm py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Sample #1 (ppe1)
+              </button>
+              <button id="ppeSampleBtn2" class="px-space-sm py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Sample #2 (ppe2)
+              </button>
+              <button id="ppeSampleBtn3" class="px-space-sm py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Sample #3 (ppe3)
+              </button>
+            </div>
+          </div>
+
+          <!-- Loading Progress Banner -->
+          <div id="ppeAnalysisLoading" class="hidden p-space-md bg-surface-container-lowest border border-primary text-center mb-space-md">
+            <div class="flex items-center justify-center gap-space-sm">
+              <span class="w-3 h-3 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
+              <span class="font-label-caps text-[12px] uppercase text-primary font-bold">
+                Executing Perception (YOLOv8) &rarr; Feature Extraction (14-Dim) &rarr; PPEReasonerNet Inference...
+              </span>
+            </div>
+          </div>
+
+          <!-- Summary Metrics Cards Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-space-sm" id="ppeMetricsCardsStrip">
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Workers Detected</span>
+              <span class="font-mono text-[22px] font-bold text-primary" id="metricTotalWorkers">0</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Fully Compliant</span>
+              <span class="font-mono text-[22px] font-bold text-secondary" id="metricCompliantCount">0</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Violations Detected</span>
+              <span class="font-mono text-[22px] font-bold text-error" id="metricViolationCount">0</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Hardhat Compliance</span>
+              <span class="font-mono text-[22px] font-bold text-tertiary" id="metricHardhatRate">0.0%</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Vest Compliance</span>
+              <span class="font-mono text-[22px] font-bold text-secondary" id="metricVestRate">0.0%</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Average Risk Score</span>
+              <span class="font-mono text-[22px] font-bold text-on-surface" id="metricAvgRisk">0.000</span>
+            </div>
+            <div class="bg-surface-container-lowest p-space-sm border border-outline-variant text-center col-span-2 md:col-span-1">
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase block">Site Status</span>
+              <span class="inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-secondary text-secondary" id="metricSiteStatus">READY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Inspection Canvas & Reasoning Workspace (Split View) -->
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop">
+
+          <!-- Left: Annotated Visual Inspection View (7 Cols) -->
+          <div class="xl:col-span-7 bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col">
+            <div class="flex items-center justify-between border-b border-outline-variant pb-space-sm mb-space-sm">
+              <div class="flex items-center gap-space-xs">
+                <span class="w-2 h-2 bg-secondary"></span>
+                <h3 class="font-label-caps text-[11px] uppercase tracking-wider text-on-surface font-bold">
+                  Annotated Visual Inspection Canvas
+                </h3>
+              </div>
+              <div class="flex items-center gap-space-sm font-label-mono-micro text-[10px]">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> Compliant</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Missing Vest</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-yellow-400"></span> Missing Hardhat</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> Critical No PPE</span>
+              </div>
+            </div>
+
+            <div class="flex-1 min-h-[420px] bg-surface-container-lowest border border-outline-variant flex items-center justify-center relative overflow-hidden group">
+              <!-- Default Placeholder -->
+              <div id="ppeImagePlaceholder" class="flex flex-col items-center justify-center p-space-xl text-center">
+                <span class="material-symbols-outlined text-outline text-[54px] mb-space-sm">safety_check</span>
+                <h4 class="font-label-caps text-[13px] text-on-surface uppercase font-bold mb-1">No Image Loaded</h4>
+                <p class="font-body-sm text-[12px] text-on-surface-variant max-w-md">
+                  Upload an image from your computer or click a sample button above to run <code class="text-primary">PPEReasonerNet</code> inference.
+                </p>
+              </div>
+
+              <!-- Live Annotated Image Display -->
+              <img id="ppeAnnotatedImageDisplay" class="hidden max-h-[580px] w-auto max-w-full object-contain mx-auto shadow-lg" alt="PPE Neural Analysis" />
+            </div>
+
+            <!-- Image Metadata Footer -->
+            <div class="mt-space-sm flex items-center justify-between text-[10px] font-mono text-on-surface-variant px-space-xs">
+              <span id="ppeFilenameDisplay">SOURCE: NONE</span>
+              <span id="ppeDimensionsDisplay">RESOLUTION: -- x --</span>
+              <span id="ppeInferenceTimeDisplay">LATENCY: -- ms</span>
+            </div>
+          </div>
+
+          <!-- Right: Per-Worker Neural Reasoning Cards (5 Cols) -->
+          <div class="xl:col-span-5 bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col">
+            <div class="flex items-center justify-between border-b border-outline-variant pb-space-sm mb-space-sm">
+              <div class="flex items-center gap-space-xs">
+                <span class="w-2 h-2 bg-primary"></span>
+                <h3 class="font-label-caps text-[11px] uppercase tracking-wider text-on-surface font-bold">
+                  Per-Worker Neural Compliance Decisions
+                </h3>
+              </div>
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant" id="ppeWorkerCardCount">
+                (0 Workers)
+              </span>
+            </div>
+
+            <!-- Scrollable Worker Cards List -->
+            <div class="flex-1 overflow-y-auto max-h-[580px] space-y-space-sm pr-1" id="ppeWorkerCardsContainer">
+              <div class="p-space-lg bg-surface-container-lowest border border-outline-variant text-center">
+                <span class="font-label-mono-micro text-[11px] text-on-surface-variant block">
+                  Awaiting inference input... Worker breakdown will appear here with compliance scores and OSHA protocol actions.
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
