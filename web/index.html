@@ -1,404 +1,1003 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HazardMesh — Context-Aware Construction Safety Intelligence</title>
-  <meta name="description" content="AI safety intelligence platform reasoning about PPE, machinery proximity, and temporal persistence to prioritize hazard interventions.">
-  <link rel="stylesheet" href="/static/css/styles.css">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>HazardMesh — Industrial Surveillance & Safety Intelligence Terminal</title>
+  <meta name="description" content="Mission-critical construction safety surveillance console reasoning over PPE, machinery proximity, and temporal persistence.">
+
+  <!-- Google Fonts: Geist, JetBrains Mono, Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN with Stitch Project Theme Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#0a0e16",
+            "primary-container": "#3198dc",
+            "surface-tint": "#93ccff",
+            "surface-bright": "#353942",
+            "inverse-surface": "#dfe2ee",
+            "secondary-fixed-dim": "#4edea3",
+            "tertiary-fixed": "#ffddb8",
+            "primary-fixed-dim": "#93ccff",
+            "on-secondary-fixed": "#002113",
+            "on-secondary": "#003824",
+            "on-surface": "#dfe2ee",
+            "tertiary-fixed-dim": "#ffb95f",
+            "tertiary": "#ffb95f",
+            "on-secondary-fixed-variant": "#005236",
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "background": "#0f131c",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-primary": "#003351",
+            "outline-variant": "#3f4850",
+            "secondary-container": "#00a572",
+            "secondary": "#4edea3",
+            "on-tertiary": "#472a00",
+            "on-surface-variant": "#bfc7d2",
+            "primary": "#93ccff",
+            "on-error-container": "#ffdad6",
+            "on-primary-container": "#002c47",
+            "surface-variant": "#31353e",
+            "inverse-on-surface": "#2c3039",
+            "surface-container-highest": "#31353e",
+            "on-error": "#690005",
+            "surface-container-low": "#181c24",
+            "on-secondary-container": "#00311f",
+            "surface-container": "#1c2028",
+            "on-tertiary-container": "#3e2400",
+            "tertiary-container": "#ca8100",
+            "inverse-primary": "#006398",
+            "error-container": "#93000a",
+            "on-tertiary-fixed": "#2a1700",
+            "surface-container-high": "#262a33",
+            "error": "#ffb4ab",
+            "on-background": "#dfe2ee",
+            "outline": "#89929b",
+            "on-primary-fixed-variant": "#004b73",
+            "on-primary-fixed": "#001d31",
+            "primary-fixed": "#cce5ff",
+            "secondary-fixed": "#6ffbbe"
+          },
+          spacing: {
+            "gutter-desktop": "1rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "1.25rem",
+            "gutter": "0.75rem",
+            "space-xs": "0.25rem",
+            "margin": "0.75rem",
+            "space-sm": "0.5rem"
+          },
+          fontFamily: {
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-xl": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "label-caps": ["JetBrains Mono", "monospace"],
+            "label-mono-micro": ["JetBrains Mono", "monospace"],
+            "mono-metric-lg": ["JetBrains Mono", "monospace"],
+            "mono-metric-md": ["JetBrains Mono", "monospace"],
+            "mono-metric-sm": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Dedicated Stylesheet -->
+  <link rel="stylesheet" href="/static/css/styles.css"/>
 </head>
-<body>
 
-  <!-- Header -->
-  <header class="app-header">
-    <div class="logo-group">
-      <div class="brand-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L2 22h20L12 2zm0 3.8L19.5 20h-15L12 5.8zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
-        </svg>
-      </div>
-      <div class="brand-text">
-        <h1>HazardMesh</h1>
-        <p>Context-Aware Construction Safety Intelligence</p>
-      </div>
-    </div>
+<body class="bg-surface font-body-md text-on-surface select-none min-h-screen flex flex-col">
 
-    <div class="header-controls">
-      <nav class="nav-tabs">
-        <button class="tab-btn active" data-tab="tab-live-intel" id="tabLiveBtn">Live Safety Reasoning</button>
-        <button class="tab-btn" data-tab="tab-improvement" id="tabImprovementBtn">Model Improvement Hub</button>
-        <button class="tab-btn" data-tab="tab-ingestion" id="tabIngestionBtn">Data Ingestion Studio</button>
+  <!-- ==================== PERSISTENT TACTICAL HEADER ==================== -->
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+    <div class="h-16 w-full px-margin-desktop flex items-center justify-between gap-gutter-desktop">
+      
+      <!-- Brand & Status -->
+      <div class="flex items-center gap-space-md min-w-max">
+        <div class="flex items-center gap-space-sm">
+          <div class="w-6 h-6 bg-surface-container flex items-center justify-center border border-outline-variant">
+            <span class="material-symbols-outlined text-primary text-[16px]">radar</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-label-caps uppercase tracking-wider text-on-surface font-bold text-[12px]">HazardMesh Control Terminal</span>
+            <div class="flex items-center gap-space-xs">
+              <span class="w-1.5 h-1.5 rounded-full bg-secondary led-pulse"></span>
+              <span class="font-label-mono-micro text-on-surface-variant text-[10px]" id="headerSystemStatus">● 12 SCENARIOS LOADED | PYTORCH V3 ACTIVE | 25 FPS | OBSIDIAN NODE-01</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs Segment -->
+      <nav class="flex items-center bg-surface-container-low border border-outline-variant p-0.5" id="navTabs">
+        <button class="nav-tab-btn px-space-md py-1 font-label-caps uppercase text-[11px] transition-colors bg-surface-container-highest text-primary border-b-2 border-primary font-bold" data-tab="tab-live-intel" id="tabLiveBtn">
+          [1] Live Surveillance &amp; Reasoning
+        </button>
+        <button class="nav-tab-btn px-space-md py-1 font-label-caps uppercase text-[11px] text-on-surface-variant hover:text-on-surface transition-colors" data-tab="tab-benchmark" id="tabBenchmarkBtn">
+          [2] Model Benchmark &amp; Lineage
+        </button>
+        <button class="nav-tab-btn px-space-md py-1 font-label-caps uppercase text-[11px] text-on-surface-variant hover:text-on-surface transition-colors" data-tab="tab-ingestion" id="tabIngestionBtn">
+          [3] Data Ingestion Studio
+        </button>
       </nav>
-      <div class="status-badge" id="systemStatusBadge">
-        <span class="status-dot"></span>
-        <span>YOLOv8 + PyTorch Active</span>
+
+      <!-- Right Telemetry & Active Model Indicator -->
+      <div class="flex items-center gap-space-md min-w-max">
+        <div class="hidden xl:flex items-center gap-space-md">
+          <div class="flex flex-col text-right">
+            <span class="font-mono-metric-sm text-on-surface text-[13px]" id="utcClock">14:28:09 UTC</span>
+            <span class="font-label-mono-micro text-on-surface-variant text-[10px]" id="localClock">LOCAL 09:28:09</span>
+          </div>
+          <div class="px-space-sm py-1 bg-surface-container border border-outline-variant">
+            <span class="font-label-caps text-secondary font-bold text-[11px]" id="activeModelTag">PYTORCH V3 LEARNED</span>
+          </div>
+          <div class="flex flex-col text-left">
+            <span class="font-label-mono-micro text-on-surface font-semibold text-[10px]">SYNC: LOCKED 0.04s</span>
+            <span class="font-label-mono-micro text-on-surface-variant text-[10px]">ENG://STATION-4</span>
+          </div>
+        </div>
+        <div class="w-7 h-7 bg-primary flex items-center justify-center text-on-primary">
+          <span class="material-symbols-outlined text-[16px]">person</span>
+        </div>
       </div>
+
     </div>
   </header>
 
-  <!-- Main Content Container -->
-  <main class="main-content">
+  <!-- ==================== MAIN APPLICATION CONTAINER ==================== -->
+  <main class="w-full pt-16 pb-12 flex-1 flex flex-col bg-surface">
 
-    <!-- Tab 1: Live Safety Reasoning & Inspection -->
+    <!-- ==================== TAB 1: LIVE SURVEILLANCE & SAFETY REASONING ==================== -->
     <section class="tab-pane active" id="tab-live-intel">
-      <div class="intel-grid">
-
-        <!-- Left Column: Video & Perception Stage -->
-        <div class="video-column">
-          <div class="glass-card">
-            <div class="card-title-bar">
-              <h2>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                </svg>
-                Perception Stage & Scene Tracking
-              </h2>
-              <span class="chip-counter" id="frameCounter">Frame 1 / 100</span>
+      
+      <!-- Sub-Ticker Stream Status Strip -->
+      <div class="w-full px-margin-desktop py-1 bg-surface-container-lowest border-b border-outline-variant">
+        <div class="flex flex-wrap items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-md">
+            <div class="flex items-center gap-space-xs px-space-sm py-0.5 bg-error-container text-on-error-container font-label-caps text-[10px] font-bold" id="streamInterventionBadge">
+              <span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+              <span id="streamInterventionText">STATE: LEVEL-4 INTERVENTION</span>
             </div>
+            <div class="flex items-center gap-space-xs font-label-mono-micro text-[10px] text-on-surface-variant">
+              <span class="text-outline">FEED:</span>
+              <span class="text-on-surface font-semibold font-mono" id="feedNameDisplay">CAM_04_GANTRY_NORTH.RAW</span>
+              <span class="text-outline">|</span>
+              <span class="text-outline">CODEC:</span>
+              <span class="text-secondary font-mono">NVDEC_H264_25FPS</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-lg">
+            <div class="flex items-center gap-space-xs font-label-mono-micro text-[10px]">
+              <span class="text-on-surface-variant">CUDA CORE LOAD:</span>
+              <div class="w-16 h-1.5 bg-surface-container overflow-hidden">
+                <div class="h-full bg-secondary-container" style="width: 78%;"></div>
+              </div>
+              <span class="text-secondary font-semibold font-mono">78%</span>
+            </div>
+            <div class="flex items-center gap-space-xs font-label-mono-micro text-[10px]">
+              <span class="text-on-surface-variant">INFERENCE DISPATCH:</span>
+              <span class="text-primary font-semibold font-mono" id="gpuDeviceLabel">CUDA://RTX_GPU#0</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Two-Column Surveillance HUD Layout -->
+      <div class="w-full p-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+        
+        <!-- Left Column: Video & Canvas HUD + Timeline Controls (8 cols) -->
+        <section class="lg:col-span-8 flex flex-col gap-space-md min-w-0">
+          
+          <!-- Tactical CCTV Viewport Container -->
+          <div class="video-stage-wrapper relative w-full aspect-video bg-surface-container-lowest overflow-hidden shadow-2xl flex flex-col justify-between select-none">
+            
             <!-- Video & Canvas Overlay -->
-            <div class="video-stage-container">
-              <video id="constructionVideo" muted playsinline></video>
-              <canvas id="overlayCanvas"></canvas>
-            </div>
+            <video id="constructionVideo" muted playsinline></video>
+            <canvas id="overlayCanvas"></canvas>
 
-            <!-- Playback Controls -->
-            <div class="video-controls">
-              <button class="ctrl-btn primary" id="playPauseBtn">Play</button>
-              <button class="ctrl-btn" id="prevFrameBtn">&laquo; Prev</button>
-              <button class="ctrl-btn" id="nextFrameBtn">Next &raquo;</button>
-              
-              <div class="progress-bar-container" id="progressBarContainer">
-                <div class="progress-bar-fill" id="progressBarFill"></div>
+            <!-- Tactical Framing Corners -->
+            <div class="corner-tick corner-tick-tl"></div>
+            <div class="corner-tick corner-tick-tr"></div>
+            <div class="corner-tick corner-tick-bl"></div>
+            <div class="corner-tick corner-tick-br"></div>
+
+            <!-- Top-Left HUD Info Badge -->
+            <div class="absolute top-space-md left-space-md z-20 flex flex-col gap-1 pointer-events-none">
+              <div class="flex items-center gap-space-xs bg-surface-container-lowest/85 px-space-sm py-0.5 border border-outline-variant backdrop-blur">
+                <span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                <span class="font-label-caps text-[10px] uppercase text-on-surface tracking-wider font-bold" id="camTagLabel">CAM-04 NORTH GANTRY</span>
+                <span class="text-outline">/</span>
+                <span class="font-label-mono-micro text-[10px] text-secondary font-mono">REC 25.0 FPS</span>
+                <span class="text-outline">/</span>
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant font-mono">640x360 SENSOR</span>
+              </div>
+              <div class="font-label-mono-micro text-[10px] text-on-surface-variant bg-surface-container-lowest/85 px-space-sm py-0.5 border border-outline-variant backdrop-blur flex items-center gap-space-sm font-mono">
+                <span class="text-primary font-bold" id="hudFrameTag">FRM: 0048/0100</span>
+                <span id="hudTimestampTag">TIME: 00:01.920s</span>
+                <span class="text-secondary">GPS: 41.8902° N, 87.6244° W</span>
               </div>
             </div>
 
-            <!-- Scenario Switcher -->
-            <div class="scenario-bar">
-              <label for="scenarioSelect" style="display:block; font-size:11px; color:var(--text-dim); text-transform:uppercase; margin-bottom:6px;">Select Construction Scenario Clip:</label>
-              <select class="select-control" id="scenarioSelect">
-                <!-- Dynamically populated from /api/scenarios -->
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Contextual Reasoning & Explainability -->
-        <div class="reasoning-column">
-          <div class="reasoning-panel">
-
-            <!-- Active Risk Model Selector Toolbar -->
-            <div class="glass-card" style="padding: 16px;">
-              <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;">Active Hazard Risk Engine:</div>
-              <div class="model-selector-bar">
-                <button class="model-pill" data-model="v0_baseline" id="btnModelV0">V0 Baseline</button>
-                <button class="model-pill" data-model="v1_context" id="btnModelV1">V1 Context</button>
-                <button class="model-pill" data-model="v2_temporal" id="btnModelV2">V2 Temporal</button>
-                <button class="model-pill active" data-model="v3_learned" id="btnModelV3">V3 Learned (PyTorch)</button>
+            <!-- Top-Right Hazard Alert Badge -->
+            <div class="absolute top-space-md right-space-md z-20 flex items-center gap-space-xs pointer-events-none">
+              <div class="bg-error-container/90 text-on-error-container px-space-sm py-0.5 font-label-caps text-[10px] uppercase tracking-wider backdrop-blur font-bold flex items-center gap-1 border border-error" id="hudExclusionBreachBadge">
+                <span class="material-symbols-outlined text-[14px]">warning</span>
+                <span id="hudExclusionBreachText">EXCLUSION BREACH ACTIVE</span>
+              </div>
+              <div class="bg-surface-container-high/90 text-on-surface px-space-sm py-0.5 font-label-mono-micro text-[10px] border border-outline-variant backdrop-blur">
+                ISO-3864 DANGER
               </div>
             </div>
 
-            <!-- Risk Gauge & Decision Output -->
-            <div class="glass-card risk-gauge-card">
-              <div class="gauge-svg-container">
-                <svg class="gauge-svg" width="110" height="110" viewBox="0 0 100 100">
-                  <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
-                  <circle class="gauge-progress" id="riskGaugeCircle" cx="50" cy="50" r="45"></circle>
-                </svg>
-                <div class="gauge-value" id="riskScoreVal">0.00</div>
+            <!-- Bottom HUD Status Line -->
+            <div class="absolute bottom-space-md left-space-md right-space-md z-20 flex items-center justify-between pointer-events-none">
+              <div class="bg-surface-container-lowest/90 px-space-sm py-0.5 border border-outline-variant backdrop-blur font-label-mono-micro text-[10px] text-on-surface-variant flex items-center gap-space-md">
+                <span>TARGET_FOCUSED: <span class="text-error font-bold font-mono" id="hudTargetWorker">WORKER_#1</span></span>
+                <span>TRACKING_CONF: <span class="text-secondary font-bold font-mono" id="hudTrackingConf">0.972</span></span>
+                <span>HEURISTIC: <span class="text-primary font-bold font-mono" id="hudActiveHeuristic">V3_RISK_MLP</span></span>
               </div>
-
-              <div class="risk-meta-info">
-                <div class="label">Hazard Assessment</div>
-                <div class="badge-row">
-                  <div class="severity-badge severity-NONE" id="severityBadge">NONE</div>
-                  <div class="priority-badge priority-MONITOR" id="priorityBadge">MONITOR</div>
-                </div>
-                <div style="font-size: 11px; color: var(--text-dim); margin-top: 8px;">
-                  Continuous Risk Score &bull; Automated Intervention Priority
-                </div>
-              </div>
-            </div>
-
-            <!-- Worker Context Telemetry -->
-            <div class="glass-card">
-              <div class="card-title-bar" style="margin-bottom: 8px;">
-                <h2>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                  Worker Telemetry &bull; <span id="workerIdTag" style="color:var(--color-cyan);">#1</span>
-                </h2>
-              </div>
-
-              <div class="worker-telemetry-grid">
-                <div class="telemetry-item">
-                  <div class="t-label">Hardhat Status</div>
-                  <div class="t-value compliant" id="workerHelmetVal">PRESENT</div>
-                </div>
-                <div class="telemetry-item">
-                  <div class="t-label">Safety Vest</div>
-                  <div class="t-value compliant" id="workerVestVal">PRESENT</div>
-                </div>
-                <div class="telemetry-item">
-                  <div class="t-label">Equipment Proximity</div>
-                  <div class="t-value compliant" id="workerProxVal">CLEAR</div>
-                </div>
-                <div class="telemetry-item">
-                  <div class="t-label">Hazard Exposure</div>
-                  <div class="t-value" id="workerDurationVal">0.0 s</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- "Why" Factor Explainability -->
-            <div class="glass-card">
-              <div class="card-title-bar" style="margin-bottom: 8px;">
-                <h2>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                  </svg>
-                  Why This Risk Score? (Factor Breakdown)
-                </h2>
-              </div>
-              <div class="factors-list" id="factorsList">
-                <div class="factor-chip">Compliant conditions observed</div>
+              <div class="bg-surface-container-lowest/90 px-space-sm py-0.5 border border-outline-variant backdrop-blur font-label-mono-micro text-[10px] text-on-surface-variant flex items-center gap-space-xs">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span>LIVE SYNC LOCAL_FASTAPI_PIPELINE</span>
               </div>
             </div>
 
           </div>
-        </div>
+
+          <!-- Playback Transport & Timeline Controller -->
+          <div class="w-full bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col gap-space-md">
+            
+            <!-- Controls Ribbon -->
+            <div class="flex flex-wrap items-center justify-between gap-space-sm">
+              <div class="flex items-center gap-space-xs">
+                
+                <!-- Play/Pause -->
+                <button class="h-8 px-space-md bg-primary text-on-primary font-label-caps text-[11px] uppercase flex items-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm font-bold" id="playBtn">
+                  <span class="material-symbols-outlined text-[16px]" id="playIcon">play_arrow</span>
+                  <span id="playText">PLAY</span>
+                </button>
+
+                <!-- Step Prev/Next -->
+                <button class="h-8 px-space-sm bg-surface-container text-on-surface border border-outline-variant hover:bg-surface-container-high transition-colors" id="prevFrameBtn" title="Step Back (Left Arrow / J)">
+                  <span class="material-symbols-outlined text-[16px]">skip_previous</span>
+                </button>
+                <button class="h-8 px-space-sm bg-surface-container text-on-surface border border-outline-variant hover:bg-surface-container-high transition-colors" id="nextFrameBtn" title="Step Next (Right Arrow / L)">
+                  <span class="material-symbols-outlined text-[16px]">skip_next</span>
+                </button>
+
+                <!-- Speed Multipliers -->
+                <div class="flex items-center bg-surface-container-lowest border border-outline-variant p-0.5 ml-space-xs">
+                  <button class="speed-btn px-2 py-1 font-label-mono-micro text-[10px] text-on-surface-variant hover:text-on-surface" data-speed="0.5">0.5x</button>
+                  <button class="speed-btn px-2 py-1 font-label-mono-micro text-[10px] bg-surface-container text-primary font-bold" data-speed="1.0">1x</button>
+                  <button class="speed-btn px-2 py-1 font-label-mono-micro text-[10px] text-on-surface-variant hover:text-on-surface" data-speed="2.0">2x</button>
+                </div>
+              </div>
+
+              <!-- Scenario Switcher Dropdown -->
+              <div class="flex items-center gap-space-sm">
+                <label class="font-label-caps text-[10px] text-on-surface-variant uppercase font-bold" for="scenarioSelect">SCENARIO CLIP:</label>
+                <div class="relative min-w-[320px]">
+                  <select class="w-full h-8 bg-surface-container-lowest text-on-surface px-space-sm font-label-mono-micro text-[11px] border border-outline-variant appearance-none focus:outline-none focus:border-primary cursor-pointer" id="scenarioSelect">
+                    <!-- Populated dynamically via /api/scenarios -->
+                  </select>
+                  <span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-[16px]">expand_more</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scrubbable Timeline Track -->
+            <div class="flex flex-col gap-1 w-full">
+              <div class="flex items-center justify-between font-label-mono-micro text-[10px] text-on-surface-variant font-mono">
+                <div class="flex items-center gap-space-xs">
+                  <span>INDEX:</span>
+                  <span class="text-primary font-bold" id="frameCounter">1 / 100</span>
+                  <span class="text-outline">|</span>
+                  <span>PTS: <span class="text-on-surface" id="ptsCounter">00:00.040s</span></span>
+                </div>
+                <div class="flex items-center gap-space-md">
+                  <div class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-error"></span>
+                    <span>CRITICAL ZONE</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-tertiary"></span>
+                    <span>ELEVATED PROXIMITY</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <span class="w-2 h-2 bg-secondary"></span>
+                    <span>NOMINAL SAFE</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Scrub Track Bar -->
+              <div class="timeline-track border border-outline-variant" id="timelineTrack">
+                <div class="timeline-progress-bar">
+                  <div class="timeline-fill" id="timelineProgress"></div>
+                </div>
+                <div class="timeline-playhead" id="timelinePlayhead" style="left: 0%;">
+                  <div class="w-1 h-1 bg-surface-container-lowest"></div>
+                  <div class="w-1 h-1 bg-surface-container-lowest"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+        <!-- Right Column: Model Engine & Telemetry Console (4 cols) -->
+        <section class="lg:col-span-4 flex flex-col gap-space-md min-w-0">
+          
+          <!-- Model Engine Selector -->
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-[11px] uppercase text-on-surface-variant font-bold tracking-wider">INFERENCE ENGINE</span>
+              <span class="font-label-mono-micro text-[10px] text-secondary font-mono" id="inferenceLatencyLabel">LATENCY: 14.2ms</span>
+            </div>
+            <div class="grid grid-cols-2 gap-1 bg-surface-container-lowest p-1 border border-outline-variant" id="modelSelectorGroup">
+              <button class="model-pill" data-model="v0_baseline" id="btnModelV0">V0 Rule Baseline</button>
+              <button class="model-pill" data-model="v1_context" id="btnModelV1">V1 Context</button>
+              <button class="model-pill" data-model="v2_temporal" id="btnModelV2">V2 Temporal</button>
+              <button class="model-pill active" data-model="v3_learned" id="btnModelV3">V3 PyTorch (Active)</button>
+            </div>
+          </div>
+
+          <!-- Primary Risk Assessment Card -->
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col gap-space-md relative overflow-hidden">
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="font-label-caps text-[11px] uppercase text-on-surface-variant font-bold">PRIMARY RISK ASSESSMENT</span>
+                <div class="flex items-baseline gap-space-sm mt-0.5">
+                  <span class="font-mono-metric-lg text-[32px] text-error font-bold font-mono" id="riskScoreVal">0.00</span>
+                  <span class="font-mono-metric-sm text-on-surface-variant font-mono">/ 1.00 THRESHOLD</span>
+                </div>
+              </div>
+              <div class="px-space-sm py-1 font-label-caps text-[10px] uppercase font-bold tracking-wider border" id="severityBadge">
+                NONE
+              </div>
+            </div>
+
+            <!-- Continuous Risk Level Gradient Gauge Bar -->
+            <div class="flex flex-col gap-1">
+              <div class="w-full h-3 bg-surface-container-lowest border border-outline-variant overflow-hidden flex relative">
+                <div class="h-full bg-secondary" style="width: 30%;"></div>
+                <div class="h-full bg-tertiary" style="width: 35%;"></div>
+                <div class="h-full bg-error" style="width: 35%;"></div>
+                <!-- Playhead Indicator Needle -->
+                <div class="absolute top-0 bottom-0 w-1.5 bg-white shadow-md transition-all duration-75" id="riskScoreNeedle" style="left: 0%;"></div>
+              </div>
+              <div class="flex justify-between font-label-mono-micro text-[9px] text-on-surface-variant font-mono">
+                <span>0.00 SAFE</span>
+                <span>0.30 MODERATE</span>
+                <span>0.65 ELEVATED</span>
+                <span class="text-error font-bold" id="riskPeakLabel">0.88 PEAK</span>
+              </div>
+            </div>
+
+            <!-- Actionable Intervention Strip -->
+            <div class="p-space-md flex items-center justify-between text-on-error-container border border-error bg-error-container" id="interventionCard">
+              <div class="flex items-center gap-space-md">
+                <span class="material-symbols-outlined text-[24px] animate-bounce text-error" id="interventionIcon">campaign</span>
+                <div class="flex flex-col">
+                  <span class="font-label-caps text-[11px] uppercase font-bold tracking-wider" id="interventionTitle">SITE STATUS: MONITOR</span>
+                  <span class="font-label-mono-micro text-[9px] text-on-surface-variant" id="interventionSubtitle">AUTOMATED RELAY PROTOCOL ACTIVE</span>
+                </div>
+              </div>
+              <button class="px-space-sm py-1 bg-surface text-on-surface font-label-caps text-[10px] uppercase font-bold hover:bg-surface-container-lowest transition-colors flex items-center gap-1 shadow-sm border border-outline-variant" id="hornBtn">
+                <span class="material-symbols-outlined text-[14px]">volume_up</span>
+                <span>HORN</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Worker Telemetry Card -->
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+              <div class="flex items-center gap-space-xs">
+                <span class="material-symbols-outlined text-[16px] text-primary">person_search</span>
+                <span class="font-label-caps text-[11px] uppercase text-on-surface font-bold">TELEMETRY: WORKER <span class="text-primary font-mono" id="workerIdTag">#1</span></span>
+              </div>
+              <span class="font-label-mono-micro text-[9px] px-1 py-0.5 font-bold border" id="workerStatusBadge">COMPLIANT</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-space-xs mt-1">
+              <div class="bg-surface-container-lowest p-space-sm border border-outline-variant flex flex-col">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">Hardhat Status</span>
+                <span class="font-label-caps text-[12px] font-bold mt-1 text-secondary" id="workerHelmetVal">PRESENT</span>
+                <span class="font-label-mono-micro text-[9px] text-on-surface-variant font-mono" id="workerHelmetConf">CONF: 96%</span>
+              </div>
+              <div class="bg-surface-container-lowest p-space-sm border border-outline-variant flex flex-col">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">High-Vis Vest</span>
+                <span class="font-label-caps text-[12px] font-bold mt-1 text-secondary" id="workerVestVal">PRESENT</span>
+                <span class="font-label-mono-micro text-[9px] text-on-surface-variant font-mono" id="workerVestConf">CONF: 94%</span>
+              </div>
+              <div class="bg-surface-container-lowest p-space-sm border border-outline-variant flex flex-col">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">Machine Distance</span>
+                <span class="font-label-caps text-[12px] font-bold mt-1 font-mono text-secondary" id="workerProxVal">CLEAR</span>
+                <span class="font-label-mono-micro text-[9px] text-on-surface-variant font-mono" id="workerProxSub">NORMALIZED: 1.00</span>
+              </div>
+              <div class="bg-surface-container-lowest p-space-sm border border-outline-variant flex flex-col">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">Persistent Dwell</span>
+                <span class="font-label-caps text-[12px] font-bold mt-1 font-mono text-on-surface" id="workerDurationVal">0.0s</span>
+                <span class="font-label-mono-micro text-[9px] text-on-surface-variant font-mono">THRESHOLD: 1.0s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explainability & Attribution Factor Breakdown -->
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md flex flex-col gap-space-sm">
+            <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+              <span class="font-label-caps text-[11px] uppercase text-on-surface font-bold tracking-wider">ATTRIBUTION &amp; EXPLAINABILITY</span>
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant font-mono">FEATURE WEIGHTS</span>
+            </div>
+            
+            <div class="flex flex-col gap-space-sm font-label-mono-micro text-[10px] mt-1" id="factorsContainer">
+              <!-- Dynamically populated factor bars -->
+            </div>
+
+            <div class="mt-space-xs p-space-sm bg-surface-container-lowest border border-outline-variant flex items-center justify-between text-on-surface-variant font-label-mono-micro text-[10px]">
+              <span class="font-mono text-secondary">PyTorch Inference: Active</span>
+              <span class="font-mono text-outline">DUAL-HEAD LOSS</span>
+            </div>
+          </div>
+
+        </section>
 
       </div>
     </section>
 
-    <!-- Tab 2: Model Improvement Hub & Benchmark -->
-    <section class="tab-pane" id="tab-improvement">
-      <div class="hub-header">
-        <h2>Model Progression & Failure-Driven Improvement</h2>
-        <p>Measurable progress evaluated strictly on held-out test split across iterations (V0 &rarr; V1 &rarr; V2 &rarr; V3).</p>
-      </div>
-
-      <!-- Benchmark Table Card -->
-      <div class="glass-card" style="margin-bottom: 24px;">
-        <div class="card-title-bar">
-          <h2>Held-Out Evaluation Progression Benchmark</h2>
-          <span class="chip-counter">N = 366 Held-Out Samples</span>
+    <!-- ==================== TAB 2: MODEL BENCHMARK & LINEAGE ==================== -->
+    <section class="tab-pane" id="tab-benchmark">
+      <div class="w-full px-margin-desktop py-space-md flex flex-col gap-space-lg">
+        
+        <!-- Top Status Ticker -->
+        <div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-sm border border-outline-variant">
+          <div class="flex items-center gap-space-md">
+            <span class="font-label-caps text-[10px] uppercase tracking-wider text-on-surface-variant bg-surface-container px-space-xs py-0.5 border border-outline-variant">BENCHMARK_REGISTRY // HOLDOUT_V3</span>
+            <div class="flex items-center gap-space-xs font-label-mono-micro text-[10px] text-on-surface-variant">
+              <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+              <span>SPLIT: TEST_ISOLATED (ZERO LEAKAGE)</span>
+            </div>
+            <span class="font-label-mono-micro text-outline">|</span>
+            <span class="font-label-mono-micro text-[10px] text-primary">STRICT_CONFINEMENT: ACTIVE</span>
+          </div>
+          <div class="flex items-center gap-space-sm">
+            <button class="h-7 px-space-sm bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-caps text-[10px] uppercase border border-outline-variant flex items-center gap-space-xs transition-colors" id="btnExportMetrics">
+              <span class="material-symbols-outlined text-[14px] text-primary">download</span>
+              Export Metrics (.json)
+            </button>
+            <button class="h-7 px-space-sm bg-primary-container text-on-primary font-label-caps text-[10px] uppercase font-bold hover:brightness-110 flex items-center gap-space-xs transition-all" id="btnRunBenchmarkAll">
+              <span class="material-symbols-outlined text-[14px]">play_circle</span>
+              Evaluate All Models
+            </button>
+          </div>
         </div>
 
-        <div class="table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Model Version</th>
-                <th>Macro F1</th>
-                <th>High-Risk Recall</th>
-                <th>False Positive Rate</th>
-                <th>Weighted Hazard Error</th>
-              </tr>
-            </thead>
-            <tbody id="benchmarkTableBody">
-              <!-- Dynamically populated from /api/benchmark -->
-            </tbody>
-          </table>
-        </div>
-      </div>
+        <!-- Metric Bento Cards -->
+        <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter-desktop">
+          
+          <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+            <div class="flex items-center justify-between mb-space-sm">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Evaluation Ground Truth</span>
+              <span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-xs">
+                <span class="font-mono-metric-lg text-[28px] text-on-surface font-bold">N=366</span>
+                <span class="font-label-mono-micro text-secondary font-semibold">FRAMES</span>
+              </div>
+              <p class="font-body-sm text-on-surface-variant mt-1 text-[12px]">Strict holdout split: 0 zero leakage between training &amp; test clips.</p>
+            </div>
+            <div class="mt-space-md pt-space-xs bg-surface-container-lowest p-space-xs border border-outline-variant flex items-center justify-between font-label-mono-micro text-[9px] text-on-surface-variant">
+              <span>ZERO DATA LEAKAGE</span>
+              <span class="text-secondary font-semibold">ISOLATED ENCLAVE</span>
+            </div>
+          </div>
 
-      <!-- Failure Analysis Loop Cards -->
-      <div class="glass-card" style="margin-bottom: 24px;">
-        <div class="card-title-bar">
-          <h2>Failure-Driven Iteration Loop</h2>
-          <span class="chip-counter" style="color:var(--color-green);">187 Total Errors Eliminated</span>
-        </div>
-        <p style="font-size: 13px; color: var(--text-muted);">
-          Each model version resolves specific failure modes diagnosed from the previous version.
-        </p>
+          <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+            <div class="flex items-center justify-between mb-space-sm">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Leader Architecture</span>
+              <span class="px-space-xs py-0.5 bg-secondary-container/20 text-secondary font-label-caps text-[10px] border border-secondary">DEPLOYED</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-headline-md text-primary font-bold tracking-tight text-[16px]">V3 Risk MLP (PyTorch)</span>
+              <span class="font-label-mono-micro text-on-surface-variant mt-1 text-[11px]">Compact Dual-Head Architecture + MSE Risk Loss</span>
+            </div>
+            <div class="mt-space-md pt-space-xs bg-surface-container-lowest p-space-xs border border-outline-variant flex items-center justify-between font-label-mono-micro text-[9px]">
+              <span class="text-on-surface-variant">INFERENCE SPEED</span>
+              <span class="text-secondary font-semibold">2.4ms / frame</span>
+            </div>
+          </div>
 
-        <div class="failure-iterations-grid" id="failureIterationsContainer">
-          <!-- Dynamically populated from /api/failure_analysis -->
-        </div>
-      </div>
+          <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+            <div class="flex items-center justify-between mb-space-sm">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">False Alarm Reduction</span>
+              <span class="material-symbols-outlined text-secondary text-[18px]">trending_down</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-xs">
+                <span class="font-mono-metric-lg text-[28px] text-secondary font-bold">-98.6%</span>
+                <span class="font-label-mono-micro text-on-surface-variant">HAZARD ERROR</span>
+              </div>
+              <div class="w-full bg-surface-container-highest h-1.5 mt-2 overflow-hidden">
+                <div class="bg-secondary h-full" style="width: 98.6%"></div>
+              </div>
+            </div>
+            <div class="mt-space-md pt-space-xs bg-surface-container-lowest p-space-xs border border-outline-variant flex items-center justify-between font-label-mono-micro text-[9px]">
+              <span class="text-on-surface-variant">FALSE POSITIVE RATE</span>
+              <span class="text-secondary font-semibold">0.00% (ZERO FP)</span>
+            </div>
+          </div>
 
-      <!-- PRISM Lineage & Runs Card -->
-      <div class="glass-card">
-        <div class="card-title-bar">
-          <h2>PRISM Experiment Trace Registry</h2>
-          <span class="chip-counter">Verifiable Lineage</span>
-        </div>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-          PRISM traces logging run IDs, git commits, hyperparameters, and evaluation metrics.
-        </p>
-        <div class="prism-runs-list" id="prismRunsList">
-          <!-- Dynamically populated from /api/prism_runs -->
-        </div>
+          <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+            <div class="flex items-center justify-between mb-space-sm">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Critical Danger Recall</span>
+              <span class="material-symbols-outlined text-primary text-[18px]">emergency</span>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-baseline gap-space-xs">
+                <span class="font-mono-metric-lg text-[28px] text-primary font-bold">100.0%</span>
+                <span class="font-label-mono-micro text-secondary font-semibold">+57.14pp vs V0</span>
+              </div>
+              <p class="font-body-sm text-on-surface-variant mt-1 text-[12px]">All critical danger zone violations intercepted safely.</p>
+            </div>
+            <div class="mt-space-md pt-space-xs bg-surface-container-lowest p-space-xs border border-outline-variant flex items-center justify-between font-label-mono-micro text-[9px]">
+              <span class="text-on-surface-variant">LETHAL MISS RATE</span>
+              <span class="text-secondary font-bold">0.00% (0 MISSED)</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Benchmark Progression Table -->
+        <section class="flex flex-col bg-surface-container-low border border-outline-variant shadow-sm overflow-hidden">
+          <div class="p-space-md bg-surface-container-lowest border-b border-outline-variant flex flex-wrap items-center justify-between gap-space-sm">
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-primary text-[20px]">table_chart</span>
+              <span class="font-headline-sm text-on-surface font-semibold text-[15px]">Strict Holdout Performance Progression (N=366 Frames)</span>
+            </div>
+            <div class="flex items-center gap-space-sm font-label-mono-micro text-[10px] text-on-surface-variant">
+              <span>EVAL SPLIT: HOLDOUT_FEATURES.JSON</span>
+              <span class="bg-surface-container px-space-xs py-0.5 text-primary border border-outline-variant">4 MODELS TESTED</span>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto w-full">
+            <table class="w-full text-left font-body-sm tactical-table">
+              <thead>
+                <tr class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">
+                  <th>Model Version</th>
+                  <th>Architecture</th>
+                  <th class="text-right">Macro F1</th>
+                  <th class="text-right">High-Risk Recall</th>
+                  <th class="text-right">False Positive Rate</th>
+                  <th class="text-right">Weighted Hazard Err</th>
+                  <th>Key Failure Mode Resolved</th>
+                  <th class="text-center">Status</th>
+                </tr>
+              </thead>
+              <tbody id="benchmarkTableBody">
+                <!-- Dynamically populated from /api/benchmark -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Failure-Driven Diagnosis Grid -->
+        <section class="flex flex-col gap-space-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-secondary text-[20px]">troubleshoot</span>
+              <span class="font-headline-sm text-on-surface font-semibold text-[15px]">Failure-Driven Diagnosis &amp; Root-Cause Progression</span>
+            </div>
+            <span class="font-label-caps text-on-surface-variant text-[10px] uppercase" id="totalErrorsEliminatedBadge">187 TOTAL ERRORS ELIMINATED</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop" id="failureAnalysisContainer">
+            
+            <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+                  <span class="font-label-caps text-primary uppercase font-bold text-[10px]">V0 → V1 Transition</span>
+                  <span class="font-label-mono-micro text-outline text-[9px] font-semibold">RESOLVED FP</span>
+                </div>
+                <span class="font-headline-sm text-on-surface font-bold text-[14px] mt-1">Spatial Proximity Filtering</span>
+                <p class="font-body-md text-on-surface-variant text-[12px] mt-1">
+                  Eliminated false alarms triggered by personnel crossing safe designated walkways via dynamic 2D polygon exclusion grids and geometric raycasting.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-lowest p-space-xs border border-outline-variant flex flex-col gap-1">
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">WALKWAY FP REDUCTION</span>
+                  <span class="text-secondary font-bold">-47.1%</span>
+                </div>
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">MECHANISM</span>
+                  <span class="text-on-surface">Bounding Box Distance Matrix</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+                  <span class="font-label-caps text-secondary uppercase font-bold text-[10px]">V1 → V2 Transition</span>
+                  <span class="font-label-mono-micro text-outline text-[9px] font-semibold">RESOLVED JITTER</span>
+                </div>
+                <span class="font-headline-sm text-on-surface font-bold text-[14px] mt-1">Temporal Persistence Gating</span>
+                <p class="font-body-md text-on-surface-variant text-[12px] mt-1">
+                  Filtered transient crossing flickers with 1.0s rolling buffer (k=10 frames). Suppressed single-frame occlusions and rapid boundary crossings.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-lowest p-space-xs border border-outline-variant flex flex-col gap-1">
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">FLICKER SUPPRESSION</span>
+                  <span class="text-secondary font-bold">-53.8%</span>
+                </div>
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">MECHANISM</span>
+                  <span class="text-on-surface">Sliding Window Consensus</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-surface-container-low p-space-md border border-outline-variant flex flex-col justify-between shadow-sm">
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between pb-space-xs border-b border-outline-variant">
+                  <span class="font-label-caps text-tertiary uppercase font-bold text-[10px]">V2 → V3 Transition</span>
+                  <span class="font-label-mono-micro text-secondary text-[9px] font-semibold">PRODUCTION SOTA</span>
+                </div>
+                <span class="font-headline-sm text-on-surface font-bold text-[14px] mt-1">Non-Linear Risk MLP</span>
+                <p class="font-body-md text-on-surface-variant text-[12px] mt-1">
+                  Resolved non-linear compounding risk under multi-worker congestion and blind spots using learned representation vectors and velocity vectors.
+                </p>
+              </div>
+              <div class="mt-space-md pt-space-sm bg-surface-container-lowest p-space-xs border border-outline-variant flex flex-col gap-1">
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">COMPLEX MULTI-BODY FN</span>
+                  <span class="text-secondary font-bold">-75.0%</span>
+                </div>
+                <div class="flex items-center justify-between font-label-mono-micro text-[9px]">
+                  <span class="text-on-surface-variant">MECHANISM</span>
+                  <span class="text-on-surface">Dual-Head Neural Network</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- PRISM Experiment Lineage Registry -->
+        <section class="flex flex-col bg-surface-container-low border border-outline-variant shadow-sm overflow-hidden">
+          <div class="p-space-md bg-surface-container-lowest border-b border-outline-variant flex flex-wrap items-center justify-between gap-space-md">
+            <div class="flex flex-col">
+              <div class="flex items-center gap-space-sm">
+                <span class="material-symbols-outlined text-primary text-[20px]">hub</span>
+                <span class="font-headline-sm text-on-surface font-semibold text-[15px]">PRISM Experiment Lineage Registry</span>
+              </div>
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant mt-0.5">ENDPOINT: /api/prism_runs | LINEAGE TRACE ENGINE</span>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <span class="font-label-mono-micro text-[10px] text-secondary bg-surface-container px-space-xs py-1 border border-outline-variant">SHA-256 ARTIFACT VERIFIED</span>
+              <button class="h-7 px-space-sm bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-caps text-[10px] uppercase border border-outline-variant flex items-center gap-space-xs transition-colors" id="btnSyncPrismRuns">
+                <span class="material-symbols-outlined text-[14px]">refresh</span>
+                Refresh Registry
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto w-full">
+            <table class="w-full text-left font-body-sm tactical-table">
+              <thead>
+                <tr class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">
+                  <th>Run ID</th>
+                  <th>Model / Split</th>
+                  <th>Git Commit</th>
+                  <th class="text-right">Timestamp</th>
+                  <th class="text-right">Macro F1</th>
+                  <th class="text-right">Hazard Error</th>
+                  <th class="text-center">Verification Status</th>
+                </tr>
+              </thead>
+              <tbody id="prismRunsTableBody">
+                <!-- Dynamically populated from /api/prism_runs -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
       </div>
     </section>
 
-    <!-- Tab 3: Data Ingestion Studio -->
+    <!-- ==================== TAB 3: DATA INGESTION STUDIO ==================== -->
     <section class="tab-pane" id="tab-ingestion">
-      <div class="hub-header">
-        <h2>Dataset Ingestion & Training Expansion Studio</h2>
-        <p>Ingest real-world construction safety footage from Kaggle using your API Token or upload local videos/archives.</p>
-      </div>
-
-      <div class="ingestion-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; margin-bottom: 24px;">
-
-        <!-- Left: Kaggle Ingestion Card -->
-        <div class="glass-card">
-          <div class="card-title-bar">
-            <h2>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              Kaggle Dataset Ingestion (Authenticated)
-            </h2>
-            <span class="chip-counter" id="kaggleTokenStatus" style="color:var(--color-green);">Connected</span>
-          </div>
-
-          <!-- Token status badge -->
-          <div style="background: rgba(15, 23, 42, 0.6); padding: 12px 14px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-            <div>
-              <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Active Kaggle Access Token</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--color-cyan);" id="kaggleTokenDisplay">KGAT_30f03f4d2199...</div>
+      
+      <!-- Top Metric Cards -->
+      <section class="w-full px-margin-desktop py-space-md">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+          
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Registered Video Clips</span>
+              <span class="material-symbols-outlined text-primary text-[18px]">video_library</span>
             </div>
-            <span class="status-badge" style="padding: 4px 10px; font-size: 11px;">
-              <span class="status-dot"></span>
-              Verified
-            </span>
-          </div>
-
-          <!-- Live Kaggle Search -->
-          <div style="margin-bottom: 16px;">
-            <label style="display:block; font-size:11px; color:var(--text-dim); text-transform:uppercase; margin-bottom:6px;">Search Kaggle for Safety Datasets:</label>
-            <div style="display: flex; gap: 8px;">
-              <input type="text" class="select-control" id="kaggleSearchInput" placeholder="e.g. construction site safety, ppe detection" value="construction site safety">
-              <button class="ctrl-btn primary" id="kaggleSearchBtn" style="white-space: nowrap; padding: 0 18px;">Search</button>
+            <div class="flex items-baseline gap-space-xs mt-1">
+              <span class="font-mono-metric-lg text-[26px] text-on-surface font-bold" id="metricTotalClips">12</span>
+              <span class="font-label-mono-micro text-[10px] text-secondary">ACTIVE</span>
+            </div>
+            <div class="w-full bg-surface-container-highest h-1 mt-2 overflow-hidden">
+              <div class="bg-primary h-full" style="width: 100%;"></div>
             </div>
           </div>
 
-          <!-- Search Results / Curated List Container -->
-          <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;" id="kaggleResultsTitle">Curated Construction Safety Datasets:</div>
-          <div class="curated-datasets-list" id="kaggleResultsList" style="display: flex; flex-direction: column; gap: 10px; max-height: 280px; overflow-y: auto; padding-right: 4px;">
-            <!-- Populated dynamically -->
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Total Annotated Frames</span>
+              <span class="material-symbols-outlined text-secondary text-[18px]">filter_center_focus</span>
+            </div>
+            <div class="flex items-baseline gap-space-xs mt-1">
+              <span class="font-mono-metric-lg text-[26px] text-on-surface font-bold" id="metricTotalFrames">1,200</span>
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant">25 FPS BASE</span>
+            </div>
+            <div class="w-full bg-surface-container-highest h-1 mt-2 overflow-hidden">
+              <div class="bg-secondary h-full" style="width: 100%;"></div>
+            </div>
           </div>
 
-          <!-- Custom Slug Download Form -->
-          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-            <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;">Or Ingest Specific Kaggle Dataset Slug:</div>
-            <div style="display: flex; gap: 8px; margin-bottom: 8px;">
-              <input type="text" class="select-control" id="customSlugInput" placeholder="owner/dataset-slug (e.g. mrifatrashid/construction-site-safety-video)">
-              <select class="select-control" id="customSlugSplit" style="width: 140px;">
-                <option value="train">Train Split</option>
-                <option value="val">Val Split</option>
-                <option value="holdout">Holdout</option>
-              </select>
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Held-Out Test Partition</span>
+              <span class="material-symbols-outlined text-tertiary text-[18px]">pie_chart</span>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <label style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                <input type="checkbox" id="kaggleAutoTrain" checked>
-                Auto-retrain V3 model after ingestion
-              </label>
-              <button class="ctrl-btn primary" id="kaggleCustomDownloadBtn">Download & Ingest</button>
+            <div class="flex items-baseline gap-space-xs mt-1">
+              <span class="font-mono-metric-lg text-[26px] text-on-surface font-bold">15%</span>
+              <span class="font-label-mono-micro text-[10px] text-tertiary">3 CLIPS RESERVED</span>
+            </div>
+            <div class="w-full bg-surface-container-highest h-1 mt-2 overflow-hidden">
+              <div class="bg-tertiary h-full" style="width: 15%;"></div>
             </div>
           </div>
+
+          <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps text-[10px] uppercase text-on-surface-variant">Ingestion Engine</span>
+              <span class="material-symbols-outlined text-secondary text-[18px]">memory</span>
+            </div>
+            <div class="flex items-center gap-space-sm mt-1">
+              <span class="w-2 h-2 rounded-full bg-secondary led-pulse"></span>
+              <span class="font-mono-metric-md text-[18px] text-secondary font-bold">ONLINE</span>
+              <span class="font-label-mono-micro text-[10px] text-on-surface-variant ml-auto">NVENC V3 READY</span>
+            </div>
+            <div class="w-full bg-surface-container-highest h-1 mt-2 overflow-hidden">
+              <div class="bg-secondary h-full w-full"></div>
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <!-- Right: Local File & Video Upload Card -->
-        <div class="glass-card">
-          <div class="card-title-bar">
-            <h2>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
-                <path d="M12 12v9"></path>
-                <path d="m16 16-4-4-4 4"></path>
-              </svg>
-              Local Video & File Upload
-            </h2>
-          </div>
+      <!-- Ingestion Controls & Dropzone Grid -->
+      <section class="w-full px-margin-desktop pb-space-xl">
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+          
+          <!-- Left Column: Kaggle API & Direct Slug (5 cols) -->
+          <div class="xl:col-span-5 flex flex-col gap-gutter-desktop">
+            
+            <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+              <div class="flex items-center justify-between bg-surface-container-lowest p-space-sm border border-outline-variant">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2 h-2 bg-primary"></span>
+                  <span class="font-label-caps text-[11px] uppercase tracking-wider text-on-surface font-bold">Kaggle API Integration</span>
+                </div>
+                <div class="flex items-center gap-space-xs px-space-xs py-0.5 bg-secondary-container/20 text-secondary border border-secondary" id="kaggleTokenStatusBadge">
+                  <span class="w-1.5 h-1.5 bg-secondary"></span>
+                  <span class="font-label-caps text-[10px]" id="kaggleTokenStatusText">KGAT VERIFIED / CONNECTED</span>
+                </div>
+              </div>
 
-          <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
-            Upload construction video files (<code style="color:var(--color-cyan);">.mp4</code>, <code style="color:var(--color-cyan);">.avi</code>) or <code style="color:var(--color-cyan);">.zip</code> archives. Footage will be automatically normalized to 640x360 @ 25 FPS, chunked, and registered.
-          </p>
+              <!-- Search Kaggle Datasets -->
+              <div class="mt-space-md">
+                <div class="relative w-full">
+                  <span class="material-symbols-outlined absolute left-space-sm top-2 text-on-surface-variant text-[18px]">search</span>
+                  <input class="w-full bg-surface-container-lowest text-on-surface pl-9 pr-24 py-1.5 text-[12px] font-mono border border-outline-variant focus:outline-none focus:border-primary placeholder:text-outline" id="kaggleSearchInput" placeholder="Search construction safety datasets..." type="text" value="construction site safety"/>
+                  <button class="absolute right-1 top-1 bottom-1 px-space-sm bg-primary text-on-primary font-label-caps text-[10px] uppercase font-bold" id="kaggleSearchBtn">Search</button>
+                </div>
+              </div>
 
-          <!-- Upload Dropzone -->
-          <div id="uploadDropzone" style="border: 2px dashed var(--border-accent); border-radius: var(--radius-md); padding: 36px 20px; text-align: center; background: rgba(15, 23, 42, 0.4); cursor: pointer; transition: all 0.25s ease;">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-cyan)" stroke-width="2" style="margin-bottom: 10px;">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
-            <div style="font-weight: 600; font-size: 14px; color: #fff;">Click to select file or drag & drop here</div>
-            <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">Supports MP4, AVI, MOV, ZIP</div>
-            <input type="file" id="localFileInput" accept=".mp4,.avi,.mov,.zip" style="display: none;">
-          </div>
+              <!-- Curated / Search Results -->
+              <div class="mt-space-md">
+                <span class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider block mb-space-xs" id="kaggleResultsTitle">Curated Industrial Safety Datasets:</span>
+                <div class="flex flex-col gap-space-xs max-h-60 overflow-y-auto pr-1" id="kaggleResultsList">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
 
-          <div id="selectedFileInfo" style="margin-top: 12px; font-size: 12px; color: var(--color-cyan); display: none;"></div>
+              <!-- Direct Dataset Slug Download Form -->
+              <div class="mt-space-lg bg-surface-container-lowest p-space-sm border border-outline-variant">
+                <span class="font-label-caps text-[10px] uppercase text-primary tracking-wider block mb-space-sm font-bold">Direct Dataset Slug Ingestion</span>
+                <div class="flex flex-col gap-space-sm">
+                  <div class="flex flex-col gap-1">
+                    <span class="font-label-mono-micro text-[10px] text-on-surface-variant">REPOSITORY SLUG</span>
+                    <input class="bg-surface text-on-surface px-space-sm py-1.5 text-[12px] font-mono border border-outline-variant focus:outline-none focus:border-primary" id="customSlugInput" placeholder="owner/dataset-slug (e.g. mrifatrashid/construction-site-safety-video)" type="text"/>
+                  </div>
+                  <div class="grid grid-cols-2 gap-space-sm items-center">
+                    <div class="flex flex-col gap-1">
+                      <span class="font-label-mono-micro text-[10px] text-on-surface-variant">TARGET SPLIT</span>
+                      <select class="bg-surface text-on-surface px-space-sm py-1.5 text-[11px] font-mono border border-outline-variant focus:outline-none" id="customSlugSplit">
+                        <option value="train">TRAIN (Primary)</option>
+                        <option value="val">VAL (Validation)</option>
+                        <option value="holdout" selected>HOLDOUT (Test Split)</option>
+                      </select>
+                    </div>
+                    <div class="flex flex-col gap-1 justify-center pt-2">
+                      <span class="font-label-mono-micro text-[10px] text-on-surface-variant">AUTO-RETRAIN V3</span>
+                      <label class="flex items-center gap-1 cursor-pointer">
+                        <input type="checkbox" id="kaggleAutoTrain" checked class="accent-primary"/>
+                        <span class="font-label-mono-micro text-[10px] text-secondary">TRIGGER RETRAINING</span>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="w-full mt-1 bg-surface-container-highest hover:bg-primary hover:text-on-primary text-on-surface font-label-caps text-[11px] py-2 uppercase tracking-wider transition-colors flex items-center justify-center gap-space-sm border border-outline-variant font-bold" id="kaggleCustomDownloadBtn">
+                    <span class="material-symbols-outlined text-[16px]">cloud_download</span>
+                    <span>Download &amp; Ingest Dataset</span>
+                  </button>
+                </div>
+              </div>
 
-          <div style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <label style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 4px;">Target Split:</label>
-              <select class="select-control" id="localUploadSplit" style="width: 140px;">
-                <option value="train">Train Split</option>
-                <option value="val">Val Split</option>
-                <option value="holdout">Holdout</option>
-              </select>
             </div>
 
-            <div style="text-align: right;">
-              <label style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px; cursor: pointer;">
-                <input type="checkbox" id="localAutoTrain" checked>
-                Auto-retrain V3
-              </label>
-              <button class="ctrl-btn primary" id="localUploadBtn" disabled>Upload & Ingest</button>
+            <!-- Local Video Dropzone Card -->
+            <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+              <div class="flex items-center justify-between bg-surface-container-lowest p-space-sm mb-space-sm border border-outline-variant">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2 h-2 bg-secondary"></span>
+                  <span class="font-label-caps text-[11px] uppercase tracking-wider text-on-surface font-bold">Local Video Dropzone</span>
+                </div>
+                <span class="font-label-mono-micro text-[10px] text-secondary">AUTO-NORMALIZER</span>
+              </div>
+
+              <div class="p-space-xl bg-surface-container-lowest border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-center cursor-pointer transition-colors hover:bg-surface-container" id="uploadDropzone">
+                <div class="w-12 h-12 bg-surface-container flex items-center justify-center mb-space-sm text-primary border border-outline-variant">
+                  <span class="material-symbols-outlined text-[28px]">upload_file</span>
+                </div>
+                <span class="font-label-caps text-[11px] uppercase text-on-surface tracking-wider font-bold">Click or Drag &amp; Drop Video Stream</span>
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant mt-1">SUPPORTED: .MP4, .AVI, .MOV, .ZIP ARCHIVES</span>
+                <div class="mt-space-md px-space-sm py-1 bg-surface-container text-on-surface-variant font-label-mono-micro text-[9px] border border-outline-variant">
+                  AUTO-RESCALES TO 640x360 @ 25 FPS (FASTAPI / OPENCV NORMALIZER)
+                </div>
+                <input type="file" id="localFileInput" accept=".mp4,.avi,.mov,.zip" style="display: none;"/>
+              </div>
+
+              <div id="selectedFileInfo" class="mt-2 font-mono text-[11px] text-primary" style="display: none;"></div>
+
+              <div class="mt-space-md flex items-center justify-between">
+                <div>
+                  <label class="font-label-mono-micro text-[10px] text-on-surface-variant block mb-1">TARGET SPLIT:</label>
+                  <select class="bg-surface-container-lowest text-on-surface px-space-sm py-1 text-[11px] font-mono border border-outline-variant" id="localUploadSplit">
+                    <option value="train">Train Split</option>
+                    <option value="val">Val Split</option>
+                    <option value="holdout">Holdout Split</option>
+                  </select>
+                </div>
+                <div class="text-right">
+                  <label class="font-label-mono-micro text-[10px] text-secondary flex items-center gap-1 mb-1 cursor-pointer">
+                    <input type="checkbox" id="localAutoTrain" checked class="accent-primary"/>
+                    <span>Auto-Retrain V3</span>
+                  </label>
+                  <button class="px-space-md py-1.5 bg-primary text-on-primary font-label-caps text-[11px] uppercase font-bold disabled:opacity-50" id="localUploadBtn" disabled>
+                    Upload &amp; Process
+                  </button>
+                </div>
+              </div>
+
+              <!-- Pipeline Execution Stepper -->
+              <div id="ingestionProgressBox" class="mt-space-md p-space-sm bg-surface-container-lowest border border-outline-variant" style="display: none;">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-label-caps text-[10px] uppercase text-primary font-bold">PIPELINE EXECUTION:</span>
+                  <span class="font-label-mono-micro text-[10px] text-secondary" id="ingestionStatusMsg">ACTIVE</span>
+                </div>
+                <div class="font-mono text-[11px] text-on-surface-variant space-y-1" id="ingestionStepList">
+                  <!-- Steps filled dynamically -->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right Column: Registered Clips Manifest (7 cols) -->
+          <div class="xl:col-span-7 flex flex-col gap-gutter-desktop">
+            <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm bg-surface-container-lowest p-space-sm border border-outline-variant">
+                <div class="flex items-center gap-space-xs">
+                  <span class="w-2 h-2 bg-tertiary"></span>
+                  <span class="font-label-caps text-[11px] uppercase tracking-wider text-on-surface font-bold">Registered Clips Manifest</span>
+                  <span class="font-label-mono-micro text-[10px] text-on-surface-variant" id="manifestClipCount">(12 CLIPS)</span>
+                </div>
+                <div class="flex items-center gap-space-xs" id="manifestFilterGroup">
+                  <button class="px-space-sm py-1 bg-surface-container text-primary font-label-caps text-[10px] uppercase manifest-filter-btn active border border-primary font-bold" data-split="all">All</button>
+                  <button class="px-space-sm py-1 bg-surface text-on-surface-variant hover:text-on-surface font-label-caps text-[10px] uppercase manifest-filter-btn border border-outline-variant" data-split="train">Train</button>
+                  <button class="px-space-sm py-1 bg-surface text-on-surface-variant hover:text-on-surface font-label-caps text-[10px] uppercase manifest-filter-btn border border-outline-variant" data-split="val">Val</button>
+                  <button class="px-space-sm py-1 bg-surface text-on-surface-variant hover:text-on-surface font-label-caps text-[10px] uppercase manifest-filter-btn border border-outline-variant" data-split="holdout">Holdout</button>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto mt-space-sm">
+                <table class="w-full text-left font-body-sm tactical-table">
+                  <thead>
+                    <tr class="font-label-caps text-[10px] uppercase text-on-surface-variant tracking-wider">
+                      <th>Clip ID</th>
+                      <th>Split</th>
+                      <th>Frames</th>
+                      <th>Resolution</th>
+                      <th>Severity</th>
+                      <th class="text-right">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="manifestTableBody">
+                    <!-- Dynamically populated from /api/ingestion/manifest -->
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
-          <!-- Ingestion Status Stepper Display -->
-          <div id="ingestionProgressBox" style="display: none; margin-top: 20px; padding: 14px; border-radius: var(--radius-md); background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-subtle);">
-            <div style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 6px;">Pipeline Execution:</div>
-            <div id="ingestionStatusMsg" style="font-size: 13px; font-weight: 600; color: var(--color-cyan);">Initializing...</div>
-            <div id="ingestionStepList" style="margin-top: 8px; font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); line-height: 1.6;"></div>
-          </div>
         </div>
+      </section>
 
-      </div>
-
-      <!-- Manifest & Registered Clips Table -->
-      <div class="glass-card">
-        <div class="card-title-bar">
-          <h2>Registered Video Clips Manifest</h2>
-          <span class="chip-counter" id="manifestClipCount">0 Clips</span>
-        </div>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
-          Clips actively indexed in <code style="color:var(--color-cyan);">data/labels/dataset_manifest.json</code> and accessible across the pipeline.
-        </p>
-        <div class="table-wrapper">
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Clip ID</th>
-                <th>Target Split</th>
-                <th>Frames</th>
-                <th>Source Origin</th>
-                <th>File Name</th>
-              </tr>
-            </thead>
-            <tbody id="manifestTableBody">
-              <!-- Dynamically populated -->
-            </tbody>
-          </table>
-        </div>
-      </div>
     </section>
 
   </main>
 
+  <!-- ==================== PERSISTENT FOOTER ==================== -->
+  <footer class="fixed bottom-0 left-0 right-0 w-full z-40 bg-surface-container-lowest border-t border-outline-variant">
+    <div class="h-9 w-full px-margin-desktop flex items-center justify-between gap-gutter-desktop">
+      <div class="flex items-center gap-space-md font-label-caps text-[10px]">
+        <div class="flex items-center gap-space-xs px-space-xs py-0.5 border border-secondary text-secondary bg-secondary-container/20">
+          <span class="w-1.5 h-1.5 bg-secondary"></span>
+          <span>ANSI-01 NOMINAL</span>
+        </div>
+        <div class="flex items-center gap-space-xs px-space-xs py-0.5 border border-outline text-on-surface-variant bg-surface-container">
+          <span class="w-1.5 h-1.5 bg-outline"></span>
+          <span>PERIMETER SECURE</span>
+        </div>
+        <div class="flex items-center gap-space-xs px-space-xs py-0.5 border border-tertiary text-tertiary bg-tertiary-container/20">
+          <span class="w-1.5 h-1.5 bg-tertiary"></span>
+          <span>HAZARD ZONE B: MONITORING</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center font-label-mono-micro text-[10px] text-on-surface-variant tracking-wider">
+        <span class="text-primary font-semibold mr-space-xs">KEYS:</span>
+        <span>Space: Play/Pause | ← / J: Step -1 | → / L: Step +1 | 1-4: Model Select</span>
+      </div>
+
+      <div class="flex items-center gap-space-md font-label-mono-micro text-[10px]">
+        <span class="text-on-surface-variant">MEM_POOL: <span class="text-primary font-semibold">14.2 / 32 GB</span></span>
+        <span class="text-on-surface-variant">VRAM: <span class="text-secondary font-semibold">92% ALLOC</span></span>
+        <span class="text-on-surface-variant">LATENCY: <span class="text-secondary font-semibold" id="footerLatency">11ms</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
   <script src="/static/js/app.js"></script>
 </body>
 </html>
