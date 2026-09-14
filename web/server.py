@@ -158,6 +158,9 @@ class WarehousePredictRequest(BaseModel):
     features: List[float]
 
 
+WarehousePredictRequest.model_rebuild()
+
+
 class AssistantChatRequest(BaseModel):
     message: str
 
