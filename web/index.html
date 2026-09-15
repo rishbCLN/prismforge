@@ -1229,17 +1229,28 @@
         <div class="bg-surface-container-low p-space-md border border-outline-variant shadow-md">
           <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md border-b border-outline-variant pb-space-sm mb-space-md">
             <div>
-              <h3 class="font-label-caps text-[12px] uppercase tracking-wider text-on-surface font-bold flex items-center gap-space-xs">
-                <span class="material-symbols-outlined text-primary text-[18px]">upload_file</span>
-                Image Testing Studio &amp; Upload
-              </h3>
-              <p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">
+              <div class="flex items-center gap-space-sm mb-1">
+                <h3 class="font-label-caps text-[12px] uppercase tracking-wider text-on-surface font-bold flex items-center gap-space-xs">
+                  <span class="material-symbols-outlined text-primary text-[18px]">camera_enhance</span>
+                  PPE Testing Studio
+                </h3>
+                <!-- Mode Switcher -->
+                <div class="flex items-center bg-surface-container-lowest border border-outline-variant p-0.5 ml-2">
+                  <button id="ppeModePhotoBtn" class="px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold bg-primary text-on-primary transition-all cursor-pointer">
+                    [1] Static Photo
+                  </button>
+                  <button id="ppeModeVideoBtn" class="px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold text-on-surface-variant hover:text-on-surface transition-all cursor-pointer">
+                    [2] Local Video Stream
+                  </button>
+                </div>
+              </div>
+              <p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5" id="ppeStudioModeDescription">
                 Upload any construction test image or click a verified sample from <code class="text-tertiary font-mono">datasets/ppe_master_folder</code>.
               </p>
             </div>
 
-            <!-- Upload input and quick buttons -->
-            <div class="flex flex-wrap items-center gap-space-sm">
+            <!-- Photo Mode Controls -->
+            <div id="ppePhotoModeControls" class="flex flex-wrap items-center gap-space-sm">
               <label class="cursor-pointer px-space-md py-1.5 bg-primary text-on-primary font-label-caps text-[11px] uppercase font-bold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow">
                 <span class="material-symbols-outlined text-[16px]">add_photo_alternate</span>
                 <span>Select Test Image</span>
@@ -1255,6 +1266,57 @@
               <button id="ppeSampleBtn3" class="px-space-sm py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1">
                 <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Sample #3 (ppe3)
               </button>
+            </div>
+
+            <!-- Video Mode Controls -->
+            <div id="ppeVideoModeControls" class="hidden flex flex-wrap items-center gap-space-sm">
+              <label class="cursor-pointer px-space-md py-1.5 bg-secondary text-on-secondary font-label-caps text-[11px] uppercase font-bold hover:bg-secondary-container transition-all flex items-center gap-space-xs shadow">
+                <span class="material-symbols-outlined text-[16px]">video_file</span>
+                <span>Upload Local Video</span>
+                <input type="file" id="ppeVideoUploadInput" accept="video/*" class="hidden" />
+              </label>
+
+              <!-- Video Selected Badge -->
+              <div id="ppeVideoSelectedBadge" class="hidden flex items-center gap-1 px-space-sm py-1 bg-surface-container-lowest border border-secondary text-[11px] font-mono text-secondary">
+                <span class="material-symbols-outlined text-[14px]">check_circle</span>
+                <span id="ppeVideoFilenameText" class="truncate max-w-[180px]">stream.mp4</span>
+              </div>
+
+              <!-- Sampling Rate -->
+              <div class="flex items-center gap-1 bg-surface-container-lowest px-space-xs py-1 border border-outline-variant">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">Rate:</span>
+                <select id="ppeTargetFpsSelect" class="bg-surface-container text-on-surface font-mono text-[10px] border border-outline-variant px-1 py-0.5">
+                  <option value="5.0">5 FPS (Fast)</option>
+                  <option value="8.0" selected>8 FPS (Balanced)</option>
+                  <option value="12.0">12 FPS (Dense)</option>
+                </select>
+              </div>
+
+              <!-- Max Frames -->
+              <div class="flex items-center gap-1 bg-surface-container-lowest px-space-xs py-1 border border-outline-variant">
+                <span class="font-label-mono-micro text-[10px] text-on-surface-variant uppercase">Max:</span>
+                <select id="ppeMaxFramesSelect" class="bg-surface-container text-on-surface font-mono text-[10px] border border-outline-variant px-1 py-0.5">
+                  <option value="60">60 Frames</option>
+                  <option value="120" selected>120 Frames</option>
+                  <option value="240">240 Frames</option>
+                </select>
+              </div>
+
+              <!-- Primary Test Button -->
+              <button id="ppeRunVideoAnalysisBtn" class="px-space-md py-1.5 bg-primary text-on-primary font-label-caps text-[11px] uppercase font-bold hover:bg-primary-container transition-all flex items-center gap-space-xs shadow border border-primary cursor-pointer">
+                <span class="material-symbols-outlined text-[16px]">play_circle</span>
+                <span>[TEST VIDEO: DISSECT &amp; RUN PPE PIPELINE]</span>
+              </button>
+
+              <!-- Quick Preset Sample Video Clips -->
+              <div class="flex items-center gap-1">
+                <button id="ppeSampleVideoBtn1" class="px-space-xs py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1 cursor-pointer" title="Test with Preset Danger Zone Clip">
+                  <span class="w-1.5 h-1.5 rounded-full bg-error"></span> Demo Clip 1 (Danger Zone)
+                </button>
+                <button id="ppeSampleVideoBtn2" class="px-space-xs py-1.5 bg-surface-container-lowest text-on-surface hover:text-primary font-label-caps text-[10px] uppercase border border-outline-variant transition-colors flex items-center gap-1 cursor-pointer" title="Test with Preset Safe Walkway Clip">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Demo Clip 2 (Safe Walkway)
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1334,6 +1396,67 @@
 
               <!-- Live Annotated Image Display -->
               <img id="ppeAnnotatedImageDisplay" class="hidden max-h-[580px] w-auto max-w-full object-contain mx-auto shadow-lg" alt="PPE Neural Analysis" />
+            </div>
+
+            <!-- Video Playback Controls Toolbar (Visible in Video Mode after processing) -->
+            <div id="ppeVideoPlaybackControls" class="hidden mt-space-sm pt-space-xs border-t border-outline-variant flex flex-col gap-1.5 bg-surface-container-lowest p-space-sm border">
+              <!-- Top Transport Row -->
+              <div class="flex items-center justify-between gap-space-xs flex-wrap">
+                <div class="flex items-center gap-1">
+                  <!-- Play / Pause Button -->
+                  <button id="ppePlayPauseBtn" class="px-space-sm py-1 bg-primary text-on-primary font-label-caps text-[10px] uppercase font-bold hover:bg-primary-container transition-all flex items-center gap-1 cursor-pointer">
+                    <span class="material-symbols-outlined text-[14px]">pause</span>
+                    <span>PAUSE</span>
+                  </button>
+                  <!-- Step Prev -->
+                  <button id="ppePrevFrameBtn" class="px-space-xs py-1 bg-surface-container text-on-surface hover:text-primary border border-outline-variant font-label-caps text-[10px] transition-colors cursor-pointer" title="Step 1 Frame Back">
+                    &lt;&lt; -1F
+                  </button>
+                  <!-- Step Next -->
+                  <button id="ppeNextFrameBtn" class="px-space-xs py-1 bg-surface-container text-on-surface hover:text-primary border border-outline-variant font-label-caps text-[10px] transition-colors cursor-pointer" title="Step 1 Frame Forward">
+                    +1F &gt;&gt;
+                  </button>
+                  <!-- Loop Toggle -->
+                  <button id="ppeLoopToggleBtn" class="px-space-xs py-1 bg-surface-container text-secondary border border-secondary font-label-caps text-[9px] font-bold cursor-pointer">
+                    LOOP: ON
+                  </button>
+                  <!-- Playback Speed -->
+                  <div class="flex items-center gap-1 bg-surface-container px-1 py-0.5 border border-outline-variant">
+                    <span class="font-label-mono-micro text-[9px] text-on-surface-variant">SPD:</span>
+                    <select id="ppeVideoSpeedSelect" class="bg-surface-container-lowest text-on-surface font-mono text-[9px] border-none py-0">
+                      <option value="0.5">0.5x</option>
+                      <option value="1.0" selected>1.0x</option>
+                      <option value="1.5">1.5x</option>
+                      <option value="2.0">2.0x</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Frame Counter & Timestamp -->
+                <div class="flex items-center gap-2 font-mono text-[11px]">
+                  <span id="ppeFrameCounter" class="text-primary font-bold">FRAME 1 / --</span>
+                  <span class="text-outline">|</span>
+                  <span id="ppeTimestampDisplay" class="text-secondary font-bold">0.00s</span>
+                  <span class="text-outline">|</span>
+                  <span id="ppeTimelineBreachSummary" class="text-on-surface-variant text-[10px]">-- BREACHES</span>
+                </div>
+              </div>
+
+              <!-- Temporal Violation Heatmap Strip -->
+              <div class="w-full flex flex-col gap-0.5">
+                <div class="flex items-center justify-between text-[9px] font-mono text-on-surface-variant">
+                  <span>TIMELINE VIOLATION HEATMAP:</span>
+                  <span class="text-[9px]"><span class="text-secondary">&#9632; Compliant</span> | <span class="text-amber-400">&#9632; Missing Vest</span> | <span class="text-error">&#9632; No Helmet</span></span>
+                </div>
+                <div id="ppeViolationHeatmapStrip" class="w-full h-3 bg-surface-container-low border border-outline-variant flex items-center gap-[1px] cursor-pointer overflow-hidden" title="Click any tick to jump to frame"></div>
+              </div>
+
+              <!-- Timeline Scrubber Slider -->
+              <div class="w-full flex items-center gap-2">
+                <span class="font-label-mono-micro text-[9px] text-outline">0s</span>
+                <input type="range" id="ppeVideoTimelineScrubber" min="0" max="0" value="0" class="w-full h-1.5 bg-surface-container-low accent-primary cursor-pointer" />
+                <span id="ppeVideoDurationScrubberMax" class="font-label-mono-micro text-[9px] text-outline">END</span>
+              </div>
             </div>
 
             <!-- Image Metadata Footer -->

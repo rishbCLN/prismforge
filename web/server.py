@@ -412,6 +412,72 @@ def analyze_sample_image(req: AnalyzeSampleRequest):
         raise HTTPException(status_code=500, detail=f"Analysis failed: {e}")
 
 
+# ==================== PPE VIDEO DISSECTION & STREAM API ====================
+from src.features.video_ppe_pipeline import VideoPPEPipeline
+
+video_ppe_pipeline = VideoPPEPipeline(ppe_engine=ppe_engine)
+
+
+@app.post("/api/ppe/analyze_video")
+async def analyze_ppe_video(
+    file: UploadFile = File(...),
+    target_fps: float = Form(8.0),
+    max_frames: int = Form(120)
+):
+    """Dissects an uploaded local video file into sequential frames and executes frame-by-frame PPE neural inference."""
+    import tempfile
+    suffix = os.path.splitext(file.filename or "")[1] or ".mp4"
+    tmp_file = tempfile.NamedTemporaryFile(delete=False, suffix=suffix)
+    try:
+        content = await file.read()
+        tmp_file.write(content)
+        tmp_file.flush()
+        tmp_file.close()
+
+        res = video_ppe_pipeline.process_video(
+            video_path=tmp_file.name,
+            target_fps=target_fps,
+            max_frames=max_frames
+        )
+        if "video_metadata" in res:
+            res["video_metadata"]["filename"] = file.filename
+        return JSONResponse(content=res)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Video PPE analysis failed: {str(e)}")
+    finally:
+        if os.path.exists(tmp_file.name):
+            try:
+                os.remove(tmp_file.name)
+            except Exception:
+                pass
+
+
+class AnalyzeVideoSampleRequest(BaseModel):
+    sample_path: str = "data/raw/clip_03_critical_danger_zone.mp4"
+    target_fps: float = 8.0
+    max_frames: int = 120
+
+
+@app.post("/api/ppe/analyze_video_sample")
+def analyze_video_sample(req: AnalyzeVideoSampleRequest):
+    """Analyzes a preset video clip from data/raw/."""
+    if not os.path.exists(req.sample_path):
+        raise HTTPException(status_code=404, detail=f"Sample video not found at {req.sample_path}")
+    try:
+        res = video_ppe_pipeline.process_video(
+            video_path=req.sample_path,
+            target_fps=req.target_fps,
+            max_frames=req.max_frames
+        )
+        if "video_metadata" in res:
+            res["video_metadata"]["filename"] = os.path.basename(req.sample_path)
+        return JSONResponse(content=res)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Video sample analysis failed: {str(e)}")
+
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("web.server:app", host="0.0.0.0", port=8000, reload=False)
+

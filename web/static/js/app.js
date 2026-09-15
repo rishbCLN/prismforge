@@ -1237,17 +1237,72 @@ class HazardMeshConsole {
 
   // ==================== PPE ANALYSER ====================
   setupPPEAnalyser() {
-    const fileInput = document.getElementById("ppeImageUploadInput");
+    const photoFileInput = document.getElementById("ppeImageUploadInput");
+    const videoFileInput = document.getElementById("ppeVideoUploadInput");
     const loadingBox = document.getElementById("ppeAnalysisLoading");
+    const loadingMainText = document.getElementById("ppeLoadingMainText");
+    const loadingSubText = document.getElementById("ppeLoadingSubText");
 
-    // File Upload Handler
-    fileInput?.addEventListener("change", async (e) => {
+    // Mode Toggle Buttons
+    const photoModeBtn = document.getElementById("ppeModePhotoBtn");
+    const videoModeBtn = document.getElementById("ppeModeVideoBtn");
+    const photoControls = document.getElementById("ppePhotoModeControls");
+    const videoControls = document.getElementById("ppeVideoModeControls");
+    const modeDesc = document.getElementById("ppeStudioModeDescription");
+    const playbackControls = document.getElementById("ppeVideoPlaybackControls");
+
+    this.ppeCurrentMode = "photo"; // "photo" or "video"
+    this.ppeVideoFile = null;
+    this.ppeVideoData = null;
+    this.ppeVideoFrames = [];
+    this.ppeCurrentFrameIdx = 0;
+    this.ppeIsPlaying = false;
+    this.ppePlaybackTimer = null;
+    this.ppePlaybackSpeed = 1.0;
+    this.ppeLoop = true;
+
+    // Switch to Photo Mode
+    photoModeBtn?.addEventListener("click", () => {
+      this.ppeCurrentMode = "photo";
+      this.pausePPEVideo();
+      photoModeBtn.className = "px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold bg-primary text-on-primary transition-all cursor-pointer";
+      videoModeBtn.className = "px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold text-on-surface-variant hover:text-on-surface transition-all cursor-pointer";
+      photoControls?.classList.remove("hidden");
+      videoControls?.classList.add("hidden");
+      playbackControls?.classList.add("hidden");
+      if (modeDesc) {
+        modeDesc.innerHTML = 'Upload any construction test image or click a verified sample from <code class="text-tertiary font-mono">datasets/ppe_master_folder</code>.';
+      }
+    });
+
+    // Switch to Video Stream Mode
+    videoModeBtn?.addEventListener("click", () => {
+      this.ppeCurrentMode = "video";
+      videoModeBtn.className = "px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold bg-secondary text-on-secondary transition-all cursor-pointer";
+      photoModeBtn.className = "px-space-sm py-0.5 font-label-caps text-[10px] uppercase font-bold text-on-surface-variant hover:text-on-surface transition-all cursor-pointer";
+      videoControls?.classList.remove("hidden");
+      photoControls?.classList.add("hidden");
+      if (this.ppeVideoFrames.length > 0) {
+        playbackControls?.classList.remove("hidden");
+      }
+      if (modeDesc) {
+        modeDesc.innerHTML = 'Select a local construction video stream (<code class="text-secondary font-mono">.mp4, .mov, .avi, .webm</code>), dissect into frames, and run frame-by-frame neural PPE compliance.';
+      }
+    });
+
+    // 1. Photo File Upload Handler
+    photoFileInput?.addEventListener("change", async (e) => {
       const file = e.target.files?.[0];
       if (!file) return;
+
+      this.pausePPEVideo();
+      playbackControls?.classList.add("hidden");
 
       const formData = new FormData();
       formData.append("file", file);
 
+      if (loadingMainText) loadingMainText.textContent = "Executing Perception (YOLOv8) → Cranial Spatial Reasoning → PPEReasonerNet...";
+      if (loadingSubText) loadingSubText.textContent = "Processing image through FaceCranialDetector & OSHA PPE Reasoner...";
       loadingBox?.classList.remove("hidden");
       const startTime = performance.now();
 
@@ -1261,17 +1316,21 @@ class HazardMeshConsole {
 
         this.renderPPEResults(data, duration);
       } catch (err) {
-        console.error("PPE analysis failed:", err);
+        console.error("PPE photo analysis failed:", err);
         alert("PPE Analysis failed: " + err.message);
       } finally {
         loadingBox?.classList.add("hidden");
       }
     });
 
-    // Sample Preset Buttons
+    // 2. Sample Preset Buttons
     [1, 2, 3].forEach(idx => {
       const btn = document.getElementById(`ppeSampleBtn${idx}`);
       btn?.addEventListener("click", async () => {
+        this.pausePPEVideo();
+        playbackControls?.classList.add("hidden");
+
+        if (loadingMainText) loadingMainText.textContent = "Executing Perception (YOLOv8) → Cranial Spatial Reasoning → PPEReasonerNet...";
         loadingBox?.classList.remove("hidden");
         const startTime = performance.now();
         try {
@@ -1296,15 +1355,317 @@ class HazardMeshConsole {
         }
       });
     });
+
+    // 3. Video File Selection Handler
+    videoFileInput?.addEventListener("change", (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      this.ppeVideoFile = file;
+      const badge = document.getElementById("ppeVideoSelectedBadge");
+      const nameText = document.getElementById("ppeVideoFilenameText");
+      if (badge && nameText) {
+        badge.classList.remove("hidden");
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+        nameText.textContent = `${file.name} (${sizeMb} MB)`;
+      }
+    });
+
+    // 4. Video Run Test Button & Preset Video Clips
+    const runVideoAnalysis = async (samplePath = null) => {
+      this.pausePPEVideo();
+      playbackControls?.classList.add("hidden");
+
+      const targetFps = document.getElementById("ppeTargetFpsSelect")?.value || "8.0";
+      const maxFrames = document.getElementById("ppeMaxFramesSelect")?.value || "120";
+
+      let url = "/api/ppe/analyze_video";
+      let requestOptions = {};
+
+      if (samplePath) {
+        url = "/api/ppe/analyze_video_sample";
+        requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sample_path: samplePath,
+            target_fps: parseFloat(targetFps),
+            max_frames: parseInt(maxFrames, 10)
+          })
+        };
+        const fname = samplePath.split("/").pop();
+        if (loadingMainText) loadingMainText.textContent = `Dissecting sample clip "${fname}" into frames & running neural inference...`;
+      } else if (this.ppeVideoFile) {
+        const formData = new FormData();
+        formData.append("file", this.ppeVideoFile);
+        formData.append("target_fps", targetFps);
+        formData.append("max_frames", maxFrames);
+        requestOptions = { method: "POST", body: formData };
+        if (loadingMainText) loadingMainText.textContent = `Dissecting uploaded video "${this.ppeVideoFile.name}" into frames & running neural inference...`;
+      } else {
+        // If user pushes test button without uploading, seamlessly evaluate default demo clip
+        url = "/api/ppe/analyze_video_sample";
+        requestOptions = {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sample_path: "data/raw/clip_03_critical_danger_zone.mp4",
+            target_fps: parseFloat(targetFps),
+            max_frames: parseInt(maxFrames, 10)
+          })
+        };
+        if (loadingMainText) loadingMainText.textContent = `Dissecting demo clip "clip_03_critical_danger_zone.mp4" into frames & running neural inference...`;
+      }
+
+      if (loadingSubText) loadingSubText.textContent = `Sampling stream at ${targetFps} FPS (max ${maxFrames} frames) through FaceCranialDetector & PPEReasonerNet...`;
+      loadingBox?.classList.remove("hidden");
+
+      try {
+        const resp = await fetch(url, requestOptions);
+        if (!resp.ok) {
+          const errData = await resp.json().catch(() => ({}));
+          throw new Error(errData.detail || `Server returned status ${resp.status}`);
+        }
+        const data = await resp.json();
+        this.setupPPEVideoPlayback(data);
+      } catch (err) {
+        console.error("Video PPE analysis failed:", err);
+        alert("Video PPE Analysis failed: " + err.message);
+      } finally {
+        loadingBox?.classList.add("hidden");
+      }
+    };
+
+    const runVideoBtn = document.getElementById("ppeRunVideoAnalysisBtn");
+    runVideoBtn?.addEventListener("click", () => runVideoAnalysis(null));
+
+    document.getElementById("ppeSampleVideoBtn1")?.addEventListener("click", () => {
+      runVideoAnalysis("data/raw/clip_03_critical_danger_zone.mp4");
+    });
+    document.getElementById("ppeSampleVideoBtn2")?.addEventListener("click", () => {
+      runVideoAnalysis("data/raw/clip_01_safe_walkway.mp4");
+    });
+
+
+    // 5. Video Playback Transport Event Listeners
+    document.getElementById("ppePlayPauseBtn")?.addEventListener("click", () => this.togglePPEPlayPause());
+    document.getElementById("ppePrevFrameBtn")?.addEventListener("click", () => {
+      this.pausePPEVideo();
+      this.seekPPEVideoFrame(this.ppeCurrentFrameIdx - 1);
+    });
+    document.getElementById("ppeNextFrameBtn")?.addEventListener("click", () => {
+      this.pausePPEVideo();
+      this.seekPPEVideoFrame(this.ppeCurrentFrameIdx + 1);
+    });
+    document.getElementById("ppeLoopToggleBtn")?.addEventListener("click", (e) => {
+      this.ppeLoop = !this.ppeLoop;
+      e.currentTarget.textContent = `LOOP: ${this.ppeLoop ? 'ON' : 'OFF'}`;
+      e.currentTarget.className = this.ppeLoop 
+        ? "px-space-xs py-1 bg-surface-container text-secondary border border-secondary font-label-caps text-[9px] font-bold cursor-pointer"
+        : "px-space-xs py-1 bg-surface-container text-on-surface-variant border border-outline-variant font-label-caps text-[9px] font-bold cursor-pointer";
+    });
+    document.getElementById("ppeVideoSpeedSelect")?.addEventListener("change", (e) => {
+      this.ppePlaybackSpeed = parseFloat(e.target.value) || 1.0;
+      if (this.ppeIsPlaying) {
+        this.pausePPEVideo();
+        this.playPPEVideo();
+      }
+    });
+    document.getElementById("ppeVideoTimelineScrubber")?.addEventListener("input", (e) => {
+      this.pausePPEVideo();
+      this.seekPPEVideoFrame(parseInt(e.target.value, 10));
+    });
   }
 
+  // Set up Video Playback from API result
+  setupPPEVideoPlayback(data) {
+    if (!data || data.status !== "success") return;
+
+    this.ppeVideoData = data;
+    this.ppeVideoFrames = data.frames || [];
+    this.ppeCurrentFrameIdx = 0;
+
+    const playbackControls = document.getElementById("ppeVideoPlaybackControls");
+    playbackControls?.classList.remove("hidden");
+
+    const scrubber = document.getElementById("ppeVideoTimelineScrubber");
+    if (scrubber) {
+      scrubber.min = "0";
+      scrubber.max = (this.ppeVideoFrames.length - 1).toString();
+      scrubber.value = "0";
+    }
+
+    // Populate Temporal Violation Heatmap Strip
+    const heatmap = document.getElementById("ppeViolationHeatmapStrip");
+    const timeline = data.violation_timeline || [];
+    if (heatmap) {
+      heatmap.innerHTML = "";
+      timeline.forEach((tick, idx) => {
+        const tickEl = document.createElement("div");
+        let bgClass = "bg-secondary"; // Compliant Emerald
+        if (tick.status_code === 2) {
+          bgClass = "bg-error"; // Critical No Helmet
+        } else if (tick.status_code === 1) {
+          bgClass = "bg-amber-400"; // Missing Vest
+        }
+
+        tickEl.className = `ppe-heatmap-tick flex-1 h-full ${bgClass} hover:opacity-100 opacity-85 transition-all`;
+        tickEl.title = `Frame #${idx + 1} (${tick.timestamp_sec}s): ${tick.status_code === 2 ? 'CRITICAL NO PPE' : (tick.status_code === 1 ? 'MISSING VEST' : 'COMPLIANT')}`;
+        tickEl.addEventListener("click", () => {
+          this.pausePPEVideo();
+          this.seekPPEVideoFrame(idx);
+        });
+        heatmap.appendChild(tickEl);
+      });
+    }
+
+    // Breach Summary text
+    const breachSummaryEl = document.getElementById("ppeTimelineBreachSummary");
+    const clip = data.clip_summary || {};
+    if (breachSummaryEl) {
+      const crit = clip.critical_violation_frames_count || 0;
+      const mod = clip.moderate_violation_frames_count || 0;
+      breachSummaryEl.textContent = `${crit} CRITICAL, ${mod} MODERATE BREACHES`;
+      breachSummaryEl.className = crit > 0 ? "text-error font-bold" : (mod > 0 ? "text-amber-400 font-bold" : "text-secondary font-bold");
+    }
+
+    // Render initial frame and auto-play
+    this.renderPPEVideoFrame(0);
+    this.playPPEVideo();
+  }
+
+  // Seek to specific frame in video stream
+  seekPPEVideoFrame(frameIdx) {
+    if (!this.ppeVideoFrames || this.ppeVideoFrames.length === 0) return;
+    const clamped = Math.max(0, Math.min(this.ppeVideoFrames.length - 1, frameIdx));
+    this.renderPPEVideoFrame(clamped);
+  }
+
+  // Play Video Loop
+  playPPEVideo() {
+    if (this.ppeIsPlaying || this.ppeVideoFrames.length === 0) return;
+    this.ppeIsPlaying = true;
+
+    const playIcon = document.getElementById("ppePlayPauseIcon");
+    if (playIcon) playIcon.textContent = "pause";
+
+    const meta = this.ppeVideoData?.video_metadata || {};
+    const baseFps = meta.playback_fps || 8.0;
+    const intervalMs = Math.max(25, Math.round(1000.0 / (baseFps * this.ppePlaybackSpeed)));
+
+    this.ppePlaybackTimer = setInterval(() => {
+      let nextIdx = this.ppeCurrentFrameIdx + 1;
+      if (nextIdx >= this.ppeVideoFrames.length) {
+        if (this.ppeLoop) {
+          nextIdx = 0;
+        } else {
+          this.pausePPEVideo();
+          return;
+        }
+      }
+      this.renderPPEVideoFrame(nextIdx);
+    }, intervalMs);
+  }
+
+  // Pause Video
+  pausePPEVideo() {
+    this.ppeIsPlaying = false;
+    if (this.ppePlaybackTimer) {
+      clearInterval(this.ppePlaybackTimer);
+      this.ppePlaybackTimer = null;
+    }
+    const playIcon = document.getElementById("ppePlayPauseIcon");
+    if (playIcon) playIcon.textContent = "play_arrow";
+  }
+
+  // Toggle Play/Pause
+  togglePPEPlayPause() {
+    if (this.ppeIsPlaying) {
+      this.pausePPEVideo();
+    } else {
+      this.playPPEVideo();
+    }
+  }
+
+  // Render a Single Video Frame & Synchronize All UI Components
+  renderPPEVideoFrame(frameIndex) {
+    const frame = this.ppeVideoFrames[frameIndex];
+    if (!frame) return;
+
+    this.ppeCurrentFrameIdx = frameIndex;
+
+    // 1. Update Canvas Image Display
+    const imgDisplay = document.getElementById("ppeAnnotatedImageDisplay");
+    const placeholder = document.getElementById("ppeImagePlaceholder");
+    if (frame.annotated_image_base64 && imgDisplay) {
+      imgDisplay.src = frame.annotated_image_base64;
+      imgDisplay.classList.remove("hidden");
+      if (placeholder) placeholder.classList.add("hidden");
+    }
+
+    // 2. Update Transport Scrubber & Readout
+    const scrubber = document.getElementById("ppeVideoTimelineScrubber");
+    if (scrubber) scrubber.value = frameIndex.toString();
+
+    const frameDisp = document.getElementById("ppeCurrentFrameIndexDisplay");
+    if (frameDisp) frameDisp.textContent = `${frameIndex + 1} / ${this.ppeVideoFrames.length}`;
+
+    const timeDisp = document.getElementById("ppeCurrentTimestampDisplay");
+    if (timeDisp) timeDisp.textContent = frame.time_display || "00:00.0";
+
+    // 3. Highlight current tick on timeline heatmap strip
+    const ticks = document.querySelectorAll(".ppe-heatmap-tick");
+    ticks.forEach((tick, i) => {
+      if (i === frameIndex) {
+        tick.classList.add("ring-2", "ring-white", "opacity-100", "scale-y-125");
+      } else {
+        tick.classList.remove("ring-2", "ring-white", "scale-y-125");
+      }
+    });
+
+    // 4. Update Footer Metadata
+    const meta = this.ppeVideoData?.video_metadata || {};
+    const setVal = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+    setVal("ppeFilenameDisplay", `VIDEO: ${meta.filename || "Uploaded Stream"}`);
+    setVal("ppeDimensionsDisplay", `RES: ${meta.resolution?.width || 0}x${meta.resolution?.height || 0} | PLAYBACK: ${meta.playback_fps || 8} FPS`);
+    setVal("ppeInferenceTimeDisplay", `AVG LATENCY: ${meta.avg_frame_latency_ms || 0} ms/frame`);
+
+    // 5. Dynamically update the Right-Side Worker Decision Cards for this frame!
+    this.renderPPEWorkerCards(frame.workers || []);
+
+    // 6. Update Top Metric Cards for this frame
+    const summary = frame.summary_metrics || {};
+    setVal("metricTotalWorkers", summary.total_workers ?? 0);
+    setVal("metricCompliantCount", summary.compliant_count ?? 0);
+    setVal("metricViolationCount", summary.violation_count ?? 0);
+    setVal("metricHardhatRate", `${summary.hardhat_compliance_rate_pct ?? 0}%`);
+    setVal("metricVestRate", `${summary.vest_compliance_rate_pct ?? 0}%`);
+    setVal("metricAvgRisk", (summary.avg_risk_score ?? 0).toFixed(3));
+
+    const statusEl = document.getElementById("metricSiteStatus");
+    const siteStatus = summary.site_status || "UNKNOWN";
+    if (statusEl) {
+      statusEl.textContent = siteStatus.replace(/_/g, " ");
+      if (siteStatus === "FULL_COMPLIANCE") {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-secondary text-secondary bg-secondary-container/20";
+      } else if (siteStatus === "CRITICAL_VIOLATIONS") {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-error text-error bg-error-container/20";
+      } else {
+        statusEl.className = "inline-block px-2 py-0.5 mt-1 font-label-caps text-[10px] font-bold border border-tertiary text-tertiary bg-tertiary-container/20";
+      }
+    }
+  }
+
+  // Render Static Photo Results
   renderPPEResults(data, latencyMs) {
     if (!data || data.status !== "success") return;
 
     const summary = data.summary_metrics || {};
     const workers = data.workers || [];
 
-    // Update metrics strip
     const setVal = (id, val) => {
       const el = document.getElementById(id);
       if (el) el.textContent = val;
@@ -1345,8 +1706,14 @@ class HazardMeshConsole {
     setVal("ppeInferenceTimeDisplay", `LATENCY: ${latencyMs} ms`);
 
     // Render Worker Cards
+    this.renderPPEWorkerCards(workers);
+  }
+
+  // Reusable Per-Worker Neural Decision Cards Renderer
+  renderPPEWorkerCards(workers) {
     const container = document.getElementById("ppeWorkerCardsContainer");
-    setVal("ppeWorkerCardCount", `(${workers.length} Workers)`);
+    const countBadge = document.getElementById("ppeWorkerCardCount");
+    if (countBadge) countBadge.textContent = `(${workers.length} Workers)`;
     if (!container) return;
     container.innerHTML = "";
 
@@ -1354,7 +1721,7 @@ class HazardMeshConsole {
       container.innerHTML = `
         <div class="p-space-lg bg-surface-container-lowest border border-outline-variant text-center">
           <span class="font-label-mono-micro text-[11px] text-on-surface-variant block">
-            No workers detected in this scene.
+            No active personnel detected in current frame.
           </span>
         </div>
       `;
