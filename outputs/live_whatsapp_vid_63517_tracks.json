@@ -1,5 +1,5 @@
 {
-  "clip_id": "live_whatsapp_video",
+  "clip_id": "live_whatsapp_vid_63517",
   "total_frames": 300,
   "total_unique_tracks": 10,
   "metadata": {
@@ -8,7 +8,7 @@
     "frame_height": 640,
     "fps": 30.0,
     "duration_seconds": 10.0,
-    "inference_duration_sec": 27.3
+    "inference_duration_sec": 17.62
   },
   "neural_summary": {
     "model_version": "WarehouseRiskMLP_v3",
@@ -14885,5 +14885,123 @@
         }
       ]
     }
-  }
+  },
+  "incidents": [
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 17,
+      "end_frame": 39,
+      "start_time": "00:00.56",
+      "end_time": "00:01.30",
+      "duration_sec": 0.77,
+      "peak_frame": 39,
+      "peak_risk_score": 0.8732,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.45
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_039.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 143,
+      "end_frame": 161,
+      "start_time": "00:04.76",
+      "end_time": "00:05.36",
+      "duration_sec": 0.63,
+      "peak_frame": 146,
+      "peak_risk_score": 0.8002,
+      "peak_risk_percent": 80,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_146.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-003",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 170,
+      "end_frame": 171,
+      "start_time": "00:05.66",
+      "end_time": "00:05.70",
+      "duration_sec": 0.1,
+      "peak_frame": 170,
+      "peak_risk_score": 0.8744,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.87
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_170.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-004",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 180,
+      "end_frame": 215,
+      "start_time": "00:06.00",
+      "end_time": "00:07.16",
+      "duration_sec": 1.2,
+      "peak_frame": 180,
+      "peak_risk_score": 0.8809,
+      "peak_risk_percent": 88,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.3
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_180.jpg",
+      "status": "UNREVIEWED"
+    }
+  ]
 }

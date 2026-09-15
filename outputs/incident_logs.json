@@ -1,0 +1,1465 @@
+{
+  "version": "1.0",
+  "threshold": 0.5,
+  "incidents": [
+    {
+      "incident_id": "INC-LIVEROLLI-001",
+      "timestamp_iso": "2026-09-15T11:36:49.472434Z",
+      "clip_id": "live_rolling_and__72183",
+      "source_video": "Rolling and dragging on wet floor.mp4",
+      "start_frame": 6,
+      "end_frame": 182,
+      "start_time": "00:00.20",
+      "end_time": "00:06.06",
+      "duration_sec": 5.9,
+      "peak_frame": 154,
+      "peak_risk_score": 0.9401,
+      "peak_risk_percent": 94,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 14,
+          "class_name": "person",
+          "speed": 0.2
+        },
+        {
+          "track_id": 22,
+          "class_name": "carton",
+          "speed": 0.79
+        }
+      ],
+      "frame_thumbnail": "live_rolling_and__72183_frames/frame_154.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEROLLI-001",
+      "timestamp_iso": "2026-09-15T11:30:25.014173Z",
+      "clip_id": "live_rolling_and__71797",
+      "source_video": "Rolling and dragging on wet floor.mp4",
+      "start_frame": 6,
+      "end_frame": 182,
+      "start_time": "00:00.20",
+      "end_time": "00:06.06",
+      "duration_sec": 5.9,
+      "peak_frame": 154,
+      "peak_risk_score": 0.9401,
+      "peak_risk_percent": 94,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 14,
+          "class_name": "person",
+          "speed": 0.2
+        },
+        {
+          "track_id": 22,
+          "class_name": "carton",
+          "speed": 0.79
+        }
+      ],
+      "frame_thumbnail": "live_rolling_and__71797_frames/frame_154.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEROLLI-001",
+      "timestamp_iso": "2026-09-15T11:27:01.906814Z",
+      "clip_id": "live_rolling_and__71594",
+      "source_video": "Rolling and dragging on wet floor.mp4",
+      "start_frame": 6,
+      "end_frame": 182,
+      "start_time": "00:00.20",
+      "end_time": "00:06.06",
+      "duration_sec": 5.9,
+      "peak_frame": 154,
+      "peak_risk_score": 0.9401,
+      "peak_risk_percent": 94,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 14,
+          "class_name": "person",
+          "speed": 0.2
+        },
+        {
+          "track_id": 22,
+          "class_name": "carton",
+          "speed": 0.79
+        }
+      ],
+      "frame_thumbnail": "live_rolling_and__71594_frames/frame_154.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T11:25:41.692069Z",
+      "clip_id": "live_whatsapp_vid_71520",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_71520_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T11:25:41.692069Z",
+      "clip_id": "live_whatsapp_vid_71520",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_71520_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T11:13:52.349576Z",
+      "clip_id": "live_whatsapp_vid_70811",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70811_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T11:13:52.349576Z",
+      "clip_id": "live_whatsapp_vid_70811",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70811_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T11:03:33.316273Z",
+      "clip_id": "live_whatsapp_vid_70193",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70193_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T11:03:33.316273Z",
+      "clip_id": "live_whatsapp_vid_70193",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70193_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T11:01:24.414004Z",
+      "clip_id": "live_whatsapp_vid_70058",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70058_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T11:01:24.414004Z",
+      "clip_id": "live_whatsapp_vid_70058",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_70058_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:59:52.614851Z",
+      "clip_id": "live_whatsapp_vid_66374",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_66374_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:59:52.614851Z",
+      "clip_id": "live_whatsapp_vid_66374",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_66374_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-007",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 232,
+      "end_frame": 232,
+      "start_time": "00:30.93",
+      "end_time": "00:30.93",
+      "duration_sec": 0.13,
+      "peak_frame": 232,
+      "peak_risk_score": 0.6306,
+      "peak_risk_percent": 63,
+      "severity": "MODERATE",
+      "intervention_priority": "P2_EVALUATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 39,
+          "class_name": "person",
+          "speed": 0.23
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_232.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-006",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 200,
+      "end_frame": 221,
+      "start_time": "00:26.66",
+      "end_time": "00:29.46",
+      "duration_sec": 2.93,
+      "peak_frame": 203,
+      "peak_risk_score": 0.8446,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 27,
+          "class_name": "person",
+          "speed": 0.28
+        },
+        {
+          "track_id": 32,
+          "class_name": "person",
+          "speed": 0.07
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_203.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-005",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 171,
+      "end_frame": 187,
+      "start_time": "00:22.80",
+      "end_time": "00:24.93",
+      "duration_sec": 2.27,
+      "peak_frame": 179,
+      "peak_risk_score": 0.8491,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 28,
+          "class_name": "person",
+          "speed": 0.21
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_179.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-004",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 108,
+      "end_frame": 161,
+      "start_time": "00:14.40",
+      "end_time": "00:21.46",
+      "duration_sec": 7.2,
+      "peak_frame": 156,
+      "peak_risk_score": 0.8466,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 24,
+          "class_name": "person",
+          "speed": 0.19
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_156.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-003",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 40,
+      "end_frame": 101,
+      "start_time": "00:05.33",
+      "end_time": "00:13.46",
+      "duration_sec": 8.27,
+      "peak_frame": 77,
+      "peak_risk_score": 0.8499,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 15,
+          "class_name": "person",
+          "speed": 0.7
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_077.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-002",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 12,
+      "end_frame": 33,
+      "start_time": "00:01.60",
+      "end_time": "00:04.40",
+      "duration_sec": 2.93,
+      "peak_frame": 12,
+      "peak_risk_score": 0.8481,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 6,
+          "class_name": "person",
+          "speed": 0.07
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_012.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-001",
+      "timestamp_iso": "2026-09-15T09:48:48.718988Z",
+      "clip_id": "live_dock_level___65688",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 3,
+      "end_frame": 4,
+      "start_time": "00:00.40",
+      "end_time": "00:00.53",
+      "duration_sec": 0.27,
+      "peak_frame": 4,
+      "peak_risk_score": 0.8302,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.63
+        },
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.16
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___65688_frames/frame_004.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "clip_id": "kd_packets",
+      "source_video": "KD packets dragged, heavy box compression",
+      "start_frame": 160,
+      "end_frame": 200,
+      "peak_frame": 180,
+      "start_time": "15:33:00",
+      "end_time": "15:33:30",
+      "duration_sec": 3.5,
+      "peak_risk_score": 0.96,
+      "peak_risk_percent": 96,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "PACKET_BUNDLE_DRAGGED",
+        "HEAVY_BOX_OVERLOAD"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "carton"
+        },
+        {
+          "track_id": 3,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "IMPACT / DROPPED",
+      "distance_to_worker_m": 2.0,
+      "frame_thumbnail": "kd_packets_frames/frame_180.jpg",
+      "status": "UNREVIEWED",
+      "incident_id": "INC-KD_PACKE-180",
+      "timestamp_iso": "2026-09-15T09:42:15.963461+00:00"
+    },
+    {
+      "clip_id": "drag_cupboard",
+      "source_video": "Dock level, dragging cupboard across floor",
+      "start_frame": 140,
+      "end_frame": 180,
+      "peak_frame": 160,
+      "start_time": "15:23:00",
+      "end_time": "15:23:20",
+      "duration_sec": 3.0,
+      "peak_risk_score": 0.94,
+      "peak_risk_percent": 94,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "SUSTAINED_HEAVY_DRAGGING",
+        "OPERATOR_STRAIN"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "cupboard"
+        },
+        {
+          "track_id": 2,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "IMPACT / DROPPED",
+      "distance_to_worker_m": 1.8,
+      "frame_thumbnail": "drag_cupboard_frames/frame_160.jpg",
+      "status": "UNREVIEWED",
+      "incident_id": "INC-DRAG_CUP-160",
+      "timestamp_iso": "2026-09-15T09:42:15.963461+00:00"
+    },
+    {
+      "clip_id": "throw_seating",
+      "source_video": "Throwing seating cartons, strap release (Bay 04)",
+      "start_frame": 165,
+      "end_frame": 190,
+      "peak_frame": 175,
+      "start_time": "15:12:40",
+      "end_time": "15:12:50",
+      "duration_sec": 1.6,
+      "peak_risk_score": 0.92,
+      "peak_risk_percent": 92,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "MULTIPLE_CARTONS_TOSSED",
+        "AISLE_BREACH"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 2,
+          "class_name": "carton"
+        },
+        {
+          "track_id": 1,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "BEING TOSSED",
+      "distance_to_worker_m": 3.1,
+      "frame_thumbnail": "throw_seating_frames/frame_175.jpg",
+      "status": "UNREVIEWED",
+      "incident_id": "INC-THROW_SE-175",
+      "timestamp_iso": "2026-09-15T09:42:15.963461+00:00"
+    },
+    {
+      "clip_id": "throw_seating",
+      "source_video": "Throwing seating cartons, strap release (Bay 04)",
+      "start_frame": 105,
+      "end_frame": 130,
+      "peak_frame": 115,
+      "start_time": "15:12:00",
+      "end_time": "15:12:08",
+      "duration_sec": 1.8,
+      "peak_risk_score": 0.95,
+      "peak_risk_percent": 95,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "CARTON_THROWN_BALLISTIC_ARC",
+        "STRAP_TENSION_RELEASE"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "carton"
+        },
+        {
+          "track_id": 2,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "BEING TOSSED",
+      "distance_to_worker_m": 2.4,
+      "frame_thumbnail": "throw_seating_frames/frame_115.jpg",
+      "status": "UNREVIEWED",
+      "incident_id": "INC-THROW_SE-115",
+      "timestamp_iso": "2026-09-15T09:42:15.963461+00:00"
+    },
+    {
+      "clip_id": "real_drag",
+      "source_video": "Rolling and dragging on wet floor (Dock 07/08)",
+      "start_frame": 105,
+      "end_frame": 135,
+      "peak_frame": 110,
+      "start_time": "14:42:00",
+      "end_time": "14:42:15",
+      "duration_sec": 2.5,
+      "peak_risk_score": 0.93,
+      "peak_risk_percent": 93,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "LATERAL_DRAGGING_WET_FLOOR",
+        "SLIP_HAZARD_FRICTION"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "carton"
+        },
+        {
+          "track_id": 2,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "IMPACT / DROPPED",
+      "distance_to_worker_m": 2.2,
+      "frame_thumbnail": "real_drag_frames/frame_110.jpg",
+      "status": "UNREVIEWED",
+      "incident_id": "INC-REAL_DRA-110",
+      "timestamp_iso": "2026-09-15T09:42:15.963461+00:00"
+    },
+    {
+      "incident_id": "INC-REALDROP-095",
+      "timestamp_iso": "2026-09-15T09:41:14.399453+00:00",
+      "clip_id": "real_drop",
+      "source_video": "Rolling and dropping carton (Dock 09)",
+      "start_frame": 95,
+      "end_frame": 96,
+      "start_time": "00:03.00",
+      "end_time": "00:04.00",
+      "duration_sec": 0.6,
+      "peak_frame": 95,
+      "peak_risk_score": 0.94,
+      "peak_risk_percent": 94,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "PRODUCT_DROPPED_OFF_PALLET",
+        "HIGH_DESCENT_VELOCITY"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "carton"
+        },
+        {
+          "track_id": 2,
+          "class_name": "person"
+        }
+      ],
+      "box_state": "FALLING",
+      "distance_to_worker_m": 1.6,
+      "frame_thumbnail": "real_drop_frames/frame_095.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-004",
+      "timestamp_iso": "2026-09-15T09:15:54.083953Z",
+      "clip_id": "live_whatsapp_vid_63710",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 180,
+      "end_frame": 215,
+      "start_time": "00:06.00",
+      "end_time": "00:07.16",
+      "duration_sec": 1.2,
+      "peak_frame": 180,
+      "peak_risk_score": 0.8809,
+      "peak_risk_percent": 88,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.3
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63710_frames/frame_180.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-003",
+      "timestamp_iso": "2026-09-15T09:15:54.083953Z",
+      "clip_id": "live_whatsapp_vid_63710",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 170,
+      "end_frame": 171,
+      "start_time": "00:05.66",
+      "end_time": "00:05.70",
+      "duration_sec": 0.1,
+      "peak_frame": 170,
+      "peak_risk_score": 0.8744,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.87
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63710_frames/frame_170.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:15:54.083953Z",
+      "clip_id": "live_whatsapp_vid_63710",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 143,
+      "end_frame": 161,
+      "start_time": "00:04.76",
+      "end_time": "00:05.36",
+      "duration_sec": 0.63,
+      "peak_frame": 146,
+      "peak_risk_score": 0.8002,
+      "peak_risk_percent": 80,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63710_frames/frame_146.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:15:54.083953Z",
+      "clip_id": "live_whatsapp_vid_63710",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 17,
+      "end_frame": 39,
+      "start_time": "00:00.56",
+      "end_time": "00:01.30",
+      "duration_sec": 0.77,
+      "peak_frame": 39,
+      "peak_risk_score": 0.8732,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.45
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63710_frames/frame_039.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:14:21.401504Z",
+      "clip_id": "live_whatsapp_vid_63647",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63647_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:14:21.401504Z",
+      "clip_id": "live_whatsapp_vid_63647",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63647_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-004",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 180,
+      "end_frame": 215,
+      "start_time": "00:06.00",
+      "end_time": "00:07.16",
+      "duration_sec": 1.2,
+      "peak_frame": 180,
+      "peak_risk_score": 0.8809,
+      "peak_risk_percent": 88,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.3
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_180.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-003",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 170,
+      "end_frame": 171,
+      "start_time": "00:05.66",
+      "end_time": "00:05.70",
+      "duration_sec": 0.1,
+      "peak_frame": 170,
+      "peak_risk_score": 0.8744,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.87
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_170.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 143,
+      "end_frame": 161,
+      "start_time": "00:04.76",
+      "end_time": "00:05.36",
+      "duration_sec": 0.63,
+      "peak_frame": 146,
+      "peak_risk_score": 0.8002,
+      "peak_risk_percent": 80,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_146.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:12:14.919512Z",
+      "clip_id": "live_whatsapp_vid_63517",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 17,
+      "end_frame": 39,
+      "start_time": "00:00.56",
+      "end_time": "00:01.30",
+      "duration_sec": 0.77,
+      "peak_frame": 39,
+      "peak_risk_score": 0.8732,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.45
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_63517_frames/frame_039.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-007",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 232,
+      "end_frame": 232,
+      "start_time": "00:30.93",
+      "end_time": "00:30.93",
+      "duration_sec": 0.13,
+      "peak_frame": 232,
+      "peak_risk_score": 0.6306,
+      "peak_risk_percent": 63,
+      "severity": "MODERATE",
+      "intervention_priority": "P2_EVALUATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 37,
+          "class_name": "person",
+          "speed": 0.23
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_232.jpg",
+      "status": "REVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-006",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 198,
+      "end_frame": 221,
+      "start_time": "00:26.39",
+      "end_time": "00:29.46",
+      "duration_sec": 3.2,
+      "peak_frame": 203,
+      "peak_risk_score": 0.8446,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 26,
+          "class_name": "person",
+          "speed": 0.28
+        },
+        {
+          "track_id": 30,
+          "class_name": "person",
+          "speed": 0.07
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_203.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-005",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 171,
+      "end_frame": 187,
+      "start_time": "00:22.80",
+      "end_time": "00:24.93",
+      "duration_sec": 2.27,
+      "peak_frame": 179,
+      "peak_risk_score": 0.8491,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 27,
+          "class_name": "person",
+          "speed": 0.21
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_179.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-004",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 108,
+      "end_frame": 161,
+      "start_time": "00:14.40",
+      "end_time": "00:21.46",
+      "duration_sec": 7.2,
+      "peak_frame": 156,
+      "peak_risk_score": 0.8466,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 23,
+          "class_name": "person",
+          "speed": 0.19
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_156.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-003",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 40,
+      "end_frame": 101,
+      "start_time": "00:05.33",
+      "end_time": "00:13.46",
+      "duration_sec": 8.27,
+      "peak_frame": 77,
+      "peak_risk_score": 0.8499,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 14,
+          "class_name": "person",
+          "speed": 0.7
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_077.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-002",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 12,
+      "end_frame": 33,
+      "start_time": "00:01.60",
+      "end_time": "00:04.40",
+      "duration_sec": 2.93,
+      "peak_frame": 12,
+      "peak_risk_score": 0.8481,
+      "peak_risk_percent": 85,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 5,
+          "class_name": "person",
+          "speed": 0.07
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_012.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEDOCK-001",
+      "timestamp_iso": "2026-09-15T09:06:32.750132Z",
+      "clip_id": "live_dock_level___63174",
+      "source_video": "Dock level, dragging cupboard.mp4",
+      "start_frame": 2,
+      "end_frame": 4,
+      "start_time": "00:00.26",
+      "end_time": "00:00.53",
+      "duration_sec": 0.4,
+      "peak_frame": 4,
+      "peak_risk_score": 0.8304,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.63
+        },
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.16
+        }
+      ],
+      "frame_thumbnail": "live_dock_level___63174_frames/frame_004.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEROLLI-001",
+      "timestamp_iso": "2026-09-15T09:00:57.809670Z",
+      "clip_id": "live_rolling_and__62822",
+      "source_video": "Rolling and dragging on wet floor.mp4",
+      "start_frame": 6,
+      "end_frame": 182,
+      "start_time": "00:00.20",
+      "end_time": "00:06.06",
+      "duration_sec": 5.9,
+      "peak_frame": 79,
+      "peak_risk_score": 0.863,
+      "peak_risk_percent": 86,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 6,
+          "class_name": "person",
+          "speed": 0.02
+        }
+      ],
+      "frame_thumbnail": "live_rolling_and__62822_frames/frame_079.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-004",
+      "timestamp_iso": "2026-09-15T08:31:36.868221Z",
+      "clip_id": "live_whatsapp_video",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 180,
+      "end_frame": 215,
+      "start_time": "00:06.00",
+      "end_time": "00:07.16",
+      "duration_sec": 1.2,
+      "peak_frame": 180,
+      "peak_risk_score": 0.8809,
+      "peak_risk_percent": 88,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.3
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_video_frames/frame_180.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-003",
+      "timestamp_iso": "2026-09-15T08:31:36.868221Z",
+      "clip_id": "live_whatsapp_video",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 170,
+      "end_frame": 171,
+      "start_time": "00:05.66",
+      "end_time": "00:05.70",
+      "duration_sec": 0.1,
+      "peak_frame": 170,
+      "peak_risk_score": 0.8744,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.87
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_video_frames/frame_170.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T08:31:36.868221Z",
+      "clip_id": "live_whatsapp_video",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 143,
+      "end_frame": 161,
+      "start_time": "00:04.76",
+      "end_time": "00:05.36",
+      "duration_sec": 0.63,
+      "peak_frame": 146,
+      "peak_risk_score": 0.8002,
+      "peak_risk_percent": 80,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 4,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_video_frames/frame_146.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T08:31:36.868221Z",
+      "clip_id": "live_whatsapp_video",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.22.00 AM.mp4",
+      "start_frame": 17,
+      "end_frame": 39,
+      "start_time": "00:00.56",
+      "end_time": "00:01.30",
+      "duration_sec": 0.77,
+      "peak_frame": 39,
+      "peak_risk_score": 0.8732,
+      "peak_risk_percent": 87,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.45
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_video_frames/frame_039.jpg",
+      "status": "UNREVIEWED"
+    }
+  ],
+  "last_updated": "2026-09-15T11:36:49.474445Z",
+  "total_incidents": 48
+}

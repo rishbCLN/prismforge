@@ -1,0 +1,6871 @@
+{
+  "clip_id": "live_whatsapp_vid_66374",
+  "total_frames": 151,
+  "total_unique_tracks": 1,
+  "metadata": {
+    "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+    "frame_width": 360,
+    "frame_height": 640,
+    "fps": 14.985014985014985,
+    "duration_seconds": 10.076733333333333,
+    "inference_duration_sec": 17.7
+  },
+  "neural_summary": {
+    "model_version": "WarehouseRiskMLP_v3",
+    "peak_risk_score": 0.8399,
+    "peak_severity": "HIGH",
+    "intervention_priority": "P1_IMMEDIATE",
+    "top_contributing_factors": [
+      "PACKAGE_AREA_RATIO",
+      "VELOCITY_VARIANCE",
+      "KINEMATIC_JERK"
+    ],
+    "gradient_attribution": {
+      "drop_velocity": 0.0088,
+      "impact_deceleration": 0.0,
+      "throw_horizontal_velocity": 0.0045,
+      "separation_rate": 0.0,
+      "drag_floor_contact": 0.0,
+      "drag_velocity": 0.0,
+      "trolley_overlap_iou": 0.0,
+      "kinematic_jerk": 0.0315,
+      "staging_zone_distance": 0.0013,
+      "is_outside_staging": 0.0212,
+      "operator_distance": 0.0,
+      "handling_duration": 0.0065,
+      "package_area_ratio": 0.0809,
+      "velocity_variance": 0.072,
+      "stationary_after_impact": 0.0,
+      "tracking_confidence": 0.0034
+    },
+    "model_comparison": {
+      "v0_baseline": 0.9,
+      "v1_context": 0.7811,
+      "v2_temporal": 0.92,
+      "v3_learned": 0.8399
+    }
+  },
+  "frames": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.06673333333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.13346666666666668,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.20020000000000002,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.26693333333333336,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 5,
+      "timestamp": 0.33366666666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 6,
+      "timestamp": 0.40040000000000003,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 7,
+      "timestamp": 0.46713333333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 8,
+      "timestamp": 0.5338666666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 9,
+      "timestamp": 0.6006,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 10,
+      "timestamp": 0.6673333333333333,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 11,
+      "timestamp": 0.7340666666666666,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 12,
+      "timestamp": 0.8008000000000001,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 13,
+      "timestamp": 0.8675333333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 14,
+      "timestamp": 0.9342666666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 15,
+      "timestamp": 1.0010000000000001,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.001,
+          "frames_seen": 1,
+          "time_lost": 0,
+          "bbox": [
+            121.53,
+            353.82,
+            175.6,
+            427.63
+          ],
+          "position": [
+            148.56,
+            390.73
+          ],
+          "position_norm": [
+            0.4127,
+            0.6105
+          ],
+          "confidence": 0.4279,
+          "velocity": [
+            0.0,
+            0.0
+          ],
+          "speed": 0.0,
+          "acceleration": [
+            0.0,
+            0.0
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.18269935250282288,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 16,
+      "timestamp": 1.0677333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.068,
+          "frames_seen": 2,
+          "time_lost": 0,
+          "bbox": [
+            116.16,
+            353.21,
+            175.78,
+            428.25
+          ],
+          "position": [
+            145.97,
+            390.73
+          ],
+          "position_norm": [
+            0.4055,
+            0.6105
+          ],
+          "confidence": 0.3275,
+          "velocity": [
+            -0.1083,
+            0.0002
+          ],
+          "speed": 0.1083,
+          "acceleration": [
+            0.0,
+            0.0
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.1528608798980713,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 17,
+      "timestamp": 1.1344666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.134,
+          "frames_seen": 3,
+          "time_lost": 0,
+          "bbox": [
+            124.4,
+            353.16,
+            175.95,
+            428.93
+          ],
+          "position": [
+            150.18,
+            391.05
+          ],
+          "position_norm": [
+            0.4172,
+            0.611
+          ],
+          "confidence": 0.2737,
+          "velocity": [
+            0.1745,
+            0.0076
+          ],
+          "speed": 0.1747,
+          "acceleration": [
+            4.2361,
+            0.1109
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.14821510016918182,
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 18,
+      "timestamp": 1.2012,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.201,
+          "frames_seen": 4,
+          "time_lost": 0,
+          "bbox": [
+            142.54,
+            350.09,
+            178.96,
+            398.78
+          ],
+          "position": [
+            160.75,
+            374.43
+          ],
+          "position_norm": [
+            0.4465,
+            0.5851
+          ],
+          "confidence": 0.2076,
+          "velocity": [
+            0.4397,
+            -0.389
+          ],
+          "speed": 0.5871,
+          "acceleration": [
+            3.976,
+            -5.9458
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8281051516532898,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.6672,
+      "v2_risk": 0.92
+    },
+    {
+      "frame_id": 19,
+      "timestamp": 1.2679333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.268,
+          "frames_seen": 5,
+          "time_lost": 0,
+          "bbox": [
+            141.77,
+            350.06,
+            173.18,
+            397.77
+          ],
+          "position": [
+            157.48,
+            373.91
+          ],
+          "position_norm": [
+            0.4374,
+            0.5842
+          ],
+          "confidence": 0.223,
+          "velocity": [
+            -0.1359,
+            -0.0129
+          ],
+          "speed": 0.1365,
+          "acceleration": [
+            -8.6255,
+            5.6365
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8113962411880493,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.6983,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 20,
+      "timestamp": 1.3346666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.335,
+          "frames_seen": 6,
+          "time_lost": 0,
+          "bbox": [
+            141.25,
+            349.92,
+            173.23,
+            397.91
+          ],
+          "position": [
+            157.24,
+            373.92
+          ],
+          "position_norm": [
+            0.4368,
+            0.5842
+          ],
+          "confidence": 0.2157,
+          "velocity": [
+            -0.0093,
+            0.0006
+          ],
+          "speed": 0.0093,
+          "acceleration": [
+            1.8959,
+            0.2027
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8223686814308167,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.775,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 21,
+      "timestamp": 1.4014,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 22,
+      "timestamp": 1.4681333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.468,
+          "frames_seen": 7,
+          "time_lost": 0,
+          "bbox": [
+            141.89,
+            341.98,
+            174.24,
+            399.69
+          ],
+          "position": [
+            158.06,
+            370.84
+          ],
+          "position_norm": [
+            0.4391,
+            0.5794
+          ],
+          "confidence": 0.1876,
+          "velocity": [
+            0.017,
+            -0.0358
+          ],
+          "speed": 0.0396,
+          "acceleration": [
+            0.1972,
+            -0.2724
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8326718211174011,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7811,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 23,
+      "timestamp": 1.5348666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.535,
+          "frames_seen": 8,
+          "time_lost": 0,
+          "bbox": [
+            141.87,
+            346.93,
+            173.34,
+            399.52
+          ],
+          "position": [
+            157.61,
+            373.23
+          ],
+          "position_norm": [
+            0.4378,
+            0.5832
+          ],
+          "confidence": 0.1813,
+          "velocity": [
+            -0.0196,
+            0.0564
+          ],
+          "speed": 0.0597,
+          "acceleration": [
+            -0.5481,
+            1.3806
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8256763219833374,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7566,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 24,
+      "timestamp": 1.6016000000000001,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.602,
+          "frames_seen": 9,
+          "time_lost": 0,
+          "bbox": [
+            140.58,
+            337.49,
+            171.97,
+            399.07
+          ],
+          "position": [
+            156.28,
+            368.28
+          ],
+          "position_norm": [
+            0.4341,
+            0.5754
+          ],
+          "confidence": 0.2356,
+          "velocity": [
+            -0.0555,
+            -0.1164
+          ],
+          "speed": 0.1289,
+          "acceleration": [
+            -0.5384,
+            -2.5904
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8181372284889221,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7292,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 25,
+      "timestamp": 1.6683333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.668,
+          "frames_seen": 10,
+          "time_lost": 0,
+          "bbox": [
+            140.87,
+            337.02,
+            171.76,
+            399.04
+          ],
+          "position": [
+            156.31,
+            368.03
+          ],
+          "position_norm": [
+            0.4342,
+            0.575
+          ],
+          "confidence": 0.2609,
+          "velocity": [
+            0.0016,
+            -0.0053
+          ],
+          "speed": 0.0055,
+          "acceleration": [
+            0.856,
+            1.665
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8040960431098938,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7142,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 26,
+      "timestamp": 1.7350666666666668,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.735,
+          "frames_seen": 11,
+          "time_lost": 0,
+          "bbox": [
+            140.77,
+            338.2,
+            171.64,
+            399.25
+          ],
+          "position": [
+            156.2,
+            368.73
+          ],
+          "position_norm": [
+            0.4339,
+            0.5761
+          ],
+          "confidence": 0.2572,
+          "velocity": [
+            -0.0045,
+            0.017
+          ],
+          "speed": 0.0175,
+          "acceleration": [
+            -0.0906,
+            0.3335
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8076077699661255,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7203,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 27,
+      "timestamp": 1.8018,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.802,
+          "frames_seen": 12,
+          "time_lost": 0,
+          "bbox": [
+            140.47,
+            341.22,
+            171.16,
+            399.3
+          ],
+          "position": [
+            155.81,
+            370.26
+          ],
+          "position_norm": [
+            0.4328,
+            0.5785
+          ],
+          "confidence": 0.3006,
+          "velocity": [
+            -0.0162,
+            0.0365
+          ],
+          "speed": 0.0399,
+          "acceleration": [
+            -0.1754,
+            0.2916
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8070432543754578,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7208,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 28,
+      "timestamp": 1.8685333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.869,
+          "frames_seen": 13,
+          "time_lost": 0,
+          "bbox": [
+            140.82,
+            339.86,
+            171.39,
+            399.49
+          ],
+          "position": [
+            156.1,
+            369.68
+          ],
+          "position_norm": [
+            0.4336,
+            0.5776
+          ],
+          "confidence": 0.2723,
+          "velocity": [
+            0.0124,
+            -0.0132
+          ],
+          "speed": 0.0181,
+          "acceleration": [
+            0.428,
+            -0.7452
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8027574419975281,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7127,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 29,
+      "timestamp": 1.9352666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 1.935,
+          "frames_seen": 14,
+          "time_lost": 0,
+          "bbox": [
+            140.9,
+            341.36,
+            171.51,
+            399.57
+          ],
+          "position": [
+            156.2,
+            370.47
+          ],
+          "position_norm": [
+            0.4339,
+            0.5789
+          ],
+          "confidence": 0.2876,
+          "velocity": [
+            0.0045,
+            0.0187
+          ],
+          "speed": 0.0193,
+          "acceleration": [
+            -0.1178,
+            0.4785
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7979703545570374,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7072,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 30,
+      "timestamp": 2.0020000000000002,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.002,
+          "frames_seen": 15,
+          "time_lost": 0,
+          "bbox": [
+            141.07,
+            339.73,
+            171.6,
+            399.29
+          ],
+          "position": [
+            156.33,
+            369.51
+          ],
+          "position_norm": [
+            0.4343,
+            0.5774
+          ],
+          "confidence": 0.3594,
+          "velocity": [
+            0.0055,
+            -0.0231
+          ],
+          "speed": 0.0237,
+          "acceleration": [
+            0.0143,
+            -0.6267
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7870842218399048,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6999,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 31,
+      "timestamp": 2.0687333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.069,
+          "frames_seen": 16,
+          "time_lost": 0,
+          "bbox": [
+            141.61,
+            339.55,
+            171.82,
+            399.62
+          ],
+          "position": [
+            156.72,
+            369.59
+          ],
+          "position_norm": [
+            0.4353,
+            0.5775
+          ],
+          "confidence": 0.3672,
+          "velocity": [
+            0.0153,
+            0.0011
+          ],
+          "speed": 0.0153,
+          "acceleration": [
+            0.1465,
+            0.3633
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7816344499588013,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6946,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 32,
+      "timestamp": 2.135466666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.135,
+          "frames_seen": 17,
+          "time_lost": 0,
+          "bbox": [
+            141.68,
+            339.64,
+            172.17,
+            399.98
+          ],
+          "position": [
+            156.93,
+            369.81
+          ],
+          "position_norm": [
+            0.4359,
+            0.5778
+          ],
+          "confidence": 0.3629,
+          "velocity": [
+            0.009,
+            0.0049
+          ],
+          "speed": 0.0103,
+          "acceleration": [
+            -0.0939,
+            0.0571
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7869867086410522,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7026,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 33,
+      "timestamp": 2.2022,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.202,
+          "frames_seen": 18,
+          "time_lost": 0,
+          "bbox": [
+            141.57,
+            339.32,
+            173.35,
+            401.4
+          ],
+          "position": [
+            157.46,
+            370.36
+          ],
+          "position_norm": [
+            0.4374,
+            0.5787
+          ],
+          "confidence": 0.4012,
+          "velocity": [
+            0.0223,
+            0.0133
+          ],
+          "speed": 0.026,
+          "acceleration": [
+            0.1997,
+            0.126
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7613635659217834,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.644,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 34,
+      "timestamp": 2.2689333333333335,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.269,
+          "frames_seen": 19,
+          "time_lost": 0,
+          "bbox": [
+            141.6,
+            339.81,
+            171.75,
+            400.53
+          ],
+          "position": [
+            156.68,
+            370.17
+          ],
+          "position_norm": [
+            0.4352,
+            0.5784
+          ],
+          "confidence": 0.3454,
+          "velocity": [
+            -0.0328,
+            -0.0046
+          ],
+          "speed": 0.0332,
+          "acceleration": [
+            -0.8263,
+            -0.2688
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.39232343435287476,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 35,
+      "timestamp": 2.3356666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.336,
+          "frames_seen": 20,
+          "time_lost": 0,
+          "bbox": [
+            141.57,
+            339.9,
+            171.7,
+            400.84
+          ],
+          "position": [
+            156.63,
+            370.37
+          ],
+          "position_norm": [
+            0.4351,
+            0.5787
+          ],
+          "confidence": 0.3428,
+          "velocity": [
+            -0.0015,
+            0.0045
+          ],
+          "speed": 0.0048,
+          "acceleration": [
+            0.4682,
+            0.1369
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.4144328236579895,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 36,
+      "timestamp": 2.4024,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.402,
+          "frames_seen": 21,
+          "time_lost": 0,
+          "bbox": [
+            141.55,
+            338.54,
+            172.03,
+            401.01
+          ],
+          "position": [
+            156.79,
+            369.77
+          ],
+          "position_norm": [
+            0.4355,
+            0.5778
+          ],
+          "confidence": 0.2894,
+          "velocity": [
+            0.0064,
+            -0.0139
+          ],
+          "speed": 0.0153,
+          "acceleration": [
+            0.1186,
+            -0.2757
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.4047263562679291,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 37,
+      "timestamp": 2.469133333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.469,
+          "frames_seen": 22,
+          "time_lost": 0,
+          "bbox": [
+            141.34,
+            338.25,
+            173.87,
+            402.07
+          ],
+          "position": [
+            157.61,
+            370.16
+          ],
+          "position_norm": [
+            0.4378,
+            0.5784
+          ],
+          "confidence": 0.2653,
+          "velocity": [
+            0.0343,
+            0.0086
+          ],
+          "speed": 0.0354,
+          "acceleration": [
+            0.4187,
+            0.3374
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3777289390563965,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 38,
+      "timestamp": 2.5358666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.536,
+          "frames_seen": 23,
+          "time_lost": 0,
+          "bbox": [
+            141.07,
+            337.83,
+            173.52,
+            402.09
+          ],
+          "position": [
+            157.3,
+            369.96
+          ],
+          "position_norm": [
+            0.4369,
+            0.5781
+          ],
+          "confidence": 0.2708,
+          "velocity": [
+            -0.013,
+            -0.0051
+          ],
+          "speed": 0.014,
+          "acceleration": [
+            -0.7088,
+            -0.2045
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.286672443151474,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 39,
+      "timestamp": 2.6026000000000002,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.603,
+          "frames_seen": 24,
+          "time_lost": 0,
+          "bbox": [
+            140.08,
+            338.44,
+            171.28,
+            402.32
+          ],
+          "position": [
+            155.68,
+            370.38
+          ],
+          "position_norm": [
+            0.4324,
+            0.5787
+          ],
+          "confidence": 0.2761,
+          "velocity": [
+            -0.0668,
+            0.0093
+          ],
+          "speed": 0.0674,
+          "acceleration": [
+            -0.8066,
+            0.2155
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.20481015741825104,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 40,
+      "timestamp": 2.6693333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.669,
+          "frames_seen": 25,
+          "time_lost": 0,
+          "bbox": [
+            140.68,
+            340.41,
+            171.46,
+            402.6
+          ],
+          "position": [
+            156.07,
+            371.5
+          ],
+          "position_norm": [
+            0.4335,
+            0.5805
+          ],
+          "confidence": 0.1958,
+          "velocity": [
+            0.0169,
+            0.0266
+          ],
+          "speed": 0.0315,
+          "acceleration": [
+            1.2542,
+            0.2596
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22714169323444366,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 41,
+      "timestamp": 2.736066666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.736,
+          "frames_seen": 26,
+          "time_lost": 0,
+          "bbox": [
+            140.74,
+            341.22,
+            171.57,
+            402.15
+          ],
+          "position": [
+            156.16,
+            371.69
+          ],
+          "position_norm": [
+            0.4338,
+            0.5808
+          ],
+          "confidence": 0.2099,
+          "velocity": [
+            0.004,
+            0.0039
+          ],
+          "speed": 0.0055,
+          "acceleration": [
+            -0.1939,
+            -0.3406
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2194785326719284,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 42,
+      "timestamp": 2.8028,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.803,
+          "frames_seen": 27,
+          "time_lost": 0,
+          "bbox": [
+            139.85,
+            341.2,
+            172.11,
+            402.27
+          ],
+          "position": [
+            155.98,
+            371.74
+          ],
+          "position_norm": [
+            0.4333,
+            0.5808
+          ],
+          "confidence": 0.2145,
+          "velocity": [
+            -0.0078,
+            0.0005
+          ],
+          "speed": 0.0078,
+          "acceleration": [
+            -0.1774,
+            -0.0504
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.20709924399852753,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 43,
+      "timestamp": 2.8695333333333335,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.87,
+          "frames_seen": 28,
+          "time_lost": 0,
+          "bbox": [
+            138.45,
+            341.17,
+            172.36,
+            402.09
+          ],
+          "position": [
+            155.41,
+            371.63
+          ],
+          "position_norm": [
+            0.4317,
+            0.5807
+          ],
+          "confidence": 0.2172,
+          "velocity": [
+            -0.0243,
+            -0.0019
+          ],
+          "speed": 0.0243,
+          "acceleration": [
+            -0.2468,
+            -0.0363
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2047484964132309,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 44,
+      "timestamp": 2.9362666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 2.936,
+          "frames_seen": 29,
+          "time_lost": 0,
+          "bbox": [
+            138.59,
+            341.52,
+            170.88,
+            402.44
+          ],
+          "position": [
+            154.74,
+            371.98
+          ],
+          "position_norm": [
+            0.4298,
+            0.5812
+          ],
+          "confidence": 0.2144,
+          "velocity": [
+            -0.0282,
+            0.0078
+          ],
+          "speed": 0.0292,
+          "acceleration": [
+            -0.0579,
+            0.1448
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.20160320401191711,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 45,
+      "timestamp": 3.003,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.003,
+          "frames_seen": 30,
+          "time_lost": 0,
+          "bbox": [
+            112.4,
+            341.64,
+            169.8,
+            430.76
+          ],
+          "position": [
+            141.1,
+            386.2
+          ],
+          "position_norm": [
+            0.3919,
+            0.6034
+          ],
+          "confidence": 0.4027,
+          "velocity": [
+            -0.5675,
+            0.3334
+          ],
+          "speed": 0.6582,
+          "acceleration": [
+            -8.0862,
+            4.8815
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8398565053939819,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.6132,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 46,
+      "timestamp": 3.069733333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.07,
+          "frames_seen": 31,
+          "time_lost": 0,
+          "bbox": [
+            113.12,
+            342.72,
+            168.68,
+            431.3
+          ],
+          "position": [
+            140.9,
+            387.01
+          ],
+          "position_norm": [
+            0.3914,
+            0.6047
+          ],
+          "confidence": 0.385,
+          "velocity": [
+            -0.0077,
+            0.0195
+          ],
+          "speed": 0.021,
+          "acceleration": [
+            8.3892,
+            -4.7034
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.739206075668335,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7053,
+      "v2_risk": 0.76
+    },
+    {
+      "frame_id": 47,
+      "timestamp": 3.1364666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.136,
+          "frames_seen": 32,
+          "time_lost": 0,
+          "bbox": [
+            112.54,
+            340.8,
+            168.59,
+            431.54
+          ],
+          "position": [
+            140.56,
+            386.17
+          ],
+          "position_norm": [
+            0.3905,
+            0.6034
+          ],
+          "confidence": 0.3529,
+          "velocity": [
+            -0.0141,
+            -0.0196
+          ],
+          "speed": 0.0242,
+          "acceleration": [
+            -0.0959,
+            -0.5858
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8040524125099182,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7034,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 48,
+      "timestamp": 3.2032000000000003,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.203,
+          "frames_seen": 33,
+          "time_lost": 0,
+          "bbox": [
+            111.29,
+            341.25,
+            168.15,
+            430.77
+          ],
+          "position": [
+            139.72,
+            386.01
+          ],
+          "position_norm": [
+            0.3881,
+            0.6031
+          ],
+          "confidence": 0.3253,
+          "velocity": [
+            -0.0358,
+            -0.0039
+          ],
+          "speed": 0.036,
+          "acceleration": [
+            -0.3256,
+            0.2356
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8074734807014465,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7044,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 49,
+      "timestamp": 3.2699333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.27,
+          "frames_seen": 34,
+          "time_lost": 0,
+          "bbox": [
+            111.46,
+            341.29,
+            168.12,
+            430.76
+          ],
+          "position": [
+            139.79,
+            386.02
+          ],
+          "position_norm": [
+            0.3883,
+            0.6032
+          ],
+          "confidence": 0.3526,
+          "velocity": [
+            0.0031,
+            0.001
+          ],
+          "speed": 0.0032,
+          "acceleration": [
+            0.5826,
+            0.0728
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.803181529045105,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7042,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 50,
+      "timestamp": 3.336666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.337,
+          "frames_seen": 35,
+          "time_lost": 0,
+          "bbox": [
+            111.14,
+            341.54,
+            168.15,
+            430.71
+          ],
+          "position": [
+            139.65,
+            386.12
+          ],
+          "position_norm": [
+            0.3879,
+            0.6033
+          ],
+          "confidence": 0.3619,
+          "velocity": [
+            -0.0059,
+            0.0018
+          ],
+          "speed": 0.0062,
+          "acceleration": [
+            -0.1355,
+            0.012
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8048768043518066,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7054,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 51,
+      "timestamp": 3.4034,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.403,
+          "frames_seen": 36,
+          "time_lost": 0,
+          "bbox": [
+            110.65,
+            342.2,
+            169.78,
+            430.48
+          ],
+          "position": [
+            140.22,
+            386.34
+          ],
+          "position_norm": [
+            0.3895,
+            0.6037
+          ],
+          "confidence": 0.3883,
+          "velocity": [
+            0.0238,
+            0.0053
+          ],
+          "speed": 0.0244,
+          "acceleration": [
+            0.445,
+            0.0531
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8100522756576538,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7061,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 52,
+      "timestamp": 3.4701333333333335,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.47,
+          "frames_seen": 37,
+          "time_lost": 0,
+          "bbox": [
+            110.2,
+            345.33,
+            170.16,
+            430.66
+          ],
+          "position": [
+            140.18,
+            388.0
+          ],
+          "position_norm": [
+            0.3894,
+            0.6062
+          ],
+          "confidence": 0.3782,
+          "velocity": [
+            -0.0017,
+            0.0381
+          ],
+          "speed": 0.0381,
+          "acceleration": [
+            -0.3816,
+            0.4914
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7997496724128723,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7058,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 53,
+      "timestamp": 3.5368666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.537,
+          "frames_seen": 38,
+          "time_lost": 0,
+          "bbox": [
+            110.49,
+            343.24,
+            169.7,
+            430.6
+          ],
+          "position": [
+            140.09,
+            386.92
+          ],
+          "position_norm": [
+            0.3892,
+            0.6046
+          ],
+          "confidence": 0.338,
+          "velocity": [
+            -0.0037,
+            -0.0245
+          ],
+          "speed": 0.0248,
+          "acceleration": [
+            -0.03,
+            -0.938
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7928637862205505,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7045,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 54,
+      "timestamp": 3.6036,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.604,
+          "frames_seen": 39,
+          "time_lost": 0,
+          "bbox": [
+            111.94,
+            347.64,
+            170.9,
+            430.84
+          ],
+          "position": [
+            141.42,
+            389.24
+          ],
+          "position_norm": [
+            0.3928,
+            0.6082
+          ],
+          "confidence": 0.385,
+          "velocity": [
+            0.0545,
+            0.0538
+          ],
+          "speed": 0.0766,
+          "acceleration": [
+            0.8722,
+            1.1737
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8139458298683167,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7037,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 55,
+      "timestamp": 3.6703333333333332,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.67,
+          "frames_seen": 40,
+          "time_lost": 0,
+          "bbox": [
+            112.83,
+            351.32,
+            171.5,
+            431.09
+          ],
+          "position": [
+            142.16,
+            391.2
+          ],
+          "position_norm": [
+            0.3949,
+            0.6113
+          ],
+          "confidence": 0.438,
+          "velocity": [
+            0.0315,
+            0.0458
+          ],
+          "speed": 0.0556,
+          "acceleration": [
+            -0.3445,
+            -0.1196
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.8064007759094238,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7043,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 56,
+      "timestamp": 3.7370666666666668,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.737,
+          "frames_seen": 41,
+          "time_lost": 0,
+          "bbox": [
+            112.35,
+            350.1,
+            171.41,
+            430.96
+          ],
+          "position": [
+            141.88,
+            390.53
+          ],
+          "position_norm": [
+            0.3941,
+            0.6102
+          ],
+          "confidence": 0.433,
+          "velocity": [
+            -0.0118,
+            -0.0164
+          ],
+          "speed": 0.0202,
+          "acceleration": [
+            -0.6488,
+            -0.932
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7913737297058105,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7006,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 57,
+      "timestamp": 3.8038,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.804,
+          "frames_seen": 42,
+          "time_lost": 0,
+          "bbox": [
+            111.83,
+            350.96,
+            171.48,
+            430.77
+          ],
+          "position": [
+            141.66,
+            390.87
+          ],
+          "position_norm": [
+            0.3935,
+            0.6107
+          ],
+          "confidence": 0.4146,
+          "velocity": [
+            -0.0092,
+            0.0079
+          ],
+          "speed": 0.0121,
+          "acceleration": [
+            0.0389,
+            0.3642
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7896754741668701,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6994,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 58,
+      "timestamp": 3.8705333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.871,
+          "frames_seen": 43,
+          "time_lost": 0,
+          "bbox": [
+            111.48,
+            346.7,
+            171.01,
+            431.36
+          ],
+          "position": [
+            141.25,
+            389.03
+          ],
+          "position_norm": [
+            0.3923,
+            0.6079
+          ],
+          "confidence": 0.3251,
+          "velocity": [
+            -0.0173,
+            -0.0426
+          ],
+          "speed": 0.0459,
+          "acceleration": [
+            -0.121,
+            -0.7562
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.7761036157608032,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6965,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 59,
+      "timestamp": 3.937266666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 3.937,
+          "frames_seen": 44,
+          "time_lost": 0,
+          "bbox": [
+            110.88,
+            343.27,
+            170.65,
+            431.62
+          ],
+          "position": [
+            140.76,
+            387.44
+          ],
+          "position_norm": [
+            0.391,
+            0.6054
+          ],
+          "confidence": 0.3014,
+          "velocity": [
+            -0.0193,
+            -0.0377
+          ],
+          "speed": 0.0423,
+          "acceleration": [
+            -0.0294,
+            0.0734
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.726688027381897,
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6096,
+      "v2_risk": 0.68
+    },
+    {
+      "frame_id": 60,
+      "timestamp": 4.0040000000000004,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.004,
+          "frames_seen": 45,
+          "time_lost": 0,
+          "bbox": [
+            111.92,
+            345.73,
+            170.03,
+            431.23
+          ],
+          "position": [
+            140.97,
+            388.48
+          ],
+          "position_norm": [
+            0.3916,
+            0.607
+          ],
+          "confidence": 0.3464,
+          "velocity": [
+            0.009,
+            0.024
+          ],
+          "speed": 0.0256,
+          "acceleration": [
+            0.4236,
+            0.9249
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.26955193281173706,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 61,
+      "timestamp": 4.070733333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.071,
+          "frames_seen": 46,
+          "time_lost": 0,
+          "bbox": [
+            111.9,
+            345.06,
+            170.07,
+            431.24
+          ],
+          "position": [
+            140.99,
+            388.15
+          ],
+          "position_norm": [
+            0.3916,
+            0.6065
+          ],
+          "confidence": 0.3508,
+          "velocity": [
+            0.0004,
+            -0.0077
+          ],
+          "speed": 0.0077,
+          "acceleration": [
+            -0.1293,
+            -0.4754
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.26001015305519104,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 62,
+      "timestamp": 4.137466666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.137,
+          "frames_seen": 47,
+          "time_lost": 0,
+          "bbox": [
+            112.66,
+            346.02,
+            170.15,
+            431.2
+          ],
+          "position": [
+            141.41,
+            388.61
+          ],
+          "position_norm": [
+            0.3928,
+            0.6072
+          ],
+          "confidence": 0.3957,
+          "velocity": [
+            0.0178,
+            0.0105
+          ],
+          "speed": 0.0207,
+          "acceleration": [
+            0.2613,
+            0.2731
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2622081935405731,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 63,
+      "timestamp": 4.2042,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.204,
+          "frames_seen": 48,
+          "time_lost": 0,
+          "bbox": [
+            113.93,
+            348.62,
+            170.34,
+            431.46
+          ],
+          "position": [
+            142.13,
+            390.04
+          ],
+          "position_norm": [
+            0.3948,
+            0.6094
+          ],
+          "confidence": 0.4355,
+          "velocity": [
+            0.0303,
+            0.0335
+          ],
+          "speed": 0.0452,
+          "acceleration": [
+            0.1871,
+            0.3455
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.25074997544288635,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 64,
+      "timestamp": 4.270933333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.271,
+          "frames_seen": 49,
+          "time_lost": 0,
+          "bbox": [
+            114.38,
+            346.26,
+            170.04,
+            431.93
+          ],
+          "position": [
+            142.21,
+            389.1
+          ],
+          "position_norm": [
+            0.395,
+            0.608
+          ],
+          "confidence": 0.3968,
+          "velocity": [
+            0.0034,
+            -0.0216
+          ],
+          "speed": 0.0218,
+          "acceleration": [
+            -0.4029,
+            -0.8251
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24114812910556793,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 65,
+      "timestamp": 4.337666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.338,
+          "frames_seen": 50,
+          "time_lost": 0,
+          "bbox": [
+            114.7,
+            346.35,
+            170.32,
+            431.76
+          ],
+          "position": [
+            142.51,
+            389.06
+          ],
+          "position_norm": [
+            0.3959,
+            0.6079
+          ],
+          "confidence": 0.4027,
+          "velocity": [
+            0.0129,
+            -0.0015
+          ],
+          "speed": 0.013,
+          "acceleration": [
+            0.1422,
+            0.3007
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23898939788341522,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 66,
+      "timestamp": 4.4044,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.404,
+          "frames_seen": 51,
+          "time_lost": 0,
+          "bbox": [
+            112.67,
+            345.71,
+            169.51,
+            431.32
+          ],
+          "position": [
+            141.09,
+            388.51
+          ],
+          "position_norm": [
+            0.3919,
+            0.6071
+          ],
+          "confidence": 0.335,
+          "velocity": [
+            -0.0597,
+            -0.0127
+          ],
+          "speed": 0.0611,
+          "acceleration": [
+            -1.0888,
+            -0.1675
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.21770045161247253,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 67,
+      "timestamp": 4.471133333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.471,
+          "frames_seen": 52,
+          "time_lost": 0,
+          "bbox": [
+            112.39,
+            345.9,
+            169.36,
+            431.32
+          ],
+          "position": [
+            140.88,
+            388.61
+          ],
+          "position_norm": [
+            0.3913,
+            0.6072
+          ],
+          "confidence": 0.3316,
+          "velocity": [
+            -0.0087,
+            0.0015
+          ],
+          "speed": 0.0088,
+          "acceleration": [
+            0.7642,
+            0.2135
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24093960225582123,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 68,
+      "timestamp": 4.537866666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.538,
+          "frames_seen": 53,
+          "time_lost": 0,
+          "bbox": [
+            112.91,
+            345.44,
+            169.78,
+            431.21
+          ],
+          "position": [
+            141.34,
+            388.32
+          ],
+          "position_norm": [
+            0.3926,
+            0.6068
+          ],
+          "confidence": 0.3404,
+          "velocity": [
+            0.0198,
+            -0.0066
+          ],
+          "speed": 0.0209,
+          "acceleration": [
+            0.4275,
+            -0.1217
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23351745307445526,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 69,
+      "timestamp": 4.6046000000000005,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.605,
+          "frames_seen": 54,
+          "time_lost": 0,
+          "bbox": [
+            112.43,
+            345.58,
+            169.71,
+            431.38
+          ],
+          "position": [
+            141.07,
+            388.48
+          ],
+          "position_norm": [
+            0.3919,
+            0.607
+          ],
+          "confidence": 0.3616,
+          "velocity": [
+            -0.0111,
+            0.003
+          ],
+          "speed": 0.0115,
+          "acceleration": [
+            -0.4629,
+            0.1439
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24290978908538818,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 70,
+      "timestamp": 4.671333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.671,
+          "frames_seen": 55,
+          "time_lost": 0,
+          "bbox": [
+            112.87,
+            345.62,
+            168.84,
+            431.25
+          ],
+          "position": [
+            140.86,
+            388.44
+          ],
+          "position_norm": [
+            0.3913,
+            0.6069
+          ],
+          "confidence": 0.3584,
+          "velocity": [
+            -0.0095,
+            -0.0011
+          ],
+          "speed": 0.0096,
+          "acceleration": [
+            0.0235,
+            -0.0607
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24187466502189636,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 71,
+      "timestamp": 4.738066666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.738,
+          "frames_seen": 56,
+          "time_lost": 0,
+          "bbox": [
+            112.63,
+            343.38,
+            169.11,
+            431.28
+          ],
+          "position": [
+            140.87,
+            387.33
+          ],
+          "position_norm": [
+            0.3913,
+            0.6052
+          ],
+          "confidence": 0.3532,
+          "velocity": [
+            0.0001,
+            -0.0254
+          ],
+          "speed": 0.0254,
+          "acceleration": [
+            0.1435,
+            -0.3642
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24605940282344818,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 72,
+      "timestamp": 4.8048,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.805,
+          "frames_seen": 57,
+          "time_lost": 0,
+          "bbox": [
+            112.69,
+            343.06,
+            168.42,
+            430.84
+          ],
+          "position": [
+            140.56,
+            386.95
+          ],
+          "position_norm": [
+            0.3904,
+            0.6046
+          ],
+          "confidence": 0.3135,
+          "velocity": [
+            -0.013,
+            -0.0089
+          ],
+          "speed": 0.0158,
+          "acceleration": [
+            -0.1969,
+            0.2481
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23872925341129303,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 73,
+      "timestamp": 4.871533333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.872,
+          "frames_seen": 58,
+          "time_lost": 0,
+          "bbox": [
+            112.55,
+            344.03,
+            168.64,
+            430.48
+          ],
+          "position": [
+            140.59,
+            387.25
+          ],
+          "position_norm": [
+            0.3905,
+            0.6051
+          ],
+          "confidence": 0.3604,
+          "velocity": [
+            0.0021,
+            0.0073
+          ],
+          "speed": 0.0076,
+          "acceleration": [
+            0.2266,
+            0.2425
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24745066463947296,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 74,
+      "timestamp": 4.938266666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 4.938,
+          "frames_seen": 59,
+          "time_lost": 0,
+          "bbox": [
+            112.62,
+            344.02,
+            168.51,
+            430.69
+          ],
+          "position": [
+            140.56,
+            387.36
+          ],
+          "position_norm": [
+            0.3905,
+            0.6052
+          ],
+          "confidence": 0.3731,
+          "velocity": [
+            -0.0006,
+            0.0021
+          ],
+          "speed": 0.0022,
+          "acceleration": [
+            -0.0408,
+            -0.0774
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23822027444839478,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 75,
+      "timestamp": 5.005,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.005,
+          "frames_seen": 60,
+          "time_lost": 0,
+          "bbox": [
+            113.38,
+            343.52,
+            168.51,
+            431.43
+          ],
+          "position": [
+            140.94,
+            387.48
+          ],
+          "position_norm": [
+            0.3915,
+            0.6054
+          ],
+          "confidence": 0.4328,
+          "velocity": [
+            0.0152,
+            0.0034
+          ],
+          "speed": 0.0156,
+          "acceleration": [
+            0.2369,
+            0.0201
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23954173922538757,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 76,
+      "timestamp": 5.071733333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.072,
+          "frames_seen": 61,
+          "time_lost": 0,
+          "bbox": [
+            113.52,
+            344.02,
+            168.38,
+            431.07
+          ],
+          "position": [
+            140.95,
+            387.54
+          ],
+          "position_norm": [
+            0.3915,
+            0.6055
+          ],
+          "confidence": 0.4421,
+          "velocity": [
+            0.0004,
+            0.0021
+          ],
+          "speed": 0.0021,
+          "acceleration": [
+            -0.2215,
+            -0.0197
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24514812231063843,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 77,
+      "timestamp": 5.138466666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.138,
+          "frames_seen": 62,
+          "time_lost": 0,
+          "bbox": [
+            112.73,
+            343.67,
+            168.41,
+            430.88
+          ],
+          "position": [
+            140.57,
+            387.27
+          ],
+          "position_norm": [
+            0.3905,
+            0.6051
+          ],
+          "confidence": 0.4291,
+          "velocity": [
+            -0.0154,
+            -0.0057
+          ],
+          "speed": 0.0164,
+          "acceleration": [
+            -0.2365,
+            -0.1173
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24013087153434753,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 78,
+      "timestamp": 5.2052000000000005,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.205,
+          "frames_seen": 63,
+          "time_lost": 0,
+          "bbox": [
+            111.75,
+            342.16,
+            168.64,
+            430.4
+          ],
+          "position": [
+            140.19,
+            386.28
+          ],
+          "position_norm": [
+            0.3894,
+            0.6036
+          ],
+          "confidence": 0.4218,
+          "velocity": [
+            -0.016,
+            -0.0231
+          ],
+          "speed": 0.0281,
+          "acceleration": [
+            -0.0095,
+            -0.2601
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22402770817279816,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 79,
+      "timestamp": 5.271933333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.272,
+          "frames_seen": 64,
+          "time_lost": 0,
+          "bbox": [
+            111.02,
+            343.29,
+            168.59,
+            430.43
+          ],
+          "position": [
+            139.81,
+            386.86
+          ],
+          "position_norm": [
+            0.3883,
+            0.6045
+          ],
+          "confidence": 0.4155,
+          "velocity": [
+            -0.0158,
+            0.013
+          ],
+          "speed": 0.0205,
+          "acceleration": [
+            0.0034,
+            0.5412
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23382285237312317,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 80,
+      "timestamp": 5.338666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.339,
+          "frames_seen": 65,
+          "time_lost": 0,
+          "bbox": [
+            110.97,
+            343.24,
+            168.66,
+            430.34
+          ],
+          "position": [
+            139.81,
+            386.79
+          ],
+          "position_norm": [
+            0.3884,
+            0.6044
+          ],
+          "confidence": 0.3971,
+          "velocity": [
+            0.0011,
+            -0.0021
+          ],
+          "speed": 0.0024,
+          "acceleration": [
+            0.2535,
+            -0.2263
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22158563137054443,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 81,
+      "timestamp": 5.4054,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.405,
+          "frames_seen": 66,
+          "time_lost": 0,
+          "bbox": [
+            111.25,
+            344.21,
+            168.56,
+            430.4
+          ],
+          "position": [
+            139.91,
+            387.3
+          ],
+          "position_norm": [
+            0.3886,
+            0.6052
+          ],
+          "confidence": 0.4112,
+          "velocity": [
+            0.0034,
+            0.0115
+          ],
+          "speed": 0.0119,
+          "acceleration": [
+            0.0341,
+            0.2032
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22010521590709686,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 82,
+      "timestamp": 5.472133333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.472,
+          "frames_seen": 67,
+          "time_lost": 0,
+          "bbox": [
+            119.61,
+            341.94,
+            172.64,
+            432.6
+          ],
+          "position": [
+            146.12,
+            387.27
+          ],
+          "position_norm": [
+            0.4059,
+            0.6051
+          ],
+          "confidence": 0.411,
+          "velocity": [
+            0.2593,
+            -0.0014
+          ],
+          "speed": 0.2593,
+          "acceleration": [
+            3.8344,
+            -0.1927
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.28549444675445557,
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 83,
+      "timestamp": 5.538866666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.539,
+          "frames_seen": 68,
+          "time_lost": 0,
+          "bbox": [
+            119.8,
+            342.1,
+            173.07,
+            432.66
+          ],
+          "position": [
+            146.44,
+            387.38
+          ],
+          "position_norm": [
+            0.4068,
+            0.6053
+          ],
+          "confidence": 0.4139,
+          "velocity": [
+            0.0129,
+            0.0027
+          ],
+          "speed": 0.0132,
+          "acceleration": [
+            -3.6899,
+            0.0616
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3782237470149994,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 84,
+      "timestamp": 5.6056,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.606,
+          "frames_seen": 69,
+          "time_lost": 0,
+          "bbox": [
+            119.22,
+            342.72,
+            171.08,
+            433.47
+          ],
+          "position": [
+            145.15,
+            388.1
+          ],
+          "position_norm": [
+            0.4032,
+            0.6064
+          ],
+          "confidence": 0.4324,
+          "velocity": [
+            -0.0541,
+            0.0165
+          ],
+          "speed": 0.0565,
+          "acceleration": [
+            -1.0038,
+            0.2064
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.38838809728622437,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 85,
+      "timestamp": 5.6723333333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.672,
+          "frames_seen": 70,
+          "time_lost": 0,
+          "bbox": [
+            119.24,
+            344.32,
+            170.74,
+            434.38
+          ],
+          "position": [
+            144.99,
+            389.35
+          ],
+          "position_norm": [
+            0.4028,
+            0.6084
+          ],
+          "confidence": 0.4101,
+          "velocity": [
+            -0.0067,
+            0.0294
+          ],
+          "speed": 0.0301,
+          "acceleration": [
+            0.7096,
+            0.1927
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3878643214702606,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 86,
+      "timestamp": 5.739066666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.739,
+          "frames_seen": 71,
+          "time_lost": 0,
+          "bbox": [
+            117.62,
+            345.68,
+            169.94,
+            433.91
+          ],
+          "position": [
+            143.78,
+            389.8
+          ],
+          "position_norm": [
+            0.3994,
+            0.6091
+          ],
+          "confidence": 0.3996,
+          "velocity": [
+            -0.0511,
+            0.0098
+          ],
+          "speed": 0.052,
+          "acceleration": [
+            -0.6649,
+            -0.2935
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.35027557611465454,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 87,
+      "timestamp": 5.8058000000000005,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.806,
+          "frames_seen": 72,
+          "time_lost": 0,
+          "bbox": [
+            118.49,
+            354.05,
+            169.58,
+            434.0
+          ],
+          "position": [
+            144.03,
+            394.02
+          ],
+          "position_norm": [
+            0.4001,
+            0.6157
+          ],
+          "confidence": 0.4287,
+          "velocity": [
+            0.0105,
+            0.0984
+          ],
+          "speed": 0.099,
+          "acceleration": [
+            0.9228,
+            1.3285
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.39217209815979004,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 88,
+      "timestamp": 5.872533333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.873,
+          "frames_seen": 73,
+          "time_lost": 0,
+          "bbox": [
+            118.11,
+            351.01,
+            169.22,
+            433.08
+          ],
+          "position": [
+            143.66,
+            392.04
+          ],
+          "position_norm": [
+            0.3991,
+            0.6126
+          ],
+          "confidence": 0.437,
+          "velocity": [
+            -0.0154,
+            -0.0469
+          ],
+          "speed": 0.0494,
+          "acceleration": [
+            -0.3888,
+            -2.1773
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2353721261024475,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 89,
+      "timestamp": 5.939266666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 5.939,
+          "frames_seen": 74,
+          "time_lost": 0,
+          "bbox": [
+            118.06,
+            352.01,
+            169.5,
+            432.99
+          ],
+          "position": [
+            143.78,
+            392.5
+          ],
+          "position_norm": [
+            0.3994,
+            0.6133
+          ],
+          "confidence": 0.465,
+          "velocity": [
+            0.0043,
+            0.0102
+          ],
+          "speed": 0.0111,
+          "acceleration": [
+            0.2955,
+            0.8553
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.32916882634162903,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 90,
+      "timestamp": 6.006,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.006,
+          "frames_seen": 75,
+          "time_lost": 0,
+          "bbox": [
+            117.58,
+            346.49,
+            168.46,
+            432.71
+          ],
+          "position": [
+            143.02,
+            389.6
+          ],
+          "position_norm": [
+            0.3973,
+            0.6088
+          ],
+          "confidence": 0.4363,
+          "velocity": [
+            -0.0318,
+            -0.0682
+          ],
+          "speed": 0.0753,
+          "acceleration": [
+            -0.5415,
+            -1.1757
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.29167771339416504,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 91,
+      "timestamp": 6.072733333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.073,
+          "frames_seen": 76,
+          "time_lost": 0,
+          "bbox": [
+            117.82,
+            348.48,
+            168.15,
+            433.06
+          ],
+          "position": [
+            142.99,
+            390.77
+          ],
+          "position_norm": [
+            0.3972,
+            0.6106
+          ],
+          "confidence": 0.4042,
+          "velocity": [
+            -0.0018,
+            0.0266
+          ],
+          "speed": 0.0267,
+          "acceleration": [
+            0.4497,
+            1.4213
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3053245544433594,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 92,
+      "timestamp": 6.139466666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.139,
+          "frames_seen": 77,
+          "time_lost": 0,
+          "bbox": [
+            118.68,
+            345.28,
+            168.6,
+            433.25
+          ],
+          "position": [
+            143.64,
+            389.26
+          ],
+          "position_norm": [
+            0.399,
+            0.6082
+          ],
+          "confidence": 0.3677,
+          "velocity": [
+            0.027,
+            -0.0355
+          ],
+          "speed": 0.0446,
+          "acceleration": [
+            0.4307,
+            -0.9308
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2561301589012146,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 93,
+      "timestamp": 6.2062,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.206,
+          "frames_seen": 78,
+          "time_lost": 0,
+          "bbox": [
+            117.75,
+            358.98,
+            167.99,
+            432.28
+          ],
+          "position": [
+            142.87,
+            395.63
+          ],
+          "position_norm": [
+            0.3969,
+            0.6182
+          ],
+          "confidence": 0.4456,
+          "velocity": [
+            -0.0321,
+            0.1495
+          ],
+          "speed": 0.1529,
+          "acceleration": [
+            -0.8856,
+            2.7737
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3751818537712097,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 94,
+      "timestamp": 6.2729333333333335,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.273,
+          "frames_seen": 79,
+          "time_lost": 0,
+          "bbox": [
+            118.49,
+            354.75,
+            168.66,
+            431.36
+          ],
+          "position": [
+            143.57,
+            393.06
+          ],
+          "position_norm": [
+            0.3988,
+            0.6141
+          ],
+          "confidence": 0.2344,
+          "velocity": [
+            0.0288,
+            -0.0607
+          ],
+          "speed": 0.0672,
+          "acceleration": [
+            0.912,
+            -3.15
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.19357945024967194,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 95,
+      "timestamp": 6.339666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 6.34,
+          "frames_seen": 80,
+          "time_lost": 0,
+          "bbox": [
+            120.0,
+            354.67,
+            168.83,
+            431.86
+          ],
+          "position": [
+            144.42,
+            393.26
+          ],
+          "position_norm": [
+            0.4012,
+            0.6145
+          ],
+          "confidence": 0.2552,
+          "velocity": [
+            0.0352,
+            0.0056
+          ],
+          "speed": 0.0357,
+          "acceleration": [
+            0.0964,
+            0.9936
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3042512536048889,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 96,
+      "timestamp": 6.4064000000000005,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 97,
+      "timestamp": 6.473133333333333,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 98,
+      "timestamp": 6.539866666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 99,
+      "timestamp": 6.6066,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 100,
+      "timestamp": 6.673333333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 101,
+      "timestamp": 6.740066666666666,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 102,
+      "timestamp": 6.8068,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 103,
+      "timestamp": 6.8735333333333335,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 104,
+      "timestamp": 6.940266666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 105,
+      "timestamp": 7.007000000000001,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 106,
+      "timestamp": 7.073733333333333,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 107,
+      "timestamp": 7.140466666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 108,
+      "timestamp": 7.2072,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 109,
+      "timestamp": 7.273933333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 110,
+      "timestamp": 7.3406666666666665,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 111,
+      "timestamp": 7.4074,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.407,
+          "frames_seen": 81,
+          "time_lost": 0,
+          "bbox": [
+            122.74,
+            350.24,
+            176.86,
+            431.42
+          ],
+          "position": [
+            149.8,
+            390.83
+          ],
+          "position_norm": [
+            0.4161,
+            0.6107
+          ],
+          "confidence": 0.3516,
+          "velocity": [
+            0.014,
+            -0.0036
+          ],
+          "speed": 0.0144,
+          "acceleration": [
+            -0.0199,
+            -0.0086
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3387776017189026,
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 112,
+      "timestamp": 7.4741333333333335,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.474,
+          "frames_seen": 82,
+          "time_lost": 0,
+          "bbox": [
+            121.82,
+            346.98,
+            180.08,
+            430.83
+          ],
+          "position": [
+            150.95,
+            388.9
+          ],
+          "position_norm": [
+            0.4193,
+            0.6077
+          ],
+          "confidence": 0.4329,
+          "velocity": [
+            0.048,
+            -0.0455
+          ],
+          "speed": 0.0662,
+          "acceleration": [
+            0.51,
+            -0.6278
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.28368863463401794,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 113,
+      "timestamp": 7.540866666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.541,
+          "frames_seen": 83,
+          "time_lost": 0,
+          "bbox": [
+            120.85,
+            347.12,
+            176.78,
+            430.27
+          ],
+          "position": [
+            148.81,
+            388.69
+          ],
+          "position_norm": [
+            0.4134,
+            0.6073
+          ],
+          "confidence": 0.3871,
+          "velocity": [
+            -0.0887,
+            -0.0055
+          ],
+          "speed": 0.0889,
+          "acceleration": [
+            -2.0481,
+            0.5998
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.27463337779045105,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 114,
+      "timestamp": 7.6076,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.608,
+          "frames_seen": 84,
+          "time_lost": 0,
+          "bbox": [
+            119.0,
+            342.11,
+            174.72,
+            429.42
+          ],
+          "position": [
+            146.86,
+            385.76
+          ],
+          "position_norm": [
+            0.4079,
+            0.6028
+          ],
+          "confidence": 0.2616,
+          "velocity": [
+            -0.0818,
+            -0.0681
+          ],
+          "speed": 0.1064,
+          "acceleration": [
+            0.1036,
+            -0.9385
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2749263644218445,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 115,
+      "timestamp": 7.674333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.674,
+          "frames_seen": 85,
+          "time_lost": 0,
+          "bbox": [
+            118.47,
+            344.14,
+            175.15,
+            430.26
+          ],
+          "position": [
+            146.81,
+            387.2
+          ],
+          "position_norm": [
+            0.4078,
+            0.605
+          ],
+          "confidence": 0.3076,
+          "velocity": [
+            -0.0014,
+            0.033
+          ],
+          "speed": 0.033,
+          "acceleration": [
+            1.2046,
+            1.5145
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.28426593542099,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 116,
+      "timestamp": 7.741066666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.741,
+          "frames_seen": 86,
+          "time_lost": 0,
+          "bbox": [
+            118.61,
+            343.89,
+            175.16,
+            430.29
+          ],
+          "position": [
+            146.88,
+            387.09
+          ],
+          "position_norm": [
+            0.408,
+            0.6048
+          ],
+          "confidence": 0.287,
+          "velocity": [
+            0.0032,
+            -0.0026
+          ],
+          "speed": 0.0041,
+          "acceleration": [
+            0.0689,
+            -0.5328
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2811899781227112,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 117,
+      "timestamp": 7.8078,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.808,
+          "frames_seen": 87,
+          "time_lost": 0,
+          "bbox": [
+            119.37,
+            346.61,
+            175.57,
+            430.72
+          ],
+          "position": [
+            147.47,
+            388.67
+          ],
+          "position_norm": [
+            0.4096,
+            0.6073
+          ],
+          "confidence": 0.331,
+          "velocity": [
+            0.0246,
+            0.0373
+          ],
+          "speed": 0.0447,
+          "acceleration": [
+            0.3204,
+            0.5985
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.29590272903442383,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 118,
+      "timestamp": 7.874533333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.875,
+          "frames_seen": 88,
+          "time_lost": 0,
+          "bbox": [
+            119.92,
+            347.19,
+            177.05,
+            431.94
+          ],
+          "position": [
+            148.49,
+            389.56
+          ],
+          "position_norm": [
+            0.4125,
+            0.6087
+          ],
+          "confidence": 0.3812,
+          "velocity": [
+            0.0428,
+            0.0209
+          ],
+          "speed": 0.0477,
+          "acceleration": [
+            0.2732,
+            -0.2456
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.29209497570991516,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 119,
+      "timestamp": 7.9412666666666665,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 7.941,
+          "frames_seen": 89,
+          "time_lost": 0,
+          "bbox": [
+            119.22,
+            347.46,
+            176.41,
+            431.64
+          ],
+          "position": [
+            147.81,
+            389.55
+          ],
+          "position_norm": [
+            0.4106,
+            0.6087
+          ],
+          "confidence": 0.4055,
+          "velocity": [
+            -0.0285,
+            -0.0004
+          ],
+          "speed": 0.0285,
+          "acceleration": [
+            -1.0679,
+            -0.3193
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2846596837043762,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 120,
+      "timestamp": 8.008000000000001,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.008,
+          "frames_seen": 90,
+          "time_lost": 0,
+          "bbox": [
+            118.97,
+            350.93,
+            175.1,
+            431.98
+          ],
+          "position": [
+            147.03,
+            391.46
+          ],
+          "position_norm": [
+            0.4084,
+            0.6116
+          ],
+          "confidence": 0.4387,
+          "velocity": [
+            -0.0325,
+            0.0442
+          ],
+          "speed": 0.0549,
+          "acceleration": [
+            -0.0604,
+            0.6687
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.3089570999145508,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 121,
+      "timestamp": 8.074733333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.075,
+          "frames_seen": 91,
+          "time_lost": 0,
+          "bbox": [
+            119.3,
+            351.81,
+            174.18,
+            431.85
+          ],
+          "position": [
+            146.74,
+            391.83
+          ],
+          "position_norm": [
+            0.4076,
+            0.6122
+          ],
+          "confidence": 0.4334,
+          "velocity": [
+            -0.0118,
+            0.0095
+          ],
+          "speed": 0.0152,
+          "acceleration": [
+            0.3099,
+            -0.5199
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2962128818035126,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 122,
+      "timestamp": 8.141466666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.141,
+          "frames_seen": 92,
+          "time_lost": 0,
+          "bbox": [
+            119.39,
+            352.42,
+            174.41,
+            431.83
+          ],
+          "position": [
+            146.9,
+            392.12
+          ],
+          "position_norm": [
+            0.4081,
+            0.6127
+          ],
+          "confidence": 0.442,
+          "velocity": [
+            0.0068,
+            0.0074
+          ],
+          "speed": 0.0101,
+          "acceleration": [
+            0.2789,
+            -0.0312
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.28064554929733276,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 123,
+      "timestamp": 8.2082,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.208,
+          "frames_seen": 93,
+          "time_lost": 0,
+          "bbox": [
+            118.63,
+            352.74,
+            174.48,
+            431.61
+          ],
+          "position": [
+            146.56,
+            392.18
+          ],
+          "position_norm": [
+            0.4071,
+            0.6128
+          ],
+          "confidence": 0.4272,
+          "velocity": [
+            -0.015,
+            0.0011
+          ],
+          "speed": 0.0151,
+          "acceleration": [
+            -0.3273,
+            -0.0944
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22814887762069702,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 124,
+      "timestamp": 8.274933333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.275,
+          "frames_seen": 94,
+          "time_lost": 0,
+          "bbox": [
+            116.05,
+            352.52,
+            174.09,
+            431.96
+          ],
+          "position": [
+            145.07,
+            392.24
+          ],
+          "position_norm": [
+            0.403,
+            0.6129
+          ],
+          "confidence": 0.3776,
+          "velocity": [
+            -0.0619,
+            0.0011
+          ],
+          "speed": 0.0619,
+          "acceleration": [
+            -0.7021,
+            0.0004
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22648902237415314,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 125,
+      "timestamp": 8.341666666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.342,
+          "frames_seen": 95,
+          "time_lost": 0,
+          "bbox": [
+            116.74,
+            352.74,
+            174.81,
+            431.62
+          ],
+          "position": [
+            145.78,
+            392.18
+          ],
+          "position_norm": [
+            0.4049,
+            0.6128
+          ],
+          "confidence": 0.429,
+          "velocity": [
+            0.0289,
+            -0.0018
+          ],
+          "speed": 0.029,
+          "acceleration": [
+            1.3602,
+            -0.0431
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.21753352880477905,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 126,
+      "timestamp": 8.4084,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.408,
+          "frames_seen": 96,
+          "time_lost": 0,
+          "bbox": [
+            116.56,
+            350.63,
+            175.3,
+            432.5
+          ],
+          "position": [
+            145.93,
+            391.56
+          ],
+          "position_norm": [
+            0.4054,
+            0.6118
+          ],
+          "confidence": 0.3961,
+          "velocity": [
+            0.0069,
+            -0.0147
+          ],
+          "speed": 0.0162,
+          "acceleration": [
+            -0.3296,
+            -0.1932
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.21277089416980743,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 127,
+      "timestamp": 8.475133333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.475,
+          "frames_seen": 97,
+          "time_lost": 0,
+          "bbox": [
+            117.22,
+            351.04,
+            174.14,
+            433.0
+          ],
+          "position": [
+            145.68,
+            392.02
+          ],
+          "position_norm": [
+            0.4047,
+            0.6125
+          ],
+          "confidence": 0.3645,
+          "velocity": [
+            -0.011,
+            0.011
+          ],
+          "speed": 0.0155,
+          "acceleration": [
+            -0.2681,
+            0.3845
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22864943742752075,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 128,
+      "timestamp": 8.541866666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.542,
+          "frames_seen": 98,
+          "time_lost": 0,
+          "bbox": [
+            115.5,
+            350.39,
+            174.11,
+            433.03
+          ],
+          "position": [
+            144.81,
+            391.71
+          ],
+          "position_norm": [
+            0.4022,
+            0.612
+          ],
+          "confidence": 0.3471,
+          "velocity": [
+            -0.0369,
+            -0.0068
+          ],
+          "speed": 0.0375,
+          "acceleration": [
+            -0.388,
+            -0.2664
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2373722940683365,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 129,
+      "timestamp": 8.608600000000001,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.609,
+          "frames_seen": 99,
+          "time_lost": 0,
+          "bbox": [
+            115.37,
+            351.77,
+            172.82,
+            432.85
+          ],
+          "position": [
+            144.09,
+            392.31
+          ],
+          "position_norm": [
+            0.4003,
+            0.613
+          ],
+          "confidence": 0.3633,
+          "velocity": [
+            -0.029,
+            0.0148
+          ],
+          "speed": 0.0326,
+          "acceleration": [
+            0.118,
+            0.3232
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22753335535526276,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 130,
+      "timestamp": 8.675333333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.675,
+          "frames_seen": 100,
+          "time_lost": 0,
+          "bbox": [
+            116.74,
+            353.46,
+            172.8,
+            433.25
+          ],
+          "position": [
+            144.77,
+            393.36
+          ],
+          "position_norm": [
+            0.4021,
+            0.6146
+          ],
+          "confidence": 0.4219,
+          "velocity": [
+            0.0276,
+            0.0242
+          ],
+          "speed": 0.0367,
+          "acceleration": [
+            0.8475,
+            0.1414
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.2307424396276474,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 131,
+      "timestamp": 8.742066666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.742,
+          "frames_seen": 101,
+          "time_lost": 0,
+          "bbox": [
+            116.67,
+            352.28,
+            172.98,
+            433.33
+          ],
+          "position": [
+            144.82,
+            392.8
+          ],
+          "position_norm": [
+            0.4023,
+            0.6138
+          ],
+          "confidence": 0.4146,
+          "velocity": [
+            0.0029,
+            -0.0126
+          ],
+          "speed": 0.0129,
+          "acceleration": [
+            -0.3704,
+            -0.5514
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22371363639831543,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 132,
+      "timestamp": 8.8088,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.809,
+          "frames_seen": 102,
+          "time_lost": 0,
+          "bbox": [
+            114.51,
+            347.82,
+            175.36,
+            433.4
+          ],
+          "position": [
+            144.94,
+            390.61
+          ],
+          "position_norm": [
+            0.4026,
+            0.6103
+          ],
+          "confidence": 0.353,
+          "velocity": [
+            0.0045,
+            -0.0521
+          ],
+          "speed": 0.0522,
+          "acceleration": [
+            0.0233,
+            -0.5915
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22712525725364685,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 133,
+      "timestamp": 8.875533333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.876,
+          "frames_seen": 103,
+          "time_lost": 0,
+          "bbox": [
+            114.79,
+            349.29,
+            175.34,
+            433.44
+          ],
+          "position": [
+            145.06,
+            391.37
+          ],
+          "position_norm": [
+            0.403,
+            0.6115
+          ],
+          "confidence": 0.356,
+          "velocity": [
+            0.0054,
+            0.0181
+          ],
+          "speed": 0.0189,
+          "acceleration": [
+            0.013,
+            1.0519
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.24374106526374817,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 134,
+      "timestamp": 8.942266666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 8.942,
+          "frames_seen": 104,
+          "time_lost": 0,
+          "bbox": [
+            113.86,
+            346.15,
+            176.34,
+            433.36
+          ],
+          "position": [
+            145.1,
+            389.75
+          ],
+          "position_norm": [
+            0.4031,
+            0.609
+          ],
+          "confidence": 0.3547,
+          "velocity": [
+            0.0008,
+            -0.0376
+          ],
+          "speed": 0.0376,
+          "acceleration": [
+            -0.0684,
+            -0.8337
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.236766055226326,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 135,
+      "timestamp": 9.009,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.009,
+          "frames_seen": 105,
+          "time_lost": 0,
+          "bbox": [
+            112.91,
+            348.28,
+            174.78,
+            432.52
+          ],
+          "position": [
+            143.84,
+            390.4
+          ],
+          "position_norm": [
+            0.3996,
+            0.61
+          ],
+          "confidence": 0.3095,
+          "velocity": [
+            -0.0529,
+            0.015
+          ],
+          "speed": 0.055,
+          "acceleration": [
+            -0.8056,
+            0.7885
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23818151652812958,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 136,
+      "timestamp": 9.075733333333334,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.076,
+          "frames_seen": 106,
+          "time_lost": 0,
+          "bbox": [
+            104.88,
+            343.3,
+            176.39,
+            433.35
+          ],
+          "position": [
+            140.63,
+            388.33
+          ],
+          "position_norm": [
+            0.3907,
+            0.6068
+          ],
+          "confidence": 0.3015,
+          "velocity": [
+            -0.1341,
+            -0.0486
+          ],
+          "speed": 0.1426,
+          "acceleration": [
+            -1.2164,
+            -0.9528
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22471722960472107,
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 137,
+      "timestamp": 9.142466666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.142,
+          "frames_seen": 107,
+          "time_lost": 0,
+          "bbox": [
+            102.18,
+            344.66,
+            177.01,
+            433.38
+          ],
+          "position": [
+            139.59,
+            389.02
+          ],
+          "position_norm": [
+            0.3878,
+            0.6078
+          ],
+          "confidence": 0.2988,
+          "velocity": [
+            -0.044,
+            0.0156
+          ],
+          "speed": 0.0467,
+          "acceleration": [
+            1.3498,
+            0.962
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22406528890132904,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 138,
+      "timestamp": 9.209200000000001,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.209,
+          "frames_seen": 108,
+          "time_lost": 0,
+          "bbox": [
+            110.49,
+            355.12,
+            173.98,
+            432.95
+          ],
+          "position": [
+            142.23,
+            394.03
+          ],
+          "position_norm": [
+            0.3951,
+            0.6157
+          ],
+          "confidence": 0.2999,
+          "velocity": [
+            0.1094,
+            0.1181
+          ],
+          "speed": 0.161,
+          "acceleration": [
+            2.2999,
+            1.5373
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.26094457507133484,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 139,
+      "timestamp": 9.275933333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.276,
+          "frames_seen": 109,
+          "time_lost": 0,
+          "bbox": [
+            113.64,
+            357.61,
+            173.85,
+            433.01
+          ],
+          "position": [
+            143.75,
+            395.31
+          ],
+          "position_norm": [
+            0.3993,
+            0.6177
+          ],
+          "confidence": 0.3968,
+          "velocity": [
+            0.0628,
+            0.0295
+          ],
+          "speed": 0.0694,
+          "acceleration": [
+            -0.6981,
+            -1.3269
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22455820441246033,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 140,
+      "timestamp": 9.342666666666666,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.343,
+          "frames_seen": 110,
+          "time_lost": 0,
+          "bbox": [
+            114.49,
+            358.48,
+            174.24,
+            433.08
+          ],
+          "position": [
+            144.37,
+            395.78
+          ],
+          "position_norm": [
+            0.401,
+            0.6184
+          ],
+          "confidence": 0.4468,
+          "velocity": [
+            0.0257,
+            0.0106
+          ],
+          "speed": 0.0278,
+          "acceleration": [
+            -0.5561,
+            -0.2834
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.21822279691696167,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 141,
+      "timestamp": 9.4094,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.409,
+          "frames_seen": 111,
+          "time_lost": 0,
+          "bbox": [
+            113.58,
+            359.66,
+            174.32,
+            432.78
+          ],
+          "position": [
+            143.95,
+            396.22
+          ],
+          "position_norm": [
+            0.3999,
+            0.6191
+          ],
+          "confidence": 0.4069,
+          "velocity": [
+            -0.0171,
+            0.0104
+          ],
+          "speed": 0.02,
+          "acceleration": [
+            -0.6413,
+            -0.003
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22034423053264618,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 142,
+      "timestamp": 9.476133333333333,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.476,
+          "frames_seen": 112,
+          "time_lost": 0,
+          "bbox": [
+            113.46,
+            359.51,
+            173.84,
+            432.89
+          ],
+          "position": [
+            143.65,
+            396.2
+          ],
+          "position_norm": [
+            0.399,
+            0.6191
+          ],
+          "confidence": 0.3133,
+          "velocity": [
+            -0.0131,
+            -0.0006
+          ],
+          "speed": 0.0131,
+          "acceleration": [
+            0.0604,
+            -0.1643
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.22325927019119263,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 143,
+      "timestamp": 9.542866666666667,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.543,
+          "frames_seen": 113,
+          "time_lost": 0,
+          "bbox": [
+            104.36,
+            356.94,
+            174.25,
+            434.16
+          ],
+          "position": [
+            139.31,
+            395.55
+          ],
+          "position_norm": [
+            0.387,
+            0.618
+          ],
+          "confidence": 0.256,
+          "velocity": [
+            -0.1804,
+            -0.0158
+          ],
+          "speed": 0.181,
+          "acceleration": [
+            -2.5051,
+            -0.2273
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.21665437519550323,
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 144,
+      "timestamp": 9.6096,
+      "tracks": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "first_seen": 1.001,
+          "last_seen": 9.61,
+          "frames_seen": 114,
+          "time_lost": 0,
+          "bbox": [
+            105.93,
+            356.54,
+            173.83,
+            433.28
+          ],
+          "position": [
+            139.88,
+            394.91
+          ],
+          "position_norm": [
+            0.3886,
+            0.617
+          ],
+          "confidence": 0.228,
+          "velocity": [
+            0.0233,
+            -0.0143
+          ],
+          "speed": 0.0274,
+          "acceleration": [
+            3.0543,
+            0.0226
+          ],
+          "associated_worker_id": null,
+          "worker_distance_norm": null,
+          "associated_equipment_id": null,
+          "equipment_overlap_iou": 0.0
+        }
+      ],
+      "neural_risk": 0.23254984617233276,
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
+    },
+    {
+      "frame_id": 145,
+      "timestamp": 9.676333333333334,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 146,
+      "timestamp": 9.743066666666667,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 147,
+      "timestamp": 9.809800000000001,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 148,
+      "timestamp": 9.876533333333333,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 149,
+      "timestamp": 9.943266666666666,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 150,
+      "timestamp": 10.01,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    }
+  ],
+  "trajectories": {
+    "1": {
+      "track_id": 1,
+      "observations": [
+        {
+          "frame_id": 15,
+          "timestamp": 1.0010000000000001,
+          "center_x_norm": 0.41268055555555555,
+          "center_y_norm": 0.6105078125000001,
+          "speed": 0.0,
+          "confidence": 0.4279,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 16,
+          "timestamp": 1.0677333333333334,
+          "center_x_norm": 0.40547222222222223,
+          "center_y_norm": 0.610515625,
+          "speed": 0.1083,
+          "confidence": 0.3275,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 17,
+          "timestamp": 1.1344666666666667,
+          "center_x_norm": 0.4171527777777778,
+          "center_y_norm": 0.6110078125,
+          "speed": 0.1747,
+          "confidence": 0.2737,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 18,
+          "timestamp": 1.2012,
+          "center_x_norm": 0.4465277777777778,
+          "center_y_norm": 0.5850546874999999,
+          "speed": 0.5871,
+          "confidence": 0.2076,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 19,
+          "timestamp": 1.2679333333333334,
+          "center_x_norm": 0.4374305555555556,
+          "center_y_norm": 0.5842421874999999,
+          "speed": 0.1365,
+          "confidence": 0.223,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 20,
+          "timestamp": 1.3346666666666667,
+          "center_x_norm": 0.4367777777777778,
+          "center_y_norm": 0.5842421875,
+          "speed": 0.0093,
+          "confidence": 0.2157,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 22,
+          "timestamp": 1.4681333333333333,
+          "center_x_norm": 0.43906944444444446,
+          "center_y_norm": 0.5794296875,
+          "speed": 0.0396,
+          "confidence": 0.1876,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 23,
+          "timestamp": 1.5348666666666666,
+          "center_x_norm": 0.4377916666666667,
+          "center_y_norm": 0.5831640625000001,
+          "speed": 0.0597,
+          "confidence": 0.1813,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 24,
+          "timestamp": 1.6016000000000001,
+          "center_x_norm": 0.43409722222222225,
+          "center_y_norm": 0.5754374999999999,
+          "speed": 0.1289,
+          "confidence": 0.2356,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 25,
+          "timestamp": 1.6683333333333334,
+          "center_x_norm": 0.4342083333333333,
+          "center_y_norm": 0.575046875,
+          "speed": 0.0055,
+          "confidence": 0.2609,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 26,
+          "timestamp": 1.7350666666666668,
+          "center_x_norm": 0.43390277777777775,
+          "center_y_norm": 0.5761328125,
+          "speed": 0.0175,
+          "confidence": 0.2572,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 27,
+          "timestamp": 1.8018,
+          "center_x_norm": 0.4328194444444444,
+          "center_y_norm": 0.5785312499999999,
+          "speed": 0.0399,
+          "confidence": 0.3006,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 28,
+          "timestamp": 1.8685333333333334,
+          "center_x_norm": 0.433625,
+          "center_y_norm": 0.5776171875,
+          "speed": 0.0181,
+          "confidence": 0.2723,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 29,
+          "timestamp": 1.9352666666666667,
+          "center_x_norm": 0.43390277777777775,
+          "center_y_norm": 0.5788515625,
+          "speed": 0.0193,
+          "confidence": 0.2876,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 30,
+          "timestamp": 2.0020000000000002,
+          "center_x_norm": 0.43426388888888884,
+          "center_y_norm": 0.577359375,
+          "speed": 0.0237,
+          "confidence": 0.3594,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 31,
+          "timestamp": 2.0687333333333333,
+          "center_x_norm": 0.4353194444444445,
+          "center_y_norm": 0.5774765625,
+          "speed": 0.0153,
+          "confidence": 0.3672,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 32,
+          "timestamp": 2.135466666666667,
+          "center_x_norm": 0.4359027777777778,
+          "center_y_norm": 0.577828125,
+          "speed": 0.0103,
+          "confidence": 0.3629,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 33,
+          "timestamp": 2.2022,
+          "center_x_norm": 0.4373888888888888,
+          "center_y_norm": 0.5786875,
+          "speed": 0.026,
+          "confidence": 0.4012,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 34,
+          "timestamp": 2.2689333333333335,
+          "center_x_norm": 0.43520833333333336,
+          "center_y_norm": 0.5783906249999999,
+          "speed": 0.0332,
+          "confidence": 0.3454,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 35,
+          "timestamp": 2.3356666666666666,
+          "center_x_norm": 0.4350972222222222,
+          "center_y_norm": 0.578703125,
+          "speed": 0.0048,
+          "confidence": 0.3428,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 36,
+          "timestamp": 2.4024,
+          "center_x_norm": 0.43552777777777785,
+          "center_y_norm": 0.5777734375,
+          "speed": 0.0153,
+          "confidence": 0.2894,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 37,
+          "timestamp": 2.469133333333333,
+          "center_x_norm": 0.4377916666666667,
+          "center_y_norm": 0.578375,
+          "speed": 0.0354,
+          "confidence": 0.2653,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 38,
+          "timestamp": 2.5358666666666667,
+          "center_x_norm": 0.4369305555555556,
+          "center_y_norm": 0.5780624999999999,
+          "speed": 0.014,
+          "confidence": 0.2708,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 39,
+          "timestamp": 2.6026000000000002,
+          "center_x_norm": 0.43244444444444446,
+          "center_y_norm": 0.57871875,
+          "speed": 0.0674,
+          "confidence": 0.2761,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 40,
+          "timestamp": 2.6693333333333333,
+          "center_x_norm": 0.43352777777777773,
+          "center_y_norm": 0.5804765625,
+          "speed": 0.0315,
+          "confidence": 0.1958,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 41,
+          "timestamp": 2.736066666666667,
+          "center_x_norm": 0.4337638888888889,
+          "center_y_norm": 0.5807578125,
+          "speed": 0.0055,
+          "confidence": 0.2099,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 42,
+          "timestamp": 2.8028,
+          "center_x_norm": 0.4332777777777778,
+          "center_y_norm": 0.5808359375000001,
+          "speed": 0.0078,
+          "confidence": 0.2145,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 43,
+          "timestamp": 2.8695333333333335,
+          "center_x_norm": 0.43168055555555557,
+          "center_y_norm": 0.580671875,
+          "speed": 0.0243,
+          "confidence": 0.2172,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 44,
+          "timestamp": 2.9362666666666666,
+          "center_x_norm": 0.4298194444444445,
+          "center_y_norm": 0.58121875,
+          "speed": 0.0292,
+          "confidence": 0.2144,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 45,
+          "timestamp": 3.003,
+          "center_x_norm": 0.3919444444444445,
+          "center_y_norm": 0.6034375,
+          "speed": 0.6582,
+          "confidence": 0.4027,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 46,
+          "timestamp": 3.069733333333333,
+          "center_x_norm": 0.3913888888888889,
+          "center_y_norm": 0.604703125,
+          "speed": 0.021,
+          "confidence": 0.385,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 47,
+          "timestamp": 3.1364666666666667,
+          "center_x_norm": 0.39045833333333335,
+          "center_y_norm": 0.6033906250000001,
+          "speed": 0.0242,
+          "confidence": 0.3529,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 48,
+          "timestamp": 3.2032000000000003,
+          "center_x_norm": 0.38811111111111113,
+          "center_y_norm": 0.603140625,
+          "speed": 0.036,
+          "confidence": 0.3253,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 49,
+          "timestamp": 3.2699333333333334,
+          "center_x_norm": 0.3883055555555555,
+          "center_y_norm": 0.6031640625,
+          "speed": 0.0032,
+          "confidence": 0.3526,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 50,
+          "timestamp": 3.336666666666667,
+          "center_x_norm": 0.3879027777777778,
+          "center_y_norm": 0.6033203125,
+          "speed": 0.0062,
+          "confidence": 0.3619,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 51,
+          "timestamp": 3.4034,
+          "center_x_norm": 0.38948611111111114,
+          "center_y_norm": 0.60365625,
+          "speed": 0.0244,
+          "confidence": 0.3883,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 52,
+          "timestamp": 3.4701333333333335,
+          "center_x_norm": 0.3893888888888889,
+          "center_y_norm": 0.6062421875,
+          "speed": 0.0381,
+          "confidence": 0.3782,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 53,
+          "timestamp": 3.5368666666666666,
+          "center_x_norm": 0.3891527777777778,
+          "center_y_norm": 0.6045625,
+          "speed": 0.0248,
+          "confidence": 0.338,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 54,
+          "timestamp": 3.6036,
+          "center_x_norm": 0.39283333333333337,
+          "center_y_norm": 0.6081875,
+          "speed": 0.0766,
+          "confidence": 0.385,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 55,
+          "timestamp": 3.6703333333333332,
+          "center_x_norm": 0.39490277777777777,
+          "center_y_norm": 0.6112578125,
+          "speed": 0.0556,
+          "confidence": 0.438,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 56,
+          "timestamp": 3.7370666666666668,
+          "center_x_norm": 0.3941111111111111,
+          "center_y_norm": 0.610203125,
+          "speed": 0.0202,
+          "confidence": 0.433,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 57,
+          "timestamp": 3.8038,
+          "center_x_norm": 0.3934861111111111,
+          "center_y_norm": 0.6107265625,
+          "speed": 0.0121,
+          "confidence": 0.4146,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 58,
+          "timestamp": 3.8705333333333334,
+          "center_x_norm": 0.39234722222222224,
+          "center_y_norm": 0.607859375,
+          "speed": 0.0459,
+          "confidence": 0.3251,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 59,
+          "timestamp": 3.937266666666667,
+          "center_x_norm": 0.3910138888888888,
+          "center_y_norm": 0.6053828125,
+          "speed": 0.0423,
+          "confidence": 0.3014,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 60,
+          "timestamp": 4.0040000000000004,
+          "center_x_norm": 0.3915972222222222,
+          "center_y_norm": 0.607,
+          "speed": 0.0256,
+          "confidence": 0.3464,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 61,
+          "timestamp": 4.070733333333333,
+          "center_x_norm": 0.39162500000000006,
+          "center_y_norm": 0.606484375,
+          "speed": 0.0077,
+          "confidence": 0.3508,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 62,
+          "timestamp": 4.137466666666667,
+          "center_x_norm": 0.39279166666666665,
+          "center_y_norm": 0.6072031250000001,
+          "speed": 0.0207,
+          "confidence": 0.3957,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 63,
+          "timestamp": 4.2042,
+          "center_x_norm": 0.39481944444444445,
+          "center_y_norm": 0.6094375,
+          "speed": 0.0452,
+          "confidence": 0.4355,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 64,
+          "timestamp": 4.270933333333334,
+          "center_x_norm": 0.3950277777777777,
+          "center_y_norm": 0.6079609375,
+          "speed": 0.0218,
+          "confidence": 0.3968,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 65,
+          "timestamp": 4.337666666666666,
+          "center_x_norm": 0.3958611111111111,
+          "center_y_norm": 0.6078984375,
+          "speed": 0.013,
+          "confidence": 0.4027,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 66,
+          "timestamp": 4.4044,
+          "center_x_norm": 0.3919166666666667,
+          "center_y_norm": 0.6070546875,
+          "speed": 0.0611,
+          "confidence": 0.335,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 67,
+          "timestamp": 4.471133333333333,
+          "center_x_norm": 0.39131944444444444,
+          "center_y_norm": 0.6072031250000001,
+          "speed": 0.0088,
+          "confidence": 0.3316,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 68,
+          "timestamp": 4.537866666666667,
+          "center_x_norm": 0.392625,
+          "center_y_norm": 0.6067578124999999,
+          "speed": 0.0209,
+          "confidence": 0.3404,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 69,
+          "timestamp": 4.6046000000000005,
+          "center_x_norm": 0.3918611111111111,
+          "center_y_norm": 0.607,
+          "speed": 0.0115,
+          "confidence": 0.3616,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 70,
+          "timestamp": 4.671333333333333,
+          "center_x_norm": 0.39126388888888897,
+          "center_y_norm": 0.6069296875,
+          "speed": 0.0096,
+          "confidence": 0.3584,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 71,
+          "timestamp": 4.738066666666667,
+          "center_x_norm": 0.3913055555555556,
+          "center_y_norm": 0.605203125,
+          "speed": 0.0254,
+          "confidence": 0.3532,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 72,
+          "timestamp": 4.8048,
+          "center_x_norm": 0.39043055555555556,
+          "center_y_norm": 0.604609375,
+          "speed": 0.0158,
+          "confidence": 0.3135,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 73,
+          "timestamp": 4.871533333333334,
+          "center_x_norm": 0.3905416666666667,
+          "center_y_norm": 0.6050859375,
+          "speed": 0.0076,
+          "confidence": 0.3604,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 74,
+          "timestamp": 4.938266666666666,
+          "center_x_norm": 0.39045833333333335,
+          "center_y_norm": 0.6052421875,
+          "speed": 0.0022,
+          "confidence": 0.3731,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 75,
+          "timestamp": 5.005,
+          "center_x_norm": 0.3915138888888889,
+          "center_y_norm": 0.6054296875,
+          "speed": 0.0156,
+          "confidence": 0.4328,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 76,
+          "timestamp": 5.071733333333333,
+          "center_x_norm": 0.39152777777777775,
+          "center_y_norm": 0.6055390624999999,
+          "speed": 0.0021,
+          "confidence": 0.4421,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 77,
+          "timestamp": 5.138466666666667,
+          "center_x_norm": 0.3904722222222222,
+          "center_y_norm": 0.6051171875,
+          "speed": 0.0164,
+          "confidence": 0.4291,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 78,
+          "timestamp": 5.2052000000000005,
+          "center_x_norm": 0.38943055555555556,
+          "center_y_norm": 0.6035625,
+          "speed": 0.0281,
+          "confidence": 0.4218,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 79,
+          "timestamp": 5.271933333333333,
+          "center_x_norm": 0.38834722222222223,
+          "center_y_norm": 0.60446875,
+          "speed": 0.0205,
+          "confidence": 0.4155,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 80,
+          "timestamp": 5.338666666666667,
+          "center_x_norm": 0.38837499999999997,
+          "center_y_norm": 0.6043593749999999,
+          "speed": 0.0024,
+          "confidence": 0.3971,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 81,
+          "timestamp": 5.4054,
+          "center_x_norm": 0.388625,
+          "center_y_norm": 0.6051640624999999,
+          "speed": 0.0119,
+          "confidence": 0.4112,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 82,
+          "timestamp": 5.472133333333334,
+          "center_x_norm": 0.4059027777777778,
+          "center_y_norm": 0.605109375,
+          "speed": 0.2593,
+          "confidence": 0.411,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 83,
+          "timestamp": 5.538866666666666,
+          "center_x_norm": 0.40676388888888887,
+          "center_y_norm": 0.60528125,
+          "speed": 0.0132,
+          "confidence": 0.4139,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 84,
+          "timestamp": 5.6056,
+          "center_x_norm": 0.40319444444444447,
+          "center_y_norm": 0.6063984375,
+          "speed": 0.0565,
+          "confidence": 0.4324,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 85,
+          "timestamp": 5.6723333333333334,
+          "center_x_norm": 0.40275000000000005,
+          "center_y_norm": 0.608359375,
+          "speed": 0.0301,
+          "confidence": 0.4101,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 86,
+          "timestamp": 5.739066666666667,
+          "center_x_norm": 0.3993888888888889,
+          "center_y_norm": 0.6090546875,
+          "speed": 0.052,
+          "confidence": 0.3996,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 87,
+          "timestamp": 5.8058000000000005,
+          "center_x_norm": 0.4000972222222222,
+          "center_y_norm": 0.6156640624999999,
+          "speed": 0.099,
+          "confidence": 0.4287,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 88,
+          "timestamp": 5.872533333333333,
+          "center_x_norm": 0.3990694444444444,
+          "center_y_norm": 0.6125703124999999,
+          "speed": 0.0494,
+          "confidence": 0.437,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 89,
+          "timestamp": 5.939266666666667,
+          "center_x_norm": 0.3993888888888889,
+          "center_y_norm": 0.61328125,
+          "speed": 0.0111,
+          "confidence": 0.465,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 90,
+          "timestamp": 6.006,
+          "center_x_norm": 0.3972777777777778,
+          "center_y_norm": 0.60875,
+          "speed": 0.0753,
+          "confidence": 0.4363,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 91,
+          "timestamp": 6.072733333333334,
+          "center_x_norm": 0.3971805555555556,
+          "center_y_norm": 0.610578125,
+          "speed": 0.0267,
+          "confidence": 0.4042,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 92,
+          "timestamp": 6.139466666666666,
+          "center_x_norm": 0.39899999999999997,
+          "center_y_norm": 0.6082265625,
+          "speed": 0.0446,
+          "confidence": 0.3677,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 93,
+          "timestamp": 6.2062,
+          "center_x_norm": 0.3968611111111111,
+          "center_y_norm": 0.618171875,
+          "speed": 0.1529,
+          "confidence": 0.4456,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 94,
+          "timestamp": 6.2729333333333335,
+          "center_x_norm": 0.3988194444444444,
+          "center_y_norm": 0.6141484375,
+          "speed": 0.0672,
+          "confidence": 0.2344,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 95,
+          "timestamp": 6.339666666666667,
+          "center_x_norm": 0.40115277777777786,
+          "center_y_norm": 0.6144765624999999,
+          "speed": 0.0357,
+          "confidence": 0.2552,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 111,
+          "timestamp": 7.4074,
+          "center_x_norm": 0.41611111111111115,
+          "center_y_norm": 0.6106718750000001,
+          "speed": 0.0144,
+          "confidence": 0.3516,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 112,
+          "timestamp": 7.4741333333333335,
+          "center_x_norm": 0.41930555555555554,
+          "center_y_norm": 0.6076640624999999,
+          "speed": 0.0662,
+          "confidence": 0.4329,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 113,
+          "timestamp": 7.540866666666667,
+          "center_x_norm": 0.413375,
+          "center_y_norm": 0.6073359375,
+          "speed": 0.0889,
+          "confidence": 0.3871,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 114,
+          "timestamp": 7.6076,
+          "center_x_norm": 0.4079444444444445,
+          "center_y_norm": 0.6027578124999999,
+          "speed": 0.1064,
+          "confidence": 0.2616,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 115,
+          "timestamp": 7.674333333333333,
+          "center_x_norm": 0.4078055555555556,
+          "center_y_norm": 0.605,
+          "speed": 0.033,
+          "confidence": 0.3076,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 116,
+          "timestamp": 7.741066666666667,
+          "center_x_norm": 0.40801388888888884,
+          "center_y_norm": 0.604828125,
+          "speed": 0.0041,
+          "confidence": 0.287,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 117,
+          "timestamp": 7.8078,
+          "center_x_norm": 0.4096388888888889,
+          "center_y_norm": 0.6072890625,
+          "speed": 0.0447,
+          "confidence": 0.331,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 118,
+          "timestamp": 7.874533333333334,
+          "center_x_norm": 0.41245833333333337,
+          "center_y_norm": 0.6086953125,
+          "speed": 0.0477,
+          "confidence": 0.3812,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 119,
+          "timestamp": 7.9412666666666665,
+          "center_x_norm": 0.4105972222222222,
+          "center_y_norm": 0.608671875,
+          "speed": 0.0285,
+          "confidence": 0.4055,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 120,
+          "timestamp": 8.008000000000001,
+          "center_x_norm": 0.4084305555555555,
+          "center_y_norm": 0.6116484375000001,
+          "speed": 0.0549,
+          "confidence": 0.4387,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 121,
+          "timestamp": 8.074733333333333,
+          "center_x_norm": 0.40761111111111115,
+          "center_y_norm": 0.6122343750000001,
+          "speed": 0.0152,
+          "confidence": 0.4334,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 122,
+          "timestamp": 8.141466666666666,
+          "center_x_norm": 0.40805555555555556,
+          "center_y_norm": 0.6126953125,
+          "speed": 0.0101,
+          "confidence": 0.442,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 123,
+          "timestamp": 8.2082,
+          "center_x_norm": 0.4070972222222222,
+          "center_y_norm": 0.6127734375,
+          "speed": 0.0151,
+          "confidence": 0.4272,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 124,
+          "timestamp": 8.274933333333333,
+          "center_x_norm": 0.4029722222222222,
+          "center_y_norm": 0.6128750000000001,
+          "speed": 0.0619,
+          "confidence": 0.3776,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 125,
+          "timestamp": 8.341666666666667,
+          "center_x_norm": 0.40493055555555557,
+          "center_y_norm": 0.61278125,
+          "speed": 0.029,
+          "confidence": 0.429,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 126,
+          "timestamp": 8.4084,
+          "center_x_norm": 0.4053611111111111,
+          "center_y_norm": 0.6118203125,
+          "speed": 0.0162,
+          "confidence": 0.3961,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 127,
+          "timestamp": 8.475133333333334,
+          "center_x_norm": 0.4046666666666667,
+          "center_y_norm": 0.61253125,
+          "speed": 0.0155,
+          "confidence": 0.3645,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 128,
+          "timestamp": 8.541866666666667,
+          "center_x_norm": 0.4022361111111111,
+          "center_y_norm": 0.612046875,
+          "speed": 0.0375,
+          "confidence": 0.3471,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 129,
+          "timestamp": 8.608600000000001,
+          "center_x_norm": 0.40026388888888886,
+          "center_y_norm": 0.612984375,
+          "speed": 0.0326,
+          "confidence": 0.3633,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 130,
+          "timestamp": 8.675333333333333,
+          "center_x_norm": 0.40213888888888893,
+          "center_y_norm": 0.6146171875,
+          "speed": 0.0367,
+          "confidence": 0.4219,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 131,
+          "timestamp": 8.742066666666666,
+          "center_x_norm": 0.40229166666666666,
+          "center_y_norm": 0.6137578124999999,
+          "speed": 0.0129,
+          "confidence": 0.4146,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 132,
+          "timestamp": 8.8088,
+          "center_x_norm": 0.4025972222222222,
+          "center_y_norm": 0.610328125,
+          "speed": 0.0522,
+          "confidence": 0.353,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 133,
+          "timestamp": 8.875533333333333,
+          "center_x_norm": 0.4029583333333333,
+          "center_y_norm": 0.6115078125,
+          "speed": 0.0189,
+          "confidence": 0.356,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 134,
+          "timestamp": 8.942266666666667,
+          "center_x_norm": 0.40305555555555556,
+          "center_y_norm": 0.6089921875,
+          "speed": 0.0376,
+          "confidence": 0.3547,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 135,
+          "timestamp": 9.009,
+          "center_x_norm": 0.3995694444444444,
+          "center_y_norm": 0.61,
+          "speed": 0.055,
+          "confidence": 0.3095,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 136,
+          "timestamp": 9.075733333333334,
+          "center_x_norm": 0.39065277777777774,
+          "center_y_norm": 0.6067578125,
+          "speed": 0.1426,
+          "confidence": 0.3015,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 137,
+          "timestamp": 9.142466666666667,
+          "center_x_norm": 0.3877638888888889,
+          "center_y_norm": 0.60784375,
+          "speed": 0.0467,
+          "confidence": 0.2988,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 138,
+          "timestamp": 9.209200000000001,
+          "center_x_norm": 0.39509722222222216,
+          "center_y_norm": 0.6156796874999999,
+          "speed": 0.161,
+          "confidence": 0.2999,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 139,
+          "timestamp": 9.275933333333333,
+          "center_x_norm": 0.39929166666666666,
+          "center_y_norm": 0.617671875,
+          "speed": 0.0694,
+          "confidence": 0.3968,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 140,
+          "timestamp": 9.342666666666666,
+          "center_x_norm": 0.4010138888888889,
+          "center_y_norm": 0.6184062499999999,
+          "speed": 0.0278,
+          "confidence": 0.4468,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 141,
+          "timestamp": 9.4094,
+          "center_x_norm": 0.39986111111111106,
+          "center_y_norm": 0.61909375,
+          "speed": 0.02,
+          "confidence": 0.4069,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 142,
+          "timestamp": 9.476133333333333,
+          "center_x_norm": 0.3990277777777778,
+          "center_y_norm": 0.6190625,
+          "speed": 0.0131,
+          "confidence": 0.3133,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 143,
+          "timestamp": 9.542866666666667,
+          "center_x_norm": 0.38695833333333335,
+          "center_y_norm": 0.618046875,
+          "speed": 0.181,
+          "confidence": 0.256,
+          "class_name": "person"
+        },
+        {
+          "frame_id": 144,
+          "timestamp": 9.6096,
+          "center_x_norm": 0.38855555555555554,
+          "center_y_norm": 0.617046875,
+          "speed": 0.0274,
+          "confidence": 0.228,
+          "class_name": "person"
+        }
+      ]
+    }
+  },
+  "incidents": [
+    {
+      "incident_id": "INC-LIVEWHATS-001",
+      "timestamp_iso": "2026-09-15T09:59:52.614851Z",
+      "clip_id": "live_whatsapp_vid_66374",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 18,
+      "end_frame": 33,
+      "start_time": "00:01.20",
+      "end_time": "00:02.20",
+      "duration_sec": 1.07,
+      "peak_frame": 22,
+      "peak_risk_score": 0.8327,
+      "peak_risk_percent": 83,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.04
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_66374_frames/frame_022.jpg",
+      "status": "UNREVIEWED"
+    },
+    {
+      "incident_id": "INC-LIVEWHATS-002",
+      "timestamp_iso": "2026-09-15T09:59:52.614851Z",
+      "clip_id": "live_whatsapp_vid_66374",
+      "source_video": "WhatsApp Video 2026-09-15 at 2.21.59 AM.mp4",
+      "start_frame": 45,
+      "end_frame": 59,
+      "start_time": "00:03.00",
+      "end_time": "00:03.93",
+      "duration_sec": 1.0,
+      "peak_frame": 45,
+      "peak_risk_score": 0.8399,
+      "peak_risk_percent": 84,
+      "severity": "CRITICAL",
+      "intervention_priority": "P1_IMMEDIATE",
+      "primary_factors": [
+        "VELOCITY_VARIANCE",
+        "KINEMATIC_JERK"
+      ],
+      "involved_entities": [
+        {
+          "track_id": 1,
+          "class_name": "person",
+          "speed": 0.66
+        }
+      ],
+      "frame_thumbnail": "live_whatsapp_vid_66374_frames/frame_045.jpg",
+      "status": "UNREVIEWED"
+    }
+  ]
+}

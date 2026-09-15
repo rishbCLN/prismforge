@@ -1,5 +1,5 @@
 {
-  "clip_id": "live_dock_level__dr",
+  "clip_id": "live_dock_level___55913",
   "total_frames": 233,
   "total_unique_tracks": 37,
   "metadata": {
@@ -8,7 +8,7 @@
     "frame_height": 720,
     "fps": 7.5,
     "duration_seconds": 31.066666666666666,
-    "inference_duration_sec": 37.79
+    "inference_duration_sec": 18.91
   },
   "neural_summary": {
     "model_version": "WarehouseRiskMLP_v3",
@@ -37,6 +37,12 @@
       "velocity_variance": 0.0872,
       "stationary_after_impact": 0.0,
       "tracking_confidence": 0.0138
+    },
+    "model_comparison": {
+      "v0_baseline": 0.9,
+      "v1_context": 0.98,
+      "v2_temporal": 0.92,
+      "v3_learned": 0.8499
     }
   },
   "frames": [
@@ -118,7 +124,10 @@
         }
       ],
       "neural_risk": 0.26583439111709595,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 1,
@@ -198,7 +207,10 @@
         }
       ],
       "neural_risk": 0.23452183604240417,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 2,
@@ -350,7 +362,10 @@
         }
       ],
       "neural_risk": 0.7662567496299744,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.775,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 3,
@@ -430,7 +445,10 @@
         }
       ],
       "neural_risk": 0.8184276819229126,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 4,
@@ -510,7 +528,10 @@
         }
       ],
       "neural_risk": 0.8303937911987305,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 5,
@@ -554,7 +575,10 @@
         }
       ],
       "neural_risk": 0.13363659381866455,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 6,
@@ -598,7 +622,10 @@
         }
       ],
       "neural_risk": 0.08651511371135712,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 7,
@@ -642,7 +669,10 @@
         }
       ],
       "neural_risk": 0.1420731395483017,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 8,
@@ -686,7 +716,10 @@
         }
       ],
       "neural_risk": 0.12655934691429138,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 9,
@@ -730,7 +763,10 @@
         }
       ],
       "neural_risk": 0.4256114661693573,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 10,
@@ -810,7 +846,10 @@
         }
       ],
       "neural_risk": 0.09871761500835419,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 11,
@@ -890,7 +929,10 @@
         }
       ],
       "neural_risk": 0.12006779760122299,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 12,
@@ -934,7 +976,10 @@
         }
       ],
       "neural_risk": 0.8481026887893677,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 13,
@@ -978,7 +1023,10 @@
         }
       ],
       "neural_risk": 0.8443381190299988,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 14,
@@ -1022,7 +1070,10 @@
         }
       ],
       "neural_risk": 0.8407855033874512,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 15,
@@ -1066,7 +1117,10 @@
         }
       ],
       "neural_risk": 0.8401775360107422,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 16,
@@ -1110,7 +1164,10 @@
         }
       ],
       "neural_risk": 0.8333152532577515,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 17,
@@ -1154,7 +1211,10 @@
         }
       ],
       "neural_risk": 0.8259570598602295,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 18,
@@ -1198,7 +1258,10 @@
         }
       ],
       "neural_risk": 0.8302090167999268,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 19,
@@ -1278,7 +1341,10 @@
         }
       ],
       "neural_risk": 0.8337199091911316,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 20,
@@ -1358,7 +1424,10 @@
         }
       ],
       "neural_risk": 0.1492106169462204,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 21,
@@ -1438,14 +1507,20 @@
         }
       ],
       "neural_risk": 0.7216373085975647,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.6117,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 22,
       "timestamp": 2.933333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 23,
@@ -1525,14 +1600,20 @@
         }
       ],
       "neural_risk": 0.7476679086685181,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6269,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 24,
       "timestamp": 3.2,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 25,
@@ -1576,7 +1657,10 @@
         }
       ],
       "neural_risk": 0.8391055464744568,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 26,
@@ -1620,7 +1704,10 @@
         }
       ],
       "neural_risk": 0.8107791543006897,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 27,
@@ -1664,7 +1751,10 @@
         }
       ],
       "neural_risk": 0.8266855478286743,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 28,
@@ -1708,7 +1798,10 @@
         }
       ],
       "neural_risk": 0.824161171913147,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 29,
@@ -1752,14 +1845,20 @@
         }
       ],
       "neural_risk": 0.8235176205635071,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 30,
       "timestamp": 4.0,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 31,
@@ -1803,7 +1902,10 @@
         }
       ],
       "neural_risk": 0.8223240971565247,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 32,
@@ -1847,7 +1949,10 @@
         }
       ],
       "neural_risk": 0.8067272305488586,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 33,
@@ -1891,49 +1996,70 @@
         }
       ],
       "neural_risk": 0.8125020265579224,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 34,
       "timestamp": 4.533333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 35,
       "timestamp": 4.666666666666667,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 36,
       "timestamp": 4.8,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 37,
       "timestamp": 4.933333333333334,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 38,
       "timestamp": 5.066666666666666,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 39,
       "timestamp": 5.2,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 40,
@@ -1977,14 +2103,20 @@
         }
       ],
       "neural_risk": 0.8198683261871338,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 41,
       "timestamp": 5.466666666666667,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 42,
@@ -2028,7 +2160,10 @@
         }
       ],
       "neural_risk": 0.8253519535064697,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 43,
@@ -2072,7 +2207,10 @@
         }
       ],
       "neural_risk": 0.8145596981048584,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 44,
@@ -2116,7 +2254,10 @@
         }
       ],
       "neural_risk": 0.8052538633346558,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 45,
@@ -2160,7 +2301,10 @@
         }
       ],
       "neural_risk": 0.8208194971084595,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 46,
@@ -2240,7 +2384,10 @@
         }
       ],
       "neural_risk": 0.8281375765800476,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 47,
@@ -2284,7 +2431,10 @@
         }
       ],
       "neural_risk": 0.17650410532951355,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 48,
@@ -2328,7 +2478,10 @@
         }
       ],
       "neural_risk": 0.18265646696090698,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 49,
@@ -2372,7 +2525,10 @@
         }
       ],
       "neural_risk": 0.13850916922092438,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 50,
@@ -2416,7 +2572,10 @@
         }
       ],
       "neural_risk": 0.6014353036880493,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 51,
@@ -2460,7 +2619,10 @@
         }
       ],
       "neural_risk": 0.6404924988746643,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 52,
@@ -2504,7 +2666,10 @@
         }
       ],
       "neural_risk": 0.7355475425720215,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.5998,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 53,
@@ -2584,7 +2749,10 @@
         }
       ],
       "neural_risk": 0.8237144947052002,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 54,
@@ -2664,7 +2832,10 @@
         }
       ],
       "neural_risk": 0.814205527305603,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 55,
@@ -2744,7 +2915,10 @@
         }
       ],
       "neural_risk": 0.8490172624588013,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 56,
@@ -2824,7 +2998,10 @@
         }
       ],
       "neural_risk": 0.8430436253547668,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 57,
@@ -2940,7 +3117,10 @@
         }
       ],
       "neural_risk": 0.8181644082069397,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 58,
@@ -3092,7 +3272,10 @@
         }
       ],
       "neural_risk": 0.8122017979621887,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 59,
@@ -3172,7 +3355,10 @@
         }
       ],
       "neural_risk": 0.7896937727928162,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 60,
@@ -3252,7 +3438,10 @@
         }
       ],
       "neural_risk": 0.7581745982170105,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 61,
@@ -3368,7 +3557,10 @@
         }
       ],
       "neural_risk": 0.6865226030349731,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 62,
@@ -3448,7 +3640,10 @@
         }
       ],
       "neural_risk": 0.7868542075157166,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 63,
@@ -3528,7 +3723,10 @@
         }
       ],
       "neural_risk": 0.8261799812316895,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 64,
@@ -3644,7 +3842,10 @@
         }
       ],
       "neural_risk": 0.8323078751564026,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 65,
@@ -3760,7 +3961,10 @@
         }
       ],
       "neural_risk": 0.8235782384872437,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 66,
@@ -3840,7 +4044,10 @@
         }
       ],
       "neural_risk": 0.11014490574598312,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 67,
@@ -3884,7 +4091,10 @@
         }
       ],
       "neural_risk": 0.1577131152153015,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 68,
@@ -3964,7 +4174,10 @@
         }
       ],
       "neural_risk": 0.6781165599822998,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 69,
@@ -4080,7 +4293,10 @@
         }
       ],
       "neural_risk": 0.15934595465660095,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 70,
@@ -4124,7 +4340,10 @@
         }
       ],
       "neural_risk": 0.16924479603767395,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 71,
@@ -4204,7 +4423,10 @@
         }
       ],
       "neural_risk": 0.4708639085292816,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.775,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 72,
@@ -4320,7 +4542,10 @@
         }
       ],
       "neural_risk": 0.7098826766014099,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7155,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 73,
@@ -4436,7 +4661,10 @@
         }
       ],
       "neural_risk": 0.7691446542739868,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 74,
@@ -4552,7 +4780,10 @@
         }
       ],
       "neural_risk": 0.8426438570022583,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 75,
@@ -4632,7 +4863,10 @@
         }
       ],
       "neural_risk": 0.16821536421775818,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 76,
@@ -4712,7 +4946,10 @@
         }
       ],
       "neural_risk": 0.3521639406681061,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 77,
@@ -4756,7 +4993,10 @@
         }
       ],
       "neural_risk": 0.849882185459137,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 78,
@@ -4800,7 +5040,10 @@
         }
       ],
       "neural_risk": 0.3486100733280182,
-      "neural_severity": "MEDIUM"
+      "neural_severity": "MEDIUM",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 79,
@@ -4880,7 +5123,10 @@
         }
       ],
       "neural_risk": 0.8388891816139221,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 80,
@@ -4924,7 +5170,10 @@
         }
       ],
       "neural_risk": 0.2912660241127014,
-      "neural_severity": "MEDIUM"
+      "neural_severity": "MEDIUM",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 81,
@@ -5004,7 +5253,10 @@
         }
       ],
       "neural_risk": 0.32370543479919434,
-      "neural_severity": "MEDIUM"
+      "neural_severity": "MEDIUM",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 82,
@@ -5120,7 +5372,10 @@
         }
       ],
       "neural_risk": 0.8243002891540527,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 83,
@@ -5236,7 +5491,10 @@
         }
       ],
       "neural_risk": 0.7858551740646362,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 84,
@@ -5352,7 +5610,10 @@
         }
       ],
       "neural_risk": 0.818621039390564,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 85,
@@ -5432,7 +5693,10 @@
         }
       ],
       "neural_risk": 0.11656656861305237,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 86,
@@ -5512,7 +5776,10 @@
         }
       ],
       "neural_risk": 0.6976301074028015,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 87,
@@ -5592,7 +5859,10 @@
         }
       ],
       "neural_risk": 0.8324173092842102,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 88,
@@ -5636,7 +5906,10 @@
         }
       ],
       "neural_risk": 0.8472464084625244,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 89,
@@ -5680,7 +5953,10 @@
         }
       ],
       "neural_risk": 0.8472357988357544,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 90,
@@ -5724,7 +6000,10 @@
         }
       ],
       "neural_risk": 0.8258055448532104,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 91,
@@ -5768,7 +6047,10 @@
         }
       ],
       "neural_risk": 0.8479306101799011,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 92,
@@ -5812,7 +6094,10 @@
         }
       ],
       "neural_risk": 0.8473400473594666,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 93,
@@ -5892,14 +6177,20 @@
         }
       ],
       "neural_risk": 0.16544702649116516,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 94,
       "timestamp": 12.533333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 95,
@@ -5943,14 +6234,20 @@
         }
       ],
       "neural_risk": 0.3714624047279358,
-      "neural_severity": "MEDIUM"
+      "neural_severity": "MEDIUM",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 96,
       "timestamp": 12.8,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 97,
@@ -5994,7 +6291,10 @@
         }
       ],
       "neural_risk": 0.14670993387699127,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 98,
@@ -6038,14 +6338,20 @@
         }
       ],
       "neural_risk": 0.7041293382644653,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7861,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 99,
       "timestamp": 13.2,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 100,
@@ -6089,7 +6395,10 @@
         }
       ],
       "neural_risk": 0.16791507601737976,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 101,
@@ -6133,35 +6442,50 @@
         }
       ],
       "neural_risk": 0.6143566370010376,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 102,
       "timestamp": 13.6,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 103,
       "timestamp": 13.733333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 104,
       "timestamp": 13.866666666666667,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 105,
       "timestamp": 14.0,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 106,
@@ -6205,7 +6529,10 @@
         }
       ],
       "neural_risk": 0.12611420452594757,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 107,
@@ -6249,7 +6576,10 @@
         }
       ],
       "neural_risk": 0.28664204478263855,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.85,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 108,
@@ -6293,7 +6623,10 @@
         }
       ],
       "neural_risk": 0.8150447607040405,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.7518,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 109,
@@ -6337,7 +6670,10 @@
         }
       ],
       "neural_risk": 0.820949137210846,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.76
     },
     {
       "frame_id": 110,
@@ -6417,7 +6753,10 @@
         }
       ],
       "neural_risk": 0.0934019610285759,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.76
     },
     {
       "frame_id": 111,
@@ -6461,7 +6800,10 @@
         }
       ],
       "neural_risk": 0.8388732075691223,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7263,
+      "v2_risk": 0.76
     },
     {
       "frame_id": 112,
@@ -6505,7 +6847,10 @@
         }
       ],
       "neural_risk": 0.826580286026001,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6766,
+      "v2_risk": 0.76
     },
     {
       "frame_id": 113,
@@ -6549,7 +6894,10 @@
         }
       ],
       "neural_risk": 0.8283392190933228,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7073,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 114,
@@ -6593,7 +6941,10 @@
         }
       ],
       "neural_risk": 0.8165566921234131,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7236,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 115,
@@ -6637,7 +6988,10 @@
         }
       ],
       "neural_risk": 0.805362343788147,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7144,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 116,
@@ -6681,7 +7035,10 @@
         }
       ],
       "neural_risk": 0.7832117080688477,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.712,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 117,
@@ -6725,7 +7082,10 @@
         }
       ],
       "neural_risk": 0.76887446641922,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.695,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 118,
@@ -6769,7 +7129,10 @@
         }
       ],
       "neural_risk": 0.7444539666175842,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 119,
@@ -6813,7 +7176,10 @@
         }
       ],
       "neural_risk": 0.7032593488693237,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.98,
+      "v2_risk": 0.68
     },
     {
       "frame_id": 120,
@@ -6857,7 +7223,10 @@
         }
       ],
       "neural_risk": 0.727785050868988,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 121,
@@ -6901,7 +7270,10 @@
         }
       ],
       "neural_risk": 0.7321675419807434,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 122,
@@ -6945,7 +7317,10 @@
         }
       ],
       "neural_risk": 0.8272089958190918,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7766,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 123,
@@ -6989,7 +7364,10 @@
         }
       ],
       "neural_risk": 0.802025556564331,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 124,
@@ -7033,7 +7411,10 @@
         }
       ],
       "neural_risk": 0.7890139818191528,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 125,
@@ -7077,7 +7458,10 @@
         }
       ],
       "neural_risk": 0.7860867381095886,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 126,
@@ -7121,7 +7505,10 @@
         }
       ],
       "neural_risk": 0.7297830581665039,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 127,
@@ -7165,7 +7552,10 @@
         }
       ],
       "neural_risk": 0.7856714725494385,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 128,
@@ -7209,7 +7599,10 @@
         }
       ],
       "neural_risk": 0.7951381206512451,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 129,
@@ -7253,7 +7646,10 @@
         }
       ],
       "neural_risk": 0.8042027354240417,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 130,
@@ -7297,7 +7693,10 @@
         }
       ],
       "neural_risk": 0.7712978720664978,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 131,
@@ -7341,7 +7740,10 @@
         }
       ],
       "neural_risk": 0.7727747559547424,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 132,
@@ -7385,7 +7787,10 @@
         }
       ],
       "neural_risk": 0.7856749892234802,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 133,
@@ -7429,7 +7834,10 @@
         }
       ],
       "neural_risk": 0.7339485287666321,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 134,
@@ -7473,7 +7881,10 @@
         }
       ],
       "neural_risk": 0.7327772378921509,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 135,
@@ -7517,7 +7928,10 @@
         }
       ],
       "neural_risk": 0.7634093165397644,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 136,
@@ -7561,7 +7975,10 @@
         }
       ],
       "neural_risk": 0.7458070516586304,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 137,
@@ -7605,7 +8022,10 @@
         }
       ],
       "neural_risk": 0.7520259618759155,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 138,
@@ -7649,7 +8069,10 @@
         }
       ],
       "neural_risk": 0.7222546339035034,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 139,
@@ -7693,7 +8116,10 @@
         }
       ],
       "neural_risk": 0.718643844127655,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 140,
@@ -7737,7 +8163,10 @@
         }
       ],
       "neural_risk": 0.7289716601371765,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 141,
@@ -7781,7 +8210,10 @@
         }
       ],
       "neural_risk": 0.7207069993019104,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 142,
@@ -7825,7 +8257,10 @@
         }
       ],
       "neural_risk": 0.7096869945526123,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 143,
@@ -7869,7 +8304,10 @@
         }
       ],
       "neural_risk": 0.7067209482192993,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 144,
@@ -7913,7 +8351,10 @@
         }
       ],
       "neural_risk": 0.714909017086029,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 145,
@@ -7957,7 +8398,10 @@
         }
       ],
       "neural_risk": 0.7410876750946045,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 146,
@@ -8001,7 +8445,10 @@
         }
       ],
       "neural_risk": 0.7841244339942932,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 147,
@@ -8045,7 +8492,10 @@
         }
       ],
       "neural_risk": 0.803861141204834,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 148,
@@ -8089,7 +8539,10 @@
         }
       ],
       "neural_risk": 0.8316746354103088,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 149,
@@ -8133,7 +8586,10 @@
         }
       ],
       "neural_risk": 0.8308831453323364,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 150,
@@ -8177,7 +8633,10 @@
         }
       ],
       "neural_risk": 0.8175051212310791,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 151,
@@ -8221,7 +8680,10 @@
         }
       ],
       "neural_risk": 0.8265593647956848,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 152,
@@ -8265,7 +8727,10 @@
         }
       ],
       "neural_risk": 0.8144643306732178,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 153,
@@ -8309,7 +8774,10 @@
         }
       ],
       "neural_risk": 0.8345673084259033,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 154,
@@ -8353,7 +8821,10 @@
         }
       ],
       "neural_risk": 0.823205828666687,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 155,
@@ -8433,7 +8904,10 @@
         }
       ],
       "neural_risk": 0.8309926390647888,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 156,
@@ -8477,7 +8951,10 @@
         }
       ],
       "neural_risk": 0.8466459512710571,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 157,
@@ -8557,7 +9034,10 @@
         }
       ],
       "neural_risk": 0.006369238719344139,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 158,
@@ -8601,7 +9081,10 @@
         }
       ],
       "neural_risk": 0.16782571375370026,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 159,
@@ -8645,7 +9128,10 @@
         }
       ],
       "neural_risk": 0.3162265419960022,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.6291,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 160,
@@ -8689,7 +9175,10 @@
         }
       ],
       "neural_risk": 0.1690397411584854,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 161,
@@ -8733,42 +9222,60 @@
         }
       ],
       "neural_risk": 0.7886518836021423,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 162,
       "timestamp": 21.6,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 163,
       "timestamp": 21.733333333333334,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 164,
       "timestamp": 21.866666666666667,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 165,
       "timestamp": 22.0,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 166,
       "timestamp": 22.133333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 167,
@@ -8812,7 +9319,10 @@
         }
       ],
       "neural_risk": 0.13373439013957977,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 168,
@@ -8856,7 +9366,10 @@
         }
       ],
       "neural_risk": 0.12942351400852203,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 169,
@@ -8936,7 +9449,10 @@
         }
       ],
       "neural_risk": 0.2688019871711731,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 170,
@@ -9016,7 +9532,10 @@
         }
       ],
       "neural_risk": 0.4264977276325226,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6981,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 171,
@@ -9096,7 +9615,10 @@
         }
       ],
       "neural_risk": 0.7351775765419006,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.6519,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 172,
@@ -9176,7 +9698,10 @@
         }
       ],
       "neural_risk": 0.8183054327964783,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 173,
@@ -9256,7 +9781,10 @@
         }
       ],
       "neural_risk": 0.8390148282051086,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 174,
@@ -9336,7 +9864,10 @@
         }
       ],
       "neural_risk": 0.8425882458686829,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 175,
@@ -9380,7 +9911,10 @@
         }
       ],
       "neural_risk": 0.09611350297927856,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 176,
@@ -9424,7 +9958,10 @@
         }
       ],
       "neural_risk": 0.09133224934339523,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 177,
@@ -9468,7 +10005,10 @@
         }
       ],
       "neural_risk": 0.7971670627593994,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 178,
@@ -9512,7 +10052,10 @@
         }
       ],
       "neural_risk": 0.8336650729179382,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 179,
@@ -9556,7 +10099,10 @@
         }
       ],
       "neural_risk": 0.8490504026412964,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 180,
@@ -9600,7 +10146,10 @@
         }
       ],
       "neural_risk": 0.847487211227417,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 181,
@@ -9680,7 +10229,10 @@
         }
       ],
       "neural_risk": 0.8265950679779053,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 182,
@@ -9724,7 +10276,10 @@
         }
       ],
       "neural_risk": 0.8362318277359009,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 183,
@@ -9768,7 +10323,10 @@
         }
       ],
       "neural_risk": 0.8277080059051514,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 184,
@@ -9812,14 +10370,20 @@
         }
       ],
       "neural_risk": 0.7463176846504211,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 185,
       "timestamp": 24.666666666666668,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 186,
@@ -9863,7 +10427,10 @@
         }
       ],
       "neural_risk": 0.8379752039909363,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 187,
@@ -9907,42 +10474,60 @@
         }
       ],
       "neural_risk": 0.835597813129425,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 188,
       "timestamp": 25.066666666666666,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 189,
       "timestamp": 25.2,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 190,
       "timestamp": 25.333333333333332,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 191,
       "timestamp": 25.466666666666665,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 192,
       "timestamp": 25.6,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 193,
@@ -9986,7 +10571,10 @@
         }
       ],
       "neural_risk": 0.1378677487373352,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 194,
@@ -10030,7 +10618,10 @@
         }
       ],
       "neural_risk": 0.1493813693523407,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 195,
@@ -10074,7 +10665,10 @@
         }
       ],
       "neural_risk": 0.4049544632434845,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 196,
@@ -10118,7 +10712,10 @@
         }
       ],
       "neural_risk": 0.4236185848712921,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 197,
@@ -10162,7 +10759,10 @@
         }
       ],
       "neural_risk": 0.4894508421421051,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 198,
@@ -10206,7 +10806,10 @@
         }
       ],
       "neural_risk": 0.5076329708099365,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 199,
@@ -10286,7 +10889,10 @@
         }
       ],
       "neural_risk": 0.8430562019348145,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7391,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 200,
@@ -10402,7 +11008,10 @@
         }
       ],
       "neural_risk": 0.8351035118103027,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.7868,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 201,
@@ -10518,7 +11127,10 @@
         }
       ],
       "neural_risk": 0.8053063154220581,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7545,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 202,
@@ -10670,7 +11282,10 @@
         }
       ],
       "neural_risk": 0.8320749998092651,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 203,
@@ -10750,7 +11365,10 @@
         }
       ],
       "neural_risk": 0.8445639610290527,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 204,
@@ -10866,7 +11484,10 @@
         }
       ],
       "neural_risk": 0.8393348455429077,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 205,
@@ -10982,7 +11603,10 @@
         }
       ],
       "neural_risk": 0.8360612392425537,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 206,
@@ -11062,7 +11686,10 @@
         }
       ],
       "neural_risk": 0.842063307762146,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 207,
@@ -11214,7 +11841,10 @@
         }
       ],
       "neural_risk": 0.841999351978302,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 208,
@@ -11366,7 +11996,10 @@
         }
       ],
       "neural_risk": 0.8313521146774292,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 209,
@@ -11518,7 +12151,10 @@
         }
       ],
       "neural_risk": 0.832533597946167,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 210,
@@ -11670,7 +12306,10 @@
         }
       ],
       "neural_risk": 0.835140585899353,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 211,
@@ -11858,7 +12497,10 @@
         }
       ],
       "neural_risk": 0.8281546831130981,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.7,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 212,
@@ -12010,7 +12652,10 @@
         }
       ],
       "neural_risk": 0.831462025642395,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.8,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 213,
@@ -12198,7 +12843,10 @@
         }
       ],
       "neural_risk": 0.17763720452785492,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 214,
@@ -12350,7 +12998,10 @@
         }
       ],
       "neural_risk": 0.29595062136650085,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.9,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 215,
@@ -12538,7 +13189,10 @@
         }
       ],
       "neural_risk": 0.8130573034286499,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.7372,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 216,
@@ -12690,7 +13344,10 @@
         }
       ],
       "neural_risk": 0.7987169623374939,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.7562,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 217,
@@ -12842,7 +13499,10 @@
         }
       ],
       "neural_risk": 0.814145565032959,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 218,
@@ -12994,7 +13654,10 @@
         }
       ],
       "neural_risk": 0.8218819499015808,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 219,
@@ -13182,7 +13845,10 @@
         }
       ],
       "neural_risk": 0.8311898112297058,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.6957,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 220,
@@ -13334,7 +14000,10 @@
         }
       ],
       "neural_risk": 0.8138417601585388,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.85,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 221,
@@ -13414,7 +14083,10 @@
         }
       ],
       "neural_risk": 0.8273298740386963,
-      "neural_severity": "HIGH"
+      "neural_severity": "HIGH",
+      "v0_risk": 0.9,
+      "v1_risk": 0.98,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 222,
@@ -13458,7 +14130,10 @@
         }
       ],
       "neural_risk": 0.0962684229016304,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 223,
@@ -13502,7 +14177,10 @@
         }
       ],
       "neural_risk": 0.09097856283187866,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 224,
@@ -13546,42 +14224,60 @@
         }
       ],
       "neural_risk": 0.12625569105148315,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 225,
       "timestamp": 30.0,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 226,
       "timestamp": 30.133333333333333,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 227,
       "timestamp": 30.266666666666666,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.92
     },
     {
       "frame_id": 228,
       "timestamp": 30.4,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 229,
       "timestamp": 30.533333333333335,
       "tracks": [],
       "neural_risk": 0.05465240404009819,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
     },
     {
       "frame_id": 230,
@@ -13625,7 +14321,10 @@
         }
       ],
       "neural_risk": 0.10274401307106018,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.5,
+      "v1_risk": 0.35,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 231,
@@ -13669,7 +14368,10 @@
         }
       ],
       "neural_risk": 0.3807559907436371,
-      "neural_severity": "LOW"
+      "neural_severity": "LOW",
+      "v0_risk": 0.85,
+      "v1_risk": 0.7237,
+      "v2_risk": 0.52
     },
     {
       "frame_id": 232,
@@ -13713,7 +14415,10 @@
         }
       ],
       "neural_risk": 0.6305776238441467,
-      "neural_severity": "CRITICAL"
+      "neural_severity": "CRITICAL",
+      "v0_risk": 0.85,
+      "v1_risk": 0.35,
+      "v2_risk": 0.76
     }
   ],
   "trajectories": {

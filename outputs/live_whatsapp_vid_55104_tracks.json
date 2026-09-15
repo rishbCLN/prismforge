@@ -1,5 +1,5 @@
 {
-  "clip_id": "live_whatsapp_video",
+  "clip_id": "live_whatsapp_vid_55104",
   "total_frames": 300,
   "total_unique_tracks": 10,
   "metadata": {
@@ -8,7 +8,7 @@
     "frame_height": 640,
     "fps": 30.0,
     "duration_seconds": 10.0,
-    "inference_duration_sec": 27.3
+    "inference_duration_sec": 34.81
   },
   "neural_summary": {
     "model_version": "WarehouseRiskMLP_v3",

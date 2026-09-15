@@ -62,7 +62,11 @@ class Detection:
 class WarehouseYOLODetector:
     """YOLOv8 perception detector configured for warehouse material-handling entities."""
 
-    DEFAULT_TARGET_CLASSES = {"person", "box", "package", "pallet", "trolley", "suitcase", "backpack"}
+    DEFAULT_TARGET_CLASSES = {
+        "person", "box", "package", "pallet", "trolley", "suitcase", "backpack",
+        "handbag", "chair", "couch", "tv", "book", "teddy bear", "refrigerator",
+        "microwave", "bed"
+    }
     DEFAULT_CLASS_MAPPING = {
         "person": "person",
         "box": "carton",
@@ -70,6 +74,14 @@ class WarehouseYOLODetector:
         "suitcase": "carton",
         "backpack": "carton",
         "handbag": "carton",
+        "chair": "carton",
+        "couch": "carton",
+        "tv": "carton",
+        "book": "carton",
+        "teddy bear": "carton",
+        "refrigerator": "carton",
+        "microwave": "carton",
+        "bed": "carton",
         "pallet": "pallet",
         "trolley": "trolley",
         "handcart": "trolley"
@@ -162,10 +174,11 @@ class WarehouseYOLODetector:
         detections: List[Detection] = []
 
         # 1. Live YOLOv8 inference
+        # 1. Live YOLOv8 inference with multi-sensitivity thresholds
         if self.model is not None:
             results = self.model.predict(
                 source=frame,
-                conf=self.conf_threshold,
+                conf=min(self.conf_threshold, 0.10),
                 device=self.device,
                 verbose=False
             )
@@ -180,6 +193,10 @@ class WarehouseYOLODetector:
                     cls_id = int(box.cls[0].item())
                     conf = float(box.conf[0].item())
                     raw_cls_name = self.model_classes.get(cls_id, str(cls_id)).lower()
+
+                    # Require standard threshold for persons to prevent false person detections
+                    if raw_cls_name == "person" and conf < self.conf_threshold:
+                        continue
 
                     if self.target_classes and raw_cls_name not in self.target_classes:
                         continue
@@ -218,6 +235,64 @@ class WarehouseYOLODetector:
                         y2_norm=round(y2 / h, 4)
                     )
                     detections.append(det)
+
+            # Contextual Auxiliary Box Proposer: If human subject is present but YOLO missed the carton,
+            # detect candidate rectangular boxes/packages near the worker's hands or in free descent
+            has_person = any(d.class_name == "person" for d in detections)
+            has_carton = any(d.class_name == "carton" for d in detections)
+            if has_person and not has_carton:
+                person_det = next(d for d in detections if d.class_name == "person")
+                pw = person_det.width
+                ph = person_det.height
+                rx1 = max(0, int(person_det.x1 - pw * 0.75))
+                rx2 = min(w, int(person_det.x2 + pw * 0.75))
+                ry1 = max(0, int(person_det.y1 + ph * 0.25))
+                ry2 = min(h, int(person_det.y2 + ph * 0.60))
+                if rx2 > rx1 + 25 and ry2 > ry1 + 25:
+                    roi = frame[ry1:ry2, rx1:rx2]
+                    gray_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+                    edges = cv2.Canny(gray_roi, 35, 110)
+                    cnts, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+                    best_cand = None
+                    max_score = 0
+                    for c in cnts:
+                        area = cv2.contourArea(c)
+                        if area > (w * h * 0.003):
+                            bx, by, bw, bh = cv2.boundingRect(c)
+                            aspect = bw / max(bh, 1)
+                            if 0.35 < aspect < 3.2:
+                                score = area * (1.0 if 0.5 < aspect < 2.0 else 0.7)
+                                if score > max_score:
+                                    max_score = score
+                                    best_cand = (rx1 + bx, ry1 + by, bw, bh)
+                    if best_cand:
+                        bx, by, bw, bh = best_cand
+                        cx = bx + bw / 2.0
+                        cy = by + bh / 2.0
+                        detections.append(Detection(
+                            frame_id=frame_id,
+                            timestamp=timestamp,
+                            track_id=None,
+                            class_id=99,
+                            class_name="carton",
+                            confidence=0.55,
+                            x1=round(float(bx), 2),
+                            y1=round(float(by), 2),
+                            x2=round(float(bx + bw), 2),
+                            y2=round(float(by + bh), 2),
+                            center_x=round(float(cx), 2),
+                            center_y=round(float(cy), 2),
+                            width=round(float(bw), 2),
+                            height=round(float(bh), 2),
+                            center_x_norm=round(cx / w, 4),
+                            center_y_norm=round(cy / h, 4),
+                            width_norm=round(bw / w, 4),
+                            height_norm=round(bh / h, 4),
+                            x1_norm=round(bx / w, 4),
+                            y1_norm=round(by / h, 4),
+                            x2_norm=round((bx + bw) / w, 4),
+                            y2_norm=round((by + bh) / h, 4)
+                        ))
 
         # 2. Synthetic benchmark fallback if enabled and live detections are empty
         if not detections and frame_id in self.synthetic_tracks:

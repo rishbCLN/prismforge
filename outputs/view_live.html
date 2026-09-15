@@ -74,7 +74,7 @@
       padding: 16px 24px;
     }
 
-    /* Container Box */
+    /* Outer Container Box */
     .wire-container {
       border: 1px solid var(--border-default);
       border-radius: 6px;
@@ -86,7 +86,7 @@
       overflow: hidden;
     }
 
-    /* Header Bar */
+    /* Top Wire Header */
     .wire-header {
       padding: 14px 22px;
       border-bottom: 1px solid var(--border-default);
@@ -116,17 +116,308 @@
       letter-spacing: 0.5px;
     }
 
-    .clip-selector-group {
+    .header-ops-status {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 8px rgba(20, 184, 166, 0.6);
+      animation: pulseGlow 1.5s infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes pulseGlow {
+      from { opacity: 0.4; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1.15); box-shadow: 0 0 10px rgba(20, 184, 166, 0.8); }
+    }
+
+    /* Section Navigation Bar */
+    .section-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 22px;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-default);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-tab {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 1px solid var(--border-default);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .nav-tab:hover {
+      border-color: var(--border-active);
+      color: var(--text-primary);
+      background: var(--surface-primary);
+    }
+
+    .nav-tab.active {
+      background: var(--surface-primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.25);
+    }
+
+    .tab-pill {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--text-muted);
+    }
+
+    .nav-tab.active .tab-pill {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+      color: var(--primary-hover);
+    }
+
+    .nav-actions {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .clip-selector-group label {
+    .pipeline-engine-pill {
+      font-size: 11px;
+      color: var(--teal);
+      background: rgba(20, 184, 166, 0.08);
+      border: 1px solid var(--teal-dark);
+      padding: 4px 10px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .btn-split-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-split-toggle:hover {
+      border-color: var(--primary);
+      color: #FFFFFF;
+      background: var(--surface-elevated);
+    }
+
+    .btn-split-toggle.active {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Sections Wrapper & Views */
+    .sections-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .section-view {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* Dual Mode Layout */
+    .wire-container.dual-mode .sections-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px;
+      background: var(--bg-primary);
+      overflow-y: auto;
+    }
+
+    .wire-container.dual-mode .section-view {
+      border: 1px solid var(--border-default);
+      border-radius: 5px;
+      background: var(--bg-secondary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Section Banner */
+    .section-banner {
+      padding: 12px 20px;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .banner-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .banner-title {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .banner-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+    }
+
+    .status-chip {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    .status-chip.standby {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--text-muted);
+    }
+
+    .status-chip.running {
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary-hover);
+      animation: pulseGlow 1.2s infinite alternate;
+    }
+
+    .status-chip.completed {
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+
+    .status-chip.error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--critical);
+      color: var(--critical);
+    }
+
+    /* Live Video Ingestion Deck */
+    .ingestion-deck {
+      padding: 14px 20px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-default);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .deck-controls-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .drop-zone {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface-primary);
+      border: 1.5px dashed var(--border-default);
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--border-active);
+      background: var(--surface-elevated);
+    }
+
+    .drop-zone .btn-browse {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      color: var(--text-primary);
+      padding: 5px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+
+    .drop-zone .btn-browse:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .drop-zone .file-name-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .sample-select-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sample-select-group label {
       font-size: 11px;
       color: var(--text-muted);
       font-weight: 700;
-      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     select {
@@ -148,521 +439,48 @@
     }
 
     select:focus {
-      border-color: var(--border-active);
+      border-color: var(--primary);
       box-shadow: 0 0 0 1px var(--primary);
     }
 
-    select option {
-      background: var(--surface-elevated);
-      color: var(--text-primary);
-    }
-
-    /* Upper Main Section: Video & Status */
-    .upper-grid {
-      display: grid;
-      grid-template-columns: 1.48fr 1fr;
-      border-bottom: 1px solid var(--border-default);
-      background: var(--bg-primary);
-    }
-
-    /* Left Video Panel */
-    .video-panel {
-      padding: 18px;
-      border-right: 1px solid var(--border-default);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: var(--bg-primary);
-    }
-
-    .canvas-viewport {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border: 1px solid var(--border-default);
-      border-radius: 4px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
-    }
-
-    #videoCanvas {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .controls-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--surface-primary);
-      padding: 8px 14px;
-      border: 1px solid var(--border-default);
-      border-radius: 4px;
-    }
-
-    button {
-      background: var(--surface-elevated);
-      color: var(--text-primary);
-      border: 1px solid var(--border-default);
-      padding: 6px 14px;
-      border-radius: 3px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    button:hover {
-      background: var(--border-subtle);
-      color: var(--text-primary);
-      border-color: var(--border-active);
-    }
-
-    button.active {
-      background: var(--primary);
-      color: #FFFFFF;
-      border-color: var(--primary);
-    }
-
-    .scrubber {
-      flex: 1;
-      accent-color: var(--primary);
-      cursor: pointer;
-      height: 6px;
-    }
-
-    .frame-counter {
-      font-size: 12px;
-      color: var(--text-muted);
-      min-width: 120px;
-      text-align: right;
-      font-weight: 500;
-    }
-
-    /* Trajectory Canvas Box */
-    .traj-box {
-      background: var(--surface-primary);
-      border: 1px solid var(--border-default);
-      border-radius: 4px;
-      padding: 10px 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .traj-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      letter-spacing: 0.5px;
-    }
-
-    #trajCanvas {
-      width: 100%;
-      height: 96px;
-      background: var(--bg-secondary);
-      border-radius: 3px;
-      border: 1px solid var(--border-subtle);
-      display: block;
-    }
-
-    /* Right Status Panel */
-    .status-panel {
-      padding: 20px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 16px;
-      background: var(--bg-secondary);
-    }
-
-    .status-panel-header {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: var(--text-primary);
-      border-bottom: 1px solid var(--border-default);
-      padding-bottom: 10px;
-    }
-
-    .status-block {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .status-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 9px 14px;
-      background: var(--surface-primary);
-      border: 1px solid var(--border-default);
-      border-radius: 4px;
-      min-height: 42px;
-    }
-
-    .status-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .status-val {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--text-primary);
-      transition: color 0.15s ease, background 0.15s ease;
-    }
-
-    .status-val.risk-high {
-      color: var(--critical);
-      background: rgba(239, 68, 68, 0.12);
-      padding: 3px 10px;
-      border-radius: 3px;
-      border: 1px solid var(--critical);
-    }
-
-    .status-val.risk-med {
-      color: var(--warning);
-      background: rgba(245, 158, 11, 0.12);
-      padding: 3px 10px;
-      border-radius: 3px;
-      border: 1px solid var(--warning);
-    }
-
-    .status-val.risk-low {
-      color: var(--success);
-      background: rgba(34, 197, 94, 0.12);
-      padding: 3px 10px;
-      border-radius: 3px;
-      border: 1px solid var(--success);
-    }
-
-    .timestamp-large {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: var(--teal);
-      text-align: right;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-default);
-    }
-
-    /* Active Entities Mini Table — Zero Flicker */
-    .entities-mini {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      min-height: 84px;
-    }
-
-    .entity-tag {
-      font-size: 11px;
-      padding: 7px 12px;
-      background: var(--surface-primary);
-      border: 1px solid var(--border-default);
-      border-radius: 3px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: border-color 0.15s;
-    }
-
-    .entity-tag .ent-label {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .entity-tag .ent-val {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* Lower Section: Incident Timeline */
-    .timeline-section {
-      padding: 16px 22px;
-      border-bottom: 1px solid var(--border-default);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: var(--bg-secondary);
-    }
-
-    .timeline-header {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-    }
-
-    .timeline-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      max-height: 150px;
-      overflow-y: auto;
-    }
-
-    .timeline-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 7px 14px;
-      background: var(--surface-primary);
-      border: 1px solid var(--border-default);
-      border-radius: 4px;
-      font-size: 12px;
-      cursor: pointer;
-      color: var(--text-primary);
-      transition: all 0.15s ease;
-    }
-
-    .timeline-item:hover {
-      border-color: var(--border-active);
-      background: var(--surface-elevated);
-      transform: translateX(4px);
-    }
-
-    .timeline-item.active {
-      border-color: var(--critical);
-      background: rgba(239, 68, 68, 0.12);
-      box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.15);
-    }
-
-    .t-time {
-      color: var(--text-muted);
-      font-weight: 600;
-      min-width: 60px;
-    }
-
-    .t-icon {
-      font-size: 14px;
-      width: 18px;
-      text-align: center;
-    }
-
-    .t-label {
-      font-weight: 600;
-      flex: 1;
-      color: var(--text-primary);
-    }
-
-    /* Bottom Section: Today Stats */
-    .today-section {
-      padding: 14px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-primary);
-    }
-
-    .today-title {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-    }
-
-    .today-stats-row {
-      display: flex;
-      gap: 24px;
-    }
-
-    .stat-pill {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .stat-pill .count {
-      font-size: 14px;
-      font-weight: 800;
-      padding: 2px 10px;
-      border-radius: 3px;
-    }
-
-    .stat-pill.high .count {
-      background: rgba(239, 68, 68, 0.12);
-      color: var(--critical);
-      border: 1px solid var(--critical);
-    }
-
-    .stat-pill.med .count {
-      background: rgba(245, 158, 11, 0.12);
-      color: var(--warning);
-      border: 1px solid var(--warning);
-    }
-
-    .stat-pill.low .count {
-      background: rgba(34, 197, 94, 0.12);
-      color: var(--success);
-      border: 1px solid var(--success);
-    }
-
-    /* Live Test Studio Panel */
-    .test-studio-panel {
-      padding: 14px 22px;
-      background: var(--bg-primary);
-      border-bottom: 1px solid var(--border-default);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .test-studio-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .studio-title {
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .live-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--teal);
-      box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
-      animation: pulseGlow 1.5s infinite alternate;
-    }
-
-    @keyframes pulseGlow {
-      from { opacity: 0.4; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1.15); box-shadow: 0 0 10px rgba(20, 184, 166, 0.7); }
-    }
-
-    .model-badge {
-      font-size: 11px;
-      padding: 3px 10px;
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid var(--primary);
-      color: var(--primary-hover);
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .test-studio-body {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .upload-zone {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--surface-primary);
-      border: 1px dashed var(--border-default);
-      padding: 6px 14px;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .upload-zone:hover, .upload-zone.dragover {
-      border-color: var(--border-active);
-      background: var(--surface-elevated);
-    }
-
-    .upload-zone .btn-browse {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border-default);
-      color: var(--text-primary);
-      padding: 4px 10px;
-      font-size: 11px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    .upload-zone .btn-browse:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #FFFFFF;
-    }
-
-    .upload-zone .file-name-text {
-      font-size: 11px;
-      color: var(--text-muted);
-      max-width: 220px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .sample-select-group {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sample-select-group label {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .btn-test-action {
+    .btn-push-test {
       background: var(--primary);
       color: #FFFFFF;
       border: 1px solid var(--primary-dark);
-      padding: 9px 18px;
+      padding: 9px 22px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.5px;
       border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
       transition: all 0.15s ease;
+      white-space: nowrap;
       margin-left: auto;
     }
 
-    .btn-test-action:hover:not(:disabled) {
+    .btn-push-test:hover:not(:disabled) {
       background: var(--primary-dark);
       border-color: #1D4ED8;
-      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+      transform: translateY(-1px);
     }
 
-    .btn-test-action:active:not(:disabled) {
+    .btn-push-test:active:not(:disabled) {
       background: #1D4ED8;
-      border-color: #1E40AF;
+      transform: translateY(0);
     }
 
-    .btn-test-action:disabled {
+    .btn-push-test:disabled {
       opacity: 0.5;
       cursor: not-allowed;
       box-shadow: none;
     }
 
-    /* Pipeline Progress Banner */
+    /* 5-Stage Pipeline Progress Stepper */
     .pipeline-progress {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
       background: var(--surface-primary);
       border: 1px solid var(--border-default);
@@ -693,6 +511,7 @@
       justify-content: center;
       font-size: 10px;
       font-weight: 800;
+      flex-shrink: 0;
     }
 
     .pipeline-step.active {
@@ -716,44 +535,211 @@
       color: var(--success);
     }
 
-    /* Neural Outcome Banner */
-    .neural-outcome-banner {
+    /* Workspace Grids */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      flex: 1;
+      border-bottom: 1px solid var(--border-default);
+      min-height: 480px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 1240px) {
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Video Player Column */
+    .player-col {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-right: 1px solid var(--border-default);
+      background: var(--bg-primary);
+    }
+
+    .canvas-viewport {
+      background: #060B13;
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      overflow: hidden;
+      height: 480px;
+      max-height: 60vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.9);
+    }
+
+    .canvas-viewport canvas {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+    }
+
+    .controls-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface-primary);
+      padding: 8px 14px;
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+    }
+
+    .controls-row button {
+      background: var(--surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+      padding: 6px 12px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .controls-row button:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .scrubber {
+      flex: 1;
+      accent-color: var(--primary);
+      cursor: pointer;
+      height: 6px;
+      background: var(--surface-elevated);
+      border-radius: 3px;
+    }
+
+    .frame-counter {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--teal);
+      min-width: 110px;
+      text-align: right;
+    }
+
+    /* Kinetic Trajectory Map */
+    .traj-box {
       background: var(--surface-primary);
       border: 1px solid var(--border-default);
-      padding: 12px 18px;
       border-radius: 4px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .traj-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      animation: fadeIn 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+    .traj-box canvas {
+      width: 100%;
+      height: 80px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      display: block;
     }
 
-    .outcome-metric {
+    /* Diagnostics & Telemetry Column */
+    .diagnostic-col {
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 14px;
+      background: var(--bg-secondary);
+      overflow-y: auto;
     }
 
-    .outcome-metric .o-label {
-      font-size: 10px;
+    .diagnostic-card {
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      padding: 14px 16px;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card-header {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
       color: var(--text-muted);
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 8px;
     }
 
-    .outcome-metric .o-val {
-      font-size: 13px;
+    .risk-score-display {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .risk-score-val {
+      font-size: 26px;
       font-weight: 800;
       letter-spacing: 0.5px;
-      color: var(--text-primary);
+    }
+
+    .risk-bar-track {
+      height: 8px;
+      background: var(--surface-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .risk-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    /* Multi-Model Comparison Table */
+    .model-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    .model-table th {
+      text-align: left;
+      padding: 6px 8px;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-default);
+      font-weight: 700;
+    }
+
+    .model-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .model-table tr:last-child td {
+      border-bottom: none;
     }
 
     .factors-list {
@@ -773,7 +759,7 @@
       letter-spacing: 0.3px;
     }
 
-    /* Semantic Status Badges */
+    /* Semantic Badges */
     .badge-safe {
       background: rgba(34, 197, 94, 0.12);
       border: 1px solid var(--success);
@@ -798,233 +784,957 @@
       border-radius: 3px;
     }
 
-    .badge-info {
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid var(--primary);
-      color: var(--primary-hover);
+    /* Entity Tags Pool */
+    .entities-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .entity-tag {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-default);
+      padding: 6px 12px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+    }
+
+    .entity-tag .ent-label {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .entity-tag .ent-val {
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* Status Rows */
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      padding: 3px 0;
+    }
+
+    .status-label {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .status-val {
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    /* Incident Timeline Section */
+    .timeline-section {
+      padding: 14px 22px;
+      border-top: 1px solid var(--border-default);
+      background: var(--bg-primary);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .timeline-header {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 7px 14px;
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      color: var(--text-primary);
+      transition: all 0.15s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: var(--border-active);
+      background: var(--surface-elevated);
+      transform: translateX(4px);
+    }
+
+    .t-time {
+      color: var(--text-muted);
+      font-weight: 600;
+      min-width: 65px;
+    }
+
+    .t-icon {
+      font-size: 14px;
+      width: 18px;
+      text-align: center;
+    }
+
+    .t-label {
+      font-weight: 600;
+      flex: 1;
+      color: var(--text-primary);
+    }
+
+    /* Bottom Today Stats */
+    .today-section {
+      padding: 12px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-default);
+    }
+
+    .today-title {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .today-stats-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .stat-pill .count {
+      font-size: 13px;
+      font-weight: 800;
       padding: 2px 8px;
       border-radius: 3px;
     }
 
-    .badge-live {
-      background: rgba(20, 184, 166, 0.12);
-      border: 1px solid var(--teal);
-      color: var(--teal-hover);
-      padding: 2px 8px;
-      border-radius: 3px;
+    .stat-pill.high .count {
+      background: rgba(239, 68, 68, 0.12);
+      color: var(--critical);
+      border: 1px solid var(--critical);
     }
 
-    /* Custom Industrial Scrollbars */
+    .stat-pill.med .count {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--warning);
+      border: 1px solid var(--warning);
+    }
+
+    .stat-pill.low .count {
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--success);
+      border: 1px solid var(--success);
+    }
+
+    /* Custom Scrollbars */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
-
     ::-webkit-scrollbar-track {
       background: var(--bg-primary);
     }
-
     ::-webkit-scrollbar-thumb {
       background: var(--border-default);
       border-radius: 3px;
     }
-
     ::-webkit-scrollbar-thumb:hover {
       background: var(--primary);
+    }
+
+    /* ========================================================= */
+    /* SECTION 03: INCIDENT LOGGING & AUDIT TRAIL STYLES         */
+    /* ========================================================= */
+    .incidents-container {
+      padding: 18px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      height: 100%;
+    }
+
+    .kpi-deck {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .kpi-deck {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .kpi-card {
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--border-default);
+    }
+
+    .kpi-card.critical::before { background: var(--critical); }
+    .kpi-card.warning::before { background: var(--warning); }
+    .kpi-card.primary::before { background: var(--primary); }
+    .kpi-card.teal::before { background: var(--teal); }
+
+    .kpi-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: var(--text-muted);
+    }
+
+    .kpi-val {
+      font-size: 24px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--text-primary);
+    }
+
+    .kpi-icon {
+      font-size: 24px;
+      opacity: 0.85;
+    }
+
+    /* Toolbar */
+    .incident-toolbar {
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-left, .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .toolbar-select, .toolbar-input {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      padding: 6px 12px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      outline: none;
+    }
+
+    .toolbar-select:focus, .toolbar-input:focus {
+      border-color: var(--primary);
+    }
+
+    .toolbar-input {
+      min-width: 180px;
+    }
+
+    .btn-action-tool {
+      background: var(--surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action-tool:hover {
+      background: var(--surface-primary);
+      border-color: var(--primary);
+      color: var(--primary-hover);
+    }
+
+    .btn-action-tool.export {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+      color: var(--primary-hover);
+    }
+
+    .btn-action-tool.export:hover {
+      background: rgba(59, 130, 246, 0.28);
+    }
+
+    .btn-action-tool.clear {
+      color: var(--critical);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-action-tool.clear:hover {
+      background: rgba(239, 68, 68, 0.12);
+      border-color: var(--critical);
+    }
+
+    /* Incident Data Table */
+    .incident-table-wrap {
+      background: var(--surface-primary);
+      border: 1px solid var(--border-default);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .incident-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    .incident-table th {
+      background: var(--surface-elevated);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .incident-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      vertical-align: middle;
+    }
+
+    .incident-table tr:hover td {
+      background: rgba(22, 34, 53, 0.6);
+      color: var(--text-primary);
+    }
+
+    .incident-id-badge {
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 11px;
+      color: var(--primary-hover);
+      background: rgba(59, 130, 246, 0.12);
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      display: inline-block;
+    }
+
+    .btn-jump-frame {
+      background: var(--surface-elevated);
+      color: var(--teal);
+      border: 1px solid var(--border-default);
+      border-radius: 3px;
+      padding: 4px 10px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .btn-jump-frame:hover {
+      background: rgba(20, 184, 166, 0.15);
+      border-color: var(--teal);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* Live Hazard Alert Floating Overlay (inside canvas viewport - never displaces controls) */
+    .live-hazard-strip {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      right: 14px;
+      z-index: 25;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--critical);
+      border-radius: 4px;
+      padding: 7px 14px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: #FFFFFF;
+      font-weight: 700;
+      animation: pulseAlert 1.2s infinite alternate ease-in-out;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    @keyframes pulseAlert {
+      0% { background: rgba(239, 68, 68, 0.12); box-shadow: 0 0 4px rgba(239, 68, 68, 0.2); }
+      100% { background: rgba(239, 68, 68, 0.25); box-shadow: 0 0 14px rgba(239, 68, 68, 0.45); }
     }
   </style>
 </head>
 <body>
 
-  <div class="wire-container">
-    <!-- Header -->
+  <div class="wire-container" id="wireContainer">
+    <!-- Top Header -->
     <div class="wire-header">
       <div class="wire-header-title">
         <span class="tag">VigiAI</span>
         <span>WAREHOUSE AI SAFETY MONITOR</span>
       </div>
 
-      <div class="clip-selector-group">
-        <label for="videoSelect">FEED SOURCE:</label>
-        <select id="videoSelect">
-          <option value="real_drop">🔴 REAL: Rolling and dropping carton (Dock 09)</option>
-          <option value="real_drag">🟠 REAL: Rolling and dragging on wet floor (Dock 07/08)</option>
-          <option value="throw_seating">🔴 REAL: Throwing seating cartons, strap release (Bay 04)</option>
-          <option value="drag_cupboard">🟠 REAL: Dock level, dragging cupboard across floor</option>
-          <option value="kd_packets">🔴 REAL: KD packets dragged, heavy box compression</option>
-          <option value="throw_mattress">🟠 REAL: Throwing mattresses off trailer</option>
-          <option value="stepping_cartons">🔴 REAL: Stepping on cartons, improper stacking</option>
-          <option value="sim_drop">🔵 BENCHMARK: wh_clip_02 carton drop impact</option>
-        </select>
+      <div class="header-ops-status">
+        <span class="live-dot"></span>
+        <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">AI OPERATIONS ACTIVE</span>
       </div>
     </div>
 
-    <!-- LIVE VIDEO INGESTION & NEURAL TEST STUDIO -->
-    <div class="test-studio-panel">
-      <div class="test-studio-header">
-        <div class="studio-title">
+    <!-- Section Navigation Bar -->
+    <div class="section-nav-bar">
+      <div class="nav-tabs">
+        <button class="nav-tab active" id="tabLiveTester" onclick="switchSection('tester')">
           <span class="live-dot"></span>
-          <span>LIVE VIDEO INGESTION & NEURAL TEST STUDIO</span>
-        </div>
-        <span class="model-badge">AI Model: WarehouseRiskMLP (PyTorch v3 Dual-Head Neural Net)</span>
-      </div>
+          <span>LIVE VIDEO TEST STUDIO</span>
+          <span class="tab-pill">SECTION 01</span>
+        </button>
 
-      <div class="test-studio-body">
-        <div class="upload-zone" id="dropZone">
-          <input type="file" id="videoFileInput" accept="video/mp4,video/avi,video/quicktime" style="display:none;">
-          <button class="btn-browse" id="btnBrowseFile">📁 Upload Video File...</button>
-          <span class="file-name-text" id="fileNameText">Select local MP4/AVI or drag & drop</span>
-        </div>
+        <button class="nav-tab" id="tabSurveillance" onclick="switchSection('surveillance')">
+          <span>🏭</span>
+          <span>DOCK SURVEILLANCE & ARCHIVE</span>
+          <span class="tab-pill">SECTION 02</span>
+        </button>
 
-        <div class="sample-select-group">
-          <label for="sampleVideoSelect">OR TEST RAW FEED:</label>
-          <select id="sampleVideoSelect">
-            <option value="">-- Choose Raw Video from Server --</option>
-          </select>
-        </div>
-
-        <button class="btn-test-action" id="btnRunLiveTest">
-          ⚡ PUSH TO TEST (RUN AI PIPELINE)
+        <button class="nav-tab" id="tabIncidentLogs" onclick="switchSection('logs')">
+          <span class="live-dot" style="background:var(--critical); box-shadow:0 0 6px var(--critical);"></span>
+          <span>SAFETY INCIDENT LOGS (>50% RISK)</span>
+          <span class="tab-pill" id="tabLogsCount" style="background:rgba(239, 68, 68, 0.18); color:var(--critical); border-color:var(--critical);">0 EVENTS</span>
         </button>
       </div>
 
-      <!-- Pipeline Progress Stepper (Visible during test) -->
-      <div class="pipeline-progress" id="pipelineProgress" style="display:none;">
-        <div class="pipeline-step active" id="pStep1"><span class="step-num">1</span> Ingesting Stream (OpenCV)</div>
-        <div class="pipeline-step" id="pStep2"><span class="step-num">2</span> YOLOv8 Spatial Perception</div>
-        <div class="pipeline-step" id="pStep3"><span class="step-num">3</span> ByteTrack Multi-Stage Tracking</div>
-        <div class="pipeline-step" id="pStep4"><span class="step-num">4</span> Differential Kinematics (v, a, j)</div>
-        <div class="pipeline-step" id="pStep5"><span class="step-num">5</span> PyTorch Neural Net (WarehouseRiskMLP)</div>
-      </div>
-
-      <!-- Neural Outcome Banner (Visible after test) -->
-      <div class="neural-outcome-banner" id="neuralOutcomeBanner" style="display:none;">
-        <div class="outcome-metric">
-          <span class="o-label">TESTED CLIP</span>
-          <span class="o-val" id="outcomeClipName" style="color:var(--text-primary);">video.mp4</span>
-        </div>
-
-        <div class="outcome-metric">
-          <span class="o-label">NEURAL RISK SCORE</span>
-          <span class="o-val" id="outcomeRiskScore" style="color:var(--critical);">89.4% [CRITICAL]</span>
-        </div>
-
-        <div class="outcome-metric">
-          <span class="o-label">SEVERITY / PRIORITY</span>
-          <span class="o-val badge-critical" id="outcomeSeverity">CRITICAL / P1_IMMEDIATE</span>
-        </div>
-
-        <div class="outcome-metric" style="flex:1;">
-          <span class="o-label">TOP NEURAL ATTRIBUTION DRIVERS</span>
-          <div class="factors-list" id="outcomeFactorsList">
-            <span class="factor-badge">DROP_VELOCITY</span>
-          </div>
-        </div>
-
-        <div class="outcome-metric">
-          <span class="o-label">INFERENCE TIME</span>
-          <span class="o-val" id="outcomeInferenceTime" style="color:var(--teal);">5.8s (25.0 FPS)</span>
-        </div>
+      <div class="nav-actions">
+        <span class="pipeline-engine-pill">PyTorch WarehouseRiskMLP (v3 Dual-Head)</span>
+        <button class="btn-split-toggle" id="btnToggleSplit" onclick="toggleDualView()">
+          <span id="dualViewIcon">⊞</span>
+          <span id="dualViewText">DUAL VIEW</span>
+        </button>
       </div>
     </div>
 
+    <!-- Sections Container -->
+    <div class="sections-wrapper">
 
-    <!-- Upper Grid: Video & Current Status -->
-    <div class="upper-grid">
-      <!-- Left: Video [AI Overlays] -->
-      <div class="video-panel">
-        <div class="canvas-viewport">
-          <canvas id="videoCanvas" width="1280" height="720"></canvas>
+      <!-- ========================================================= -->
+      <!-- SECTION 01: DEDICATED LIVE VIDEO TESTER & PIPELINE STUDIO -->
+      <!-- ========================================================= -->
+      <div class="section-view" id="sectionLiveTester">
+        <!-- Section Header Banner -->
+        <div class="section-banner">
+          <div class="banner-title-block">
+            <div class="banner-title">
+              <span class="live-dot"></span>
+              <span>SECTION 01: LIVE INGESTION & PIPELINE TEST STUDIO</span>
+            </div>
+            <div class="banner-sub">
+              Upload local surveillance clips (.mp4, .avi, .mov) or execute full 5-stage computer vision & neural risk verification on raw server feeds.
+            </div>
+          </div>
+          <span class="status-chip standby" id="liveTestStatusBadge">STANDBY // AWAITING STREAM</span>
         </div>
 
-        <div class="controls-row">
-          <button id="btnPlayPause">Play</button>
-          <button id="btnStepBack">-1 F</button>
-          <button id="btnStepFwd">+1 F</button>
-          <input type="range" id="scrubber" class="scrubber" min="0" max="281" value="0" step="1">
-          <div class="frame-counter" id="frameCounter">F: 000 | 0.00s</div>
-        </div>
-
-        <!-- Trajectory Map -->
-        <div class="traj-box">
-          <div class="traj-title">
-            <span id="trajTitleLabel">KINETIC TRAJECTORY MAP (Primary Motion Path)</span>
-            <span id="trajTelemetry" style="color:var(--teal);">Displacement: 0.00 | v: 0.00 m/s</span>
-          </div>
-          <canvas id="trajCanvas" width="680" height="96"></canvas>
-        </div>
-      </div>
-
-      <!-- Right: Current Status -->
-      <div class="status-panel">
-        <div class="status-panel-header">CURRENT STATUS</div>
-
-        <div class="status-block">
-          <div class="status-row">
-            <span class="status-label">Risk Level</span>
-            <span class="status-val risk-high" id="statusRisk">HIGH</span>
-          </div>
-
-          <div class="status-row">
-            <span class="status-label">Event Behavior</span>
-            <span class="status-val" id="statusEvent" style="color:var(--critical);">DROPPING</span>
-          </div>
-
-          <div class="status-row">
-            <span class="status-label">Model Confidence</span>
-            <span class="status-val" id="statusConf">94%</span>
-          </div>
-
-          <div class="status-row">
-            <span class="status-label">Active Entities</span>
-            <span class="status-val" id="statusEntities" style="color:var(--teal);">2 Tracks</span>
-          </div>
-
-          <!-- Permanent Reusable Entity Pool for ZERO Flicker -->
-          <div class="entities-mini" id="entitiesList">
-            <div class="entity-tag" id="entRow0" style="display:none;">
-              <span class="ent-label">#1 PERSON</span>
-              <span class="ent-val">v=0.29 (94%)</span>
+        <!-- Ingestion & Control Deck -->
+        <div class="ingestion-deck">
+          <div class="deck-controls-row">
+            <!-- Drag & Drop Upload Zone -->
+            <div class="drop-zone" id="dropZone">
+              <input type="file" id="videoFileInput" accept="video/mp4,video/avi,video/quicktime" style="display:none;">
+              <button class="btn-browse" id="btnBrowseFile">📁 Upload Video File...</button>
+              <span class="file-name-text" id="fileNameText">Select MP4/AVI or drag & drop video here</span>
             </div>
-            <div class="entity-tag" id="entRow1" style="display:none;">
-              <span class="ent-label">#2 CARTON</span>
-              <span class="ent-val">v=0.85 (91%)</span>
+
+            <!-- Server Raw Video Picker -->
+            <div class="sample-select-group">
+              <label for="sampleVideoSelect">OR RAW FEED:</label>
+              <select id="sampleVideoSelect">
+                <option value="">-- Choose Raw Video from Server --</option>
+              </select>
             </div>
-            <div class="entity-tag" id="entRow2" style="display:none;">
-              <span class="ent-label">#3 TROLLEY</span>
-              <span class="ent-val">v=0.00 (88%)</span>
-            </div>
-            <div class="entity-tag" id="entRow3" style="display:none;">
-              <span class="ent-label">#4 PERSON</span>
-              <span class="ent-val">v=0.15 (90%)</span>
-            </div>
+
+            <!-- Action Button -->
+            <button class="btn-push-test" id="btnRunLiveTest">
+              ⚡ PUSH TO TEST (RUN AI PIPELINE)
+            </button>
+          </div>
+
+          <!-- 5-Stage Pipeline Progress Stepper -->
+          <div class="pipeline-progress" id="pipelineProgress" style="display:none;">
+            <div class="pipeline-step active" id="pStep1"><span class="step-num">1</span> OpenCV Ingestion</div>
+            <div class="pipeline-step" id="pStep2"><span class="step-num">2</span> YOLOv8 Perception</div>
+            <div class="pipeline-step" id="pStep3"><span class="step-num">3</span> ByteTrack Tracking</div>
+            <div class="pipeline-step" id="pStep4"><span class="step-num">4</span> Differential Kinematics</div>
+            <div class="pipeline-step" id="pStep5"><span class="step-num">5</span> PyTorch Risk Neural Net</div>
           </div>
         </div>
 
-        <div class="timestamp-large" id="statusClock">14:32:07</div>
-      </div>
-    </div>
+        <!-- Live Test Workspace: Video Player + Neural Safety Diagnostic Card -->
+        <div class="workspace-grid">
+          <!-- Left: Player Column -->
+          <div class="player-col">
+            <div class="canvas-viewport">
+              <canvas id="testVideoCanvas" width="1280" height="720"></canvas>
+              <!-- Live Real-Time Hazard Alert Floating Overlay (>50% Risk) inside viewport -->
+              <div id="testLiveHazardAlert" class="live-hazard-strip" style="display:none;">
+                <span style="font-size:14px;">⚠️</span>
+                <span id="testLiveHazardText">HIGH-RISK HAZARD DETECTED: Risk > 50% — Logged to Section 03 Audit Trail</span>
+              </div>
+            </div>
 
-    <!-- Incident Timeline -->
-    <div class="timeline-section">
-      <div class="timeline-header">INCIDENT TIMELINE</div>
-      <div class="timeline-list" id="timelineList">
-        <!-- Dynamically populated events once per clip switch -->
-      </div>
-    </div>
+            <div class="controls-row">
+              <button id="testBtnPlayPause">Play</button>
+              <button id="testBtnStepBack">-1 F</button>
+              <button id="testBtnStepFwd">+1 F</button>
+              <input type="range" id="testScrubber" class="scrubber" min="0" max="0" value="0" step="1">
+              <div class="frame-counter" id="testFrameCounter">F: 000 | 0.00s</div>
+            </div>
 
-    <!-- Today Summary Stats -->
-    <div class="today-section">
-      <div class="today-title">TODAY</div>
-      <div class="today-stats-row">
-        <div class="stat-pill high"><span>High Risk</span><span class="count" id="countHigh">4</span></div>
-        <div class="stat-pill med"><span>Medium Risk</span><span class="count" id="countMed">8</span></div>
-        <div class="stat-pill low"><span>Low</span><span class="count" id="countLow">17</span></div>
+            <!-- Kinetic Trajectory Box -->
+            <div class="traj-box">
+              <div class="traj-title">
+                <span id="testTrajTitleLabel">TEST FEED KINETIC TRAJECTORY (Awaiting Ingestion)</span>
+                <span id="testTrajTelemetry" style="color:var(--text-muted);">Displacement: -- | v: -- m/s</span>
+              </div>
+              <canvas id="testTrajCanvas" width="680" height="80"></canvas>
+            </div>
+          </div>
+
+          <!-- Right: Diagnostic Column -->
+          <div class="diagnostic-col">
+            <!-- Live Frame Neural Risk Card -->
+            <div class="diagnostic-card">
+              <div class="card-header">
+                <span style="display:flex; align-items:center; gap:6px;">
+                  <span class="live-dot"></span>
+                  <span>LIVE NEURAL RISK ASSESSMENT</span>
+                </span>
+                <span class="status-val badge-safe" id="testOutcomeSeverity">STANDBY</span>
+              </div>
+
+              <div class="risk-score-display" style="align-items:center;">
+                <div>
+                  <span class="status-label" style="display:block; font-size:10px; letter-spacing:0.5px; margin-bottom:2px;">FRAME RISK (LIVE)</span>
+                  <span class="risk-score-val" id="testOutcomeRiskScore" style="color:var(--text-muted);">--%</span>
+                </div>
+                <div style="text-align:right;">
+                  <span class="status-label" style="display:block; font-size:10px; letter-spacing:0.5px; margin-bottom:2px;">PEAK SESSION RISK</span>
+                  <span id="testPeakRiskBadge" style="font-family:var(--font-mono); font-size:13px; font-weight:800; color:var(--text-secondary); background:var(--surface-elevated); padding:3px 8px; border-radius:3px; border:1px solid var(--border-default);">--%</span>
+                </div>
+              </div>
+
+              <div class="risk-bar-track">
+                <div class="risk-bar-fill" id="testOutcomeRiskBar" style="width: 0%; background: var(--teal); transition: width 0.06s ease, background 0.12s ease;"></div>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Intervention Priority</span>
+                <span class="status-val" id="testOutcomePriority" style="color:var(--text-muted);">--</span>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Active Entities in Frame</span>
+                <span class="status-val" id="testFrameDetections" style="color:var(--teal); font-weight:700;">0 entities</span>
+              </div>
+            </div>
+
+            <!-- Explainable AI Attribution Drivers -->
+            <div class="diagnostic-card">
+              <div class="card-header">
+                <span>TOP NEURAL ATTRIBUTION DRIVERS</span>
+              </div>
+              <div class="factors-list" id="testOutcomeFactorsList">
+                <span class="factor-badge">AWAITING_INPUT</span>
+              </div>
+            </div>
+
+            <!-- Multi-Tier Model Benchmark Comparison -->
+            <div class="diagnostic-card">
+              <div class="card-header">
+                <span>MULTI-TIER RISK MODEL COMPARISON</span>
+              </div>
+              <table class="model-table">
+                <thead>
+                  <tr>
+                    <th>Model Tier</th>
+                    <th>Type</th>
+                    <th style="text-align:right;">Live Frame</th>
+                    <th style="text-align:right;">Peak Risk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>V0 Baseline</strong></td>
+                    <td style="color:var(--text-muted);">Instantaneous Speed</td>
+                    <td id="testModelV0Live" style="text-align:right; font-weight:700; color:var(--text-primary);">--%</td>
+                    <td id="testModelV0" style="text-align:right; color:var(--text-muted); font-size:11px;">--%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>V1 Context</strong></td>
+                    <td style="color:var(--text-muted);">Spatial & Floor Contact</td>
+                    <td id="testModelV1Live" style="text-align:right; font-weight:700; color:var(--text-primary);">--%</td>
+                    <td id="testModelV1" style="text-align:right; color:var(--text-muted); font-size:11px;">--%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>V2 Temporal</strong></td>
+                    <td style="color:var(--text-muted);">Kinematic Jerk Filter</td>
+                    <td id="testModelV2Live" style="text-align:right; font-weight:700; color:var(--text-primary);">--%</td>
+                    <td id="testModelV2" style="text-align:right; color:var(--text-muted); font-size:11px;">--%</td>
+                  </tr>
+                  <tr>
+                    <td><strong>V3 Learned</strong></td>
+                    <td style="color:var(--primary-hover);">PyTorch Neural MLP</td>
+                    <td id="testModelV3Live" style="text-align:right; font-weight:800; color:var(--teal);">--%</td>
+                    <td id="testModelV3" style="text-align:right; font-weight:700; color:var(--text-muted); font-size:11px;">--%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Performance & Telemetry -->
+            <div class="diagnostic-card">
+              <div class="card-header">
+                <span>PIPELINE EXECUTION METRICS</span>
+              </div>
+              <div class="status-row">
+                <span class="status-label">Ingestion Latency</span>
+                <span class="status-val" id="testOutcomeInferenceTime" style="color:var(--teal);">--</span>
+              </div>
+              <div class="status-row">
+                <span class="status-label">Processed Frames</span>
+                <span class="status-val" id="testTotalFrames">0 frames</span>
+              </div>
+              <div class="status-row">
+                <span class="status-label">Persistent Track IDs</span>
+                <span class="status-val" id="testUniqueTracks">0 tracks</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- ========================================================= -->
+      <!-- SECTION 02: DEDICATED WAREHOUSE DOCK SURVEILLANCE ARCHIVE -->
+      <!-- ========================================================= -->
+      <div class="section-view" id="sectionSurveillance" style="display:none;">
+        <!-- Section Header Banner with Feed Dropdown -->
+        <div class="section-banner">
+          <div class="banner-title-block">
+            <div class="banner-title">
+              <span>🏭</span>
+              <span>SECTION 02: WAREHOUSE DOCK SURVEILLANCE & ARCHIVE</span>
+            </div>
+            <div class="banner-sub">
+              Facility dock operations, historical material-handling logs, and incident telemetry archives.
+            </div>
+          </div>
+
+          <div class="sample-select-group">
+            <label for="videoSelect">FEED SOURCE:</label>
+            <select id="videoSelect">
+              <option value="" selected>-- Select Surveillance Dock Feed --</option>
+              <option value="real_drop">🔴 REAL: Rolling and dropping carton (Dock 09)</option>
+              <option value="real_drag">🟠 REAL: Rolling and dragging on wet floor (Dock 07/08)</option>
+              <option value="throw_seating">🔴 REAL: Throwing seating cartons, strap release (Bay 04)</option>
+              <option value="drag_cupboard">🟠 REAL: Dock level, dragging cupboard across floor</option>
+              <option value="kd_packets">🔴 REAL: KD packets dragged, heavy box compression</option>
+              <option value="throw_mattress">🟠 REAL: Throwing mattresses off trailer</option>
+              <option value="stepping_cartons">🔴 REAL: Stepping on cartons, improper stacking</option>
+              <option value="sim_drop">🔵 BENCHMARK: wh_clip_02 carton drop impact</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Surveillance Workspace -->
+        <div class="workspace-grid">
+          <!-- Left: Video Panel -->
+          <div class="player-col">
+            <div class="canvas-viewport">
+              <canvas id="videoCanvas" width="1280" height="720"></canvas>
+              <!-- Live Real-Time Hazard Alert Floating Overlay (>50% Risk) inside viewport -->
+              <div id="survLiveHazardAlert" class="live-hazard-strip" style="display:none;">
+                <span style="font-size:14px;">⚠️</span>
+                <span id="survLiveHazardText">HIGH-RISK HAZARD DETECTED: Risk > 50% — Logged to Section 03 Audit Trail</span>
+              </div>
+            </div>
+
+            <div class="controls-row">
+              <button id="btnPlayPause">Play</button>
+              <button id="btnStepBack">-1 F</button>
+              <button id="btnStepFwd">+1 F</button>
+              <input type="range" id="scrubber" class="scrubber" min="0" max="281" value="0" step="1">
+              <div class="frame-counter" id="frameCounter">F: 000 | 0.00s</div>
+            </div>
+
+            <!-- Trajectory Map -->
+            <div class="traj-box">
+              <div class="traj-title">
+                <span id="trajTitleLabel">KINETIC TRAJECTORY MAP</span>
+                <span id="trajTelemetry" style="color:var(--text-muted);">Displacement: -- | v: -- m/s</span>
+              </div>
+              <canvas id="trajCanvas" width="680" height="80"></canvas>
+            </div>
+          </div>
+
+          <!-- Right: Current Status Panel -->
+          <div class="diagnostic-col">
+            <div class="diagnostic-card">
+              <div class="card-header">
+                <span>DOCK TELEMETRY & STATUS</span>
+                <span id="statusClock" style="color:var(--teal); font-weight:700;">14:30:00</span>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Risk Level</span>
+                <span class="status-val badge-safe" id="statusRisk">LOW</span>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Event Behavior</span>
+                <span class="status-val" id="statusEvent">NORMAL</span>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Model Confidence</span>
+                <span class="status-val" id="statusConf">96%</span>
+              </div>
+
+              <div class="status-row">
+                <span class="status-label">Active Entities</span>
+                <span class="status-val" id="statusEntities">2 Tracks</span>
+              </div>
+
+              <div class="entities-mini" id="entitiesList">
+                <div class="entity-tag" id="entRow0" style="display:none;">
+                  <span class="ent-label">#1 PERSON</span>
+                  <span class="ent-val">v=0.00 (0%)</span>
+                </div>
+                <div class="entity-tag" id="entRow1" style="display:none;">
+                  <span class="ent-label">#2 CARTON</span>
+                  <span class="ent-val">v=0.00 (0%)</span>
+                </div>
+                <div class="entity-tag" id="entRow2" style="display:none;">
+                  <span class="ent-label">#3 TROLLEY</span>
+                  <span class="ent-val">v=0.00 (0%)</span>
+                </div>
+                <div class="entity-tag" id="entRow3" style="display:none;">
+                  <span class="ent-label">#4 PERSON</span>
+                  <span class="ent-val">v=0.00 (0%)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Incident Timeline -->
+            <div class="diagnostic-card" style="flex:1;">
+              <div class="card-header">
+                <span>INCIDENT TIMELINE</span>
+              </div>
+              <div class="timeline-list" id="timelineList">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Today Summary Stats -->
+        <div class="today-section">
+          <div class="today-title">TODAY'S FACILITY LOG</div>
+          <div class="today-stats-row">
+            <div class="stat-pill high"><span>High Risk</span><span class="count" id="countHigh">4</span></div>
+            <div class="stat-pill med"><span>Medium Risk</span><span class="count" id="countMed">8</span></div>
+            <div class="stat-pill low"><span>Low</span><span class="count" id="countLow">17</span></div>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- SECTION 03: DEDICATED SAFETY INCIDENT LOGS & AUDIT TRAIL  -->
+      <!-- ========================================================= -->
+      <div class="section-view" id="sectionIncidentLogs" style="display:none; flex-direction:column;">
+        <!-- Section Header Banner -->
+        <div class="section-banner">
+          <div class="banner-title-block">
+            <div class="banner-title">
+              <span class="live-dot" style="background:var(--critical); box-shadow:0 0 8px var(--critical);"></span>
+              <span>SECTION 03: SAFETY INCIDENT LOGS & AUDIT TRAIL (>50% NEURAL RISK)</span>
+            </div>
+            <div class="banner-sub">
+              Persistent event recorder for high-risk warehouse safety violations. Captures kinematics, multi-model predictions, involved entities, and attribution drivers for audit and compliance.
+            </div>
+          </div>
+          <span class="status-chip completed" id="incidentLogStatusChip">AUDIT TRAIL ACTIVE // 50% THRESHOLD</span>
+        </div>
+
+        <!-- Incidents Content Viewport -->
+        <div class="incidents-container">
+          <!-- KPI Summary Cards Deck -->
+          <div class="kpi-deck">
+            <div class="kpi-card critical">
+              <div class="kpi-info">
+                <span class="kpi-label">CRITICAL HAZARDS (≥70%)</span>
+                <span class="kpi-val" id="kpiCriticalCount" style="color:var(--critical);">0</span>
+              </div>
+              <div class="kpi-icon">🚨</div>
+            </div>
+
+            <div class="kpi-card warning">
+              <div class="kpi-info">
+                <span class="kpi-label">MODERATE HAZARDS (50–69%)</span>
+                <span class="kpi-val" id="kpiModerateCount" style="color:var(--warning);">0</span>
+              </div>
+              <div class="kpi-icon">⚠️</div>
+            </div>
+
+            <div class="kpi-card primary">
+              <div class="kpi-info">
+                <span class="kpi-label">TOTAL LOGGED INCIDENTS</span>
+                <span class="kpi-val" id="kpiTotalCount" style="color:var(--primary-hover);">0</span>
+              </div>
+              <div class="kpi-icon">📋</div>
+            </div>
+
+            <div class="kpi-card teal">
+              <div class="kpi-info">
+                <span class="kpi-label">CLIPS AUDITED</span>
+                <span class="kpi-val" id="kpiClipsCount" style="color:var(--teal);">0</span>
+              </div>
+              <div class="kpi-icon">🏭</div>
+            </div>
+          </div>
+
+          <!-- Filter & Action Toolbar -->
+          <div class="incident-toolbar">
+            <div class="toolbar-left">
+              <span class="toolbar-label">FILTER SEVERITY:</span>
+              <select id="filterSeverity" class="toolbar-select" onchange="applyIncidentFilters()">
+                <option value="ALL">All Severities (≥50%)</option>
+                <option value="CRITICAL">Critical Only (≥70%)</option>
+                <option value="MODERATE">Moderate Only (50–69%)</option>
+              </select>
+
+              <span class="toolbar-label">VIDEO FEED:</span>
+              <select id="filterClip" class="toolbar-select" onchange="applyIncidentFilters()">
+                <option value="ALL">All Video Feeds</option>
+              </select>
+
+              <input type="text" id="filterSearch" class="toolbar-input" placeholder="Search factor, entity, or ID..." oninput="applyIncidentFilters()">
+            </div>
+
+            <div class="toolbar-right">
+              <button class="btn-action-tool export" onclick="exportIncidentLogs()">
+                <span>📥</span>
+                <span>EXPORT AUDIT JSON</span>
+              </button>
+              <button class="btn-action-tool" onclick="loadIncidentLogs()">
+                <span>🔄</span>
+                <span>REFRESH</span>
+              </button>
+              <button class="btn-action-tool clear" onclick="clearIncidentLogs()">
+                <span>🗑️</span>
+                <span>CLEAR AUDIT</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Incident Data Table -->
+          <div class="incident-table-wrap">
+            <table class="incident-table">
+              <thead>
+                <tr>
+                  <th>Incident ID</th>
+                  <th>Source Video</th>
+                  <th>Time & Duration</th>
+                  <th>Peak Risk</th>
+                  <th>Severity & Priority</th>
+                  <th>Primary Attribution Drivers</th>
+                  <th>Entities Involved</th>
+                  <th>Status</th>
+                  <th style="text-align:center;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="incidentTableBody">
+                <tr>
+                  <td colspan="9" style="text-align:center; padding:30px; color:var(--text-muted);">
+                    Loading safety incident logs...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <script>
+    // Configuration registry for surveillance clips and dynamic live test clips
     const CONFIGS = {
       real_drop: {
         title: "Rolling and dropping carton (Dock 09)",
@@ -1154,520 +1864,702 @@
       }
     };
 
-    let activeKey = "real_drop";
-    let tracksData = null;
-    let currentFrame = 0;
-    let isPlaying = false;
-    let playInterval = null;
+    // =========================================================================
+    // MODULAR VIDEO STREAM PLAYER CONTROLLER
+    // =========================================================================
+    class VideoStreamPlayer {
+      constructor(opts) {
+        this.canvas = document.getElementById(opts.canvasId);
+        this.ctx = this.canvas.getContext('2d');
+        this.trajCanvas = document.getElementById(opts.trajCanvasId);
+        this.tCtx = this.trajCanvas.getContext('2d');
+        this.btnPlayPause = document.getElementById(opts.playPauseId);
+        this.btnStepBack = document.getElementById(opts.stepBackId);
+        this.btnStepFwd = document.getElementById(opts.stepFwdId);
+        this.scrubber = document.getElementById(opts.scrubberId);
+        this.frameCounter = document.getElementById(opts.frameCounterId);
+        this.trajTitleLabel = document.getElementById(opts.trajTitleLabelId);
+        this.trajTelemetry = document.getElementById(opts.trajTelemetryId);
+        this.isTestStudio = opts.isTestStudio || false;
 
-    // Cache pre-decoded Image objects in memory for ZERO flicker
-    let frameCache = [];
-    let denseTrajectory = []; // Full length continuous curve array: 1 point per frame
+        this.currentFrame = 0;
+        this.isPlaying = false;
+        this.playInterval = null;
+        this.frameCache = [];
+        this.denseTrajectory = [];
+        this.tracksData = null;
+        this.activeKey = null;
 
-    // DOM Elements
-    const videoCanvas = document.getElementById('videoCanvas');
-    const vCtx = videoCanvas.getContext('2d');
-    const trajCanvas = document.getElementById('trajCanvas');
-    const tCtx = trajCanvas.getContext('2d');
-
-    const videoSelect = document.getElementById('videoSelect');
-    const btnPlayPause = document.getElementById('btnPlayPause');
-    const btnStepBack = document.getElementById('btnStepBack');
-    const btnStepFwd = document.getElementById('btnStepFwd');
-    const scrubber = document.getElementById('scrubber');
-    const frameCounter = document.getElementById('frameCounter');
-
-    const statusRisk = document.getElementById('statusRisk');
-    const statusEvent = document.getElementById('statusEvent');
-    const statusConf = document.getElementById('statusConf');
-    const statusEntities = document.getElementById('statusEntities');
-    const statusClock = document.getElementById('statusClock');
-    const timelineList = document.getElementById('timelineList');
-    const countHigh = document.getElementById('countHigh');
-    const countMed = document.getElementById('countMed');
-    const countLow = document.getElementById('countLow');
-    const trajTitleLabel = document.getElementById('trajTitleLabel');
-    const trajTelemetry = document.getElementById('trajTelemetry');
-
-    // Pre-allocated entity rows for ZERO layout reflow or flicker
-    const entityRows = [
-      document.getElementById('entRow0'),
-      document.getElementById('entRow1'),
-      document.getElementById('entRow2'),
-      document.getElementById('entRow3')
-    ];
-
-    // State diffing store
-    const lastState = {
-      risk: null,
-      event: null,
-      conf: null,
-      clock: null,
-      trackCount: -1,
-      timelineIdx: -1
-    };
-
-    videoSelect.addEventListener('change', () => {
-      loadScenario(videoSelect.value);
-    });
-
-    function loadScenario(key) {
-      activeKey = key;
-      const sc = CONFIGS[key];
-      scrubber.max = sc.totalFrames - 1;
-      currentFrame = 0;
-      denseTrajectory = [];
-
-      togglePlay(false);
-
-      trajTitleLabel.textContent = `KINETIC TRAJECTORY MAP (${sc.label})`;
-
-      // Render timeline & stats (only runs on clip change)
-      renderTimelineAndStats(sc);
-
-      // Preload images into memory
-      preloadFrames(sc);
-
-      // Load tracks.json
-      fetch(sc.tracksFile)
-        .then(res => res.json())
-        .then(data => {
-          tracksData = data;
-          buildDenseTrajectory(sc);
-          drawTrajectoryMap(0);
-          renderCanvasFrame(0);
-          togglePlay(true);
-        })
-        .catch(err => {
-          console.error("Tracks load error:", err);
-          buildDenseTrajectory(sc);
-          drawTrajectoryMap(0);
-          renderCanvasFrame(0);
-        });
-    }
-
-    function preloadFrames(sc) {
-      frameCache = new Array(sc.totalFrames);
-      for (let i = 0; i < sc.totalFrames; i++) {
-        const img = new Image();
-        img.src = `${sc.framesDir}/frame_${String(i).padStart(3, '0')}.jpg`;
-        img.onload = () => {
-          if (i === currentFrame) renderCanvasFrame(currentFrame);
-        };
-        frameCache[i] = img;
+        this.bindEvents();
+        this.drawStandby();
       }
-    }
 
-    function renderTimelineAndStats(sc) {
-      countHigh.textContent = sc.stats.high;
-      countMed.textContent = sc.stats.med;
-      countLow.textContent = sc.stats.low;
-
-      timelineList.innerHTML = '';
-      sc.timeline.forEach((item, idx) => {
-        const row = document.createElement('div');
-        row.className = 'timeline-item';
-        row.innerHTML = `
-          <span class="t-time">${item.time}</span>
-          <span class="t-icon">${item.icon}</span>
-          <span class="t-label">${item.label}</span>
-        `;
-        row.addEventListener('click', () => {
-          togglePlay(false);
-          renderCanvasFrame(item.frame);
+      bindEvents() {
+        this.btnPlayPause.addEventListener('click', () => this.togglePlay());
+        this.btnStepBack.addEventListener('click', () => this.step(-1));
+        this.btnStepFwd.addEventListener('click', () => this.step(1));
+        this.scrubber.addEventListener('input', (e) => {
+          this.togglePlay(false);
+          this.renderFrame(parseInt(e.target.value, 10));
         });
-        timelineList.appendChild(row);
-      });
+      }
 
-      // Reset cached state
-      lastState.risk = null;
-      lastState.event = null;
-      lastState.conf = null;
-      lastState.clock = null;
-      lastState.trackCount = -1;
-      lastState.timelineIdx = -1;
-    }
+      drawStandby() {
+        this.togglePlay(false);
+        this.canvas.width = 1280;
+        this.canvas.height = 720;
+        const w = this.canvas.width;
+        const h = this.canvas.height;
+        this.ctx.clearRect(0, 0, w, h);
 
-    // Build dense, continuous 1-point-per-frame kinematic trajectory covering 100% video duration
-    function buildDenseTrajectory(sc) {
-      denseTrajectory = new Array(sc.totalFrames);
+        this.ctx.fillStyle = '#0B1220';
+        this.ctx.fillRect(0, 0, w, h);
 
-      let bestObs = null;
-      if (tracksData && tracksData.trajectories) {
-        let bestScore = -1;
-        for (const [tid, tr] of Object.entries(tracksData.trajectories)) {
-          const obs = tr.observations || [];
-          if (obs.length > 3) {
-            let minY = 1, maxY = 0;
-            obs.forEach(o => {
-              const y = o.center_y_norm !== undefined ? o.center_y_norm : 0.5;
-              if (y < minY) minY = y;
-              if (y > maxY) maxY = y;
+        // Technical Grid
+        this.ctx.strokeStyle = 'rgba(38, 54, 77, 0.45)';
+        this.ctx.lineWidth = 1;
+        for (let x = 0; x < w; x += 64) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(x, 0);
+          this.ctx.lineTo(x, h);
+          this.ctx.stroke();
+        }
+        for (let y = 0; y < h; y += 64) {
+          this.ctx.beginPath();
+          this.ctx.moveTo(0, y);
+          this.ctx.lineTo(w, y);
+          this.ctx.stroke();
+        }
+
+        // Center Box
+        const cx = w / 2;
+        const cy = h / 2;
+        const boxW = 540;
+        const boxH = 150;
+
+        this.ctx.fillStyle = 'rgba(17, 28, 45, 0.92)';
+        this.ctx.strokeStyle = '#26364D';
+        this.ctx.lineWidth = 1.5;
+        this.ctx.beginPath();
+        this.ctx.roundRect(cx - boxW / 2, cy - boxH / 2, boxW, boxH, 6);
+        this.ctx.fill();
+        this.ctx.stroke();
+
+        this.ctx.font = '700 15px "JetBrains Mono", monospace';
+        this.ctx.fillStyle = '#F1F5F9';
+        this.ctx.textAlign = 'center';
+        const titleText = this.isTestStudio ? 'STANDBY // AWAITING TEST VIDEO INGESTION' : 'STANDBY // NO SURVEILLANCE FEED SELECTED';
+        this.ctx.fillText(titleText, cx, cy + 10);
+
+        this.ctx.font = '500 12px "Inter", sans-serif';
+        this.ctx.fillStyle = '#94A3B8';
+        const subText = this.isTestStudio ? 'Upload a video file or select raw server feed above, then click "PUSH TO TEST"' : 'Select a warehouse dock surveillance feed from the dropdown above';
+        this.ctx.fillText(subText, cx, cy + 34);
+        this.ctx.textAlign = 'start';
+
+        // Standby Trajectory
+        const tw = this.trajCanvas.width;
+        const th = this.trajCanvas.height;
+        this.tCtx.clearRect(0, 0, tw, th);
+        this.tCtx.fillStyle = '#0E1726';
+        this.tCtx.fillRect(0, 0, tw, th);
+
+        this.tCtx.font = '11px "JetBrains Mono", monospace';
+        this.tCtx.fillStyle = '#64748B';
+        this.tCtx.textAlign = 'center';
+        this.tCtx.fillText('STANDBY // NO ACTIVE TRAJECTORY DATA', tw / 2, th / 2 + 4);
+        this.tCtx.textAlign = 'start';
+
+        if (this.trajTitleLabel) this.trajTitleLabel.textContent = this.isTestStudio ? "TEST FEED KINETIC TRAJECTORY (Awaiting Ingestion)" : "KINETIC TRAJECTORY MAP (Awaiting Feed)";
+        if (this.trajTelemetry) {
+          this.trajTelemetry.textContent = "Displacement: -- | v: -- m/s";
+          this.trajTelemetry.style.color = "var(--text-muted)";
+        }
+      }
+
+      loadScenario(key, dataOverride) {
+        if (!key || !CONFIGS[key]) {
+          this.drawStandby();
+          return;
+        }
+        this.activeKey = key;
+        const sc = CONFIGS[key];
+        this.currentFrame = 0;
+        this.scrubber.max = sc.totalFrames - 1;
+        this.scrubber.value = 0;
+        this.togglePlay(false);
+
+        if (this.trajTitleLabel) this.trajTitleLabel.textContent = `KINETIC TRAJECTORY (${sc.label})`;
+        if (this.trajTelemetry) this.trajTelemetry.style.color = 'var(--teal)';
+
+        // Preload images
+        this.frameCache = new Array(sc.totalFrames);
+        for (let i = 0; i < sc.totalFrames; i++) {
+          const img = new Image();
+          img.src = `${sc.framesDir}/frame_${String(i).padStart(3, '0')}.jpg`;
+          img.onload = () => {
+            if (i === this.currentFrame) this.renderFrame(this.currentFrame);
+          };
+          this.frameCache[i] = img;
+        }
+
+        // Handle tracks
+        if (dataOverride && (dataOverride.trajectories || dataOverride.frames)) {
+          this.tracksData = dataOverride;
+          this.buildDenseTrajectory(sc);
+          this.drawTrajectoryMap(0);
+          this.renderFrame(0);
+          this.updateDiagnostics(sc);
+          this.togglePlay(true);
+        } else {
+          fetch(sc.tracksFile)
+            .then(res => res.json())
+            .then(data => {
+              this.tracksData = data;
+              this.buildDenseTrajectory(sc);
+              this.drawTrajectoryMap(0);
+              this.renderFrame(0);
+              this.updateDiagnostics(sc);
+              this.togglePlay(true);
+            })
+            .catch(err => {
+              console.warn("Tracks fetch fallback:", err);
+              this.buildDenseTrajectory(sc);
+              this.drawTrajectoryMap(0);
+              this.renderFrame(0);
+              this.updateDiagnostics(sc);
             });
-            const span = maxY - minY;
-            const isCarton = (tr.class_name === 'carton' || tr.class_name === 'box') ? 2.5 : 1.0;
-            const score = (span * 2.0 + (obs.length / sc.totalFrames)) * isCarton;
-            if (score > bestScore) {
-              bestScore = score;
-              bestObs = obs;
+        }
+      }
+
+      buildDenseTrajectory(sc) {
+        this.denseTrajectory = new Array(sc.totalFrames);
+        let bestObs = null;
+        if (this.tracksData && this.tracksData.trajectories) {
+          let bestScore = -1;
+          for (const [tid, tr] of Object.entries(this.tracksData.trajectories)) {
+            const obs = tr.observations || [];
+            if (obs.length > 3) {
+              let minY = 1, maxY = 0;
+              obs.forEach(o => {
+                const y = o.center_y_norm !== undefined ? o.center_y_norm : 0.5;
+                if (y < minY) minY = y;
+                if (y > maxY) maxY = y;
+              });
+              const span = maxY - minY;
+              const isCarton = (tr.class_name === 'carton' || tr.class_name === 'box') ? 2.5 : 1.0;
+              const score = (span * 2.0 + (obs.length / sc.totalFrames)) * isCarton;
+              if (score > bestScore) {
+                bestScore = score;
+                bestObs = obs;
+              }
+            }
+          }
+        }
+
+        if (!bestObs || bestObs.length === 0) {
+          for (let f = 0; f < sc.totalFrames; f++) {
+            const ratio = f / (sc.totalFrames - 1);
+            const y = 0.30 + 0.48 / (1.0 + Math.exp(-10 * (ratio - 0.45)));
+            const v = Math.abs(Math.sin(ratio * Math.PI)) * 1.8;
+            this.denseTrajectory[f] = { frame: f, yNorm: y, speed: v };
+          }
+          return;
+        }
+
+        const obsMap = new Map();
+        bestObs.forEach(o => obsMap.set(o.frame_id, o));
+
+        let prevY = 0.45;
+        let prevSpeed = 0.0;
+        for (let f = 0; f < sc.totalFrames; f++) {
+          if (obsMap.has(f)) {
+            prevY = obsMap.get(f).center_y_norm ?? 0.45;
+            prevSpeed = obsMap.get(f).speed ?? 0.0;
+            break;
+          }
+        }
+
+        for (let f = 0; f < sc.totalFrames; f++) {
+          if (obsMap.has(f)) {
+            const o = obsMap.get(f);
+            prevY = o.center_y_norm !== undefined ? o.center_y_norm : prevY;
+            prevSpeed = o.speed !== undefined ? o.speed : prevSpeed;
+          }
+          this.denseTrajectory[f] = { frame: f, yNorm: prevY, speed: prevSpeed };
+        }
+      }
+
+      renderFrame(idx) {
+        if (!this.activeKey || !CONFIGS[this.activeKey]) return;
+        const sc = CONFIGS[this.activeKey];
+        if (idx < 0) idx = 0;
+        if (idx >= sc.totalFrames) idx = sc.totalFrames - 1;
+        this.currentFrame = idx;
+
+        this.scrubber.value = idx;
+        const curSec = (idx / sc.fps).toFixed(2);
+        this.frameCounter.textContent = `F: ${String(idx).padStart(3, '0')} | ${curSec}s`;
+
+        const img = this.frameCache[idx];
+        if (img && img.complete && img.naturalWidth > 0) {
+          if (this.canvas.width !== img.naturalWidth || this.canvas.height !== img.naturalHeight) {
+            this.canvas.width = img.naturalWidth;
+            this.canvas.height = img.naturalHeight;
+          }
+          this.ctx.drawImage(img, 0, 0);
+        }
+
+        this.drawTrajectoryMap(idx);
+        this.updateFrameTelemetry(idx, sc);
+      }
+
+      drawTrajectoryMap(currIdx) {
+        const w = this.trajCanvas.width;
+        const h = this.trajCanvas.height;
+        this.tCtx.clearRect(0, 0, w, h);
+
+        this.tCtx.fillStyle = '#0E1726';
+        this.tCtx.fillRect(0, 0, w, h);
+
+        // Reference Grid
+        this.tCtx.strokeStyle = '#1D2A3D';
+        this.tCtx.lineWidth = 1;
+        this.tCtx.setLineDash([3, 3]);
+        [0.25, 0.5, 0.75].forEach(frac => {
+          this.tCtx.beginPath();
+          this.tCtx.moveTo(0, h * frac);
+          this.tCtx.lineTo(w, h * frac);
+          this.tCtx.stroke();
+        });
+        this.tCtx.setLineDash([]);
+
+        if (!this.denseTrajectory || this.denseTrajectory.length === 0) return;
+
+        const total = this.denseTrajectory.length;
+        const padX = 14;
+        const drawW = w - padX * 2;
+        const padY = 10;
+        const drawH = h - padY * 2;
+
+        const getCoord = (idx) => {
+          const pt = this.denseTrajectory[idx];
+          const x = padX + (idx / (total - 1)) * drawW;
+          const y = padY + (pt ? pt.yNorm : 0.5) * drawH;
+          return { x, y, speed: pt ? pt.speed : 0 };
+        };
+
+        // Render continuous trail
+        this.tCtx.lineWidth = 2.2;
+        for (let i = 1; i < total; i++) {
+          const p0 = getCoord(i - 1);
+          const p1 = getCoord(i);
+          const spd = p1.speed;
+          let stroke = '#14B8A6';
+          if (spd > 1.4) stroke = '#EF4444';
+          else if (spd > 0.6) stroke = '#F59E0B';
+
+          this.tCtx.strokeStyle = stroke;
+          this.tCtx.beginPath();
+          this.tCtx.moveTo(p0.x, p0.y);
+          this.tCtx.lineTo(p1.x, p1.y);
+          this.tCtx.stroke();
+        }
+
+        // Current scrubber point
+        const curPt = getCoord(currIdx);
+        this.tCtx.fillStyle = '#3B82F6';
+        this.tCtx.beginPath();
+        this.tCtx.arc(curPt.x, curPt.y, 4.5, 0, Math.PI * 2);
+        this.tCtx.fill();
+
+        this.tCtx.strokeStyle = '#FFFFFF';
+        this.tCtx.lineWidth = 1.5;
+        this.tCtx.beginPath();
+        this.tCtx.arc(curPt.x, curPt.y, 7, 0, Math.PI * 2);
+        this.tCtx.stroke();
+
+        if (this.trajTelemetry) {
+          const speedVal = curPt.speed.toFixed(2);
+          const dispVal = (curPt.y / h * 1.8).toFixed(2);
+          this.trajTelemetry.textContent = `Displacement: ${dispVal}m | v: ${speedVal} m/s`;
+        }
+      }
+
+      updateFrameTelemetry(idx, sc) {
+        if (!this.tracksData || !this.tracksData.frames) return;
+        const frameInfo = this.tracksData.frames[idx] || {};
+
+        if (this.isTestStudio) {
+          // LIVE TEST STUDIO UPDATES (Frame-by-Frame Real-Time Fluctuation)
+          const curScore = frameInfo.neural_risk !== undefined ? frameInfo.neural_risk : 0.05;
+          const curPct = Math.round(curScore * 100);
+          const curSev = (frameInfo.neural_severity || (curPct >= 70 ? 'HIGH' : (curPct >= 40 ? 'MED' : 'LOW'))).toUpperCase();
+          const riskColor = curPct >= 70 ? 'var(--critical)' : (curPct >= 40 ? 'var(--warning)' : 'var(--success)');
+
+          const rScore = document.getElementById('testOutcomeRiskScore');
+          if (rScore) {
+            rScore.textContent = `${curPct}% [${curSev}]`;
+            rScore.style.color = riskColor;
+          }
+
+          const rBar = document.getElementById('testOutcomeRiskBar');
+          if (rBar) {
+            rBar.style.width = `${curPct}%`;
+            rBar.style.background = riskColor;
+          }
+
+          const sevBadge = document.getElementById('testOutcomeSeverity');
+          if (sevBadge) {
+            sevBadge.textContent = curSev;
+            sevBadge.className = 'status-val ' + (curPct >= 70 ? 'badge-critical' : (curPct >= 40 ? 'badge-warning' : 'badge-safe'));
+          }
+
+          const prio = document.getElementById('testOutcomePriority');
+          if (prio) {
+            if (curPct >= 70) {
+              prio.textContent = 'P1_IMMEDIATE';
+              prio.style.color = 'var(--critical)';
+            } else if (curPct >= 40) {
+              prio.textContent = 'P2_MONITOR';
+              prio.style.color = 'var(--warning)';
+            } else {
+              prio.textContent = 'P3_NOMINAL';
+              prio.style.color = 'var(--teal)';
+            }
+          }
+
+          const liveHazard = document.getElementById('testLiveHazardAlert');
+          const liveHazardText = document.getElementById('testLiveHazardText');
+          if (liveHazard && liveHazardText) {
+            if (curPct >= 50) {
+              liveHazard.style.display = 'flex';
+              liveHazardText.textContent = `⚠️ HIGH-RISK HAZARD DETECTED: ${curPct}% [${curSev}] at Frame ${idx} — Logged to Section 03 Audit Trail`;
+            } else {
+              liveHazard.style.display = 'none';
+            }
+          }
+
+          const tracks = frameInfo.tracks || [];
+          const detEl = document.getElementById('testFrameDetections');
+          if (detEl) {
+            detEl.textContent = `${tracks.length} active entit${tracks.length === 1 ? 'y' : 'ies'}`;
+          }
+
+          // Dynamic live model tiers for this exact frame
+          const m0L = document.getElementById('testModelV0Live');
+          const m1L = document.getElementById('testModelV1Live');
+          const m2L = document.getElementById('testModelV2Live');
+          const m3L = document.getElementById('testModelV3Live');
+          if (m0L) m0L.textContent = frameInfo.v0_risk !== undefined ? `${Math.round(frameInfo.v0_risk * 100)}%` : `${curPct}%`;
+          if (m1L) m1L.textContent = frameInfo.v1_risk !== undefined ? `${Math.round(frameInfo.v1_risk * 100)}%` : `${curPct}%`;
+          if (m2L) m2L.textContent = frameInfo.v2_risk !== undefined ? `${Math.round(frameInfo.v2_risk * 100)}%` : `${curPct}%`;
+          if (m3L) {
+            m3L.textContent = `${curPct}%`;
+            m3L.style.color = riskColor;
+          }
+
+          // Contributing factors update
+          const factorsList = document.getElementById('testOutcomeFactorsList');
+          if (factorsList) {
+            const ns = (this.tracksData && this.tracksData.neural_summary) || {};
+            const factors = frameInfo.factors || ns.top_contributing_factors || ['COMPLIANT_HANDLING'];
+            factorsList.innerHTML = '';
+            factors.forEach(f => {
+              const b = document.createElement('span');
+              b.className = 'factor-badge';
+              if (curPct >= 70) {
+                b.style.borderColor = 'var(--critical)';
+                b.style.color = 'var(--critical)';
+              } else if (curPct >= 40) {
+                b.style.borderColor = 'var(--warning)';
+                b.style.color = 'var(--warning)';
+              }
+              b.textContent = f;
+              factorsList.appendChild(b);
+            });
+          }
+        } else {
+          // Surveillance view updates
+          let rScore = frameInfo.neural_risk;
+          if (rScore === undefined) {
+            let maxSpd = 0;
+            (frameInfo.tracks || []).forEach(tr => {
+              if (tr.speed > maxSpd) maxSpd = tr.speed;
+            });
+            rScore = Math.min(0.95, Math.max(0.08, maxSpd / 2.2));
+          }
+          const statusRisk = document.getElementById('statusRisk');
+          const statusEvent = document.getElementById('statusEvent');
+          const statusConf = document.getElementById('statusConf');
+          const statusEntities = document.getElementById('statusEntities');
+          const statusClock = document.getElementById('statusClock');
+
+          if (statusRisk) {
+            const pct = Math.round(rScore * 100);
+            statusRisk.textContent = `${pct}% [${frameInfo.neural_severity || (pct >= 70 ? 'HIGH' : (pct >= 35 ? 'MED' : 'LOW'))}]`;
+            statusRisk.className = 'status-val ' + (pct >= 70 ? 'badge-critical' : (pct >= 35 ? 'badge-warning' : 'badge-safe'));
+          }
+
+          if (statusEvent) {
+            statusEvent.textContent = rScore >= 0.70 ? 'CRITICAL_HAZARD' : (rScore >= 0.35 ? 'ROUGH_HANDLING' : 'NORMAL');
+            statusEvent.style.color = rScore >= 0.70 ? 'var(--critical)' : (rScore >= 0.35 ? 'var(--warning)' : 'var(--success)');
+          }
+
+          if (statusConf) statusConf.textContent = `${Math.round(88 + rScore * 10)}%`;
+
+          const tracks = frameInfo.tracks || [];
+          if (statusEntities) statusEntities.textContent = `${tracks.length} Tracks`;
+
+          for (let i = 0; i < 4; i++) {
+            const row = document.getElementById(`entRow${i}`);
+            if (!row) continue;
+            if (i < tracks.length) {
+              const tr = tracks[i];
+              row.style.display = 'flex';
+              row.querySelector('.ent-label').textContent = `#${tr.track_id} ${(tr.class_name || 'ENTITY').toUpperCase()}`;
+              const spd = tr.speed !== undefined ? tr.speed.toFixed(2) : '0.00';
+              row.querySelector('.ent-val').textContent = `v=${spd} m/s`;
+            } else {
+              row.style.display = 'none';
+            }
+          }
+
+          if (statusClock) {
+            const sec = Math.floor(idx / sc.fps);
+            statusClock.textContent = `00:${String(Math.floor(sec / 60)).padStart(2, '0')}:${String(sec % 60).padStart(2, '0')}`;
+          }
+
+          const survHazard = document.getElementById('survLiveHazardAlert');
+          const survHazardText = document.getElementById('survLiveHazardText');
+          if (survHazard && survHazardText) {
+            const pctVal = Math.round(rScore * 100);
+            if (pctVal >= 50) {
+              survHazard.style.display = 'flex';
+              survHazardText.textContent = `⚠️ HIGH-RISK HAZARD DETECTED: ${pctVal}% at Frame ${idx} — Logged to Section 03 Audit Trail`;
+            } else {
+              survHazard.style.display = 'none';
             }
           }
         }
       }
 
-      // If no valid track observation, build mathematical descent model matching timeline
-      if (!bestObs || bestObs.length === 0) {
-        for (let f = 0; f < sc.totalFrames; f++) {
-          const ratio = f / (sc.totalFrames - 1);
-          // Sigmoidal drop descent
-          const y = 0.30 + 0.48 / (1.0 + Math.exp(-10 * (ratio - 0.45)));
-          const v = Math.abs(Math.sin(ratio * Math.PI)) * 1.8;
-          denseTrajectory[f] = { frame: f, yNorm: y, speed: v };
-        }
-        return;
-      }
+      updateDiagnostics(sc) {
+        if (this.isTestStudio) {
+          const ns = (this.tracksData && this.tracksData.neural_summary) || sc.neuralSummary || {};
+          const peakScore = ns.peak_risk_score || 0.05;
+          const peakPct = Math.round(peakScore * 100);
+          const peakSev = (ns.peak_severity || 'LOW').toUpperCase();
 
-      // Map observations to frame index
-      const obsMap = new Map();
-      bestObs.forEach(o => obsMap.set(o.frame_id, o));
+          const peakBadge = document.getElementById('testPeakRiskBadge');
+          if (peakBadge) {
+            peakBadge.textContent = `${peakPct}% [${peakSev}]`;
+            peakBadge.style.color = peakPct >= 70 ? 'var(--critical)' : (peakPct >= 40 ? 'var(--warning)' : 'var(--success)');
+          }
 
-      // Continuous interpolation across all frames
-      let prevY = 0.45;
-      let prevSpeed = 0.0;
-      for (let f = 0; f < sc.totalFrames; f++) {
-        if (obsMap.has(f)) {
-          prevY = obsMap.get(f).center_y_norm ?? 0.45;
-          prevSpeed = obsMap.get(f).speed ?? 0.0;
-          break;
-        }
-      }
+          const prio = document.getElementById('testOutcomePriority');
+          if (prio) {
+            prio.textContent = ns.intervention_priority || (peakPct >= 70 ? 'P1_IMMEDIATE' : 'P3_NOMINAL');
+          }
 
-      for (let f = 0; f < sc.totalFrames; f++) {
-        if (obsMap.has(f)) {
-          const o = obsMap.get(f);
-          prevY = o.center_y_norm !== undefined ? o.center_y_norm : prevY;
-          prevSpeed = o.speed !== undefined ? o.speed : prevSpeed;
-        }
-        denseTrajectory[f] = {
-          frame: f,
-          yNorm: prevY,
-          speed: prevSpeed
-        };
-      }
-    }
+          // Multi-model peak scores
+          const mc = ns.model_comparison || {};
+          const m0 = document.getElementById('testModelV0');
+          const m1 = document.getElementById('testModelV1');
+          const m2 = document.getElementById('testModelV2');
+          const m3 = document.getElementById('testModelV3');
+          if (m0) m0.textContent = mc.v0_baseline !== undefined ? `${Math.round(mc.v0_baseline * 100)}%` : `${Math.min(peakPct, 20)}%`;
+          if (m1) m1.textContent = mc.v1_context !== undefined ? `${Math.round(mc.v1_context * 100)}%` : `${Math.min(peakPct, 35)}%`;
+          if (m2) m2.textContent = mc.v2_temporal !== undefined ? `${Math.round(mc.v2_temporal * 100)}%` : `${Math.min(peakPct, 60)}%`;
+          if (m3) m3.textContent = `${peakPct}%`;
 
-    function renderCanvasFrame(idx) {
-      const sc = CONFIGS[activeKey];
-      currentFrame = Math.max(0, Math.min(sc.totalFrames - 1, idx));
-      scrubber.value = currentFrame;
+          // Metrics
+          const mTime = document.getElementById('testOutcomeInferenceTime');
+          const mFrames = document.getElementById('testTotalFrames');
+          const mTracks = document.getElementById('testUniqueTracks');
+          if (mTime) {
+            const dur = (this.tracksData && this.tracksData.metadata && this.tracksData.metadata.inference_duration_sec) || (sc.rawResult && sc.rawResult.inference_time_sec) || 5.8;
+            mTime.textContent = `${dur}s (${sc.fps} FPS)`;
+          }
+          if (mFrames) mFrames.textContent = `${sc.totalFrames} frames`;
+          if (mTracks) mTracks.textContent = `${(this.tracksData && this.tracksData.total_unique_tracks) || (sc.rawResult && sc.rawResult.total_unique_tracks) || 2} tracks`;
 
-      const timeSec = (currentFrame / sc.fps).toFixed(2);
-      frameCounter.textContent = `F: ${String(currentFrame).padStart(3, '0')} | ${timeSec}s`;
-
-      // Draw onto canvas
-      const img = frameCache[currentFrame];
-      if (img && img.complete && img.naturalWidth > 0) {
-        vCtx.clearRect(0, 0, videoCanvas.width, videoCanvas.height);
-        vCtx.drawImage(img, 0, 0, videoCanvas.width, videoCanvas.height);
-      } else {
-        const fallbackImg = new Image();
-        fallbackImg.src = `${sc.framesDir}/frame_${String(currentFrame).padStart(3, '0')}.jpg`;
-        fallbackImg.onload = () => {
-          vCtx.drawImage(fallbackImg, 0, 0, videoCanvas.width, videoCanvas.height);
-        };
-      }
-
-      // Update right-hand status telemetry with state diffing
-      updateStatusPanel(currentFrame, sc);
-
-      // Update trajectory map cursor & curve
-      drawTrajectoryMap(currentFrame);
-    }
-
-    // High performance status update — ZERO DOM destruction, ZERO flicker
-    function updateStatusPanel(frameIdx, sc) {
-      // Find matching timeline item
-      let activeTimeline = sc.timeline[0];
-      let activeIdx = 0;
-      for (let i = sc.timeline.length - 1; i >= 0; i--) {
-        if (frameIdx >= sc.timeline[i].frame) {
-          activeTimeline = sc.timeline[i];
-          activeIdx = i;
-          break;
-        }
-      }
-
-      // 1. Risk Level Diffing
-      if (lastState.risk !== activeTimeline.risk) {
-        statusRisk.textContent = activeTimeline.risk;
-        statusRisk.className = 'status-val ' + (
-          activeTimeline.risk === 'HIGH' ? 'risk-high' :
-          activeTimeline.risk === 'MEDIUM' ? 'risk-med' : 'risk-low'
-        );
-        lastState.risk = activeTimeline.risk;
-      }
-
-      // 2. Event Behavior Diffing
-      if (lastState.event !== activeTimeline.event) {
-        statusEvent.textContent = activeTimeline.event;
-        const ev = activeTimeline.event;
-        if (ev === 'NORMAL') {
-          statusEvent.style.color = 'var(--success)';
-        } else if (ev === 'DRAGGING' || ev === 'ROUGH_HANDLING' || ev === 'IMPROPER_STACKING') {
-          statusEvent.style.color = 'var(--warning)';
-        } else if (ev === 'DROPPING' || ev === 'THROWING' || ev === 'CRUSH_RISK' || ev === 'CRITICAL_HAZARD') {
-          statusEvent.style.color = 'var(--critical)';
+          // Immediately update frame telemetry for current frame
+          this.updateFrameTelemetry(this.currentFrame, sc);
         } else {
-          statusEvent.style.color = 'var(--text-primary)';
+          // Surveillance timeline & stats
+          const countHigh = document.getElementById('countHigh');
+          const countMed = document.getElementById('countMed');
+          const countLow = document.getElementById('countLow');
+          const timelineList = document.getElementById('timelineList');
+
+          if (countHigh && sc.stats) countHigh.textContent = sc.stats.high;
+          if (countMed && sc.stats) countMed.textContent = sc.stats.med;
+          if (countLow && sc.stats) countLow.textContent = sc.stats.low;
+
+          if (timelineList && sc.timeline) {
+            timelineList.innerHTML = '';
+            sc.timeline.forEach(item => {
+              const row = document.createElement('div');
+              row.className = 'timeline-item';
+              row.innerHTML = `
+                <span class="t-time">${item.time}</span>
+                <span class="t-icon">${item.icon}</span>
+                <span class="t-label">${item.label}</span>
+              `;
+              row.addEventListener('click', () => {
+                this.togglePlay(false);
+                this.renderFrame(item.frame);
+              });
+              timelineList.appendChild(row);
+            });
+          }
         }
-        lastState.event = activeTimeline.event;
       }
 
-      // 3. Confidence Diffing
-      if (lastState.conf !== activeTimeline.conf) {
-        statusConf.textContent = activeTimeline.conf;
-        lastState.conf = activeTimeline.conf;
-      }
+      togglePlay(forceState) {
+        const nextState = (forceState !== undefined) ? forceState : !this.isPlaying;
+        if (this.isPlaying === nextState) return;
 
-      // 4. Timestamp Calculation Diffing
-      const timeSecsTotal = Math.floor(frameIdx / sc.fps);
-      const baseParts = (sc.baseTime || "14:30:00").split(':').map(Number);
-      let sec = baseParts[2] + timeSecsTotal;
-      let min = baseParts[1] + Math.floor(sec / 60);
-      sec = sec % 60;
-      let hour = baseParts[0] + Math.floor(min / 60);
-      min = min % 60;
-      const clockStr = `${String(hour).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
-      if (lastState.clock !== clockStr) {
-        statusClock.textContent = clockStr;
-        lastState.clock = clockStr;
-      }
+        this.isPlaying = nextState;
+        this.btnPlayPause.textContent = this.isPlaying ? 'Pause' : 'Play';
 
-      // 5. Active Entities Pool Update (In-place text update, zero node destruction)
-      const trs = (tracksData && tracksData.frames && tracksData.frames[frameIdx] && tracksData.frames[frameIdx].tracks) || [];
-      if (lastState.trackCount !== trs.length) {
-        statusEntities.textContent = trs.length > 0 ? `${trs.length} Tracks` : "Tracking active";
-        statusEntities.style.color = 'var(--teal)';
-        lastState.trackCount = trs.length;
-      }
-
-      for (let i = 0; i < 4; i++) {
-        const row = entityRows[i];
-        if (i < trs.length) {
-          const t = trs[i];
-          const labelText = `#${t.track_id} ${t.class_name.toUpperCase()}`;
-          const valText = `v=${(t.speed || 0).toFixed(2)} (${Math.round((t.confidence || 0) * 100)}%)`;
-          
-          if (row.children[0].textContent !== labelText) row.children[0].textContent = labelText;
-          if (row.children[1].textContent !== valText) row.children[1].textContent = valText;
-          if (row.style.display !== 'flex') row.style.display = 'flex';
+        if (this.isPlaying) {
+          if (!this.activeKey || !CONFIGS[this.activeKey]) {
+            this.isPlaying = false;
+            this.btnPlayPause.textContent = 'Play';
+            return;
+          }
+          const fps = CONFIGS[this.activeKey].fps || 25;
+          const intervalMs = Math.max(25, Math.floor(1000 / fps));
+          this.playInterval = setInterval(() => {
+            let next = this.currentFrame + 1;
+            if (next >= CONFIGS[this.activeKey].totalFrames) next = 0;
+            this.renderFrame(next);
+          }, intervalMs);
         } else {
-          if (row.style.display !== 'none') row.style.display = 'none';
+          if (this.playInterval) clearInterval(this.playInterval);
+          this.playInterval = null;
         }
       }
 
-      // 6. Highlight active timeline row only on index change
-      if (lastState.timelineIdx !== activeIdx) {
-        const items = timelineList.children;
-        for (let i = 0; i < items.length; i++) {
-          if (i === activeIdx) items[i].classList.add('active');
-          else items[i].classList.remove('active');
-        }
-        lastState.timelineIdx = activeIdx;
+      step(delta) {
+        this.togglePlay(false);
+        this.renderFrame(this.currentFrame + delta);
       }
     }
 
-    function togglePlay(start) {
-      const sc = CONFIGS[activeKey];
-      if (start === true || (start === undefined && !isPlaying)) {
-        isPlaying = true;
-        btnPlayPause.textContent = 'Pause';
-        btnPlayPause.classList.add('active');
-        if (playInterval) clearInterval(playInterval);
-        playInterval = setInterval(() => {
-          let next = currentFrame + 1;
-          if (next >= sc.totalFrames) next = 0;
-          renderCanvasFrame(next);
-        }, 1000 / sc.fps);
+    // Initialize both player instances
+    const testPlayer = new VideoStreamPlayer({
+      canvasId: 'testVideoCanvas',
+      trajCanvasId: 'testTrajCanvas',
+      playPauseId: 'testBtnPlayPause',
+      stepBackId: 'testBtnStepBack',
+      stepFwdId: 'testBtnStepFwd',
+      scrubberId: 'testScrubber',
+      frameCounterId: 'testFrameCounter',
+      trajTitleLabelId: 'testTrajTitleLabel',
+      trajTelemetryId: 'testTrajTelemetry',
+      isTestStudio: true
+    });
+
+    const survPlayer = new VideoStreamPlayer({
+      canvasId: 'videoCanvas',
+      trajCanvasId: 'trajCanvas',
+      playPauseId: 'btnPlayPause',
+      stepBackId: 'btnStepBack',
+      stepFwdId: 'btnStepFwd',
+      scrubberId: 'scrubber',
+      frameCounterId: 'frameCounter',
+      trajTitleLabelId: 'trajTitleLabel',
+      trajTelemetryId: 'trajTelemetry',
+      isTestStudio: false
+    });
+
+    // =========================================================================
+    // SECTION NAVIGATION & DUAL VIEW CONTROLLER
+    // =========================================================================
+    let currentSection = 'tester';
+    let isDualMode = false;
+
+    function switchSection(sec) {
+      currentSection = sec;
+      if (isDualMode) {
+        toggleDualView(false);
+      }
+      updateSectionVisibility();
+    }
+
+    function toggleDualView(force) {
+      isDualMode = (force !== undefined) ? force : !isDualMode;
+      const container = document.getElementById('wireContainer');
+      const btn = document.getElementById('btnToggleSplit');
+      const secTester = document.getElementById('sectionLiveTester');
+      const secSurv = document.getElementById('sectionSurveillance');
+      const secLogs = document.getElementById('sectionIncidentLogs');
+
+      if (isDualMode) {
+        currentSection = 'tester';
+        container.classList.add('dual-mode');
+        btn.classList.add('active');
+        document.getElementById('dualViewText').textContent = 'SINGLE VIEW';
+        secTester.style.display = 'flex';
+        secSurv.style.display = 'flex';
+        if (secLogs) secLogs.style.display = 'none';
       } else {
-        isPlaying = false;
-        btnPlayPause.textContent = 'Play';
-        btnPlayPause.classList.remove('active');
-        if (playInterval) clearInterval(playInterval);
+        container.classList.remove('dual-mode');
+        btn.classList.remove('active');
+        document.getElementById('dualViewText').textContent = 'DUAL VIEW';
+        updateSectionVisibility();
       }
     }
 
-    btnPlayPause.addEventListener('click', () => togglePlay());
+    function updateSectionVisibility() {
+      const tabTester = document.getElementById('tabLiveTester');
+      const tabSurv = document.getElementById('tabSurveillance');
+      const tabLogs = document.getElementById('tabIncidentLogs');
+      const secTester = document.getElementById('sectionLiveTester');
+      const secSurv = document.getElementById('sectionSurveillance');
+      const secLogs = document.getElementById('sectionIncidentLogs');
 
-    scrubber.addEventListener('input', () => {
-      togglePlay(false);
-      renderCanvasFrame(parseInt(scrubber.value));
-    });
+      if (tabTester) tabTester.classList.remove('active');
+      if (tabSurv) tabSurv.classList.remove('active');
+      if (tabLogs) tabLogs.classList.remove('active');
 
-    btnStepBack.addEventListener('click', () => {
-      togglePlay(false);
-      renderCanvasFrame(currentFrame - 1);
-    });
-
-    btnStepFwd.addEventListener('click', () => {
-      togglePlay(false);
-      renderCanvasFrame(currentFrame + 1);
-    });
-
-    // 100% Robust, Full-Scale Kinetic Trajectory Map with Dynamic Normalization
-    function drawTrajectoryMap(curFrame = 0) {
-      const w = trajCanvas.width;
-      const h = trajCanvas.height;
-      tCtx.clearRect(0, 0, w, h);
-      const sc = CONFIGS[activeKey];
-
-      if (!denseTrajectory || denseTrajectory.length === 0) return;
-
-      // Find dynamic range for prominent vertical descent
-      let minY = 1.0, maxY = 0.0;
-      denseTrajectory.forEach(pt => {
-        if (pt.yNorm < minY) minY = pt.yNorm;
-        if (pt.yNorm > maxY) maxY = pt.yNorm;
-      });
-      // Ensure min dynamic height buffer
-      if (maxY - minY < 0.20) {
-        minY = Math.max(0.0, minY - 0.12);
-        maxY = Math.min(1.0, maxY + 0.12);
+      if (currentSection === 'tester') {
+        if (tabTester) tabTester.classList.add('active');
+        secTester.style.display = 'flex';
+        secSurv.style.display = 'none';
+        if (secLogs) secLogs.style.display = 'none';
+      } else if (currentSection === 'surveillance') {
+        if (tabSurv) tabSurv.classList.add('active');
+        secTester.style.display = 'none';
+        secSurv.style.display = 'flex';
+        if (secLogs) secLogs.style.display = 'none';
+      } else if (currentSection === 'logs') {
+        if (tabLogs) tabLogs.classList.add('active');
+        secTester.style.display = 'none';
+        secSurv.style.display = 'none';
+        if (secLogs) {
+          secLogs.style.display = 'flex';
+          loadIncidentLogs();
+        }
       }
-
-      const padX = 24;
-      const padTop = 16;
-      const padBottom = 20;
-      const usableH = h - padTop - padBottom;
-      const usableW = w - padX * 2;
-
-      function toScreenX(f) {
-        return padX + (f / (sc.totalFrames - 1)) * usableW;
-      }
-      function toScreenY(yNorm) {
-        const ratio = (yNorm - minY) / Math.max(0.01, (maxY - minY));
-        return padTop + ratio * usableH;
-      }
-
-      // Draw Grid Lines & Level Badges
-      tCtx.strokeStyle = '#1D2A3D';
-      tCtx.lineWidth = 1;
-      tCtx.setLineDash([4, 4]);
-
-      // Top Stage Reference
-      tCtx.beginPath();
-      tCtx.moveTo(padX, padTop);
-      tCtx.lineTo(w - padX, padTop);
-      tCtx.stroke();
-
-      // Mid Descent Reference
-      tCtx.beginPath();
-      tCtx.moveTo(padX, padTop + usableH * 0.5);
-      tCtx.lineTo(w - padX, padTop + usableH * 0.5);
-      tCtx.stroke();
-
-      // Floor / Impact Level
-      tCtx.beginPath();
-      tCtx.moveTo(padX, padTop + usableH);
-      tCtx.lineTo(w - padX, padTop + usableH);
-      tCtx.stroke();
-      tCtx.setLineDash([]); // Reset dash
-
-      // Level text markers
-      tCtx.font = '9px "JetBrains Mono", monospace';
-      tCtx.fillStyle = '#64748B';
-      tCtx.fillText('CARRY / STAGING', padX, padTop - 4);
-      tCtx.fillText('FLOOR / IMPACT PLANE', padX, padTop + usableH + 12);
-
-      // Gradient Fill Under Curve
-      const fillGrad = tCtx.createLinearGradient(0, padTop, 0, h);
-      fillGrad.addColorStop(0, 'rgba(59, 130, 246, 0.15)');
-      fillGrad.addColorStop(0.6, 'rgba(245, 158, 11, 0.05)');
-      fillGrad.addColorStop(1, 'rgba(14, 23, 38, 0)');
-
-      tCtx.beginPath();
-      tCtx.moveTo(toScreenX(0), padTop + usableH);
-      for (let f = 0; f < sc.totalFrames; f++) {
-        tCtx.lineTo(toScreenX(f), toScreenY(denseTrajectory[f].yNorm));
-      }
-      tCtx.lineTo(toScreenX(sc.totalFrames - 1), padTop + usableH);
-      tCtx.closePath();
-      tCtx.fillStyle = fillGrad;
-      tCtx.fill();
-
-      // Trajectory Line with Risk Gradient
-      const lineGrad = tCtx.createLinearGradient(padX, 0, w - padX, 0);
-      lineGrad.addColorStop(0, '#3B82F6');     // Primary blue start
-      lineGrad.addColorStop(0.45, '#F59E0B');  // Amber mid-motion
-      lineGrad.addColorStop(1, '#EF4444');     // Red impact / descent
-
-      tCtx.strokeStyle = lineGrad;
-      tCtx.lineWidth = 2.4;
-      tCtx.shadowBlur = 0;
-      tCtx.beginPath();
-
-      for (let f = 0; f < sc.totalFrames; f++) {
-        const sx = toScreenX(f);
-        const sy = toScreenY(denseTrajectory[f].yNorm);
-        if (f === 0) tCtx.moveTo(sx, sy);
-        else tCtx.lineTo(sx, sy);
-      }
-      tCtx.stroke();
-
-      // Start Marker (Blue)
-      const startX = toScreenX(0);
-      const startY = toScreenY(denseTrajectory[0].yNorm);
-      tCtx.fillStyle = '#3B82F6';
-      tCtx.beginPath();
-      tCtx.arc(startX, startY, 4.5, 0, Math.PI * 2);
-      tCtx.fill();
-
-      // Impact Marker (Red)
-      const endX = toScreenX(sc.totalFrames - 1);
-      const endY = toScreenY(denseTrajectory[sc.totalFrames - 1].yNorm);
-      tCtx.fillStyle = '#EF4444';
-      tCtx.beginPath();
-      tCtx.arc(endX, endY, 5, 0, Math.PI * 2);
-      tCtx.fill();
-      tCtx.strokeStyle = '#F1F5F9';
-      tCtx.lineWidth = 1.2;
-      tCtx.stroke();
-
-      // Active Playhead Cursor Line & Dot (Synced with currentFrame)
-      const curData = denseTrajectory[curFrame] || denseTrajectory[0];
-      const curX = toScreenX(curFrame);
-      const curY = toScreenY(curData.yNorm);
-
-      // Vertical playhead scanline
-      tCtx.strokeStyle = 'rgba(59, 130, 246, 0.45)';
-      tCtx.lineWidth = 1.5;
-      tCtx.setLineDash([3, 3]);
-      tCtx.beginPath();
-      tCtx.moveTo(curX, padTop - 6);
-      tCtx.lineTo(curX, padTop + usableH + 6);
-      tCtx.stroke();
-      tCtx.setLineDash([]);
-
-      // Radar dot
-      tCtx.strokeStyle = '#F1F5F9';
-      tCtx.lineWidth = 2.0;
-      tCtx.beginPath();
-      tCtx.arc(curX, curY, 7, 0, Math.PI * 2);
-      tCtx.stroke();
-
-      tCtx.fillStyle = '#3B82F6';
-      tCtx.beginPath();
-      tCtx.arc(curX, curY, 4, 0, Math.PI * 2);
-      tCtx.fill();
-
-      // Update live telemetry readout
-      trajTelemetry.textContent = `Y: ${(curData.yNorm).toFixed(2)} | v: ${(curData.speed || 0).toFixed(2)} m/s`;
     }
 
-    // Initialize with Real Warehouse CCTV clip
-    loadScenario("real_drop");
+    // Connect Surveillance Feed Selector
+    const videoSelect = document.getElementById('videoSelect');
+    videoSelect.addEventListener('change', () => {
+      if (videoSelect.value) {
+        survPlayer.loadScenario(videoSelect.value);
+      } else {
+        survPlayer.drawStandby();
+      }
+    });
 
-    // ==================== LIVE VIDEO TEST STUDIO LOGIC ====================
+    // =========================================================================
+    // LIVE VIDEO TEST INGESTION & PIPELINE EXECUTION HANDLERS
+    // =========================================================================
     const dropZone = document.getElementById('dropZone');
     const videoFileInput = document.getElementById('videoFileInput');
     const btnBrowseFile = document.getElementById('btnBrowseFile');
@@ -1675,17 +2567,11 @@
     const sampleVideoSelect = document.getElementById('sampleVideoSelect');
     const btnRunLiveTest = document.getElementById('btnRunLiveTest');
     const pipelineProgress = document.getElementById('pipelineProgress');
-    const neuralOutcomeBanner = document.getElementById('neuralOutcomeBanner');
-
-    const outcomeClipName = document.getElementById('outcomeClipName');
-    const outcomeRiskScore = document.getElementById('outcomeRiskScore');
-    const outcomeSeverity = document.getElementById('outcomeSeverity');
-    const outcomeFactorsList = document.getElementById('outcomeFactorsList');
-    const outcomeInferenceTime = document.getElementById('outcomeInferenceTime');
+    const liveTestStatusBadge = document.getElementById('liveTestStatusBadge');
 
     let selectedUploadFile = null;
 
-    // Load available raw videos from backend API
+    // Fetch server raw videos
     fetch('/api/warehouse/raw_videos')
       .then(res => res.json())
       .then(data => {
@@ -1700,7 +2586,6 @@
       })
       .catch(err => console.warn("Could not fetch raw videos:", err));
 
-    // File selection
     btnBrowseFile.addEventListener('click', (e) => {
       e.stopPropagation();
       videoFileInput.click();
@@ -1716,7 +2601,6 @@
       }
     });
 
-    // Drag & Drop
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
       dropZone.classList.add('dragover');
@@ -1749,7 +2633,6 @@
       }
     });
 
-    // Step Animation Timer
     let stepTimer = null;
     function animatePipelineSteps() {
       const steps = [
@@ -1769,11 +2652,12 @@
           steps[currentStep].classList.add('completed');
           currentStep++;
           steps[currentStep].classList.add('active');
+          liveTestStatusBadge.textContent = `EXECUTING AI PIPELINE (STAGE ${currentStep+1}/5)`;
         }
-      }, 1100);
+      }, 1200);
     }
 
-    // Push to Test Action
+    // PUSH TO TEST ACTION TRIGGER
     btnRunLiveTest.addEventListener('click', () => {
       if (!selectedUploadFile && !sampleVideoSelect.value) {
         alert("Please select a local video file or choose a raw video from the dropdown first!");
@@ -1792,9 +2676,10 @@
 
       // UI state
       btnRunLiveTest.disabled = true;
-      btnRunLiveTest.textContent = "⏳ RUNNING NEURAL PIPELINE...";
-      pipelineProgress.style.display = 'flex';
-      neuralOutcomeBanner.style.display = 'none';
+      btnRunLiveTest.textContent = "⏳ EXECUTING PIPELINE...";
+      pipelineProgress.style.display = 'grid';
+      liveTestStatusBadge.textContent = "EXECUTING AI PIPELINE (STAGE 1/5)";
+      liveTestStatusBadge.className = "status-chip running";
       animatePipelineSteps();
 
       fetch('/api/warehouse/test_video', {
@@ -1802,44 +2687,21 @@
         body: formData
       })
       .then(res => {
-        if (!res.ok) throw new Error(`Server returned ${res.status}`);
+        if (!res.ok) throw new Error(`Server returned HTTP ${res.status}`);
         return res.json();
       })
       .then(data => {
         clearInterval(stepTimer);
-        const steps = document.querySelectorAll('.pipeline-step');
-        steps.forEach(s => { s.className = 'pipeline-step completed'; });
-
-        // Update Neural Outcome Banner
-        const ns = data.neural_summary || {};
-        outcomeClipName.textContent = clipLabel;
-        const riskPct = Math.round((ns.peak_risk_score || 0) * 100);
-        outcomeRiskScore.textContent = `${riskPct}% [${ns.peak_severity || 'LOW'}]`;
-        outcomeRiskScore.style.color = (riskPct >= 70) ? 'var(--critical)' : ((riskPct >= 40) ? 'var(--warning)' : 'var(--success)');
-        const sev = (ns.peak_severity || 'LOW').toUpperCase();
-        outcomeSeverity.textContent = `${sev} / ${ns.intervention_priority || 'P3_INFORMATIONAL'}`;
-        outcomeSeverity.className = 'o-val ' + (
-          (sev === 'CRITICAL' || sev === 'HIGH') ? 'badge-critical' :
-          (sev === 'MEDIUM' ? 'badge-warning' : 'badge-safe')
-        );
-        outcomeInferenceTime.textContent = `${data.inference_time_sec}s (${data.fps} FPS)`;
-
-        // Factors
-        outcomeFactorsList.innerHTML = '';
-        (ns.top_contributing_factors || ['NORMAL_COMPLIANT_HANDLING']).slice(0, 4).forEach(f => {
-          const bd = document.createElement('span');
-          bd.className = 'factor-badge';
-          bd.textContent = f;
-          outcomeFactorsList.appendChild(bd);
-        });
-
-        neuralOutcomeBanner.style.display = 'flex';
-        pipelineProgress.style.display = 'none';
+        document.querySelectorAll('.pipeline-step').forEach(s => s.className = 'pipeline-step completed');
+        liveTestStatusBadge.textContent = "PIPELINE VERIFIED & COMPLETE";
+        liveTestStatusBadge.className = "status-chip completed";
         btnRunLiveTest.disabled = false;
         btnRunLiveTest.textContent = "⚡ PUSH TO TEST (RUN AI PIPELINE)";
 
-        // Register new scenario in CONFIGS
         const scenarioKey = "live_" + String(Date.now()).slice(-4);
+        const ns = data.neural_summary || {};
+        const riskPct = Math.round((ns.peak_risk_score || 0) * 100);
+
         CONFIGS[scenarioKey] = {
           title: `LIVE TEST: ${clipLabel}`,
           label: `Live Tested Motion & Descent Path`,
@@ -1849,22 +2711,29 @@
           fps: data.fps,
           baseTime: "00:00:00",
           timeline: data.timeline,
-          stats: data.stats
+          stats: data.stats,
+          neuralSummary: ns,
+          rawResult: data
         };
 
-        // Add to Feed Selector dropdown & select
+        // Also add to Surveillance dropdown for multi-view archive inspect
         const newOpt = document.createElement('option');
         newOpt.value = scenarioKey;
-        newOpt.textContent = `⚡ LIVE TEST: ${clipLabel} (${riskPct}% Risk [${ns.peak_severity}])`;
+        newOpt.textContent = `⚡ LIVE TEST: ${clipLabel} (${riskPct}% [${ns.peak_severity}])`;
         videoSelect.insertBefore(newOpt, videoSelect.firstChild);
-        videoSelect.value = scenarioKey;
 
-        // Auto-load and play
-        loadScenario(scenarioKey);
+        // Load into Section 01 testPlayer and play
+        testPlayer.loadScenario(scenarioKey, data);
+        testPlayer.togglePlay(true);
+
+        // Refresh incident logs so newly extracted >50% events appear immediately
+        loadIncidentLogs();
       })
       .catch(err => {
         clearInterval(stepTimer);
         pipelineProgress.style.display = 'none';
+        liveTestStatusBadge.textContent = "PIPELINE ERROR";
+        liveTestStatusBadge.className = "status-chip error";
         btnRunLiveTest.disabled = false;
         btnRunLiveTest.textContent = "⚡ PUSH TO TEST (RUN AI PIPELINE)";
         alert("Live test pipeline error: " + err.message);
@@ -1872,6 +2741,279 @@
       });
     });
 
+    // =========================================================================
+    // SECTION 03: SAFETY INCIDENT LOGS & AUDIT TRAIL CONTROLLER (>50% RISK)
+    // =========================================================================
+    let cachedIncidents = [];
+
+    function loadIncidentLogs() {
+      fetch('/api/warehouse/incidents')
+        .then(res => res.json())
+        .then(data => {
+          cachedIncidents = data.incidents || [];
+          updateIncidentBadgesAndKPIs();
+          populateClipFilterDropdown(cachedIncidents);
+          applyIncidentFilters();
+        })
+        .catch(err => {
+          console.warn("Could not load incident logs:", err);
+          const tbody = document.getElementById('incidentTableBody');
+          if (tbody) {
+            tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:30px; color:var(--critical);">Failed loading incident logs: ${err.message}</td></tr>`;
+          }
+        });
+    }
+
+    function updateIncidentBadgesAndKPIs() {
+      const all = cachedIncidents;
+      const critical = all.filter(i => (i.peak_risk_score || 0) >= 0.70).length;
+      const moderate = all.filter(i => (i.peak_risk_score || 0) >= 0.50 && (i.peak_risk_score || 0) < 0.70).length;
+      const uniqueClips = new Set(all.map(i => i.clip_id)).size;
+
+      // Nav Tab Badge
+      const tabBadge = document.getElementById('tabLogsCount');
+      if (tabBadge) tabBadge.textContent = `${all.length} EVENTS`;
+
+      // KPI Summary Cards
+      const elCrit = document.getElementById('kpiCriticalCount');
+      const elMod = document.getElementById('kpiModerateCount');
+      const elTot = document.getElementById('kpiTotalCount');
+      const elClips = document.getElementById('kpiClipsCount');
+
+      if (elCrit) elCrit.textContent = critical;
+      if (elMod) elMod.textContent = moderate;
+      if (elTot) elTot.textContent = all.length;
+      if (elClips) elClips.textContent = uniqueClips;
+    }
+
+    function populateClipFilterDropdown(incidents) {
+      const select = document.getElementById('filterClip');
+      if (!select) return;
+      const curVal = select.value;
+      const uniqueClips = Array.from(new Set(incidents.map(i => i.clip_id || i.source_video))).filter(Boolean);
+
+      select.innerHTML = '<option value="ALL">All Video Feeds</option>';
+      uniqueClips.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        select.appendChild(opt);
+      });
+      if (curVal && Array.from(select.options).some(o => o.value === curVal)) {
+        select.value = curVal;
+      }
+    }
+
+    function applyIncidentFilters() {
+      const sevFilter = (document.getElementById('filterSeverity')?.value || 'ALL').toUpperCase();
+      const clipFilter = document.getElementById('filterClip')?.value || 'ALL';
+      const query = (document.getElementById('filterSearch')?.value || '').toLowerCase().trim();
+
+      let filtered = cachedIncidents.filter(inc => {
+        // Severity
+        const incSev = (inc.severity || '').toUpperCase();
+        if (sevFilter === 'CRITICAL' && incSev !== 'CRITICAL') return false;
+        if (sevFilter === 'MODERATE' && incSev !== 'MODERATE') return false;
+
+        // Clip
+        if (clipFilter !== 'ALL') {
+          const matchClip = (inc.clip_id === clipFilter) || (inc.source_video === clipFilter);
+          if (!matchClip) return false;
+        }
+
+        // Query
+        if (query) {
+          const factors = (inc.primary_factors || []).join(' ').toLowerCase();
+          const entities = (inc.involved_entities || []).map(e => `${e.class_name} ${e.track_id}`).join(' ').toLowerCase();
+          const id = (inc.incident_id || '').toLowerCase();
+          const src = (inc.source_video || inc.clip_id || '').toLowerCase();
+          if (!factors.includes(query) && !entities.includes(query) && !id.includes(query) && !src.includes(query)) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      renderIncidentTable(filtered);
+    }
+
+    function renderIncidentTable(incidents) {
+      const tbody = document.getElementById('incidentTableBody');
+      if (!tbody) return;
+
+      if (!incidents || incidents.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="9" style="text-align:center; padding:40px; color:var(--text-muted); font-size:13px;">
+              <div style="font-size:24px; margin-bottom:8px;">🔍</div>
+              No high-risk safety incidents found matching the filter criteria.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = incidents.map(inc => {
+        const riskPct = inc.peak_risk_percent !== undefined ? inc.peak_risk_percent : Math.round((inc.peak_risk_score || 0) * 100);
+        const isCrit = (inc.severity || '').toUpperCase() === 'CRITICAL' || riskPct >= 70;
+        const sevColor = isCrit ? 'var(--critical)' : 'var(--warning)';
+        const sevBg = isCrit ? 'rgba(239, 68, 68, 0.12)' : 'rgba(245, 158, 11, 0.12)';
+        const sevBorder = isCrit ? 'rgba(239, 68, 68, 0.35)' : 'rgba(245, 158, 11, 0.35)';
+
+        const factorsHtml = (inc.primary_factors || []).map(f => {
+          const label = f.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
+          return `<span style="display:inline-block; margin:2px; padding:2px 7px; background:rgba(38, 54, 77, 0.6); border:1px solid var(--border-default); border-radius:4px; font-size:10.5px; color:var(--text-secondary);">${label}</span>`;
+        }).join('') || '<span style="color:var(--text-muted); font-size:11px;">Kinematic variance</span>';
+
+        const entitiesHtml = (inc.involved_entities || []).map(e => {
+          return `<span style="display:inline-block; margin:2px; padding:2px 6px; background:rgba(59, 130, 246, 0.12); border:1px solid rgba(59, 130, 246, 0.28); border-radius:3px; font-size:11px; color:var(--primary-hover);">#${e.track_id} ${e.class_name || 'carton'}</span>`;
+        }).join('') || '<span style="color:var(--text-muted); font-size:11px;">Material object</span>';
+
+        const targetFrame = inc.peak_frame !== undefined ? inc.peak_frame : inc.start_frame;
+
+        const statusLabel = inc.status || 'UNREVIEWED';
+        const isReviewed = statusLabel.toUpperCase() === 'REVIEWED';
+
+        return `
+          <tr>
+            <td>
+              <div style="font-family:'JetBrains Mono', monospace; font-weight:700; color:var(--text-primary); font-size:12px;">
+                ${inc.incident_id || 'INC-LOG'}
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); margin-top:2px;">
+                ${(inc.timestamp_iso || '').replace('T', ' ').substring(0, 19)}
+              </div>
+            </td>
+            <td>
+              <div style="font-weight:600; color:var(--text-primary); max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${inc.source_video || inc.clip_id}">
+                ${inc.source_video || inc.clip_id}
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); font-family:'JetBrains Mono', monospace;">
+                Clip: ${inc.clip_id}
+              </div>
+            </td>
+            <td>
+              <div style="font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-secondary);">
+                ${inc.start_time} → ${inc.end_time}
+              </div>
+              <div style="font-size:10.5px; color:var(--teal); font-family:'JetBrains Mono', monospace; margin-top:2px;">
+                Δ ${(inc.duration_sec || 0).toFixed(1)}s (F:${inc.start_frame}–${inc.end_frame})
+              </div>
+            </td>
+            <td>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:14px; font-weight:800; color:${sevColor};">
+                  ${riskPct}%
+                </span>
+              </div>
+              <div style="width:100%; max-width:90px; height:4px; background:rgba(38, 54, 77, 0.8); border-radius:2px; margin-top:4px; overflow:hidden;">
+                <div style="height:100%; width:${riskPct}%; background:${sevColor}; border-radius:2px;"></div>
+              </div>
+            </td>
+            <td>
+              <span style="display:inline-block; padding:2px 8px; border-radius:4px; font-size:10px; font-weight:700; letter-spacing:0.5px; color:${sevColor}; background:${sevBg}; border:1px solid ${sevBorder};">
+                ${inc.severity || 'HAZARD'}
+              </span>
+              <div style="font-size:10px; color:var(--text-muted); font-family:'JetBrains Mono', monospace; margin-top:3px;">
+                ${inc.intervention_priority || 'P1_IMMEDIATE'}
+              </div>
+            </td>
+            <td style="max-width:210px;">
+              ${factorsHtml}
+            </td>
+            <td style="max-width:140px;">
+              ${entitiesHtml}
+            </td>
+            <td>
+              <select class="status-select" onchange="updateIncidentStatus('${inc.incident_id}', this.value)" style="background:var(--surface-input); border:1px solid var(--border-default); color:${isReviewed ? 'var(--success)' : 'var(--warning)'}; font-size:11px; padding:3px 6px; border-radius:4px; cursor:pointer;">
+                <option value="UNREVIEWED" ${!isReviewed ? 'selected' : ''}>⏳ UNREVIEWED</option>
+                <option value="REVIEWED" ${isReviewed ? 'selected' : ''}>✓ REVIEWED</option>
+              </select>
+            </td>
+            <td style="text-align:center;">
+              <button class="btn-jump-frame" onclick="jumpToIncident('${inc.clip_id}', ${targetFrame})" title="Load clip and seek player to frame ${targetFrame}">
+                <span>🎯</span>
+                <span>INSPECT F:${targetFrame}</span>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function updateIncidentStatus(incidentId, newStatus) {
+      fetch('/api/warehouse/incidents/status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ incident_id: incidentId, status: newStatus })
+      })
+      .then(res => res.json())
+      .then(res => {
+        loadIncidentLogs();
+      })
+      .catch(err => {
+        console.error("Status update error:", err);
+      });
+    }
+
+    function jumpToIncident(clipId, frameIdx) {
+      // 1. Ensure scenario exists in CONFIGS
+      if (!CONFIGS[clipId]) {
+        CONFIGS[clipId] = {
+          title: `HAZARD AUDIT: ${clipId}`,
+          label: `Incident Inspection Path`,
+          tracksFile: `${clipId}_tracks.json`,
+          framesDir: `${clipId}_frames`,
+          totalFrames: 300,
+          fps: 30.0,
+          baseTime: "00:00:00",
+          timeline: [],
+          stats: { high: 1, med: 0, low: 0 }
+        };
+      }
+
+      // 2. Switch to Live Tester studio (Section 01)
+      switchSection('tester');
+
+      // 3. Load scenario and seek
+      testPlayer.loadScenario(clipId);
+
+      // Brief delay to allow frame buffer to render target frame
+      setTimeout(() => {
+        testPlayer.togglePlay(false);
+        testPlayer.renderFrame(frameIdx);
+
+        // Scroll smoothly to player
+        const el = document.getElementById('sectionLiveTester');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 350);
+    }
+
+    function exportIncidentLogs() {
+      window.open('/api/warehouse/incidents/export', '_blank');
+    }
+
+    function clearIncidentLogs() {
+      if (!confirm("Are you sure you want to clear all safety incident logs? This will reset the audit history.")) {
+        return;
+      }
+      fetch('/api/warehouse/incidents/clear', { method: 'POST' })
+        .then(res => res.json())
+        .then(res => {
+          loadIncidentLogs();
+        })
+        .catch(err => {
+          alert("Failed clearing logs: " + err.message);
+        });
+    }
+
+    // Initial load on startup
+    window.addEventListener('DOMContentLoaded', () => {
+      loadIncidentLogs();
+    });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      loadIncidentLogs();
+    }
   </script>
 </body>
 </html>

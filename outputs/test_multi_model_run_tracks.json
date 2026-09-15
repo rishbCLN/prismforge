@@ -1,0 +1,249 @@
+{
+  "clip_id": "test_multi_model_run",
+  "total_frames": 20,
+  "total_unique_tracks": 0,
+  "metadata": {
+    "source_video": "wh_clip_02_carton_drop_impact.mp4",
+    "frame_width": 640,
+    "frame_height": 360,
+    "fps": 5.0,
+    "duration_seconds": 4.0,
+    "inference_duration_sec": 5.11
+  },
+  "neural_summary": {
+    "model_version": "WarehouseRiskMLP_v3",
+    "peak_risk_score": 0.0547,
+    "peak_severity": "LOW",
+    "intervention_priority": "P3_INFORMATIONAL",
+    "top_contributing_factors": [
+      "NORMAL_COMPLIANT_HANDLING"
+    ],
+    "gradient_attribution": {
+      "drop_velocity": 0.0,
+      "impact_deceleration": 0.0,
+      "throw_horizontal_velocity": 0.0,
+      "separation_rate": 0.0,
+      "drag_floor_contact": 0.0,
+      "drag_velocity": 0.0,
+      "trolley_overlap_iou": 0.0,
+      "kinematic_jerk": 0.0,
+      "staging_zone_distance": 0.0,
+      "is_outside_staging": 0.0,
+      "operator_distance": 0.0,
+      "handling_duration": 0.0,
+      "package_area_ratio": 0.0,
+      "velocity_variance": 0.0,
+      "stationary_after_impact": 0.0,
+      "tracking_confidence": 0.0
+    },
+    "model_comparison": {
+      "v0_baseline": 0.05,
+      "v1_context": 0.05,
+      "v2_temporal": 0.05,
+      "v3_learned": 0.0547
+    }
+  },
+  "frames": [
+    {
+      "frame_id": 0,
+      "timestamp": 0.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 1,
+      "timestamp": 0.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 2,
+      "timestamp": 0.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 3,
+      "timestamp": 0.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 4,
+      "timestamp": 0.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 5,
+      "timestamp": 1.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 6,
+      "timestamp": 1.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 7,
+      "timestamp": 1.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 8,
+      "timestamp": 1.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 9,
+      "timestamp": 1.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 10,
+      "timestamp": 2.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 11,
+      "timestamp": 2.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 12,
+      "timestamp": 2.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 13,
+      "timestamp": 2.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 14,
+      "timestamp": 2.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 15,
+      "timestamp": 3.0,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 16,
+      "timestamp": 3.2,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 17,
+      "timestamp": 3.4,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 18,
+      "timestamp": 3.6,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    },
+    {
+      "frame_id": 19,
+      "timestamp": 3.8,
+      "tracks": [],
+      "neural_risk": 0.05465240404009819,
+      "neural_severity": "LOW",
+      "v0_risk": 0.05,
+      "v1_risk": 0.05,
+      "v2_risk": 0.05
+    }
+  ],
+  "trajectories": {}
+}

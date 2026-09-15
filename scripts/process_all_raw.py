@@ -89,8 +89,13 @@ def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetec
     total_raw_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     effective_fps = orig_fps / stride
 
+    min_dim = min(orig_w, orig_h) if (orig_w > 0 and orig_h > 0) else 720
+    scale_up = max(1.0, 720.0 / float(min_dim)) if min_dim > 0 else 1.0
+    viz_w = int(round(orig_w * scale_up))
+    viz_h = int(round(orig_h * scale_up))
+
     print(f"\n[INFO] === Processing: {video_filename} ===")
-    print(f"[INFO] Raw frames: {total_raw_frames} @ {orig_fps:.1f} FPS | Sampling stride: {stride} -> Effective FPS: {effective_fps:.1f}")
+    print(f"[INFO] Raw frames: {total_raw_frames} @ {orig_fps:.1f} FPS | Sampling stride: {stride} -> Effective FPS: {effective_fps:.1f} (Viz: {viz_w}x{viz_h})")
 
     tracker = WarehouseTracker(
         high_conf_thresh=0.45,
@@ -131,9 +136,12 @@ def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetec
                 frame_h=orig_h
             )
 
-            serialized_tracks = []
             for t in active_tracks:
                 unique_track_ids.add(t.track_id)
+
+            # Convert to serializable format for JSON export
+            serialized_tracks = []
+            for t in active_tracks:
                 t_dict = t.to_dict()
                 serialized_tracks.append(t_dict)
 
@@ -157,13 +165,25 @@ def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetec
                 "tracks": serialized_tracks
             })
 
-            # Render visualization frame with overlays
-            viz_frame = frame.copy()
+            # Render visualization frame with overlays in HD
+            if scale_up > 1.001:
+                viz_frame = cv2.resize(frame, (viz_w, viz_h), interpolation=cv2.INTER_CUBIC)
+            else:
+                viz_frame = frame.copy()
 
-            # Trails
+            ref_dim = min(viz_w, viz_h)
+            font_scale = max(0.68, min(ref_dim / 850.0, 1.25) * 0.85)
+            text_thick = max(2, int(round(font_scale * 2.2)))
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            pad_h = int(10 * scale_up)
+            pad_v = int(6 * scale_up)
+            (_, base_lh), _ = cv2.getTextSize("TEST", font, font_scale, text_thick)
+
+            # Motion trails
             for t in active_tracks:
                 tid = t.track_id
-                cx, cy = int(t.current_position[0]), int(t.current_position[1])
+                cx = int(t.current_position[0] * scale_up)
+                cy = int(t.current_position[1] * scale_up)
                 if tid not in track_trails:
                     track_trails[tid] = []
                 track_trails[tid].append((cx, cy))
@@ -173,41 +193,89 @@ def process_single_video(feed_info: Dict[str, Any], detector: WarehouseYOLODetec
                 pts = track_trails[tid]
                 color = CLASS_COLORS.get(t.class_name, CLASS_COLORS["default"])
                 for k in range(1, len(pts)):
-                    cv2.line(viz_frame, pts[k-1], pts[k], color, max(1, int(k / 5)))
+                    thick_k = max(2, int(round(k / 4.0 * scale_up)))
+                    cv2.line(viz_frame, pts[k-1], pts[k], color, thick_k, lineType=cv2.LINE_AA)
 
-            # Bounding boxes
+            # Bounding boxes with high-contrast badge labels
             for t in active_tracks:
                 tid = t.track_id
                 cls_name = t.class_name
                 color = CLASS_COLORS.get(cls_name, CLASS_COLORS["default"])
-                x1, y1, x2, y2 = [int(v) for v in t.current_bbox]
+                bx1 = int(t.current_bbox[0] * scale_up)
+                by1 = int(t.current_bbox[1] * scale_up)
+                bx2 = int(t.current_bbox[2] * scale_up)
+                by2 = int(t.current_bbox[3] * scale_up)
 
-                cv2.rectangle(viz_frame, (x1, y1), (x2, y2), color, 2)
+                box_thick = max(2, int(round(2.2 * scale_up)))
+                cv2.rectangle(viz_frame, (bx1, by1), (bx2, by2), color, box_thick, lineType=cv2.LINE_AA)
+
+                # Corner brackets
+                c_len = min(int(min(bx2 - bx1, by2 - by1) * 0.22), int(16 * scale_up))
+                if c_len > 4:
+                    cv2.line(viz_frame, (bx1, by1), (bx1 + c_len, by1), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx1, by1), (bx1, by1 + c_len), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx2, by1), (bx2 - c_len, by1), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx2, by1), (bx2, by1 + c_len), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx1, by2), (bx1 + c_len, by2), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx1, by2), (bx1, by2 - c_len), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx2, by2), (bx2 - c_len, by2), color, box_thick + 1, lineType=cv2.LINE_AA)
+                    cv2.line(viz_frame, (bx2, by2), (bx2, by2 - c_len), color, box_thick + 1, lineType=cv2.LINE_AA)
+
                 speed_val = getattr(t, "speed", 0.0)
-                speed_str = f" v={speed_val:.2f}" if speed_val > 0.05 else ""
-                label = f"#{tid} {cls_name} ({t.confidence:.2f}){speed_str}"
-                (lw, lh), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.42, 1)
-                lx1, ly1 = x1, max(0, y1 - lh - 8)
-                lx2, ly2 = x1 + lw + 10, max(lh + 6, y1)
-                lbl_sub = viz_frame[ly1:ly2, lx1:lx2]
-                if lbl_sub.shape[0] > 0 and lbl_sub.shape[1] > 0:
-                    bg_rect = np.full(lbl_sub.shape, (32, 18, 11), dtype=np.uint8) # #0B1220
-                    cv2.addWeighted(bg_rect, 0.85, lbl_sub, 0.15, 0, lbl_sub)
-                    viz_frame[ly1:ly2, lx1:lx2] = lbl_sub
-                cv2.rectangle(viz_frame, (lx1, ly1), (lx2, ly2), color, 1)
-                cv2.putText(viz_frame, label, (x1 + 5, max(lh + 2, y1 - 4)), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (249, 245, 241), 1)
+                speed_str = f" | {speed_val:.1f}m/s" if speed_val > 0.05 else ""
+                label = f"#{tid} {cls_name.upper()} ({int(t.confidence*100)}%){speed_str}"
 
-            # Top HUD
-            hud = viz_frame.copy()
-            cv2.rectangle(hud, (10, 10), (340, 68), (32, 18, 11), -1) # #0B1220
-            cv2.addWeighted(hud, 0.85, viz_frame, 0.15, 0, viz_frame)
-            cv2.rectangle(viz_frame, (10, 10), (340, 68), (77, 54, 38), 1) # #26364D border
-            cv2.putText(viz_frame, f"VigiAI Tracker: Frame {saved_frame_idx:03d}", (16, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (246, 130, 59), 1) # #3B82F6 Blue
-            cv2.putText(viz_frame, f"Active: {len(active_tracks)} | Total Unique IDs: {len(unique_track_ids)}", (16, 48), cv2.FONT_HERSHEY_SIMPLEX, 0.40, (184, 163, 148), 1) # #94A3B8 Secondary
+                lbl_scale = font_scale * 0.88
+                (lw, lh), _ = cv2.getTextSize(label, font, lbl_scale, text_thick)
+                pad_h = int(10 * scale_up)
+                pad_v = int(6 * scale_up)
+
+                if by1 - lh - pad_v * 2 - 4 > 0:
+                    ly1 = by1 - lh - pad_v * 2 - 4
+                    ly2 = by1
+                    txt_y = by1 - pad_v - 2
+                else:
+                    ly1 = by1
+                    ly2 = by1 + lh + pad_v * 2 + 4
+                    txt_y = by1 + lh + pad_v + 2
+
+                lx1 = max(0, bx1)
+                lx2 = min(viz_w - 1, bx1 + lw + pad_h * 2)
+                txt_x = lx1 + pad_h
+
+                cv2.rectangle(viz_frame, (lx1, ly1), (lx2, ly2), (32, 18, 11), -1) # #0B1220
+                cv2.rectangle(viz_frame, (lx1, ly1), (lx2, ly2), color, max(1, text_thick - 1), lineType=cv2.LINE_AA)
+                cv2.putText(viz_frame, label, (txt_x + 1, txt_y + 1), font, lbl_scale, (0, 0, 0), text_thick + 1, lineType=cv2.LINE_AA)
+                cv2.putText(viz_frame, label, (txt_x, txt_y), font, lbl_scale, (255, 255, 255), text_thick, lineType=cv2.LINE_AA)
+
+            # Top HUD Card
+            hud_pad = int(12 * scale_up)
+            hud_w = min(viz_w - hud_pad * 2, int(max(400, viz_w * 0.88)))
+            hud_lh = int(base_lh * 1.55)
+            hud_h = hud_lh * 2 + int(pad_v * 2.5)
+
+            hx1 = hud_pad
+            hy1 = hud_pad
+            hx2 = hx1 + hud_w
+            hy2 = hy1 + hud_h
+
+            cv2.rectangle(viz_frame, (hx1, hy1), (hx2, hy2), (32, 18, 11), -1) # #0B1220
+            cv2.rectangle(viz_frame, (hx1, hy1), (hx2, hy2), (77, 54, 38), 1, lineType=cv2.LINE_AA) # #26364D
+            cv2.rectangle(viz_frame, (hx1, hy1), (hx2, hy1 + max(3, int(3 * scale_up))), (246, 130, 59), -1) # Blue bar
+
+            l1_y = hy1 + int(hud_lh * 0.95) + pad_v
+            l1_text = f"VigiAI Tracker: Frame {saved_frame_idx:03d}/{total_raw_frames//stride}"
+            cv2.putText(viz_frame, l1_text, (hx1 + pad_h + 1, l1_y + 1), font, font_scale * 0.92, (0, 0, 0), text_thick + 1, lineType=cv2.LINE_AA)
+            cv2.putText(viz_frame, l1_text, (hx1 + pad_h, l1_y), font, font_scale * 0.92, (246, 130, 59), text_thick, lineType=cv2.LINE_AA)
+
+            l2_y = l1_y + hud_lh
+            l2_text = f"Active: {len(active_tracks)} | Total Unique IDs: {len(unique_track_ids)}"
+            cv2.putText(viz_frame, l2_text, (hx1 + pad_h + 1, l2_y + 1), font, font_scale * 0.82, (0, 0, 0), text_thick, lineType=cv2.LINE_AA)
+            cv2.putText(viz_frame, l2_text, (hx1 + pad_h, l2_y), font, font_scale * 0.82, (184, 163, 148), max(1, text_thick - 1), lineType=cv2.LINE_AA)
 
             # Save JPEG frame
             out_img_path = os.path.join(frames_out_dir, f"frame_{saved_frame_idx:03d}.jpg")
-            cv2.imwrite(out_img_path, viz_frame, [cv2.IMWRITE_JPEG_QUALITY, 85])
+            cv2.imwrite(out_img_path, viz_frame, [cv2.IMWRITE_JPEG_QUALITY, 92])
 
             saved_frame_idx += 1
             if saved_frame_idx % 50 == 0:

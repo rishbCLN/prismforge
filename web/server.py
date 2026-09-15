@@ -7,8 +7,9 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import json
+from datetime import datetime
 from typing import Dict, Any, Optional, List, Tuple
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, UploadFile, File, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel
@@ -344,9 +345,12 @@ from src.pipeline.live_test import run_live_video_test
 @app.get("/api/warehouse/raw_videos")
 def list_raw_warehouse_videos():
     """Lists available raw warehouse videos in data/raw for 1-click live testing."""
-    if not os.path.exists(videos_dir):
-        return {"videos": []}
-    files = [f for f in os.listdir(videos_dir) if f.endswith(('.mp4', '.avi', '.mov')) and not f.startswith('.')]
+    files = []
+    if os.path.exists(videos_dir):
+        files.extend([f for f in os.listdir(videos_dir) if f.endswith(('.mp4', '.avi', '.mov')) and not f.startswith('.')])
+    uploads_dir = os.path.join(videos_dir, "uploads")
+    if os.path.exists(uploads_dir):
+        files.extend([os.path.join("uploads", f) for f in os.listdir(uploads_dir) if f.endswith(('.mp4', '.avi', '.mov')) and not f.startswith('.')])
     return {"videos": sorted(files)}
 
 
@@ -362,6 +366,9 @@ async def test_warehouse_video(
     video_path = None
     output_name = "live_test"
 
+    import time
+    ts = int(time.time()) % 100000
+
     if file is not None and file.filename:
         saved_path = os.path.join(upload_dir, file.filename)
         with open(saved_path, "wb") as f:
@@ -369,13 +376,13 @@ async def test_warehouse_video(
             f.write(content)
         video_path = saved_path
         clean_stem = "".join(c if c.isalnum() else "_" for c in os.path.splitext(file.filename)[0].lower())
-        output_name = f"live_{clean_stem[:14]}"
+        output_name = f"live_{clean_stem[:12]}_{ts}"
     elif sample_video:
         candidate = os.path.join(videos_dir, sample_video)
         if os.path.exists(candidate):
             video_path = candidate
             clean_stem = "".join(c if c.isalnum() else "_" for c in os.path.splitext(sample_video)[0].lower())
-            output_name = f"live_{clean_stem[:14]}"
+            output_name = f"live_{clean_stem[:12]}_{ts}"
         else:
             raise HTTPException(status_code=404, detail=f"Sample video not found: {sample_video}")
     else:
@@ -388,6 +395,192 @@ async def test_warehouse_video(
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Live test pipeline failed: {str(e)}")
+
+
+class IncidentStatusUpdateRequest(BaseModel):
+    incident_id: str
+    status: str
+
+
+@app.get("/api/warehouse/incidents")
+def get_warehouse_incidents(
+    min_risk: Optional[float] = None,
+    severity: Optional[str] = None,
+    clip_id: Optional[str] = None,
+    limit: Optional[int] = 100
+):
+    """Retrieves logged high-risk warehouse safety incidents with optional filtering."""
+    log_path = os.path.join(outputs_dir, "incident_logs.json")
+    if not os.path.exists(log_path):
+        return {"version": "1.0", "threshold": 0.50, "total_incidents": 0, "incidents": []}
+
+    try:
+        with open(log_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        return {"error": f"Failed reading incident logs: {str(e)}", "incidents": []}
+
+    incidents = data.get("incidents", [])
+
+    if min_risk is not None:
+        incidents = [i for i in incidents if i.get("peak_risk_score", 0.0) >= min_risk]
+    if severity:
+        sev_clean = severity.upper().strip()
+        incidents = [i for i in incidents if i.get("severity", "").upper() == sev_clean]
+    if clip_id:
+        c_lower = clip_id.lower()
+        incidents = [i for i in incidents if c_lower in i.get("clip_id", "").lower() or c_lower in i.get("source_video", "").lower()]
+
+    if limit and limit > 0:
+        incidents = incidents[:limit]
+
+    return {
+        "version": data.get("version", "1.0"),
+        "last_updated": data.get("last_updated"),
+        "threshold": data.get("threshold", 0.50),
+        "total_incidents": len(data.get("incidents", [])),
+        "filtered_count": len(incidents),
+        "incidents": incidents
+    }
+
+
+@app.get("/api/warehouse/incidents/export")
+def export_warehouse_incidents():
+    """Returns downloadable full JSON audit report of warehouse incidents."""
+    log_path = os.path.join(outputs_dir, "incident_logs.json")
+    if not os.path.exists(log_path):
+        empty_doc = {"version": "1.0", "threshold": 0.50, "incidents": []}
+        return JSONResponse(content=empty_doc)
+    return FileResponse(
+        log_path,
+        media_type="application/json",
+        filename="warehouse_safety_incident_logs.json"
+    )
+
+
+@app.post("/api/warehouse/incidents/status")
+def update_incident_status(req: IncidentStatusUpdateRequest):
+    """Updates supervisor review status for a specific incident."""
+    log_path = os.path.join(outputs_dir, "incident_logs.json")
+    if not os.path.exists(log_path):
+        raise HTTPException(status_code=404, detail="Incident logs file not found")
+
+    with open(log_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    found = False
+    for inc in data.get("incidents", []):
+        if inc.get("incident_id") == req.incident_id:
+            inc["status"] = req.status.upper()
+            found = True
+            break
+
+    if not found:
+        raise HTTPException(status_code=404, detail=f"Incident {req.incident_id} not found")
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    return {"success": True, "incident_id": req.incident_id, "status": req.status.upper()}
+
+
+class IncidentRecordRequest(BaseModel):
+    clip_id: str
+    source_video: Optional[str] = None
+    frame_id: int
+    risk_score: float
+    severity: Optional[str] = "CRITICAL"
+    intervention_priority: Optional[str] = "P1_IMMEDIATE"
+    primary_factors: Optional[List[str]] = None
+    involved_entities: Optional[List[Dict[str, Any]]] = None
+    box_state: Optional[str] = None
+    distance_to_worker_m: Optional[float] = None
+
+
+@app.post("/api/warehouse/incidents/record_event")
+def record_warehouse_incident_event(req: IncidentRecordRequest):
+    """Dynamically records a high-risk (>50%) incident from video playback into persistent JSON storage."""
+    log_path = os.path.join(outputs_dir, "incident_logs.json")
+    os.makedirs(outputs_dir, exist_ok=True)
+
+    data = {"version": "1.0", "threshold": 0.50, "incidents": []}
+    if os.path.exists(log_path):
+        try:
+            with open(log_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            pass
+
+    import datetime
+    now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    clean_stem = "".join(c if c.isalnum() else "" for c in req.clip_id.upper())[:8] or "HAZARD"
+    inc_id = f"INC-{clean_stem}-{req.frame_id:03d}"
+
+    # Deduplicate: if an incident for this clip and nearby frame already exists, update peak
+    existing = None
+    for inc in data.get("incidents", []):
+        if inc.get("clip_id") == req.clip_id and abs(inc.get("peak_frame", 0) - req.frame_id) <= 20:
+            existing = inc
+            break
+
+    if existing:
+        if req.risk_score > existing.get("peak_risk_score", 0.0):
+            existing["peak_risk_score"] = round(req.risk_score, 4)
+            existing["peak_risk_percent"] = int(req.risk_score * 100)
+            existing["peak_frame"] = req.frame_id
+            existing["end_frame"] = max(existing.get("end_frame", req.frame_id), req.frame_id)
+        if req.box_state:
+            existing["box_state"] = req.box_state
+        if req.distance_to_worker_m is not None:
+            existing["distance_to_worker_m"] = req.distance_to_worker_m
+    else:
+        new_inc = {
+            "incident_id": inc_id,
+            "timestamp_iso": now_iso,
+            "clip_id": req.clip_id,
+            "source_video": req.source_video or req.clip_id,
+            "start_frame": req.frame_id,
+            "end_frame": req.frame_id + 1,
+            "start_time": f"00:{int(req.frame_id / 25):02d}.00",
+            "end_time": f"00:{int((req.frame_id + 15) / 25):02d}.00",
+            "duration_sec": 0.6,
+            "peak_frame": req.frame_id,
+            "peak_risk_score": round(req.risk_score, 4),
+            "peak_risk_percent": int(req.risk_score * 100),
+            "severity": req.severity or ("CRITICAL" if req.risk_score >= 0.70 else "MODERATE"),
+            "intervention_priority": req.intervention_priority or "P1_IMMEDIATE",
+            "primary_factors": req.primary_factors or ["HIGH_KINETIC_ENERGY", "VELOCITY_VARIANCE"],
+            "involved_entities": req.involved_entities or [{"track_id": 1, "class_name": "carton"}],
+            "box_state": req.box_state or "FALLING",
+            "distance_to_worker_m": req.distance_to_worker_m,
+            "frame_thumbnail": f"{req.clip_id}_frames/frame_{req.frame_id:03d}.jpg",
+            "status": "UNREVIEWED"
+        }
+        data.setdefault("incidents", []).insert(0, new_inc)
+
+    data["last_updated"] = now_iso
+    data["total_incidents"] = len(data["incidents"])
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
+    return {"success": True, "total_incidents": data["total_incidents"], "logged_incident_id": inc_id}
+
+
+@app.post("/api/warehouse/incidents/clear")
+def clear_incident_logs():
+    """Resets the incident logs archive."""
+    log_path = os.path.join(outputs_dir, "incident_logs.json")
+    empty_doc = {
+        "version": "1.0",
+        "threshold": 0.50,
+        "last_updated": datetime.utcnow().isoformat() + "Z",
+        "total_incidents": 0,
+        "incidents": []
+    }
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(empty_doc, f, indent=2)
+    return {"success": True, "message": "Incident logs cleared"}
 
 
 @app.get("/view_live.html")
