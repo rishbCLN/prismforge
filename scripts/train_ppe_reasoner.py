@@ -42,6 +42,7 @@ def main():
     parser.add_argument("--ema", action="store_true", default=True, help="Use Exponential Moving Average of weights")
     parser.add_argument("--no-ema", action="store_true", default=False, help="Disable EMA")
     parser.add_argument("--gradient-clip", type=float, default=1.0, help="Max gradient norm for clipping")
+    parser.add_argument("--hardhat-weight", type=float, default=2.5, help="Loss weight multiplier for hardhat compliance (intensive focus)")
 
     args = parser.parse_args()
 
@@ -52,6 +53,7 @@ def main():
 
     print("=" * 75)
     print("   HAZARDMESH — PPEReasonerNet V3 PRODUCTION TRAINING PIPELINE   ")
+    print("           INTENSIVE FOCUS: HARDHAT DETECTION & CRANIAL REASONING")
     print("=" * 75)
     print(f"Target Master Dataset: {os.path.abspath(args.dataset_dir)}")
 
@@ -97,6 +99,7 @@ def main():
         early_stopping_patience=args.early_stopping,
         use_ema=use_ema,
         gradient_clip_norm=args.gradient_clip,
+        w_hardhat=args.hardhat_weight,
     )
 
     # 5. Summary metrics
@@ -109,8 +112,14 @@ def main():
     print(f"Parameters:           {results.get('trainable_parameters', 'N/A'):,}")
     print(f"Training Time:        {results['training_time_seconds']}s across {results['epochs']} epochs (best: epoch {results.get('best_epoch', 'N/A')})")
     print(f"Total Worker Samples: {results['total_samples']} (Train: {results['train_samples']}, Val: {results['val_samples']})")
+    print("-" * 75)
+    print(">>> HARDHAT INTENSIVE PERFORMANCE <<<")
+    print(f"  • Hardhat Compliance Accuracy: {m.get('val_hardhat_acc', m.get('hardhat_acc'))}%")
+    print(f"  • Hardhat Detection Precision:  {m.get('val_hardhat_precision', 'N/A')}%")
+    print(f"  • Hardhat Safety Recall:       {m.get('val_hardhat_recall', 'N/A')}%")
+    print(f"  • Hardhat F1-Score:            {m.get('val_hardhat_f1', 'N/A')}")
+    print("-" * 75)
     print(f"Vest Accuracy:        {m.get('val_vest_acc', m.get('vest_acc'))}%")
-    print(f"Hardhat Accuracy:     {m.get('val_hardhat_acc', m.get('hardhat_acc'))}%")
     print(f"Violation Class Acc:  {m.get('val_violation_acc', 'N/A')}%")
     print(f"Risk Score MAE:       {m.get('val_risk_mae', 'N/A')}")
     print("=" * 75)

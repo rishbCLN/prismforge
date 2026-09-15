@@ -381,13 +381,20 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
             has_explicit_no_helmet = any(max(_calc_iou(head_box, [nh["x1"], nh["y1"], nh["x2"], nh["y2"]]), _calc_iou(cranial_box, [nh["x1"], nh["y1"], nh["x2"], nh["y2"]])) > 0.05 for nh in no_helmets)
             has_hardhat = (best_h is not None and best_h_iou > 0.05) and not has_explicit_no_helmet
 
+            # Anatomical face box estimation for training
+            fw_est = 0.44 * ww
+            fh_est = (0.50 * wh * 0.48) if is_chest_up else (0.14 * wh)
+            face_est = [w["x1"] + 0.28 * ww, w["y1"] + (0.12 * wh if is_chest_up else 0.07 * wh), w["x1"] + 0.72 * ww, w["y1"] + (0.12 * wh if is_chest_up else 0.07 * wh) + fh_est]
+
             feats = extract_ppe_neural_features(
                 worker_box=wb,
                 vest_box=best_v if has_vest else None,
                 hardhat_box=best_h if has_hardhat else None,
                 worker_conf=w.get("confidence", 1.0),
                 vest_conf=0.90 if has_vest else 0.0,
-                hardhat_conf=0.90 if has_hardhat else 0.0
+                hardhat_conf=0.90 if has_hardhat else 0.0,
+                face_box=face_est,
+                is_good_detect=has_hardhat
             )
 
             v_label = 1.0 if has_vest else 0.0
@@ -413,7 +420,7 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
                 "risk_score": risk
             })
 
-            # Augmentation: Explicit negative training for hardhat held in hand / waist
+            # Augmentation: Explicit negative training for hardhat held in hand / waist (NOT on face)
             if has_hardhat and len(samples) % 5 == 0:
                 held_h = [w["x1"] + 0.15 * ww, w["y1"] + 0.58 * wh, w["x2"] - 0.15 * ww, w["y1"] + 0.78 * wh]
                 feats_held = extract_ppe_neural_features(
@@ -422,7 +429,9 @@ def extract_ppe_training_samples(manifest: Dict[str, Any], show_progress: bool =
                     hardhat_box=held_h,
                     worker_conf=w.get("confidence", 1.0),
                     vest_conf=0.90 if has_vest else 0.0,
-                    hardhat_conf=0.90
+                    hardhat_conf=0.90,
+                    face_box=face_est,
+                    is_good_detect=False  # Strict rule: Not on face -> NOT a good detect!
                 )
                 samples.append({
                     "features": feats_held,
@@ -487,12 +496,13 @@ def train_ppe_model(
     early_stopping_patience: int = 10,
     use_ema: bool = True,
     gradient_clip_norm: float = 1.0,
+    w_hardhat: float = 2.5,
 ) -> Dict[str, Any]:
     """Trains PPEReasonerNet V3 with production-grade training strategies."""
     if not samples:
         raise ValueError("Cannot train PPEReasonerNet: 0 samples provided.")
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)
 
     device, device_desc = get_optimal_device(force_gpu=force_gpu, requested_device=device_name)
     if show_progress:
@@ -507,6 +517,7 @@ def train_ppe_model(
             pct = class_counts[cls_id] / len(samples) * 100
             print(f"  {class_names.get(cls_id, f'Class_{cls_id}')}: {class_counts[cls_id]:,} ({pct:.1f}%)")
 
+    # Convert to PyTorch Dataset
     dataset = PPEDataset(samples)
 
     # Stratified split
@@ -538,7 +549,7 @@ def train_ppe_model(
     model = PPEReasonerNet(input_dim=16, hidden_dim=64).to(device)
     param_count = sum(p.numel() for p in model.parameters() if p.requires_grad)
     if show_progress:
-        print(f"\n[Model] PPEReasonerNet V3 | {param_count:,} trainable parameters")
+        print(f"\n[Model] PPEReasonerNet V3 + HardhatReasonerBlock | {param_count:,} trainable parameters")
 
     # Optimizer
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-3)
@@ -569,9 +580,9 @@ def train_ppe_model(
     # EMA
     ema = EMAModel(model, decay=0.999) if use_ema else None
 
-    # Loss weights: penalizing risk misestimation hardest
+    # Loss weights: Intensive Hardhat weighting
     W_VEST = 1.5
-    W_HARDHAT = 1.5
+    W_HARDHAT = w_hardhat
     W_VIOLATION = 2.0
     W_RISK = 4.0
 
@@ -587,7 +598,7 @@ def train_ppe_model(
         loss_info = "Focal" if use_focal_loss else "BCE"
         print(f"\n[Training Config]")
         print(f"  Loss: {loss_info} + LabelSmooth({label_smoothing}) + SmoothL1")
-        print(f"  Loss Weights: Vest={W_VEST}, Hardhat={W_HARDHAT}, Violation={W_VIOLATION}, Risk={W_RISK}")
+        print(f"  Loss Weights: Vest={W_VEST}, Hardhat={W_HARDHAT} (INTENSIVE FOCUS), Violation={W_VIOLATION}, Risk={W_RISK}")
         print(f"  LR Schedule: CosineAnnealingWarmRestarts (T0={max(5, epochs//4)}, eta_min={lr*0.01:.6f})")
         print(f"  Gradient Clip: {gradient_clip_norm}")
         print(f"  Augmentation: {use_augmentation}")
@@ -666,6 +677,7 @@ def train_ppe_model(
             val_loss = 0.0
             val_batches = 0
             val_correct_v, val_correct_h, val_correct_c, val_items = 0, 0, 0, 0
+            val_tp_h, val_fp_h, val_fn_h, val_tn_h = 0, 0, 0, 0
             val_risk_mae = 0.0
 
             # Per-class confusion tracking
@@ -693,15 +705,35 @@ def train_ppe_model(
                     val_risk_mae += torch.abs(out["risk_score"] - y_r).sum().item()
                     val_items += len(y_v)
 
+                    # Hardhat binary confusion tracking
+                    for yt, yp in zip(y_h.cpu(), h_pred.cpu()):
+                        t_val = int(yt.item() >= 0.5)
+                        p_val = int(yp.item() >= 0.5)
+                        if t_val == 1 and p_val == 1:
+                            val_tp_h += 1
+                        elif t_val == 0 and p_val == 1:
+                            val_fp_h += 1
+                        elif t_val == 1 and p_val == 0:
+                            val_fn_h += 1
+                        else:
+                            val_tn_h += 1
+
                     # Accumulate confusion matrix
                     for t, p in zip(y_viol.cpu(), c_pred.cpu()):
                         val_confusion[t.item(), p.item()] += 1
 
             avg_val_loss = val_loss / max(1, val_batches)
+            hh_prec = (val_tp_h / max(1, val_tp_h + val_fp_h)) * 100.0
+            hh_rec = (val_tp_h / max(1, val_tp_h + val_fn_h)) * 100.0
+            hh_f1 = (2 * hh_prec * hh_rec / max(1e-5, hh_prec + hh_rec))
+
             val_metrics = {
                 "val_loss": round(avg_val_loss, 4),
                 "val_vest_acc": round((val_correct_v / max(1, val_items)) * 100.0, 2),
                 "val_hardhat_acc": round((val_correct_h / max(1, val_items)) * 100.0, 2),
+                "val_hardhat_precision": round(hh_prec, 2),
+                "val_hardhat_recall": round(hh_rec, 2),
+                "val_hardhat_f1": round(hh_f1, 2),
                 "val_violation_acc": round((val_correct_c / max(1, val_items)) * 100.0, 2),
                 "val_risk_mae": round(val_risk_mae / max(1, val_items), 4),
             }
@@ -721,7 +753,13 @@ def train_ppe_model(
                     "epochs": ep + 1,
                     "val_loss": avg_val_loss,
                     "version": "V3",
-                    "architecture": "PPEReasonerNet_V3_DeepResidual"
+                    "architecture": "PPEReasonerNet_V3_DeepResidual",
+                    "hardhat_metrics": {
+                        "accuracy": val_metrics["val_hardhat_acc"],
+                        "precision": val_metrics["val_hardhat_precision"],
+                        "recall": val_metrics["val_hardhat_recall"],
+                        "f1": val_metrics["val_hardhat_f1"],
+                    }
                 }, output_path)
             else:
                 patience_counter += 1
@@ -743,6 +781,7 @@ def train_ppe_model(
             "Loss": f"{avg_train_loss:.3f}",
             "VestAcc": f"{vest_acc:.1f}%",
             "HardhatAcc": f"{hardhat_acc:.1f}%",
+            "HH_Rec": f"{val_metrics.get('val_hardhat_recall', 0.0):.1f}%",
             "ViolAcc": f"{violation_acc:.1f}%",
             "LR": f"{current_lr:.5f}"
         }

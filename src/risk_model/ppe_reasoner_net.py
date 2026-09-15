@@ -154,6 +154,36 @@ class TaskHead(nn.Module):
         return out
 
 
+class HardhatReasonerBlock(nn.Module):
+    """Dedicated deep neural reasoning block for cranial hardhat compliance.
+
+    Explicitly fuses latent safety features with fine-grained hardhat cranial geometry
+    (has_hardhat, confidence, worker overlap, cranial head IoU, area ratio)
+    and applies anatomical cranial spatial gating.
+    """
+
+    def __init__(self, latent_dim: int = 48, hardhat_feat_dim: int = 5):
+        super().__init__()
+        in_dim = latent_dim + hardhat_feat_dim
+        self.block = nn.Sequential(
+            nn.Linear(in_dim, 32),
+            nn.LayerNorm(32),
+            nn.GELU(),
+            nn.Dropout(0.1),
+            nn.Linear(32, 24),
+            nn.GELU(),
+            nn.Linear(24, 16),
+            nn.GELU(),
+            nn.Linear(16, 1),
+            nn.Sigmoid()
+        )
+
+    def forward(self, latent: torch.Tensor, hardhat_feats: torch.Tensor, spatial_gate: torch.Tensor) -> torch.Tensor:
+        comb = torch.cat([latent, hardhat_feats], dim=1)
+        raw_score = self.block(comb)
+        return raw_score * spatial_gate
+
+
 class PPEReasonerNet(nn.Module):
     """Production-grade deep multi-task neural network with crop-geometry awareness,
     residual blocks, SE attention, feature interactions, and spatial gating.
@@ -162,7 +192,7 @@ class PPEReasonerNet(nn.Module):
         Input (16-dim) → FeatureInteraction → InputProj(→hidden)
         → ResBlock1(hidden→hidden) → ResBlock2(hidden→2×hidden) → ResBlock3(2×hidden→hidden)
         → MultiHeadSelfAttention → Bottleneck(→48)
-        → 4 TaskHeads (vest, hardhat, violation, risk)
+        → 4 TaskHeads + Dedicated HardhatReasonerBlock (vest, hardhat, violation, risk)
     """
 
     def __init__(self, input_dim: int = 16, hidden_dim: int = 64):
@@ -201,8 +231,12 @@ class PPEReasonerNet(nn.Module):
         # Head 1: Vest Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
         self.vest_compliance_head = TaskHead(bottleneck_dim, 1, activation=nn.Sigmoid())
 
-        # Head 2: Hardhat Compliance Score (0.0 = Not Worn, 1.0 = Properly Worn)
+        # Head 2: Standard Hardhat Task Head (retained for backward compatibility)
         self.hardhat_compliance_head = TaskHead(bottleneck_dim, 1, activation=nn.Sigmoid())
+
+        # Dedicated Hardhat Reasoning Chunk: Fuses latent safety features with hardhat spatial slice
+        self.hardhat_reasoner = HardhatReasonerBlock(bottleneck_dim, hardhat_feat_dim=5)
+        self.use_hardhat_reasoner = True  # Enabled for training; dynamically set by load_state_dict
 
         # Head 3: Multi-class Violation Type:
         # 0: COMPLIANT (Both worn)
@@ -216,6 +250,12 @@ class PPEReasonerNet(nn.Module):
 
         # Initialize weights with Kaiming for better convergence
         self.apply(self._init_weights)
+
+    def load_state_dict(self, state_dict, strict=True):
+        # Check if incoming checkpoint contains weights for hardhat_reasoner
+        has_hr = any(k.startswith("hardhat_reasoner.") for k in state_dict.keys())
+        self.use_hardhat_reasoner = has_hr
+        return super().load_state_dict(state_dict, strict=strict)
 
     @staticmethod
     def _init_weights(module):
@@ -241,17 +281,21 @@ class PPEReasonerNet(nn.Module):
         h_attn = self.attention(h3)
         latent = self.bottleneck(h_attn)
 
-        # Task heads
-        raw_hh = self.hardhat_compliance_head(latent)
-
         # Anatomical Spatial Gating:
         # A hardhat CANNOT be compliant if not worn on the cranial dome/head!
         # Feature 10 is h_iou_head; Feature 7 is has_hardhat_det (worn on head).
         # If a worker holds the hardhat in hand, h_iou_head is 0.0 -> compliance is strictly 0.0!
-        h_iou_head = x[:, 10:11]
-        has_hh = x[:, 7:8]
+        h_iou_head = x[:, 10:11] if x.shape[1] > 10 else torch.zeros(x.shape[0], 1, device=x.device)
+        has_hh = x[:, 7:8] if x.shape[1] > 7 else torch.zeros(x.shape[0], 1, device=x.device)
         spatial_gate = torch.clamp(h_iou_head / 0.06, 0.0, 1.0) * torch.clamp(has_hh, 0.0, 1.0)
-        gated_hh = raw_hh * spatial_gate
+
+        # Dedicated Hardhat Reasoning Chunk
+        hh_slice = x[:, 7:12] if x.shape[1] >= 12 else torch.zeros(x.shape[0], 5, device=x.device)
+        if getattr(self, "use_hardhat_reasoner", False) and hasattr(self, "hardhat_reasoner") and self.hardhat_reasoner is not None:
+            gated_hh = self.hardhat_reasoner(latent, hh_slice, spatial_gate)
+        else:
+            raw_hh = self.hardhat_compliance_head(latent)
+            gated_hh = raw_hh * spatial_gate
 
         return {
             "vest_compliance": self.vest_compliance_head(latent),
@@ -303,9 +347,11 @@ def extract_ppe_neural_features(
     hardhat_box: List[float] = None,
     worker_conf: float = 1.0,
     vest_conf: float = 0.0,
-    hardhat_conf: float = 0.0
+    hardhat_conf: float = 0.0,
+    face_box: List[float] = None,
+    is_good_detect: Optional[bool] = None
 ) -> List[float]:
-    """Converts raw YOLO boxes into 16-dim input vector with crop-geometry awareness."""
+    """Converts raw perception boxes into 16-dim input vector with crop-geometry and face-cranial awareness."""
     wx1, wy1, wx2, wy2 = worker_box
     ww = max(1e-4, wx2 - wx1)
     wh = max(1e-4, wy2 - wy1)
@@ -340,21 +386,34 @@ def extract_ppe_neural_features(
         v_area_ratio = 0.0
         has_vest_det = 0.0
 
-    # Hardhat geometry relative to worker
+    # Hardhat geometry relative to worker and face
     if hardhat_box:
         hx_box, hy_box, hx2_box, hy2_box = hardhat_box
         h_iou_worker = _calc_iou(worker_box, hardhat_box)
-        # Cranial dome targeting: Hardhats sit on the upper cranial vault
-        cranial_hy2 = hy1 + 0.65 * (hy2 - hy1)
-        h_iou_head = max(
-            _calc_iou([hx1, hy1, hx2, hy2], hardhat_box),
-            _calc_iou([hx1, hy1, hx2, cranial_hy2], hardhat_box)
-        )
+        
+        if face_box is not None:
+            # Face-anchored cranial vault: sits directly on top of face
+            fx1, fy1, fx2, fy2 = face_box
+            fw = max(1e-4, fx2 - fx1)
+            fh = max(1e-4, fy2 - fy1)
+            cranial_rect = [fx1 - 0.20 * fw, fy1 - 1.25 * fh, fx2 + 0.20 * fw, fy1 + 0.15 * fh]
+            h_iou_head = max(_calc_iou(cranial_rect, hardhat_box), _calc_iou([hx1, hy1, hx2, hy2], hardhat_box))
+        else:
+            # Cranial dome targeting: Hardhats sit on the upper cranial vault
+            cranial_hy2 = hy1 + 0.65 * (hy2 - hy1)
+            h_iou_head = max(
+                _calc_iou([hx1, hy1, hx2, hy2], hardhat_box),
+                _calc_iou([hx1, hy1, hx2, cranial_hy2], hardhat_box)
+            )
         h_area_ratio = ((hx2_box - hx_box) * (hy2_box - hy_box)) / (ww * wh)
 
-        # STRICT ANATOMICAL RULE: A hardhat is compliant IF AND ONLY IF worn on the head!
-        # If the hardhat is held in hand, waist, or lap (h_iou_head < 0.06), it is NOT worn!
-        is_worn_on_head = 1.0 if h_iou_head >= 0.06 else 0.0
+        # STRICT ANATOMICAL RULE: A hardhat is compliant IF AND ONLY IF worn on the head/face!
+        # If is_good_detect is explicitly provided, respect it; otherwise evaluate head IoU threshold
+        if is_good_detect is not None:
+            is_worn_on_head = 1.0 if is_good_detect else 0.0
+        else:
+            is_worn_on_head = 1.0 if h_iou_head >= 0.06 else 0.0
+
         has_hardhat_det = is_worn_on_head
         calibrated_hh_conf = hardhat_conf if is_worn_on_head > 0.5 else 0.0
     else:

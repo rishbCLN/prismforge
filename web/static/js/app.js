@@ -1390,20 +1390,45 @@ class HazardMeshConsole {
         </div>
 
         <div class="grid grid-cols-2 gap-2 text-[10px] font-mono">
-          <div class="bg-surface-container p-1 border border-outline-variant">
-            <div class="flex justify-between text-on-surface-variant">
-              <span>Hardhat:</span>
+          <div class="bg-surface-container p-1.5 border border-outline-variant col-span-2 sm:col-span-1">
+            <div class="flex justify-between items-center text-on-surface-variant">
+              <span class="font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-sm bg-yellow-400"></span> Hardhat:</span>
               <span class="${w.has_hardhat ? 'text-secondary font-bold' : 'text-error font-bold'}">
-                ${w.has_hardhat ? 'WORN' : 'MISSING'}
+                ${w.has_hardhat ? (w.is_good_detect ? '✓ GOOD DETECT' : 'WORN') : 'MISSING'}
               </span>
             </div>
             <div class="w-full bg-surface-container-lowest h-1 mt-1">
               <div class="h-1 ${w.has_hardhat ? 'bg-secondary' : 'bg-error'}" style="width: ${w.hardhat_compliance_pct}%"></div>
             </div>
-            <span class="text-[9px] text-on-surface-variant mt-0.5 block">${w.hardhat_compliance_pct}% Confidence</span>
+            <div class="flex justify-between items-center text-[9px] text-on-surface-variant mt-1">
+              <span>${w.hardhat_compliance_pct}% Conf</span>
+              ${w.hardhat_box ? `<span class="text-yellow-400 font-mono font-bold text-[8.5px]">Square: ${w.hardhat_square_dims || (w.hardhat_box[2]-w.hardhat_box[0]+'×'+(w.hardhat_box[3]-w.hardhat_box[1])+'px')}</span>` : `<span class="text-error font-mono text-[8.5px]">No Square</span>`}
+            </div>
+            ${w.is_good_detect && w.hardhat_box ? `
+              <div class="mt-1 px-1 py-0.5 bg-surface-container-lowest border border-yellow-400/50 text-yellow-400 text-[8.5px] flex items-center justify-between">
+                <span>Alignment:</span>
+                <span class="font-bold text-secondary">✓ Sits On Top Of Face</span>
+              </div>
+            ` : (w.face_box ? `
+              <div class="mt-1 px-1 py-0.5 bg-surface-container-lowest border border-error/40 text-error text-[8.5px] flex items-center justify-between">
+                <span>Cranial Vault:</span>
+                <span class="font-bold">HEAD EXPOSED (NO HELMET)</span>
+              </div>
+            ` : `
+              <div class="mt-1 px-1 py-0.5 bg-surface-container-lowest border border-error/40 text-error text-[8.5px] flex items-center justify-between">
+                <span>Cranial Status:</span>
+                <span class="font-bold">UNPROTECTED</span>
+              </div>
+            `)}
+            ${w.face_box ? `
+              <div class="mt-1 px-1 py-0.5 bg-surface-container-lowest border border-outline-variant text-[8px] text-on-surface-variant flex items-center justify-between">
+                <span>Face Detected:</span>
+                <span class="font-mono text-cyan-400">[${w.face_box[0]},${w.face_box[1]}] (${(w.face_confidence*100).toFixed(0)}%)</span>
+              </div>
+            ` : ''}
           </div>
 
-          <div class="bg-surface-container p-1 border border-outline-variant">
+          <div class="bg-surface-container p-1.5 border border-outline-variant col-span-2 sm:col-span-1">
             <div class="flex justify-between text-on-surface-variant">
               <span>Safety Vest:</span>
               <span class="${w.has_vest ? 'text-secondary font-bold' : 'text-error font-bold'}">
@@ -1413,7 +1438,7 @@ class HazardMeshConsole {
             <div class="w-full bg-surface-container-lowest h-1 mt-1">
               <div class="h-1 ${w.has_vest ? 'bg-secondary' : 'bg-error'}" style="width: ${w.vest_compliance_pct}%"></div>
             </div>
-            <span class="text-[9px] text-on-surface-variant mt-0.5 block">${w.vest_compliance_pct}% Confidence</span>
+            <span class="text-[9px] text-on-surface-variant mt-1 block">${w.vest_compliance_pct}% Confidence</span>
           </div>
         </div>
 

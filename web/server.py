@@ -339,7 +339,10 @@ def get_manifest():
 # ==================== PPE ANALYSER API ====================
 from src.features.ppe_inference import PPEInferenceEngine
 
-ppe_engine = PPEInferenceEngine(model_path="models/ppe_reasoner.pt", yolo_path="yolov8n.pt")
+ppe_engine = PPEInferenceEngine(
+    model_path="models/ppe_reasoner.pt",
+    yolo_path="models/yolov8_ppe_best.pt" if os.path.exists("models/yolov8_ppe_best.pt") else "yolov8n.pt"
+)
 
 
 @app.post("/api/ppe/analyze")
