@@ -96,7 +96,23 @@ class ImageDatasetIngestor:
         "wheel-loader": "machinery",
         "roller": "machinery",
         "vehicle": "machinery",
-        "heavy-equipment": "machinery"
+        "heavy-equipment": "machinery",
+
+        # Extended PPE: Boots, Gloves, Goggles (from ppe3 dataset)
+        "boots": "boots",
+        "boot": "boots",
+        "safety_boots": "boots",
+        "safety-boots": "boots",
+        "gloves": "gloves",
+        "glove": "gloves",
+        "safety_gloves": "gloves",
+        "safety-gloves": "gloves",
+        "goggles": "goggles",
+        "goggle": "goggles",
+        "safety_goggles": "goggles",
+        "safety-goggles": "goggles",
+        "glasses": "goggles",
+        "safety_glasses": "goggles"
     }
 
     def __init__(self, datasets_root: str = "datasets", output_manifest_dir: str = "data/ingested"):
@@ -219,25 +235,42 @@ class ImageDatasetIngestor:
                         with open(label_path, "r", encoding="utf-8") as lf:
                             for line in lf:
                                 parts = line.strip().split()
-                                if len(parts) >= 5:
-                                    cid = int(parts[0])
-                                    cx, cy, bw, bh = map(float, parts[1:5])
+                                if len(parts) < 2:
+                                    continue
+
+                                cid = int(parts[0])
+                                coords = list(map(float, parts[1:]))
+
+                                if len(coords) == 4:
+                                    # Standard YOLO bbox: cx cy w h
+                                    cx, cy, bw, bh = coords
                                     x1 = max(0.0, cx - bw / 2.0)
                                     y1 = max(0.0, cy - bh / 2.0)
                                     x2 = min(1.0, cx + bw / 2.0)
                                     y2 = min(1.0, cy + bh / 2.0)
+                                elif len(coords) >= 6 and len(coords) % 2 == 0:
+                                    # Polygon segmentation format: x1 y1 x2 y2 ... xn yn
+                                    # Convert polygon to bounding box via min/max
+                                    poly_x = coords[0::2]
+                                    poly_y = coords[1::2]
+                                    x1 = max(0.0, min(poly_x))
+                                    y1 = max(0.0, min(poly_y))
+                                    x2 = min(1.0, max(poly_x))
+                                    y2 = min(1.0, max(poly_y))
+                                else:
+                                    continue  # Unrecognized format
 
-                                    raw_name = classes.get(cid, str(cid))
-                                    c_name = self.canonical_class(raw_name)
+                                raw_name = classes.get(cid, str(cid))
+                                c_name = self.canonical_class(raw_name)
 
-                                    boxes.append(BoundingBox(
-                                        class_name=c_name,
-                                        class_id=cid,
-                                        x1=x1, y1=y1, x2=x2, y2=y2,
-                                        abs_x1=int(x1 * w), abs_y1=int(y1 * h),
-                                        abs_x2=int(x2 * w), abs_y2=int(y2 * h),
-                                        confidence=1.0
-                                    ))
+                                boxes.append(BoundingBox(
+                                    class_name=c_name,
+                                    class_id=cid,
+                                    x1=x1, y1=y1, x2=x2, y2=y2,
+                                    abs_x1=int(x1 * w), abs_y1=int(y1 * h),
+                                    abs_x2=int(x2 * w), abs_y2=int(y2 * h),
+                                    confidence=1.0
+                                ))
 
                     images.append(IngestedImage(
                         dataset_name=ds_name,
@@ -522,5 +555,15 @@ class ImageDatasetIngestor:
 
         print(f"\n[Ingestion Complete] Ingested {len(all_images)} total images across {len(subdirs)} dataset(s).")
         print(f"Saved manifest: {manifest_path}")
+
+        # Print class distribution summary
+        total_class_counts = {}
+        for ds in dataset_summaries:
+            for cls_name, count in ds.get("class_counts", {}).items():
+                total_class_counts[cls_name] = total_class_counts.get(cls_name, 0) + count
+        if total_class_counts:
+            print(f"\n[Class Distribution Across All Datasets]")
+            for cls_name in sorted(total_class_counts.keys(), key=lambda x: -total_class_counts[x]):
+                print(f"  {cls_name:>15}: {total_class_counts[cls_name]:>6}")
 
         return summary_payload

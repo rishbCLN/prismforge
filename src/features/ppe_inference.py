@@ -42,23 +42,43 @@ class PPEInferenceEngine:
         "web/index.html & web/static/js/app.js (PPE Analyser Interactive UI & Canvas)"
     ]
 
-    def __init__(self, model_path: str = "models/ppe_reasoner.pt", yolo_path: str = "yolov8n.pt"):
+    def __init__(self, model_path: str = "models/ppe_reasoner.pt", yolo_path: str = "yolov8n.pt",
+                 use_tta: bool = True, temperature: float = 1.5, tta_noise_std: float = 0.015,
+                 tta_passes: int = 5):
         self.model_path = model_path
         self.yolo_path = yolo_path
+        self.use_tta = use_tta
+        self.temperature = temperature  # Temperature scaling for calibrated logits
+        self.tta_noise_std = tta_noise_std
+        self.tta_passes = tta_passes
 
-        # Load PPEReasonerNet
+        # Load PPEReasonerNet (V3 with backward compat for V2)
         self.device = torch.device("cpu")
         self.reasoner = None
         if os.path.exists(model_path):
             try:
                 ckpt = torch.load(model_path, map_location=self.device, weights_only=False)
-                in_dim = ckpt.get("input_dim", 14)
+                in_dim = ckpt.get("input_dim", 16)
                 hid_dim = ckpt.get("hidden_dim", 64)
                 self.reasoner = PPEReasonerNet(input_dim=in_dim, hidden_dim=hid_dim)
-                self.reasoner.load_state_dict(ckpt["state_dict"])
+                self.reasoner.load_state_dict(ckpt["state_dict"], strict=False)
                 self.reasoner.eval()
             except Exception as e:
                 print(f"[Warning] Failed to load PPEReasonerNet: {e}")
+
+        # Try loading EMA model if available (even more stable weights)
+        ema_path = model_path.replace(".pt", "_ema.pt")
+        self.reasoner_ema = None
+        if os.path.exists(ema_path):
+            try:
+                ema_ckpt = torch.load(ema_path, map_location=self.device, weights_only=False)
+                in_dim = ema_ckpt.get("input_dim", 16)
+                hid_dim = ema_ckpt.get("hidden_dim", 64)
+                self.reasoner_ema = PPEReasonerNet(input_dim=in_dim, hidden_dim=hid_dim)
+                self.reasoner_ema.load_state_dict(ema_ckpt["state_dict"], strict=False)
+                self.reasoner_ema.eval()
+            except Exception:
+                pass
 
         # Load YOLOv8
         self.detector = SafetyDetector(model_path=yolo_path, conf_threshold=0.25)
@@ -114,15 +134,58 @@ class PPEInferenceEngine:
                 hardhat_conf=h_conf if has_helmet else 0.0
             )
 
-            # Pass through PPEReasonerNet
+            # Pass through PPEReasonerNet with optional TTA
             if self.reasoner is not None:
                 with torch.no_grad():
                     inp = torch.tensor([feats], dtype=torch.float32)
-                    out = self.reasoner(inp)
-                    vest_comp = float(out["vest_compliance"][0, 0].item())
-                    hh_comp = float(out["hardhat_compliance"][0, 0].item())
-                    viol_class_idx = int(out["violation_logits"].argmax(dim=1)[0].item())
-                    risk_score = float(out["risk_score"][0, 0].item())
+
+                    if self.use_tta and self.tta_passes > 1:
+                        # Test-Time Augmentation: multiple passes with noise, average predictions
+                        vest_scores = []
+                        hh_scores = []
+                        viol_logits_list = []
+                        risk_scores_list = []
+
+                        # Original pass (clean)
+                        out0 = self.reasoner(inp)
+                        vest_scores.append(out0["vest_compliance"][0, 0].item())
+                        hh_scores.append(out0["hardhat_compliance"][0, 0].item())
+                        viol_logits_list.append(out0["violation_logits"][0])
+                        risk_scores_list.append(out0["risk_score"][0, 0].item())
+
+                        # EMA model pass (if available)
+                        if self.reasoner_ema is not None:
+                            out_ema = self.reasoner_ema(inp)
+                            vest_scores.append(out_ema["vest_compliance"][0, 0].item())
+                            hh_scores.append(out_ema["hardhat_compliance"][0, 0].item())
+                            viol_logits_list.append(out_ema["violation_logits"][0])
+                            risk_scores_list.append(out_ema["risk_score"][0, 0].item())
+
+                        # Noisy passes
+                        for _ in range(self.tta_passes - 1):
+                            noise = torch.randn_like(inp) * self.tta_noise_std
+                            inp_noisy = inp + noise
+                            out_n = self.reasoner(inp_noisy)
+                            vest_scores.append(out_n["vest_compliance"][0, 0].item())
+                            hh_scores.append(out_n["hardhat_compliance"][0, 0].item())
+                            viol_logits_list.append(out_n["violation_logits"][0])
+                            risk_scores_list.append(out_n["risk_score"][0, 0].item())
+
+                        vest_comp = float(np.mean(vest_scores))
+                        hh_comp = float(np.mean(hh_scores))
+                        risk_score = float(np.mean(risk_scores_list))
+
+                        # Average logits and apply temperature scaling
+                        avg_logits = torch.stack(viol_logits_list).mean(dim=0)
+                        scaled_logits = avg_logits / self.temperature
+                        viol_class_idx = int(scaled_logits.argmax().item())
+                    else:
+                        out = self.reasoner(inp)
+                        vest_comp = float(out["vest_compliance"][0, 0].item())
+                        hh_comp = float(out["hardhat_compliance"][0, 0].item())
+                        scaled_logits = out["violation_logits"][0] / self.temperature
+                        viol_class_idx = int(scaled_logits.argmax().item())
+                        risk_score = float(out["risk_score"][0, 0].item())
             else:
                 # Fallback heuristic if reasoner weights unavailable
                 vest_comp = 0.95 if has_vest else 0.05
@@ -166,11 +229,14 @@ class PPEInferenceEngine:
                 "has_hardhat": bool(hh_comp >= 0.5),
                 "vest_compliance_pct": round(vest_comp * 100.0, 1),
                 "hardhat_compliance_pct": round(hh_comp * 100.0, 1),
+                "vest_decision_margin": round(abs(vest_comp - 0.5), 4),
+                "hardhat_decision_margin": round(abs(hh_comp - 0.5), 4),
                 "violation_class": viol_name,
                 "violation_id": viol_class_idx,
                 "risk_score": round(risk_score, 4),
                 "risk_level": risk_level,
-                "action": action
+                "action": action,
+                "inference_method": "TTA" if (self.use_tta and self.reasoner is not None) else "single_pass"
             }
             workers_analysis.append(worker_info)
 
